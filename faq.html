@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='40' fill='%23fff'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <title>Aide & FAQ — BASE</title>
+  <meta name="description" content="Authenticité, livraison, retours, tailles : toutes les réponses à tes questions.">
+</head>
+<body data-page="faq">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span>Aide</span></nav>
+        <h1>Aide & FAQ</h1>
+        <p>Une question qui n'est pas ici ? Écris-nous, on répond vite.</p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="content faq">
+        <h2 id="authenticite">Authenticité</h2>
+        <details open><summary>Vos produits sont-ils authentiques ?</summary><div class="ans">Oui, 100%. Tous nos articles proviennent directement des États-Unis via notre fournisseur. Chaque pièce est contrôlée à la main avant l'envoi (étiquettes, coutures, matières, boîte et étiquettes de composition).</div></details>
+        <details><summary>Et si un produit n'était pas authentique ?</summary><div class="ans">Tu serais intégralement remboursé, frais de livraison compris.</div></details>
+        <details><summary>BASE est-il un revendeur officiel des marques ?</summary><div class="ans">Non. BASE est un revendeur indépendant. Nous ne sommes ni affiliés, ni sponsorisés, ni autorisés officiellement par les marques présentées sur ce site. Les noms et marques cités appartiennent à leurs propriétaires respectifs.</div></details>
+
+        <h2 id="livraison">Commande & livraison</h2>
+        <details><summary>Comment passer commande ?</summary><div class="ans">Ajoute tes articles au panier puis clique sur « Commander ». Remplis tes coordonnées et choisis d'envoyer ta commande par WhatsApp, Instagram ou e-mail. On te confirme la disponibilité et on t'envoie le lien de paiement.</div></details>
+        <details><summary>Quels sont les délais de livraison ?</summary><div class="ans">Les commandes sont expédiées sous 24-48h après paiement, avec un numéro de suivi. Compte 3 à 7 jours ouvrés pour la livraison.</div></details>
+        <details><summary>Combien coûte la livraison ?</summary><div class="ans">La livraison standard est à 7,90 € et elle est offerte dès 150 € d'achat.</div></details>
+        <details><summary>Quels moyens de paiement acceptez-vous ?</summary><div class="ans">Carte bancaire, PayPal, Apple Pay et virement.</div></details>
+
+        <h2 id="retours">Retours & échanges</h2>
+        <details><summary>Puis-je retourner ou échanger un article ?</summary><div class="ans">Oui, tu as 14 jours après réception pour nous retourner un article non porté, avec ses étiquettes et dans son emballage d'origine. Contacte-nous pour lancer le retour. Les frais de retour sont à ta charge, sauf erreur de notre part.</div></details>
+
+        <h2 id="tailles">Guide des tailles</h2>
+        <details><summary>Comment choisir ma taille ?</summary><div class="ans">Les vêtements sont en tailles US. Les ensembles Essentials ont une coupe oversize : prends ta taille habituelle pour un rendu ample ou une taille en dessous pour un rendu plus ajusté. Les chaussures sont indiquées en pointures EU. Un guide est disponible sur chaque fiche produit. En cas de doute, écris-nous !</div></details>
+
+        <h2 id="contact">Contact</h2>
+        <div id="contact-block" class="ans" style="display:grid;gap:10px"></div>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var c = window.BASE_CONFIG, el = document.getElementById("contact-block"), h = "";
+      if (c.whatsapp) h += '<p><strong>WhatsApp :</strong> <a class="link-underline" href="https://wa.me/' + c.whatsapp + '" target="_blank" rel="noopener">+' + c.whatsapp + '</a></p>';
+      if (c.instagram) h += '<p><strong>Instagram :</strong> <a class="link-underline" href="https://instagram.com/' + c.instagram + '" target="_blank" rel="noopener">@' + c.instagram + '</a></p>';
+      if (c.email) h += '<p><strong>E-mail :</strong> <a class="link-underline" href="mailto:' + c.email + '">' + c.email + '</a></p>';
+      el.innerHTML = h;
+      if (location.hash) { var t = document.querySelector(location.hash); if (t) { var d = t.nextElementSibling; if (d && d.tagName === "DETAILS") d.open = true; } }
+    });
+  </script>
+</body>
+</html>

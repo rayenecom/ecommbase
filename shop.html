@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='40' fill='%23fff'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <title>Boutique — BASE</title>
+  <meta name="description" content="Tous les ensembles et sneakers BASE, 100% authentiques.">
+</head>
+<body data-page="shop">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>/</span><span id="crumb-current">Boutique</span></nav>
+        <h1 id="shop-title">Boutique</h1>
+        <p id="shop-desc"></p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="toolbar">
+        <div class="chips" id="cat-chips"></div>
+        <div class="toolbar__right">
+          <button class="chip filter-toggle" id="filter-toggle">Filtres</button>
+          <span id="result-count"></span>
+          <label class="visually-hidden" for="sort">Trier</label>
+          <select class="select" id="sort">
+            <option value="featured">En vedette</option>
+            <option value="new">Nouveautés</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="name">A → Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="shop-layout">
+        <aside class="filters" id="filters">
+          <div><h3>Marques</h3><div id="filter-brands"></div></div>
+          <div><h3>Tailles disponibles</h3><div id="filter-sizes"></div></div>
+          <button class="link-underline" id="filter-reset" style="justify-self:start">Réinitialiser</button>
+        </aside>
+        <div class="product-grid" id="shop-grid" style="padding-bottom:80px"></div>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+</body>
+</html>
