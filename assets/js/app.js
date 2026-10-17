@@ -1,7 +1,8 @@
 /* ==========================================================
-   BASE — Moteur du site (en-tête, panier, boutique, fiche
-   produit, commande). Normalement tu n'as pas besoin de
-   modifier ce fichier : édite config.js et products.js.
+   BASE — Application
+   Site en une seule page : les adresses du type
+   #/boutique, #/produit/<id>, #/commande changent la vue.
+   Pour modifier le contenu, édite config.js et products.js.
    ========================================================== */
 (function () {
   "use strict";
@@ -10,690 +11,1148 @@
   const BRANDS = window.BASE_BRANDS;
   const CATS = window.BASE_CATEGORIES;
   const PRODUCTS = window.BASE_PRODUCTS;
-  const CART_KEY = "base_cart_v1";
+  const ART = window.BASE_ART;
 
-  /* ---------------- Utilitaires ---------------- */
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const money = (n) => new Intl.NumberFormat(CFG.locale, { style: "currency", currency: CFG.currency }).format(n);
-  const params = () => new URLSearchParams(location.search);
+  /* =================== Utilitaires =================== */
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = new Intl.NumberFormat(CFG.locale, { style: "currency", currency: CFG.currency });
+  const money = (n) => fmt.format(n).replace(/[.,]00(?=\s?\D*$)/, "");
+  const moneyExact = (n) => fmt.format(n);
+  const norm = (s) => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const byId = (id) => PRODUCTS.find((p) => p.id === id);
-  const brandName = (p) => (BRANDS[p.brand] ? BRANDS[p.brand].name : p.brand);
+  const brandOf = (p) => BRANDS[p.brand] || { name: p.brand, tint: "#ececea" };
   const isNew = (p) => (p.tags || []).includes("new");
   const isBest = (p) => (p.tags || []).includes("best");
-  const isSale = (p) => p.oldPrice && p.oldPrice > p.price;
-  const norm = (s) => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const isSale = (p) => p.oldPrice > p.price;
+  const pct = (p) => Math.round((1 - p.price / p.oldPrice) * 100);
+  const variantsOf = (p) => PRODUCTS.filter((x) => x.group && x.group === p.group);
+  const availableSizes = (p) => (p.soldOut ? [] : p.sizes.filter((s) => !(p.soldOutSizes || []).includes(s)));
+  const isOut = (p) => !availableSizes(p).length;
 
   const store = {
-    get(key, fallback) { try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch (e) { return fallback; } },
-    set(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) { /* stockage indisponible */ } }
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* stockage indisponible */ } }
   };
 
-  /* ---------------- Icônes ---------------- */
-  const ICON = {
-    menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>',
-    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
-    bag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
-    user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>',
-    close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6 6 18"/></svg>',
-    arrow: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-    shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>',
-    truck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>',
-    plane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 14 3 11l1.5-1.5L11 11l5-5c1-1 2.5-1 3 0s0 2-1 3l-5 5 1.5 6.5L13 22l-3-7Z"/></svg>',
-    lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="11"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>',
-    return: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h11a5 5 0 0 1 0 10H8"/><path d="m8 5-4 4 4 4"/></svg>',
-    chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H8l-4 4V5Z"/></svg>',
-    instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
-    tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.6 3.7 3.8 3.9v3a7 7 0 0 1-3.8-1.2v6.1A5.8 5.8 0 1 1 10.7 9v3.1a2.8 2.8 0 1 0 2.8 2.8V3h3Z"/></svg>',
-    whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>'
+  // Liens internes
+  const qs = (o) => { const u = new URLSearchParams(); Object.entries(o).forEach(([k, v]) => v && u.set(k, v)); const s = u.toString(); return s ? "?" + s : ""; };
+  const L = {
+    home: "#/",
+    shop: (o = {}) => "#/boutique" + qs(o),
+    product: (id) => "#/produit/" + encodeURIComponent(id),
+    checkout: "#/commande",
+    faq: (a) => "#/aide" + (a ? "?q=" + a : ""),
+    legal: "#/mentions"
   };
 
-  /* ---------------- Visuels provisoires ----------------
-     Tant que tu n'as pas ajouté de photo à un produit,
-     un visuel sobre est généré automatiquement.          */
-  function tone(color) {
-    const c = norm(color || "");
-    if (/black|noir|eclipse|magnet/.test(c)) return { fill: "#1b1b1b", line: "#3a3a3a" };
-    if (/navy|marine/.test(c)) return { fill: "#1f2a44", line: "#33405e" };
-    if (/olive|ivy|green|vert/.test(c)) return { fill: "#565c45", line: "#6e755a" };
-    if (/oatmeal|sand|bone|cream|ivory|vanilla|almond|taupe|beige/.test(c)) return { fill: "#d8cbb5", line: "#bfb097" };
-    if (/silver|lunar|oyster/.test(c)) return { fill: "#c3c5c8", line: "#a5a8ac" };
-    if (/white|blanc/.test(c)) return { fill: "#f7f7f5", line: "#cfcfcb" };
-    if (/grey|gris|heather/.test(c)) return { fill: "#9c9c9a", line: "#828280" };
-    if (/brown|clay/.test(c)) return { fill: "#8a6a4f", line: "#735740" };
-    return { fill: "#8d8d8b", line: "#727270" };
+  // Date de livraison estimée (jours ouvrés)
+  function addBusinessDays(d, n) { const r = new Date(d); while (n > 0) { r.setDate(r.getDate() + 1); const w = r.getDay(); if (w !== 0 && w !== 6) n--; } return r; }
+  function deliveryWindow() {
+    const f = new Intl.DateTimeFormat(CFG.locale, { weekday: "short", day: "numeric", month: "short" });
+    const now = new Date();
+    return `${f.format(addBusinessDays(now, CFG.deliveryDays[0]))} et le ${f.format(addBusinessDays(now, CFG.deliveryDays[1]))}`;
   }
 
-  function shapes(category, t) {
-    const s = `fill="${t.fill}" stroke="${t.line}" stroke-width="3" stroke-linejoin="round"`;
-    if (category === "chaussures") {
-      return `
-        <g transform="translate(0 30)">
-          <path d="M84 372c-8-34-8-62 4-80 14-20 38-24 58-16 20 8 38 12 58-2l52-50c12-11 30-11 42 0l44 42c46 40 102 58 158 70 30 7 48 30 46 58v8H86Z" ${s}/>
-          <path d="M70 370h486c8 0 12 8 9 15l-4 10c-6 16-20 25-36 25H96c-18 0-32-13-34-30l-1-8c0-7 3-12 9-12Z" fill="#f6f6f4" stroke="${t.line}" stroke-width="3"/>
-          <path d="M66 394h494" stroke="${t.line}" stroke-width="2" opacity=".6"/>
-          <path d="M276 246l22 22M300 232l22 22M324 222l20 22M348 228l18 20" stroke="${t.line}" stroke-width="6" stroke-linecap="round" opacity=".9"/>
-          <path d="M96 352c74-4 150-20 214-70 54 44 130 70 232 78" fill="none" stroke="${t.line}" stroke-width="3" opacity=".7"/>
-          <path d="M88 300c-10 18-12 44-6 70" fill="none" stroke="${t.line}" stroke-width="10" stroke-linecap="round" opacity=".5"/>
-        </g>`;
-    }
-    if (category === "doudounes") {
-      return `
-        <g>
-          <path d="M250 130c0-26 100-26 100 0l70 30c30 12 50 40 54 72l20 210c2 16-10 28-26 28h-30l-6-150-12 180H180l-12-180-6 150h-30c-16 0-28-12-26-28l20-210c4-32 24-60 54-72l70-30Z" ${s}/>
-          <path d="M300 150v370" stroke="${t.line}" stroke-width="4"/>
-          <path d="M175 230h250M170 300h260M168 370h264M168 440h264" stroke="${t.line}" stroke-width="3" opacity=".8"/>
-          <path d="M250 130c10 40 90 40 100 0" fill="none" stroke="${t.line}" stroke-width="3"/>
-          <circle cx="300" cy="118" r="0"/>
-        </g>`;
-    }
-    // Ensemble : sweat à capuche + jogging
-    return `
-      <g transform="translate(-6 0)">
-        <path d="M185 120c0-30 70-30 70 0l48 22c22 10 36 30 40 54l18 130c2 12-8 22-20 22h-14l-8-70v196H139V278l-8 70h-14c-12 0-22-10-20-22l18-130c4-24 18-44 40-54l30-22Z" ${s}/>
-        <path d="M185 120c0 44 70 44 70 0" fill="none" stroke="${t.line}" stroke-width="3"/>
-        <path d="M168 380h104v34H168z" fill="none" stroke="${t.line}" stroke-width="3" opacity=".8"/>
-        <path d="M206 160l-6 60M234 160l6 60" stroke="${t.line}" stroke-width="3" stroke-linecap="round"/>
-      </g>
-      <g transform="translate(6 0)">
-        <path d="M368 170h126l14 300c0 10-8 16-16 16h-38l-20-220-20 220h-38c-8 0-16-6-16-16Z" ${s}/>
-        <path d="M368 196h126" stroke="${t.line}" stroke-width="3"/>
-        <path d="M372 456h52M440 456h52" stroke="${t.line}" stroke-width="6" stroke-linecap="round" opacity=".7"/>
-      </g>`;
+  function colorFamily(p) {
+    const c = norm(p.color.split("/")[0]);
+    if (/black|noir|magnet/.test(c)) return "Noir";
+    if (/navy|eclipse|blue|bleu/.test(c)) return "Bleu";
+    if (/green|ivy|olive|vert/.test(c)) return "Vert";
+    if (/oatmeal|sand|clay|taupe|beige|brown/.test(c)) return "Beige";
+    if (/white|ivory|bone|cream|vanilla|undyed/.test(c)) return "Blanc";
+    return "Gris";
   }
+  const FAMILY_SW = { Noir: "#171717", Blanc: "#f3f1ec", Gris: "#a9abaa", Beige: "#c9b79a", Bleu: "#1f2a44", Vert: "#4f5641" };
 
-  function placeholder(p, variant = 0) {
-    const brand = BRANDS[p.brand] || { name: p.brand, tint: "#ececea" };
-    const t = tone(p.color);
-    const bg = variant ? "#ecece9" : brand.tint;
-    return `<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(p.name)}" preserveAspectRatio="xMidYMid slice">
-      <rect width="600" height="600" fill="${bg}"/>
-      <text x="300" y="${variant ? 560 : 96}" text-anchor="middle" font-family="Archivo, Inter, Arial, sans-serif" font-weight="900" font-size="${brand.name.length > 9 ? 58 : 76}" letter-spacing="-2" fill="#000" opacity=".07">${esc(brand.name.toUpperCase())}</text>
-      <g ${variant ? 'transform="translate(600 0) scale(-1 1)"' : ""}>${shapes(p.category, t)}</g>
-    </svg>`;
-  }
+  /* =================== Icônes =================== */
+  const I = {
+    menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg>',
+    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>',
+    bag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5.5 8h13l-1 12.5h-11L5.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>',
+    close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+    right: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    left: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+    chev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 6 6 6-6 6"/></svg>',
+    plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>',
+    minus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4.5 6v5.5c0 4.8 3.2 8 7.5 9.5 4.3-1.5 7.5-4.7 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></svg>',
+    truck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 6.5h11.5v9.5H2.5zM14 9.5h4l3.5 3.5v3H14"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>',
+    ret: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h11a5 5 0 0 1 0 10H8"/><path d="m8 5-4 4 4 4"/></svg>',
+    lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>',
+    plane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10.5 13.5 3 10.5l1.5-1.5 7.5 1 4.5-4.5c1-1 2.5-1 3 0 .5.5.5 2-.5 3L14.5 13l1 7.5L14 22l-3.5-8.5Z"/></svg>',
+    ruler: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 15.5 15.5 3l5.5 5.5L8.5 21 3 15.5Z"/><path d="m7 11.5 2 2M10 8.5l2 2M13 5.5l2 2"/></svg>',
+    filter: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>',
+    chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v11H9l-5 4V5Z"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>',
+    ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>',
+    tt: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.2 1.6 3.7 3.8 3.9v3a7 7 0 0 1-3.8-1.2v6.1A5.8 5.8 0 1 1 10.7 9v3.1a2.8 2.8 0 1 0 2.8 2.8V3h3Z"/></svg>',
+    wa: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>'
+  };
 
-  function productImage(p, i = 0, cls = "") {
+  /* =================== Visuels =================== */
+  function art(p, view = 0, cls = "") {
     const imgs = p.images || [];
-    if (imgs[i]) return `<img class="product-img ${cls}" src="${esc(imgs[i])}" alt="${esc(p.name)}" loading="lazy" data-pid="${esc(p.id)}" data-variant="${i ? 1 : 0}">`;
-    return placeholder(p, i ? 1 : 0);
+    if (imgs.length) {
+      const src = imgs[view] || imgs[0];
+      return `<img class="${cls}" src="${esc(src)}" alt="${esc(p.name + " — " + p.color)}" loading="lazy" data-pid="${esc(p.id)}" data-view="${view}">`;
+    }
+    const svg = ART.render(p, view, brandOf(p));
+    return cls ? svg.replace("<svg ", `<svg class="${cls}" `) : svg;
   }
-
-  // Si une photo est introuvable, on affiche le visuel provisoire à la place.
+  // Photo introuvable -> illustration à la place
   document.addEventListener("error", (e) => {
     const img = e.target;
-    if (img.tagName !== "IMG" || !img.classList.contains("product-img")) return;
-    const p = byId(img.dataset.pid);
-    if (!p) return;
-    const wrap = document.createElement("div");
-    wrap.style.cssText = "position:absolute;inset:0";
-    if (img.classList.contains("img-alt")) { img.remove(); return; }
-    wrap.innerHTML = placeholder(p, +img.dataset.variant);
-    img.replaceWith(wrap.firstElementChild);
+    if (img.tagName !== "IMG" || !img.dataset.pid) return;
+    const p = byId(img.dataset.pid); if (!p) return;
+    const t = document.createElement("div");
+    t.innerHTML = ART.render(p, +img.dataset.view || 0, brandOf(p));
+    if (img.className) t.firstElementChild.setAttribute("class", img.className);
+    img.replaceWith(t.firstElementChild);
   }, true);
 
-  /* ---------------- Carte produit ---------------- */
-  function priceHTML(p) {
-    if (isSale(p)) return `<span class="price-sale">${money(p.price)}</span><span class="price-old">${money(p.oldPrice)}</span>`;
-    return `<span>${money(p.price)}</span>`;
-  }
-
-  function cardHTML(p) {
-    const badges = [];
-    if (p.soldOut) badges.push('<span class="badge badge--muted">Épuisé</span>');
-    else if (isSale(p)) badges.push(`<span class="badge badge--sale">-${Math.round((1 - p.price / p.oldPrice) * 100)}%</span>`);
-    if (!p.soldOut && isNew(p)) badges.push('<span class="badge badge--dark">Nouveau</span>');
-    else if (!p.soldOut && isBest(p)) badges.push('<span class="badge">Best-seller</span>');
-    const alt = p.images && p.images[1] ? productImage(p, 1, "img-alt") : "";
-    return `<a class="card${p.soldOut ? " is-soldout" : ""}" href="product.html?id=${encodeURIComponent(p.id)}">
-      <div class="card__media">
-        <div class="card__badges">${badges.join("")}</div>
-        ${productImage(p, 0)}${alt}
-        <span class="card__quick">${p.soldOut ? "Épuisé" : "Voir le produit"}</span>
-      </div>
-      <div>
-        <div class="card__brand">${esc(brandName(p))}</div>
-        <div class="card__name">${esc(p.name)}</div>
-        <div class="card__price">${priceHTML(p)}</div>
-      </div>
-    </a>`;
-  }
-
-  /* ---------------- Panier ---------------- */
+  /* =================== Panier =================== */
+  const CART_KEY = "base_cart_v2";
   const Cart = {
     items: store.get(CART_KEY, []).filter((i) => byId(i.id)),
     save() { store.set(CART_KEY, this.items); renderCart(); },
     add(id, size, qty = 1) {
-      const found = this.items.find((i) => i.id === id && i.size === size);
-      if (found) found.qty += qty; else this.items.push({ id, size, qty });
+      const f = this.items.find((i) => i.id === id && i.size === size);
+      if (f) f.qty += qty; else this.items.push({ id, size, qty });
       this.save();
     },
-    setQty(idx, qty) { if (qty <= 0) this.items.splice(idx, 1); else this.items[idx].qty = qty; this.save(); },
+    setQty(i, q) { if (q <= 0) this.items.splice(i, 1); else this.items[i].qty = Math.min(q, 9); this.save(); },
     clear() { this.items = []; this.save(); },
     count() { return this.items.reduce((n, i) => n + i.qty, 0); },
     subtotal() { return this.items.reduce((n, i) => n + byId(i.id).price * i.qty, 0); },
-    shipping() {
-      if (!this.items.length) return 0;
-      if (CFG.freeShippingFrom && this.subtotal() >= CFG.freeShippingFrom) return 0;
-      return CFG.shippingPrice;
-    }
+    shipping() { if (!this.items.length) return 0; return CFG.freeShippingFrom && this.subtotal() >= CFG.freeShippingFrom ? 0 : CFG.shippingPrice; },
+    total() { return this.subtotal() + this.shipping(); }
   };
 
-  function cartLineHTML(item, idx, editable = true) {
-    const p = byId(item.id);
-    return `<div class="cart-item">
-      <a class="cart-item__img" href="product.html?id=${encodeURIComponent(p.id)}">${productImage(p, 0)}</a>
-      <div>
-        <div class="cart-item__brand">${esc(brandName(p))}</div>
-        <div class="cart-item__name">${esc(p.name)}</div>
-        <div class="cart-item__meta">Taille : ${esc(item.size)}${editable ? "" : ` · Qté : ${item.qty}`}</div>
-        <div class="cart-item__row">
-          ${editable ? `<div class="qty"><button data-qty="${idx}" data-d="-1" aria-label="Retirer un">−</button><span>${item.qty}</span><button data-qty="${idx}" data-d="1" aria-label="Ajouter un">+</button></div>` : ""}
-          <strong>${money(p.price * item.qty)}</strong>
-        </div>
-        ${editable ? `<button class="cart-remove" data-remove="${idx}">Supprimer</button>` : ""}
-      </div>
-    </div>`;
+  const RV_KEY = "base_recent_v1";
+  function pushRecent(id) { const l = store.get(RV_KEY, []).filter((x) => x !== id); l.unshift(id); store.set(RV_KEY, l.slice(0, 12)); }
+
+  /* =================== Composants =================== */
+  function priceHTML(p) {
+    return isSale(p) ? `<span class="now-sale">${money(p.price)}</span><del>${money(p.oldPrice)}</del>` : `<span>${money(p.price)}</span>`;
   }
 
-  function shipProgressHTML() {
-    if (!CFG.freeShippingFrom) return "";
-    const left = CFG.freeShippingFrom - Cart.subtotal();
-    const pct = Math.min(100, (Cart.subtotal() / CFG.freeShippingFrom) * 100);
-    const txt = left > 0 ? `Plus que <strong>${money(left)}</strong> pour profiter de la livraison offerte` : "<strong>Bravo !</strong> La livraison est offerte 🎉";
-    return `<div class="ship-progress">${txt}<div class="ship-progress__bar"><i style="width:${pct}%"></i></div></div>`;
-  }
-
-  function renderCart() {
-    $$(".cart-count").forEach((el) => { el.textContent = Cart.count(); el.dataset.count = Cart.count(); });
-    $$(".cart-count-inline").forEach((el) => { el.textContent = Cart.count(); });
-    const body = $("#cart-body"), foot = $("#cart-foot");
-    if (!body) return;
-    if (!Cart.items.length) {
-      body.innerHTML = `<div class="cart-empty"><p>Ton panier est vide.</p><a class="btn" href="shop.html">Découvrir la boutique</a></div>`;
-      foot.hidden = true;
-    } else {
-      body.innerHTML = shipProgressHTML() + Cart.items.map((it, i) => cartLineHTML(it, i)).join("");
-      foot.hidden = false;
-      $("#cart-subtotal").textContent = money(Cart.subtotal());
+  function badgesHTML(p) {
+    const b = [];
+    if (isOut(p)) b.push('<span class="badge badge--out">Épuisé</span>');
+    else {
+      if (isSale(p)) b.push(`<span class="badge badge--sale">-${pct(p)}%</span>`);
+      if (isNew(p)) b.push('<span class="badge badge--ink">Nouveau</span>');
+      else if (isBest(p)) b.push('<span class="badge">Best-seller</span>');
     }
-    if (document.body.dataset.page === "checkout") renderCheckoutSummary();
+    return b.join("");
   }
 
-  /* ---------------- Tiroirs ---------------- */
-  function openDrawer(id) {
-    $$(".drawer.is-open, .search-panel.is-open").forEach((d) => d.classList.remove("is-open"));
-    $(id).classList.add("is-open");
-    $("#overlay").classList.add("is-open");
-    document.body.classList.add("no-scroll");
-  }
-  function closeDrawers() {
-    $$(".drawer.is-open, .search-panel.is-open").forEach((d) => d.classList.remove("is-open"));
-    $("#overlay").classList.remove("is-open");
-    document.body.classList.remove("no-scroll");
+  function swatchesHTML(p, max = 5) {
+    const v = variantsOf(p);
+    if (v.length < 2) return '<div class="swatches"></div>';
+    const shown = v.slice(0, max);
+    return `<div class="swatches">${shown.map((x) => `<a class="sw${x.id === p.id ? " is-on" : ""}" href="${L.product(x.id)}" data-sw="${esc(x.id)}" style="background:${esc(x.swatch)}" title="${esc(x.color)}" aria-label="Coloris ${esc(x.color)}"></a>`).join("")}${v.length > max ? `<span class="more">+${v.length - max}</span>` : ""}</div>`;
   }
 
-  let toastTimer;
-  function toast(msg) {
-    const el = $("#toast");
-    el.textContent = msg;
-    el.classList.add("is-visible");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => el.classList.remove("is-visible"), 2600);
+  function quickHTML(p) {
+    if (isOut(p)) return "";
+    const out = p.soldOutSizes || [];
+    return `<div class="quick" aria-label="Ajout rapide">
+      <div class="quick__label"><span>Ajout rapide</span><span class="muted">${p.category === "chaussures" ? "EU" : "US"}</span></div>
+      <div class="quick__sizes">${p.sizes.map((s) => `<button type="button" data-quick-add="${esc(p.id)}" data-size="${esc(s)}" ${out.includes(s) ? "disabled" : ""}>${esc(s)}</button>`).join("")}</div>
+    </div>
+    <button class="plus" type="button" data-quick-sheet="${esc(p.id)}" aria-label="Ajout rapide : ${esc(p.name)}">${I.plus}</button>`;
   }
 
-  /* ---------------- En-tête & pied de page ---------------- */
-  function brandsIn(cat) {
-    return Object.keys(BRANDS).filter((b) => PRODUCTS.some((p) => p.brand === b && p.category === cat));
-  }
-
-  function renderChrome() {
-    const ann = CFG.announcements.map((a) => `<span>${esc(a)}</span>`).join("");
-    const megaFor = (cat) => `<div class="mega"><a href="shop.html?cat=${cat}"><strong>Tout voir</strong></a>${brandsIn(cat).map((b) => `<a href="shop.html?cat=${cat}&brand=${b}">${esc(CATS[cat].replace(/s$/, ""))} ${esc(BRANDS[b].name)}</a>`).join("")}</div>`;
-    const brandLinks = Object.keys(BRANDS).map((b) => `<a href="shop.html?brand=${b}">${esc(BRANDS[b].name)}</a>`).join("");
-    const page = document.body.dataset.page;
-
-    $("#site-header").outerHTML = `
-      <div class="announcement" role="region" aria-label="Annonces"><div class="announcement__track">${ann}${ann}${ann}${ann}</div></div>
-      <header class="header">
-        <div class="container header__inner">
-          <button class="icon-btn menu-toggle" data-open="#menu-drawer" aria-label="Menu">${ICON.menu}</button>
-          <a class="logo" href="index.html" aria-label="${esc(CFG.storeName)} — Accueil"><span>${esc(CFG.storeName)}</span></a>
-            <nav class="nav" aria-label="Navigation principale">
-              <div class="nav__item"><a href="shop.html?filter=new">Nouveautés</a></div>
-              <div class="nav__item"><a href="shop.html?cat=ensembles">Ensembles</a>${megaFor("ensembles")}</div>
-              <div class="nav__item"><a href="shop.html?cat=chaussures">Chaussures</a>${megaFor("chaussures")}</div>
-              <div class="nav__item"><a href="shop.html?cat=doudounes">Doudounes</a></div>
-              <div class="nav__item"><a href="shop.html">Marques</a><div class="mega">${brandLinks}</div></div>
-              <div class="nav__item"><a class="is-sale" href="shop.html?filter=sale">Promos</a></div>
-            </nav>
-          <div class="header__right">
-            <button class="icon-btn" data-open="#search-panel" aria-label="Rechercher">${ICON.search}</button>
-            <a class="icon-btn hide-mobile" href="faq.html" aria-label="Aide">${ICON.user}</a>
-            <button class="icon-btn" data-open="#cart-drawer" aria-label="Panier">${ICON.bag}<span class="cart-count" data-count="0">0</span></button>
-          </div>
-        </div>
-      </header>
-
-      <div class="search-panel" id="search-panel" role="dialog" aria-label="Recherche">
-        <div class="container">
-          <form action="shop.html" method="get" role="search">
-            ${ICON.search.replace("<svg", '<svg width="26" height="26"')}
-            <input type="search" name="q" id="search-input" placeholder="Rechercher : Essentials, XT-6, Cloud…" autocomplete="off">
-            <button type="button" class="icon-btn" data-close aria-label="Fermer">${ICON.close}</button>
-          </form>
-          <div class="search-results" id="search-results"></div>
-        </div>
+  function cardHTML(p) {
+    const second = (p.images && p.images[1]) ? art(p, 1, "alt") : (!p.images || !p.images.length ? art(p, 1, "alt") : "");
+    return `<article class="card${isOut(p) ? " is-out" : ""}" data-card="${esc(p.id)}">
+      <div class="card__top" style="position:relative">
+        <a class="card__media" href="${L.product(p.id)}" aria-label="${esc(p.name + " — " + p.color)}">
+          <div class="badges">${badgesHTML(p)}</div>
+          ${art(p, 0)}${second}
+        </a>
+        ${quickHTML(p)}
       </div>
+      <div class="card__body">
+        ${swatchesHTML(p)}
+        <h3 class="card__name"><a href="${L.product(p.id)}">${esc(p.name)}</a></h3>
+        <div class="card__meta">${esc(p.color)}</div>
+        <div class="price">${priceHTML(p)}</div>
+      </div>
+    </article>`;
+  }
 
-      <div class="overlay" id="overlay" data-close></div>
+  function miniHTML(p) {
+    return `<a class="mini" href="${L.product(p.id)}"><div class="art">${art(p)}</div><b>${esc(p.name)}</b><span class="muted">${esc(p.color)}</span><span class="price">${priceHTML(p)}</span></a>`;
+  }
 
-      <aside class="drawer drawer--left" id="menu-drawer" aria-label="Menu">
-        <div class="drawer__head"><span class="drawer__title">Menu</span><button class="icon-btn" data-close aria-label="Fermer">${ICON.close}</button></div>
-        <div class="drawer__body mobile-nav">
-          <a href="shop.html?filter=new">Nouveautés ${ICON.arrow}</a>
-          <a href="shop.html?cat=ensembles">Ensembles ${ICON.arrow}</a>
-          ${brandsIn("ensembles").map((b) => `<a class="sub" href="shop.html?cat=ensembles&brand=${b}">Ensembles ${esc(BRANDS[b].name)}</a>`).join("")}
-          <a href="shop.html?cat=chaussures">Chaussures ${ICON.arrow}</a>
-          ${brandsIn("chaussures").map((b) => `<a class="sub" href="shop.html?cat=chaussures&brand=${b}">Chaussures ${esc(BRANDS[b].name)}</a>`).join("")}
-          <a href="shop.html?cat=doudounes">Doudounes ${ICON.arrow}</a>
-          <a href="shop.html?filter=sale" style="color:var(--sale)">Promos ${ICON.arrow}</a>
-          <a href="faq.html">Aide & FAQ ${ICON.arrow}</a>
-        </div>
-      </aside>
+  function railHTML(id, list) {
+    return `<div class="rail" id="${id}">${list.map(cardHTML).join("")}</div>`;
+  }
+  function railCtrl(id) {
+    return `<div class="rail-ctrl"><button class="round" data-rail="${id}" data-dir="-1" aria-label="Précédent">${I.left}</button><button class="round" data-rail="${id}" data-dir="1" aria-label="Suivant">${I.right}</button></div>`;
+  }
 
-      <aside class="drawer drawer--right" id="cart-drawer" aria-label="Panier">
-        <div class="drawer__head"><span class="drawer__title">Panier (<span class="cart-count-inline">0</span>)</span><button class="icon-btn" data-close aria-label="Fermer">${ICON.close}</button></div>
-        <div class="drawer__body" id="cart-body"></div>
-        <div class="drawer__foot" id="cart-foot" hidden>
-          <div class="cart-total"><span>Sous-total</span><span id="cart-subtotal"></span></div>
-          <p class="cart-note">Frais de livraison calculés à l'étape suivante.</p>
-          <a class="btn btn--block" href="checkout.html">Commander</a>
-          <button class="btn btn--outline btn--block" data-close>Continuer mes achats</button>
-        </div>
-      </aside>
-      <div class="toast" id="toast" role="status" aria-live="polite"></div>
-      ${CFG.whatsapp && page !== "checkout" ? `<a class="wa-float" href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">${ICON.whatsapp}</a>` : ""}
-    `;
+  // Un seul coloris par modèle dans les listes (le meilleur en premier)
+  function onePerGroup(list) {
+    const seen = new Set();
+    return list.filter((p) => { const g = p.group || p.id; if (seen.has(g)) return false; seen.add(g); return true; });
+  }
 
-    $("#site-footer").outerHTML = `
-      <footer class="footer">
-        <div class="container">
-          <div class="footer__grid">
-            <div>
-              <div class="logo">${esc(CFG.storeName)}</div>
-              <p>${esc(CFG.tagline)} Ensembles et sneakers des plus grandes marques, vérifiés un par un avant chaque envoi.</p>
-              <div class="socials">
-                ${CFG.instagram ? `<a href="https://instagram.com/${esc(CFG.instagram)}" target="_blank" rel="noopener" aria-label="Instagram">${ICON.instagram}</a>` : ""}
-                ${CFG.tiktok ? `<a href="https://www.tiktok.com/@${esc(CFG.tiktok)}" target="_blank" rel="noopener" aria-label="TikTok">${ICON.tiktok}</a>` : ""}
-                ${CFG.whatsapp ? `<a href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener" aria-label="WhatsApp">${ICON.whatsapp}</a>` : ""}
-              </div>
-            </div>
-            <div>
-              <h4>Boutique</h4>
-              <ul>
-                <li><a href="shop.html?filter=new">Nouveautés</a></li>
-                <li><a href="shop.html?cat=ensembles">Ensembles</a></li>
-                <li><a href="shop.html?cat=chaussures">Chaussures</a></li>
-                <li><a href="shop.html?cat=doudounes">Doudounes</a></li>
-                <li><a href="shop.html?filter=sale">Promos</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4>Marques</h4>
-              <ul>${Object.keys(BRANDS).map((b) => `<li><a href="shop.html?brand=${b}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul>
-            </div>
-            <div>
-              <h4>Aide</h4>
-              <ul>
-                <li><a href="faq.html#authenticite">Authenticité</a></li>
-                <li><a href="faq.html#livraison">Livraison</a></li>
-                <li><a href="faq.html#retours">Retours & échanges</a></li>
-                <li><a href="faq.html#tailles">Guide des tailles</a></li>
-                <li><a href="faq.html#contact">Contact</a></li>
-                <li><a href="legal.html">Mentions légales & CGV</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer__bottom">
-            <span>© ${new Date().getFullYear()} ${esc(CFG.storeName)}. Revendeur indépendant, non affilié aux marques présentées.</span>
-            <div class="payments"><span>VISA</span><span>MASTERCARD</span><span>PAYPAL</span><span>APPLE PAY</span><span>VIREMENT</span></div>
-          </div>
-        </div>
-      </footer>`;
-
-    // Lien actif dans la navigation
-    const cat = params().get("cat");
-    if (cat) $$(`.nav a[href="shop.html?cat=${cat}"]`).forEach((a) => a.classList.add("is-active"));
-
-    // Ouvrir / fermer
-    document.addEventListener("click", (e) => {
-      const opener = e.target.closest("[data-open]");
-      if (opener) {
-        e.preventDefault();
-        openDrawer(opener.dataset.open);
-        if (opener.dataset.open === "#search-panel") setTimeout(() => $("#search-input").focus(), 200);
-        return;
-      }
-      if (e.target.closest("[data-close]")) { closeDrawers(); return; }
-      const q = e.target.closest("[data-qty]");
-      if (q) { const i = +q.dataset.qty; Cart.setQty(i, Cart.items[i].qty + +q.dataset.d); return; }
-      const r = e.target.closest("[data-remove]");
-      if (r) Cart.setQty(+r.dataset.remove, 0);
-    });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawers(); });
-
-    // Recherche instantanée
-    $("#search-input").addEventListener("input", (e) => {
-      const q = e.target.value.trim();
-      const res = q.length < 2 ? [] : search(q).slice(0, 8);
-      $("#search-results").innerHTML = res.map((p) => `<a href="product.html?id=${encodeURIComponent(p.id)}"><span class="thumb">${productImage(p)}</span><span><small>${esc(brandName(p))}</small>${esc(p.name)}</span><strong>${money(p.price)}</strong></a>`).join("")
-        + (q.length >= 2 ? `<a class="link-underline" style="display:block" href="shop.html?q=${encodeURIComponent(q)}">Voir tous les résultats pour « ${esc(q)} »</a>` : "");
-    });
+  // Produits pour compléter un look
+  function lookFor(p, n = 3, exclude = []) {
+    const want = p.category === "chaussures" ? ["ensembles", "doudounes"] : ["chaussures"];
+    const ex = new Set([p.id, ...exclude]);
+    const pool = onePerGroup(PRODUCTS.filter((x) => want.includes(x.category) && !ex.has(x.id) && !isOut(x)));
+    pool.sort((a, b) => (b.brand === p.brand) - (a.brand === p.brand) || isBest(b) - isBest(a));
+    return pool.slice(0, n);
   }
 
   function search(q) {
     const words = norm(q).split(/\s+/).filter(Boolean);
+    if (!words.length) return [];
     return PRODUCTS.filter((p) => {
-      const hay = norm([p.name, brandName(p), CATS[p.category], p.color].join(" "));
-      return words.every((w) => hay.includes(w));
+      const hay = norm([p.name, brandOf(p).name, CATS[p.category].name, CATS[p.category].one, p.color, colorFamily(p)].join(" ")).replace(/-/g, " ");
+      return words.every((w) => hay.includes(w.replace(/-/g, " ")));
     });
   }
 
-  /* ---------------- Page d'accueil ---------------- */
-  function initHome() {
-    const set = (id, list) => { const el = $(id); if (el) el.innerHTML = list.map(cardHTML).join(""); };
-    set("#home-new", PRODUCTS.filter(isNew).slice(0, 8));
-    set("#home-best", PRODUCTS.filter(isBest).slice(0, 8));
-    set("#home-sets", PRODUCTS.filter((p) => p.category === "ensembles").slice(0, 8));
-    set("#home-shoes", PRODUCTS.filter((p) => p.category === "chaussures").slice(0, 8));
+  /* =================== Coque du site =================== */
+  function brandsIn(cat) { return Object.keys(BRANDS).filter((b) => PRODUCTS.some((p) => p.brand === b && p.category === cat)); }
+  function countIn(f) { return PRODUCTS.filter(f).length; }
 
-    const brandStrip = $("#brand-strip");
-    if (brandStrip) {
-      const links = Object.keys(BRANDS).map((b) => `<a href="shop.html?brand=${b}">${esc(BRANDS[b].name)}</a>`).join("");
-      brandStrip.innerHTML = links + links;
+  function megaHTML(cat) {
+    const feat = onePerGroup(PRODUCTS.filter((p) => p.category === cat && isBest(p))).slice(0, 3);
+    const extra = cat === "ensembles" ? [["Nouveautés", L.shop({ cat, filter: "new" })], ["Promos", L.shop({ cat, filter: "sale" })]]
+      : [["Nouveautés", L.shop({ cat, filter: "new" })], ["Promos", L.shop({ cat, filter: "sale" })], ["Doudounes", L.shop({ cat: "doudounes" })]];
+    return `<div class="mega"><div class="wrap">
+      <div><h4 class="eyebrow">Par marque</h4><ul><li><a href="${L.shop({ cat })}"><b>Tous les ${CATS[cat].name.toLowerCase()}</b></a></li>${brandsIn(cat).map((b) => `<li><a href="${L.shop({ cat, brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></div>
+      <div><h4 class="eyebrow">Explorer</h4><ul>${extra.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join("")}</ul></div>
+      <div class="mega__feature">${feat.map((p) => `<a href="${L.product(p.id)}"><div class="art">${art(p)}</div>${esc(p.name)}</a>`).join("")}</div>
+    </div></div>`;
+  }
+
+  function shell() {
+    const nav = [
+      ["Nouveautés", L.shop({ filter: "new" }), ""],
+      ["Ensembles", L.shop({ cat: "ensembles" }), megaHTML("ensembles")],
+      ["Chaussures", L.shop({ cat: "chaussures" }), megaHTML("chaussures")],
+      ["Doudounes", L.shop({ cat: "doudounes" }), ""],
+      ["Marques", "#/marques", ""],
+      ["Promos", L.shop({ filter: "sale" }), ""]
+    ];
+    document.body.insertAdjacentHTML("afterbegin", `
+      <a class="sr-only" href="#main">Aller au contenu</a>
+      <div class="announce" role="region" aria-label="Informations"><div class="wrap">${CFG.announcements.map((a, i) => `<div class="announce__msg${i ? "" : " is-on"}">${esc(a)}</div>`).join("")}</div></div>
+      <header class="header">
+        <div class="wrap">
+          <div class="header__left">
+            <button class="icon-btn menu-btn" data-open="menu" aria-label="Ouvrir le menu">${I.menu}</button>
+            <nav class="header__nav" aria-label="Navigation principale">
+              ${nav.map(([t, h, m]) => `<div class="nav-item"><a href="${h}" data-nav="${esc(t)}"${t === "Promos" ? ' class="is-sale"' : ""}>${t}</a>${m}</div>`).join("")}
+            </nav>
+          </div>
+          <a class="logo" href="${L.home}" aria-label="${esc(CFG.storeName)}, accueil">${esc(CFG.storeName)}</a>
+          <div class="header__actions">
+            <button class="icon-btn" data-open="search" aria-label="Rechercher">${I.search}</button>
+            <a class="icon-btn hide-sm" href="${L.faq()}" aria-label="Aide">${I.chat}</a>
+            <button class="icon-btn" data-open="cart" aria-label="Panier">${I.bag}<span class="bag-count" data-n="0">0</span></button>
+          </div>
+        </div>
+      </header>
+      <main id="main" tabindex="-1"></main>
+    `);
+    document.body.insertAdjacentHTML("beforeend", `
+      <footer class="footer" id="footer"></footer>
+      <div class="scrim" data-close></div>
+      <aside class="drawer drawer--l" id="menu" aria-label="Menu" aria-hidden="true">
+        <div class="drawer__head"><span class="logo" style="font-size:1.375rem">${esc(CFG.storeName)}</span><button class="icon-btn" data-close aria-label="Fermer">${I.close}</button></div>
+        <div class="drawer__body mobile-nav">
+          <a href="${L.shop({ filter: "new" })}">Nouveautés ${I.chev}</a>
+          ${["ensembles", "chaussures"].map((c) => `<details><summary>${CATS[c].name} ${I.chev}</summary><ul><li><a href="${L.shop({ cat: c })}"><b>Tout voir</b></a></li>${brandsIn(c).map((b) => `<li><a href="${L.shop({ cat: c, brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></details>`).join("")}
+          <a href="${L.shop({ cat: "doudounes" })}">Doudounes ${I.chev}</a>
+          <a href="#/marques">Marques ${I.chev}</a>
+          <a href="${L.shop({ filter: "sale" })}" style="color:var(--sale)">Promos ${I.chev}</a>
+          <a href="${L.faq()}">Aide & contact ${I.chev}</a>
+        </div>
+      </aside>
+      <aside class="drawer drawer--r" id="cart" aria-label="Panier" aria-hidden="true">
+        <div class="drawer__head"><span class="drawer__title">Panier <span class="muted tnum" id="cart-n"></span></span><button class="icon-btn" data-close aria-label="Fermer">${I.close}</button></div>
+        <div class="drawer__body" id="cart-body"></div>
+        <div class="drawer__foot" id="cart-foot"></div>
+      </aside>
+      <aside class="drawer drawer--r" id="guide" aria-label="Guide des tailles" aria-hidden="true">
+        <div class="drawer__head"><span class="drawer__title">Guide des tailles</span><button class="icon-btn" data-close aria-label="Fermer">${I.close}</button></div>
+        <div class="drawer__body" id="guide-body"></div>
+      </aside>
+      <aside class="drawer drawer--r" id="filters" aria-label="Filtres" aria-hidden="true">
+        <div class="drawer__head"><span class="drawer__title">Filtres</span><button class="icon-btn" data-close aria-label="Fermer">${I.close}</button></div>
+        <div class="drawer__body" id="filters-body"></div>
+        <div class="drawer__foot"><button class="btn btn--block" data-close id="filters-apply">Voir les produits</button></div>
+      </aside>
+      <div class="sheet" id="sheet" role="dialog" aria-label="Ajout rapide" aria-hidden="true"></div>
+      <div class="search" id="search" role="dialog" aria-label="Recherche" aria-hidden="true">
+        <div class="wrap">
+          <form class="search__bar" id="search-form" role="search">
+            ${I.search}
+            <label class="sr-only" for="search-input">Rechercher un produit</label>
+            <input id="search-input" type="search" placeholder="Rechercher un produit, une marque…" autocomplete="off">
+            <button type="button" class="icon-btn" data-close aria-label="Fermer la recherche">${I.close}</button>
+          </form>
+          <div class="search__chips" id="search-chips"><span class="eyebrow">Populaire</span>${CFG.popularSearches.map((s) => `<button class="chip" type="button" data-search="${esc(s)}">${esc(s)}</button>`).join("")}</div>
+          <div class="search__results" id="search-results"></div>
+        </div>
+      </div>
+      <div class="sticky-buy" id="sticky-buy" aria-hidden="true"></div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      ${CFG.whatsapp ? `<a class="wa-fab" href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">${I.wa}</a>` : ""}
+    `);
+    renderFooter();
+
+    // Bandeau rotatif
+    const msgs = $$(".announce__msg");
+    if (msgs.length > 1) { let i = 0; setInterval(() => { msgs[i].classList.remove("is-on"); i = (i + 1) % msgs.length; msgs[i].classList.add("is-on"); }, 4000); }
+  }
+
+  function renderFooter() {
+    $("#footer").innerHTML = `<div class="wrap">
+      <div class="footer__top">
+        <div class="footer__about">
+          <div class="logo">${esc(CFG.storeName)}</div>
+          <p>Ensembles et sneakers 100% authentiques, achetés aux États-Unis et contrôlés un par un avant chaque envoi.</p>
+          <div class="socials">
+            ${CFG.instagram ? `<a href="https://instagram.com/${esc(CFG.instagram)}" target="_blank" rel="noopener" aria-label="Instagram">${I.ig}</a>` : ""}
+            ${CFG.tiktok ? `<a href="https://www.tiktok.com/@${esc(CFG.tiktok)}" target="_blank" rel="noopener" aria-label="TikTok">${I.tt}</a>` : ""}
+            ${CFG.whatsapp ? `<a href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener" aria-label="WhatsApp">${I.wa}</a>` : ""}
+          </div>
+        </div>
+        <div><h4>Boutique</h4><ul>
+          <li><a href="${L.shop({ filter: "new" })}">Nouveautés</a></li>
+          <li><a href="${L.shop({ cat: "ensembles" })}">Ensembles</a></li>
+          <li><a href="${L.shop({ cat: "chaussures" })}">Chaussures</a></li>
+          <li><a href="${L.shop({ cat: "doudounes" })}">Doudounes</a></li>
+          <li><a href="${L.shop({ filter: "sale" })}">Promos</a></li>
+        </ul></div>
+        <div><h4>Marques</h4><ul>${Object.keys(BRANDS).map((b) => `<li><a href="${L.shop({ brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></div>
+        <div><h4>Aide</h4><ul>
+          <li><a href="${L.faq("authenticite")}">Authenticité</a></li>
+          <li><a href="${L.faq("livraison")}">Livraison</a></li>
+          <li><a href="${L.faq("retours")}">Retours & échanges</a></li>
+          <li><a href="${L.faq("tailles")}">Guide des tailles</a></li>
+          <li><a href="${L.faq("contact")}">Contact</a></li>
+          <li><a href="${L.legal}">Mentions légales & CGV</a></li>
+        </ul></div>
+      </div>
+      <div class="footer__bottom">
+        <span>© ${new Date().getFullYear()} ${esc(CFG.storeName)} · Revendeur indépendant, non affilié aux marques présentées.</span>
+        <div class="pay" aria-label="Moyens de paiement"><span>VISA</span><span>MASTERCARD</span><span>CB</span><span>PAYPAL</span><span>APPLE PAY</span></div>
+      </div>
+    </div>`;
+  }
+
+  /* =================== Panneaux =================== */
+  let lastFocus = null;
+  function open(id) {
+    closeAll(true);
+    const el = document.getElementById(id); if (!el) return;
+    lastFocus = document.activeElement;
+    el.classList.add("is-on"); el.setAttribute("aria-hidden", "false");
+    $(".scrim").classList.add("is-on");
+    document.body.classList.add("is-locked");
+    if (id === "search") setTimeout(() => $("#search-input").focus(), 120);
+    else setTimeout(() => { const f = el.querySelector("button, a, input"); f && f.focus({ preventScroll: true }); }, 60);
+  }
+  function closeAll(silent) {
+    $$(".drawer.is-on, .search.is-on, .sheet.is-on").forEach((d) => { d.classList.remove("is-on"); d.setAttribute("aria-hidden", "true"); });
+    $(".scrim").classList.remove("is-on");
+    document.body.classList.remove("is-locked");
+    if (!silent && lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+
+  let toastT;
+  function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("is-on"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("is-on"), 2600); }
+
+  /* =================== Panier (rendu) =================== */
+  let justAdded = null;
+  function lineHTML(it, i, editable) {
+    const p = byId(it.id);
+    return `<div class="line">
+      <a class="line__art" href="${L.product(p.id)}">${art(p)}${editable ? "" : `<span class="qbadge">${it.qty}</span>`}</a>
+      <div class="line__info">
+        <div class="line__top"><span>${esc(p.name)}</span><span>${money(p.price * it.qty)}</span></div>
+        <div class="line__meta">${esc(p.color)} · Taille ${esc(it.size)}</div>
+        ${editable ? `<div class="line__row">
+          <div class="qty"><button type="button" data-qty="${i}" data-d="-1" aria-label="Retirer un article">${I.minus}</button><span>${it.qty}</span><button type="button" data-qty="${i}" data-d="1" aria-label="Ajouter un article">${I.plus}</button></div>
+          <button type="button" class="rm" data-rm="${i}">Retirer</button>
+        </div>` : ""}
+      </div>
+    </div>`;
+  }
+  function shipHTML() {
+    if (!CFG.freeShippingFrom) return "";
+    const left = CFG.freeShippingFrom - Cart.subtotal();
+    const w = Math.min(100, (Cart.subtotal() / CFG.freeShippingFrom) * 100);
+    return `<div class="ship">${left > 0 ? `<span>Plus que <b>${moneyExact(left)}</b> pour la livraison offerte</span>` : `<span class="added">${I.check} Livraison offerte</span>`}<div class="ship__bar"><i style="width:${w}%"></i></div></div>`;
+  }
+  function totalsHTML() {
+    const s = Cart.shipping();
+    return `<div class="totals">
+      <div><span>Sous-total</span><span>${moneyExact(Cart.subtotal())}</span></div>
+      <div><span>Livraison</span><span>${s ? moneyExact(s) : "Offerte"}</span></div>
+      <div class="grand"><span>Total</span><span>${moneyExact(Cart.total())}</span></div>
+    </div>`;
+  }
+  function renderCart() {
+    const n = Cart.count();
+    $$(".bag-count").forEach((e) => { e.textContent = n; e.dataset.n = n; });
+    $("#cart-n").textContent = n ? `(${n})` : "";
+    const body = $("#cart-body"), foot = $("#cart-foot");
+    if (!n) {
+      body.innerHTML = `<div class="cart-empty"><p class="h-md">Ton panier est vide</p><p class="muted">Les best-sellers partent vite.</p><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><a class="btn btn--sm" href="${L.shop({ cat: "ensembles" })}">Ensembles</a><a class="btn btn--sm btn--ghost" href="${L.shop({ cat: "chaussures" })}">Chaussures</a></div></div>`;
+      foot.hidden = true;
+    } else {
+      const inCart = Cart.items.map((i) => i.id);
+      const anchor = byId(justAdded ? justAdded.id : Cart.items[Cart.items.length - 1].id);
+      const ups = lookFor(anchor, 2, inCart);
+      body.innerHTML = (justAdded ? `<p class="added" style="margin-bottom:14px">${I.check} Ajouté au panier</p>` : "")
+        + shipHTML() + Cart.items.map((it, i) => lineHTML(it, i, true)).join("")
+        + (ups.length ? `<div class="upsell"><span class="eyebrow">Complète ton look</span><div class="upsell__row">${ups.map(miniHTML).join("")}</div></div>` : "");
+      foot.hidden = false;
+      foot.innerHTML = totalsHTML() + `<a class="btn btn--block" href="${L.checkout}">Passer commande · ${moneyExact(Cart.total())}</a>
+        <div class="foot-trust"><span>${I.shield} 100% authentique</span><span>${I.ret} Retours ${CFG.returnDays} j</span><span>${I.lock} Paiement sécurisé</span></div>`;
     }
+    justAdded = null;
+    if (route.name === "checkout") renderSummary();
+  }
 
-    // Visuels des tuiles catégories
-    $$("[data-cat-visual]").forEach((el) => {
-      const p = PRODUCTS.find((x) => x.id === el.dataset.catVisual) || PRODUCTS.find((x) => x.category === el.dataset.cat);
-      if (p) el.innerHTML = productImage(p, 0);
-    });
+  function addToCart(id, size) {
+    justAdded = { id, size };
+    Cart.add(id, size);
+    open("cart");
+  }
 
-    const nl = $("#newsletter-form");
-    if (nl) nl.addEventListener("submit", (e) => {
+  /* =================== Ajout rapide (mobile) =================== */
+  function openSheet(id) {
+    const p = byId(id); if (!p) return;
+    const out = p.soldOutSizes || [];
+    $("#sheet").innerHTML = `<div class="sheet__grab"></div>
+      <div style="display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;margin-bottom:18px">
+        <div class="line__art">${art(p)}</div>
+        <div><b>${esc(p.name)}</b><div class="muted" style="font-size:var(--fs-sm)">${esc(p.color)}</div><div class="price">${priceHTML(p)}</div></div>
+        <button class="icon-btn" data-close aria-label="Fermer">${I.close}</button>
+      </div>
+      <div class="opt-head"><b>Choisis ta taille ${p.category === "chaussures" ? "(EU)" : "(US)"}</b><button class="link" type="button" data-guide="${esc(p.category)}">Guide des tailles</button></div>
+      <div class="sizes">${p.sizes.map((s) => `<button class="size${out.includes(s) ? " is-out" : ""}${(p.lowStock || []).includes(s) ? " is-low" : ""}" type="button" ${out.includes(s) ? "disabled" : `data-quick-add="${esc(p.id)}" data-size="${esc(s)}"`}>${esc(s)}</button>`).join("")}</div>
+      <a class="link" style="display:inline-block;margin-top:16px;font-size:var(--fs-sm)" href="${L.product(p.id)}">Voir la fiche produit</a>`;
+    open("sheet");
+  }
+
+  /* =================== Guide des tailles =================== */
+  function guideHTML(cat) {
+    if (cat === "chaussures") {
+      const rows = [["36", "4", "5.5", "22.5"], ["37", "4.5", "6", "23"], ["38", "5.5", "7", "24"], ["39", "6.5", "8", "24.5"], ["40", "7", "8.5", "25"], ["41", "8", "9.5", "26"], ["42", "8.5", "10", "26.5"], ["43", "9.5", "11", "27.5"], ["44", "10", "11.5", "28"], ["45", "11", "12.5", "29"], ["46", "12", "13.5", "30"]];
+      return `<p style="margin-bottom:16px">Pointures EU. Mesure ton pied du talon au plus long orteil et compare avec la colonne CM.</p>
+        <div class="size-table-wrap"><table class="size-table"><thead><tr><th>EU</th><th>US homme</th><th>US femme</th><th>CM</th></tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+        <p class="muted" style="margin-top:16px;font-size:var(--fs-sm)">On, Salomon, Asics, Mizuno et Saucony taillent normalement. Entre deux tailles, prends la plus grande. Un doute ? Écris-nous sur WhatsApp avec ta pointure habituelle.</p>`;
+    }
+    const rows = [["XS", "86–91", "71–76", "165–170"], ["S", "91–96", "76–81", "170–175"], ["M", "96–101", "81–86", "175–180"], ["L", "101–106", "86–91", "180–185"], ["XL", "106–111", "91–96", "185–190"], ["XXL", "111–116", "96–101", "190–195"]];
+    return `<p style="margin-bottom:16px">Tailles US, mesures du corps en centimètres.</p>
+      <div class="size-table-wrap"><table class="size-table"><thead><tr><th>Taille</th><th>Poitrine</th><th>Taille</th><th>Hauteur</th></tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+      <p class="muted" style="margin-top:16px;font-size:var(--fs-sm)">Essentials et Alo ont une coupe oversize : prends ta taille habituelle pour un rendu ample, une taille en dessous pour un rendu ajusté. Ralph Lauren, On et Salomon taillent normalement.</p>`;
+  }
+
+  /* =================== Routeur =================== */
+  let route = { name: "" };
+  function parse() {
+    const h = location.hash.replace(/^#\/?/, "");
+    const [path, query = ""] = h.split("?");
+    const parts = path.split("/").filter(Boolean).map(decodeURIComponent);
+    return { parts, q: new URLSearchParams(query) };
+  }
+  function setMeta(title, desc) {
+    document.title = title ? `${title} | ${CFG.storeName}` : `${CFG.storeName} · Ensembles & sneakers 100% authentiques`;
+    const m = $('meta[name="description"]'); if (m && desc) m.setAttribute("content", desc);
+  }
+  function go() {
+    const { parts, q } = parse();
+    const main = $("#main");
+    closeAll(true);
+    stickyOff();
+    const name = parts[0] || "home";
+    route = { name: name === "produit" ? "product" : name === "boutique" ? "shop" : name === "commande" ? "checkout" : name === "merci" ? "done" : name === "aide" ? "faq" : name === "mentions" ? "legal" : name === "marques" ? "brands" : name === "home" ? "home" : "404", parts, q };
+    $$(".header__nav a").forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === location.hash));
+    document.body.dataset.route = route.name;
+    const views = { home: viewHome, shop: viewShop, product: viewProduct, checkout: viewCheckout, done: viewDone, faq: viewFaq, legal: viewLegal, brands: viewBrands, 404: view404 };
+    main.innerHTML = "";
+    views[route.name](main, parts, q);
+    if (!go.keepScroll) window.scrollTo(0, 0);
+    go.keepScroll = false;
+  }
+
+  /* =================== Accueil =================== */
+  function viewHome(main) {
+    setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Salomon et sneakers On, Salomon, Asics, Mizuno, Saucony. 100% authentiques, importés des États-Unis.");
+    const hero = ["cp-goggle-down-black", "on-cloud-6-white", "essentials-set-dark-oatmeal"].map(byId).filter(Boolean);
+    const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
+    const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
+    const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
+    const duoA = byId("essentials-set-dark-oatmeal"), duoB = byId("on-cloud-6-white");
+    const catTiles = [
+      ["Ensembles", L.shop({ cat: "ensembles" }), byId("alo-accolade-bone"), countIn((p) => p.category === "ensembles")],
+      ["Chaussures", L.shop({ cat: "chaussures" }), byId("salomon-xt6-black"), countIn((p) => p.category === "chaussures")],
+      ["Doudounes", L.shop({ cat: "doudounes" }), byId("cp-goggle-down-navy"), countIn((p) => p.category === "doudounes")],
+      ["Promos", L.shop({ filter: "sale" }), byId("rl-double-knit-black"), countIn(isSale)]
+    ];
+
+    main.innerHTML = `
+      <section class="hero">
+        <div class="wrap">
+          <div class="hero__copy">
+            <span class="eyebrow">Authentique · Importé des États-Unis</span>
+            <h1 class="display">Les essentiels.<br>Les vrais.</h1>
+            <p class="hero__lede">Ensembles Essentials, Ralph Lauren, Alo et sneakers On, Salomon, Asics. Achetés aux États-Unis, contrôlés pièce par pièce, livrés chez toi en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours.</p>
+            <div class="hero__ctas">
+              <a class="btn" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
+              <a class="btn btn--ghost" href="${L.shop({ cat: "chaussures" })}">Shop les chaussures</a>
+            </div>
+            <div class="hero__proof">
+              <span>${I.check} 100% authentique</span>
+              ${CFG.freeShippingFrom ? `<span>${I.check} Livraison offerte dès ${money(CFG.freeShippingFrom)}</span>` : ""}
+              <span>${I.check} Retours ${CFG.returnDays} jours</span>
+            </div>
+          </div>
+          <div class="hero__stage">
+            ${hero.map((p) => `<a class="hero__tile" href="${L.product(p.id)}">${art(p)}<span class="tag"><b>${esc(p.name.replace(/^Ensemble |^Doudoune /, ""))}</b><span>${money(p.price)}</span></span></a>`).join("")}
+          </div>
+        </div>
+      </section>
+
+      <section class="trust" aria-label="Nos engagements"><div class="wrap">
+        <div class="trust__item">${I.shield}<div><b>100% authentique</b><span>Contrôlé avant envoi</span></div></div>
+        <div class="trust__item">${I.plane}<div><b>Direct des USA</b><span>Pas d'intermédiaire</span></div></div>
+        <div class="trust__item">${I.truck}<div><b>Livraison suivie</b><span>${CFG.freeShippingFrom ? `Offerte dès ${money(CFG.freeShippingFrom)}` : `${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours`}</span></div></div>
+        <div class="trust__item">${I.ret}<div><b>Retours ${CFG.returnDays} jours</b><span>Échange ou remboursement</span></div></div>
+      </div></section>
+
+      <section class="band"><div class="wrap">
+        <div class="sec-head">
+          <div><span class="eyebrow">Les plus vendus</span><h2 class="h-xl">Best-sellers</h2></div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <div class="tabs" role="tablist">
+              <button class="chip is-on" role="tab" aria-selected="true" data-tab="sets">Ensembles</button>
+              <button class="chip" role="tab" aria-selected="false" data-tab="shoes">Chaussures</button>
+            </div>
+            ${railCtrl("rail-best")}
+          </div>
+        </div>
+        <div id="best-sets">${railHTML("rail-best", bestSets.slice(0, 8))}</div>
+        <div id="best-shoes" hidden>${railHTML("rail-best-shoes", bestShoes.slice(0, 8))}</div>
+      </div></section>
+
+      <section class="band band--tight" style="padding-top:0"><div class="wrap">
+        <div class="cats">${catTiles.map(([t, h, p, n]) => `<a class="cat" href="${h}"><div class="cat__art">${art(p)}</div><div class="cat__label"><span>${t}</span><span class="mono">${n} pièces</span></div></a>`).join("")}</div>
+      </div></section>
+
+      ${duoA && duoB ? `<section class="band band--mist"><div class="wrap duo">
+        <div class="duo__copy">
+          <span class="eyebrow">Le look du moment</span>
+          <h2 class="h-xl">Ensemble + sneakers, le duo qui part le plus</h2>
+          <p class="muted" style="max-width:44ch">L'ensemble Essentials Dark Oatmeal avec la On Cloud 6 blanche. Commande les deux et la livraison est offerte.</p>
+          <div class="duo__total"><strong>${money(duoA.price + duoB.price)}</strong><span class="muted">les deux pièces</span></div>
+          <div class="hero__ctas"><a class="btn" href="${L.product(duoA.id)}">Choisir l'ensemble</a><a class="btn btn--ghost" href="${L.product(duoB.id)}">Choisir les sneakers</a></div>
+        </div>
+        <div class="duo__items">${cardHTML(duoA)}<span class="duo__plus" aria-hidden="true">+</span>${cardHTML(duoB)}</div>
+      </div></section>` : ""}
+
+      <section class="band"><div class="wrap">
+        <div class="sec-head"><div><span class="eyebrow">${news.length} nouvelles pièces</span><h2 class="h-xl">Nouveautés</h2></div><a class="link" href="${L.shop({ filter: "new" })}">Tout voir</a></div>
+        <div class="grid">${news.map(cardHTML).join("")}</div>
+      </div></section>
+
+      <section class="band" style="padding-top:0"><div class="wrap">
+        <div class="sec-head"><div><span class="eyebrow">${Object.keys(BRANDS).length} marques</span><h2 class="h-xl">Shop par marque</h2></div></div>
+        <div class="brands">${brandTiles()}</div>
+      </div></section>
+
+      <section class="band band--ink"><div class="wrap proof">
+        <div style="display:grid;gap:20px;align-content:start">
+          <span class="eyebrow">Notre garantie</span>
+          <h2 class="display">Vrai ou remboursé.</h2>
+          <p style="color:#c4c8c5;max-width:44ch">Chaque pièce vendue sur ${esc(CFG.storeName)} est authentique. Si ce n'est pas le cas, on te rembourse intégralement, livraison comprise.</p>
+          <div><a class="btn btn--light" href="${L.faq("authenticite")}">Comment on vérifie</a></div>
+        </div>
+        <ol class="steps" style="list-style:none;margin:0;padding:0">
+          <li class="step"><span class="step__n">01</span><div><h3>Achat aux États-Unis</h3><p>Notre fournisseur achète chaque pièce sur place, auprès de sources sûres. Aucun article ne passe par un intermédiaire inconnu.</p></div></li>
+          <li class="step"><span class="step__n">02</span><div><h3>Contrôle à la réception</h3><p>Étiquettes, coutures, matières, codes produit et boîte : chaque article est vérifié à la main avant d'être mis en vente.</p></div></li>
+          <li class="step"><span class="step__n">03</span><div><h3>Envoi suivi</h3><p>Ta commande part sous 24 à 48 h avec un numéro de suivi. Tu la reçois en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés.</p></div></li>
+        </ol>
+      </div></section>
+
+      <section class="band"><div class="wrap two-col">
+        <div style="display:grid;gap:16px;align-content:start">
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2 class="h-xl">Tu te poses une question ?</h2>
+          <p class="muted">On répond en général dans l'heure sur WhatsApp.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">${CFG.whatsapp ? `<a class="btn" href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener">${I.wa} Écrire sur WhatsApp</a>` : ""}<a class="btn btn--ghost" href="${L.faq()}">Toute l'aide</a></div>
+        </div>
+        <div class="faq">${FAQ.slice(0, 5).map(faqItem).join("")}</div>
+      </div></section>
+
+      <section class="band band--mist"><div class="wrap news">
+        <div style="display:grid;gap:12px"><span class="eyebrow">Drops & restocks</span><h2 class="h-xl">Sois prévenu en premier</h2><p class="muted">Les tailles partent vite. Inscris-toi pour recevoir les nouveaux arrivages et les restocks avant tout le monde.</p></div>
+        <div>
+          <form id="news-form" novalidate><label class="sr-only" for="news-email">Adresse e-mail</label><input id="news-email" type="email" placeholder="Ton adresse e-mail" autocomplete="email" required><button class="btn" type="submit">S'inscrire</button></form>
+          <p class="news__msg" id="news-msg" role="status"></p>
+        </div>
+      </div></section>
+    `;
+
+    // Onglets best-sellers
+    $$("[data-tab]", main).forEach((b) => b.addEventListener("click", () => {
+      $$("[data-tab]", main).forEach((x) => { x.classList.toggle("is-on", x === b); x.setAttribute("aria-selected", x === b); });
+      const sets = b.dataset.tab === "sets";
+      $("#best-sets").hidden = !sets; $("#best-shoes").hidden = sets;
+      $$("[data-rail]", main).forEach((r) => (r.dataset.rail = sets ? "rail-best" : "rail-best-shoes"));
+    }));
+    $("#news-form").addEventListener("submit", (e) => {
       e.preventDefault();
-      $("#newsletter-msg").textContent = "Merci ! Tu recevras nos prochains drops en avant-première.";
-      nl.reset();
+      const v = $("#news-email").value.trim();
+      $("#news-msg").style.color = "";
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { $("#news-msg").style.color = "var(--sale)"; $("#news-msg").textContent = "Entre une adresse e-mail valide, par exemple prenom@mail.com."; return; }
+      $("#news-msg").textContent = "C'est noté. Tu recevras les prochains drops en avant-première.";
+      e.target.reset();
     });
   }
 
-  /* ---------------- Boutique ---------------- */
-  function initShop() {
-    const sp = params();
-    const state = {
-      cat: sp.get("cat") || "",
-      filter: sp.get("filter") || "",
-      brands: new Set((sp.get("brand") || "").split(",").filter(Boolean)),
-      sizes: new Set(),
-      q: sp.get("q") || "",
-      sort: "featured"
+  function brandTiles() {
+    return Object.keys(BRANDS).map((b) => {
+      const n = PRODUCTS.filter((p) => p.brand === b).length;
+      return `<a class="brand" href="${L.shop({ brand: b })}"><span class="eyebrow">${esc(BRANDS[b].line || "")}</span><span class="brand__name">${esc(BRANDS[b].name)}</span><span class="brand__row"><span class="muted" style="font-size:var(--fs-sm)">${n} produit${n > 1 ? "s" : ""}</span>${I.right}</span></a>`;
+    }).join("");
+  }
+
+  function viewBrands(main) {
+    setMeta("Marques", "Toutes les marques disponibles sur BASE.");
+    main.innerHTML = `<div class="wrap"><div class="shop-head"><nav class="crumbs" aria-label="Fil d'Ariane"><a href="${L.home}">Accueil</a><span>/</span><span>Marques</span></nav><h1 class="display">Marques</h1><p>Uniquement des pièces authentiques, achetées aux États-Unis.</p></div><div class="brands" style="margin-bottom:96px">${brandTiles()}</div></div>`;
+  }
+
+  /* =================== Boutique =================== */
+  const PRICE_RANGES = [["0-150", "Moins de 150 €", 0, 150], ["150-200", "150 à 200 €", 150, 200], ["200-300", "200 à 300 €", 200, 300], ["300-9999", "Plus de 300 €", 300, 99999]];
+  const SIZE_ORDER = ["XS", "S", "M", "L", "XL", "XXL"];
+  const sortSizes = (a, b) => (isNaN(a) || isNaN(b) ? SIZE_ORDER.indexOf(a) - SIZE_ORDER.indexOf(b) : a - b);
+
+  function viewShop(main, parts, q) {
+    const st = {
+      cat: q.get("cat") || "", filter: q.get("filter") || "", q: q.get("q") || "",
+      brands: new Set((q.get("brand") || "").split(",").filter(Boolean)),
+      sizes: new Set(), colors: new Set(), price: "", sort: "featured"
     };
 
     function base() {
-      let list = PRODUCTS.slice();
-      if (state.cat) list = list.filter((p) => p.category === state.cat);
-      if (state.filter === "new") list = list.filter(isNew);
-      if (state.filter === "sale") list = list.filter(isSale);
-      if (state.q) { const ids = new Set(search(state.q).map((p) => p.id)); list = list.filter((p) => ids.has(p.id)); }
-      return list;
+      let l = PRODUCTS.slice();
+      if (st.cat) l = l.filter((p) => p.category === st.cat);
+      if (st.filter === "new") l = l.filter(isNew);
+      if (st.filter === "sale") l = l.filter(isSale);
+      if (st.q) { const ids = new Set(search(st.q).map((p) => p.id)); l = l.filter((p) => ids.has(p.id)); }
+      return l;
     }
-
-    function title() {
-      if (state.q) return { h: `Recherche`, d: `Résultats pour « ${state.q} »` };
-      if (state.filter === "new") return { h: "Nouveautés", d: "Les dernières pièces arrivées des États-Unis." };
-      if (state.filter === "sale") return { h: "Promos", d: "Pièces authentiques à prix réduit, dans la limite des stocks." };
-      const b = state.brands.size === 1 ? BRANDS[[...state.brands][0]] : null;
-      if (state.cat && b) return { h: `${CATS[state.cat]} ${b.name}`, d: `Tous nos ${CATS[state.cat].toLowerCase()} ${b.name}, 100% authentiques.` };
-      if (state.cat) return { h: CATS[state.cat], d: { ensembles: "Ensembles Essentials, Ralph Lauren, Alo, On, Salomon… 100% authentiques.", chaussures: "On, Salomon, Asics, Mizuno, Saucony, Alo — 100% authentiques.", doudounes: "Doudounes C.P. Company authentiques." }[state.cat] };
-      if (b) return { h: b.name, d: `Toute la sélection ${b.name}, 100% authentique.` };
-      return { h: "Tous les produits", d: "Ensembles et sneakers 100% authentiques, importés des États-Unis." };
+    function filtered() {
+      let l = base();
+      if (st.brands.size) l = l.filter((p) => st.brands.has(p.brand));
+      if (st.colors.size) l = l.filter((p) => st.colors.has(colorFamily(p)));
+      if (st.price) { const r = PRICE_RANGES.find((x) => x[0] === st.price); l = l.filter((p) => p.price >= r[2] && p.price < r[3]); }
+      if (st.sizes.size) l = l.filter((p) => availableSizes(p).some((s) => st.sizes.has(s)));
+      const S = {
+        featured: (a, b) => isBest(b) - isBest(a) || isNew(b) - isNew(a),
+        new: (a, b) => isNew(b) - isNew(a),
+        asc: (a, b) => a.price - b.price,
+        desc: (a, b) => b.price - a.price
+      };
+      l.sort(S[st.sort]);
+      l.sort((a, b) => isOut(a) - isOut(b));
+      return l;
+    }
+    function heading() {
+      const b = st.brands.size === 1 ? BRANDS[[...st.brands][0]] : null;
+      if (st.q) return ["Recherche", `Résultats pour « ${st.q} »`];
+      if (st.filter === "new") return ["Nouveautés", "Les dernières pièces arrivées des États-Unis."];
+      if (st.filter === "sale") return ["Promos", "Pièces authentiques à prix réduit, dans la limite des tailles disponibles."];
+      if (st.cat && b) return [`${CATS[st.cat].name} ${b.name}`, `Tous nos ${CATS[st.cat].name.toLowerCase()} ${b.name}, 100% authentiques.`];
+      if (st.cat) return [CATS[st.cat].name, { ensembles: "Ensembles Essentials, Ralph Lauren, Alo, On et Salomon. Hoodie et bas assortis, vendus ensemble.", chaussures: "On, Salomon, Asics, Mizuno, Saucony et Alo. Pointures EU du 35 au 46.", doudounes: "Doudounes C.P. Company Goggle et Nycra-R, garnissage duvet." }[st.cat]];
+      if (b) return [b.name, `Toute la sélection ${b.name}, 100% authentique.`];
+      return ["Tout le shop", "Ensembles, sneakers et doudounes 100% authentiques, importés des États-Unis."];
+    }
+    function syncHash() {
+      const o = { cat: st.cat, filter: st.filter, brand: [...st.brands].join(","), q: st.q };
+      const h = L.shop(o);
+      if (location.hash !== h) { try { history.replaceState(null, "", h); } catch (e) { /* navigateur restreint */ } }
+    }
+    function filtersHTML(pool) {
+      const brandKeys = Object.keys(BRANDS).filter((k) => pool.some((p) => p.brand === k) || st.brands.has(k));
+      const sizes = [...new Set(pool.flatMap((p) => p.sizes))].sort(sortSizes);
+      const fams = Object.keys(FAMILY_SW).filter((f) => pool.some((p) => colorFamily(p) === f));
+      return `
+        <details class="fgroup" open><summary>Marque</summary><div class="opts">${brandKeys.map((k) => `<label class="fopt"><input type="checkbox" data-f="brand" value="${k}" ${st.brands.has(k) ? "checked" : ""}> ${esc(BRANDS[k].name)} <span class="n">${pool.filter((p) => p.brand === k).length}</span></label>`).join("")}</div></details>
+        <details class="fgroup" open><summary>Taille disponible</summary><div class="fsizes">${sizes.map((s) => `<button type="button" data-f="size" data-v="${esc(s)}" class="${st.sizes.has(s) ? "is-on" : ""}" aria-pressed="${st.sizes.has(s)}">${esc(s)}</button>`).join("")}</div></details>
+        <details class="fgroup" open><summary>Couleur</summary><div class="fcolors">${fams.map((f) => `<button type="button" data-f="color" data-v="${f}" class="${st.colors.has(f) ? "is-on" : ""}" aria-pressed="${st.colors.has(f)}"><span class="sw" style="background:${FAMILY_SW[f]}"></span>${f}</button>`).join("")}</div></details>
+        <details class="fgroup" open><summary>Prix</summary><div class="opts">${PRICE_RANGES.map(([k, t]) => `<label class="fopt"><input type="radio" name="price-${Math.random().toString(36).slice(2, 6)}" data-f="price" value="${k}" ${st.price === k ? "checked" : ""}> ${t}</label>`).join("")}</div></details>`;
+    }
+    function activeHTML() {
+      const pills = [];
+      st.brands.forEach((b) => pills.push(["brand", b, BRANDS[b].name]));
+      st.sizes.forEach((s) => pills.push(["size", s, "Taille " + s]));
+      st.colors.forEach((c) => pills.push(["color", c, c]));
+      if (st.price) pills.push(["price", st.price, PRICE_RANGES.find((r) => r[0] === st.price)[1]]);
+      if (!pills.length) return "";
+      return `<div class="active-filters">${pills.map(([f, v, t]) => `<button class="chip" type="button" data-rmf="${f}" data-v="${esc(v)}">${esc(t)} ${I.close}</button>`).join("")}<button class="link" type="button" data-clear style="font-size:var(--fs-sm)">Tout effacer</button></div>`;
     }
 
     function render() {
-      const t = title();
-      document.title = `${t.h} — ${CFG.storeName}`;
-      $("#shop-title").textContent = t.h;
-      $("#shop-desc").textContent = t.d;
-      $("#crumb-current").textContent = t.h;
-
-      // Chips catégories
-      const chips = [["", "", "Tout"], ["ensembles", "", "Ensembles"], ["chaussures", "", "Chaussures"], ["doudounes", "", "Doudounes"], ["", "new", "Nouveautés"], ["", "sale", "Promos"]];
-      $("#cat-chips").innerHTML = chips.map(([c, f, label]) => `<button class="chip${state.cat === c && state.filter === f && !state.q ? " is-active" : ""}" data-cat="${c}" data-filter="${f}">${label}</button>`).join("");
-
+      const [h, d] = heading();
+      setMeta(h, d);
       const pool = base();
-      // Filtres marques
-      const brandKeys = Object.keys(BRANDS).filter((b) => pool.some((p) => p.brand === b) || state.brands.has(b));
-      $("#filter-brands").innerHTML = brandKeys.map((b) => `<label><input type="checkbox" value="${b}" ${state.brands.has(b) ? "checked" : ""}> ${esc(BRANDS[b].name)} <span class="count">${pool.filter((p) => p.brand === b).length}</span></label>`).join("");
-      // Filtres tailles
-      const allSizes = [...new Set(pool.flatMap((p) => p.sizes))];
-      const order = ["XS", "S", "M", "L", "XL", "XXL"];
-      allSizes.sort((a, b) => (isNaN(a) || isNaN(b) ? order.indexOf(a) - order.indexOf(b) : a - b));
-      $("#filter-sizes").innerHTML = allSizes.map((s) => `<label><input type="checkbox" value="${esc(s)}" ${state.sizes.has(s) ? "checked" : ""}> ${esc(s)}</label>`).join("");
-
-      let list = pool;
-      if (state.brands.size) list = list.filter((p) => state.brands.has(p.brand));
-      if (state.sizes.size) list = list.filter((p) => !p.soldOut && p.sizes.some((s) => state.sizes.has(s) && !(p.soldOutSizes || []).includes(s)));
-      const sorters = {
-        featured: (a, b) => (isBest(b) - isBest(a)) || (isNew(b) - isNew(a)),
-        new: (a, b) => isNew(b) - isNew(a),
-        "price-asc": (a, b) => a.price - b.price,
-        "price-desc": (a, b) => b.price - a.price,
-        name: (a, b) => a.name.localeCompare(b.name)
-      };
-      list = list.slice().sort(sorters[state.sort]);
-      list.sort((a, b) => !!a.soldOut - !!b.soldOut);
-
-      $("#result-count").textContent = `${list.length} produit${list.length > 1 ? "s" : ""}`;
-      $("#shop-grid").innerHTML = list.length
-        ? list.map(cardHTML).join("")
-        : `<div class="empty-state" style="grid-column:1/-1"><p>Aucun produit ne correspond à ta recherche.</p><a class="btn btn--outline" href="shop.html">Voir tous les produits</a></div>`;
+      const list = filtered();
+      $("#shop-title").textContent = h;
+      $("#shop-desc").textContent = d;
+      $("#crumb").textContent = h;
+      const chips = [["", "", "Tout"], ["ensembles", "", "Ensembles"], ["chaussures", "", "Chaussures"], ["doudounes", "", "Doudounes"], ["", "new", "Nouveautés"], ["", "sale", "Promos"]];
+      $("#shop-chips").innerHTML = chips.map(([c, f, t]) => `<button class="chip${st.cat === c && st.filter === f && !st.q ? " is-on" : ""}" type="button" data-cat="${c}" data-filter="${f}">${t}</button>`).join("");
+      const nActive = st.brands.size + st.sizes.size + st.colors.size + (st.price ? 1 : 0);
+      $("#filters-btn").innerHTML = `${I.filter} Filtrer${nActive ? ` (${nActive})` : ""}`;
+      $("#shop-count").textContent = `${list.length} produit${list.length > 1 ? "s" : ""}`;
+      const fh = filtersHTML(pool);
+      $("#shop-filters").innerHTML = fh;
+      $("#filters-body").innerHTML = fh;
+      $("#filters-apply").textContent = `Voir ${list.length} produit${list.length > 1 ? "s" : ""}`;
+      $("#shop-active").innerHTML = activeHTML();
+      $("#shop-grid").innerHTML = list.length ? list.map(cardHTML).join("")
+        : `<div class="empty"><p class="h-md">Aucun produit avec ces filtres</p><p class="muted">Essaie d'enlever un filtre ou de chercher un autre modèle.</p><button class="btn btn--ghost" type="button" data-clear>Effacer les filtres</button></div>`;
     }
 
-    function syncURL() {
-      const u = new URLSearchParams();
-      if (state.cat) u.set("cat", state.cat);
-      if (state.filter) u.set("filter", state.filter);
-      if (state.brands.size) u.set("brand", [...state.brands].join(","));
-      if (state.q) u.set("q", state.q);
-      history.replaceState(null, "", "shop.html" + (u.toString() ? "?" + u : ""));
-    }
+    main.innerHTML = `
+      <div class="wrap shop-head">
+        <nav class="crumbs" aria-label="Fil d'Ariane"><a href="${L.home}">Accueil</a><span>/</span><span id="crumb"></span></nav>
+        <h1 class="display" id="shop-title"></h1>
+        <p id="shop-desc"></p>
+      </div>
+      <div class="shop-bar"><div class="wrap">
+        <div class="chips-row" id="shop-chips"></div>
+        <div class="shop-bar__right">
+          <span class="muted count tnum" id="shop-count" style="font-size:var(--fs-sm)"></span>
+          <button class="chip filters-btn" type="button" id="filters-btn" data-open="filters"></button>
+          <label class="sr-only" for="shop-sort">Trier par</label>
+          <select class="select" id="shop-sort"><option value="featured">Recommandés</option><option value="new">Nouveautés</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option></select>
+        </div>
+      </div></div>
+      <div class="wrap shop">
+        <aside class="filters" id="shop-filters" aria-label="Filtres"></aside>
+        <div><div id="shop-active"></div><div class="grid grid--3" id="shop-grid"></div></div>
+      </div>`;
 
-    $("#cat-chips").addEventListener("click", (e) => {
-      const c = e.target.closest(".chip"); if (!c) return;
-      state.cat = c.dataset.cat; state.filter = c.dataset.filter; state.q = "";
-      syncURL(); render();
+    const onFilter = (e) => {
+      const t = e.target.closest("[data-f]"); if (!t) return;
+      const f = t.dataset.f;
+      if (f === "brand") { t.checked ? st.brands.add(t.value) : st.brands.delete(t.value); syncHash(); }
+      if (f === "price") st.price = t.value;
+      if (f === "size" || f === "color") { const set = f === "size" ? st.sizes : st.colors; set.has(t.dataset.v) ? set.delete(t.dataset.v) : set.add(t.dataset.v); }
+      render();
+    };
+    ["#shop-filters", "#filters-body"].forEach((s) => { $(s).onchange = onFilter; $(s).onclick = (e) => { if (e.target.closest("button[data-f]")) onFilter(e); }; });
+    main.addEventListener("click", (e) => {
+      const c = e.target.closest("#shop-chips .chip");
+      if (c) { st.cat = c.dataset.cat; st.filter = c.dataset.filter; st.q = ""; syncHash(); render(); return; }
+      const r = e.target.closest("[data-rmf]");
+      if (r) { const f = r.dataset.rmf, v = r.dataset.v; if (f === "brand") { st.brands.delete(v); syncHash(); } if (f === "size") st.sizes.delete(v); if (f === "color") st.colors.delete(v); if (f === "price") st.price = ""; render(); return; }
+      if (e.target.closest("[data-clear]")) { st.brands.clear(); st.sizes.clear(); st.colors.clear(); st.price = ""; syncHash(); render(); }
     });
-    $("#filter-brands").addEventListener("change", (e) => { e.target.checked ? state.brands.add(e.target.value) : state.brands.delete(e.target.value); syncURL(); render(); });
-    $("#filter-sizes").addEventListener("change", (e) => { e.target.checked ? state.sizes.add(e.target.value) : state.sizes.delete(e.target.value); render(); });
-    $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
-    $("#filter-toggle").addEventListener("click", () => $("#filters").classList.toggle("is-open"));
-    $("#filter-reset").addEventListener("click", () => { state.brands.clear(); state.sizes.clear(); syncURL(); render(); });
+    $("#shop-sort").addEventListener("change", (e) => { st.sort = e.target.value; render(); });
     render();
   }
 
-  /* ---------------- Fiche produit ---------------- */
-  function initProduct() {
-    const p = byId(params().get("id"));
-    const root = $("#pdp");
-    if (!p) {
-      root.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><h1>Produit introuvable</h1><a class="btn" href="shop.html">Retour à la boutique</a></div>`;
-      return;
-    }
-    document.title = `${p.name} — ${CFG.storeName}`;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", `${p.name} — 100% authentique. ${p.description}`);
-    $("#crumb-cat").textContent = CATS[p.category];
-    $("#crumb-cat").href = `shop.html?cat=${p.category}`;
-    $("#crumb-current").textContent = p.name;
+  /* =================== Fiche produit =================== */
+  function viewProduct(main, parts) {
+    const p = byId(parts[1]);
+    if (!p) return view404(main);
+    pushRecent(p.id);
+    setMeta(`${p.name} ${p.color}`, `${p.name} ${p.color} — 100% authentique, importé des États-Unis. ${p.description}`);
+    const cat = CATS[p.category];
+    const variants = variantsOf(p);
+    const out = p.soldOutSizes || [];
+    const low = p.lowStock || [];
+    const views = p.images && p.images.length ? p.images.map((_, i) => i) : [0, 1, 2];
+    const look = lookFor(p, 2);
+    const related = onePerGroup(PRODUCTS.filter((x) => x.group !== p.group && (x.brand === p.brand || x.category === p.category))
+      .sort((a, b) => (b.category === p.category) - (a.category === p.category) || (b.brand === p.brand) - (a.brand === p.brand) || isBest(b) - isBest(a))).slice(0, 8);
+    const recent = store.get(RV_KEY, []).filter((id) => id !== p.id).map(byId).filter(Boolean).slice(0, 8);
+    const unit = p.category === "chaussures" ? "EU" : "US";
+    const soldOut = isOut(p);
 
-    const imgs = p.images && p.images.length ? p.images.map((_, i) => productImage(p, i)) : [placeholder(p, 0), placeholder(p, 1), placeholder(p, 0)];
-    const soldOutSizes = p.soldOutSizes || [];
-    const isShoe = p.category === "chaussures";
-    const sizeGuide = isShoe
-      ? `<table class="size-table"><tr><th>EU</th><th>US H</th><th>US F</th><th>CM</th></tr>${[["38", "5.5", "7", "24"], ["39", "6.5", "8", "24.5"], ["40", "7", "8.5", "25"], ["41", "8", "9.5", "26"], ["42", "8.5", "10", "26.5"], ["43", "9.5", "11", "27.5"], ["44", "10", "11.5", "28"], ["45", "11", "12.5", "29"]].map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</table><p>Les correspondances varient selon les marques. En cas de doute, écris-nous.</p>`
-      : `<table class="size-table"><tr><th>Taille</th><th>Tour de poitrine</th><th>Tour de taille</th></tr>${[["XS", "86-91", "71-76"], ["S", "91-96", "76-81"], ["M", "96-101", "81-86"], ["L", "101-106", "86-91"], ["XL", "106-111", "91-96"], ["XXL", "111-116", "96-101"]].map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</table><p>Tailles US. Les ensembles Essentials taillent grand (coupe oversize).</p>`;
+    main.innerHTML = `
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Fil d'Ariane" style="padding-block:16px"><a href="${L.home}">Accueil</a><span>/</span><a href="${L.shop({ cat: p.category })}">${cat.name}</a><span>/</span><a href="${L.shop({ cat: p.category, brand: p.brand })}">${esc(brandOf(p).name)}</a></nav>
+        <div class="pdp">
+          <div class="gallery-wrap">
+            <div class="gallery" id="gallery">${views.map((v) => `<figure>${art(p, v)}</figure>`).join("")}</div>
+            <span class="gallery__count" id="gallery-count">1 / ${views.length}</span>
+          </div>
+          <div class="buy">
+            <div class="buy__head">
+              <span class="buy__brand"><a href="${L.shop({ brand: p.brand })}">${esc(brandOf(p).name)}</a></span>
+              <h1>${esc(p.name)}</h1>
+              <div class="buy__price">${priceHTML(p)}${isSale(p) ? `<span class="badge badge--sale">-${pct(p)}%</span>` : ""}</div>
+              ${CFG.installments > 1 ? `<span class="buy__small">ou ${CFG.installments} × ${moneyExact(p.price / CFG.installments)} sans frais</span>` : `<span class="buy__small">TVA incluse</span>`}
+            </div>
 
-    root.innerHTML = `
-      <div class="pdp__gallery">${imgs.map((h) => `<div class="g">${h}</div>`).join("")}</div>
-      <div class="pdp__info">
-        <div>
-          <div class="pdp__brand"><a href="shop.html?brand=${p.brand}">${esc(brandName(p))}</a></div>
-          <h1>${esc(p.name)}</h1>
+            <div>
+              <div class="opt-head"><span>Coloris : <b>${esc(p.color)}</b></span>${variants.length > 1 ? `<span class="muted">${variants.length} coloris</span>` : ""}</div>
+              ${variants.length > 1 ? `<div class="variants">${variants.map((v) => `<a class="variant${v.id === p.id ? " is-on" : ""}" href="${L.product(v.id)}" title="${esc(v.color)}" aria-label="Coloris ${esc(v.color)}"${v.id === p.id ? ' aria-current="true"' : ""}>${art(v)}</a>`).join("")}</div>` : ""}
+            </div>
+
+            <div>
+              <div class="opt-head"><b>Taille (${unit})</b><button class="link" type="button" data-guide="${esc(p.category)}" style="font-size:var(--fs-sm)">Guide des tailles</button></div>
+              <div class="sizes" id="sizes" role="radiogroup" aria-label="Taille">${p.sizes.map((s) => {
+                const o = soldOut || out.includes(s);
+                return `<button type="button" class="size${o ? " is-out" : ""}${!o && low.includes(s) ? " is-low" : ""}" data-size="${esc(s)}" role="radio" aria-checked="false" ${o ? 'aria-disabled="true"' : ""} aria-label="Taille ${esc(s)}${o ? ", épuisée" : low.includes(s) ? ", dernières pièces" : ""}">${esc(s)}</button>`;
+              }).join("")}</div>
+              <p class="size-msg" id="size-msg" aria-live="polite">${low.length && !soldOut ? `<span class="muted">Point orange : dernières pièces dans cette taille.</span>` : ""}</p>
+            </div>
+
+            <div class="buy__ctas" id="buy-ctas">
+              <button class="btn btn--block" type="button" id="atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Épuisé" : `Ajouter au panier`}</button>
+              ${CFG.whatsapp ? `<a class="btn btn--wa btn--block" id="wa-buy" href="#" target="_blank" rel="noopener">${I.wa} ${soldOut ? "Me prévenir du restock" : "Commander sur WhatsApp"}</a>` : ""}
+            </div>
+
+            <div class="perks">
+              <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">${CFG.freeShippingFrom ? (p.price >= CFG.freeShippingFrom ? "Livraison offerte sur cet article" : `Offerte dès ${money(CFG.freeShippingFrom)} d'achat`) : `Envoi suivi`}</span></div></div>
+              <div class="perk">${I.shield}<div><b>100% authentique, garanti</b><br><span class="muted">Contrôlé avant envoi. Remboursé si non authentique.</span></div></div>
+              <div class="perk">${I.ret}<div><b>Retours sous ${CFG.returnDays} jours</b><br><span class="muted">Article non porté, avec étiquettes.</span></div></div>
+            </div>
+
+            ${look.length ? `<div class="look"><span class="eyebrow">Complète le look</span>${look.map((x) => `<a class="look__item" href="${L.product(x.id)}"><div class="art">${art(x)}</div><div><div class="t">${esc(x.name)}</div><div class="s">${esc(x.color)}</div><div class="price" style="font-size:var(--fs-sm)">${priceHTML(x)}</div></div>${I.chev.replace("<svg", '<svg width="18" height="18"')}</a>`).join("")}</div>` : ""}
+
+            <div class="acc">
+              <details open><summary>Description</summary><div class="body"><p>${esc(p.description)}</p>${p.details ? `<ul class="dots">${p.details.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}</div></details>
+              <details><summary>Authenticité</summary><div class="body"><p>Acheté aux États-Unis et contrôlé à la main avant l'envoi : étiquettes, coutures, matières, codes produit et boîte. Si un article n'était pas authentique, tu serais remboursé intégralement, livraison comprise.</p></div></details>
+              <details><summary>Livraison & retours</summary><div class="body"><p>Expédition sous 24 à 48 h avec suivi, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${CFG.freeShippingFrom ? `Livraison ${moneyExact(CFG.shippingPrice)}, offerte dès ${money(CFG.freeShippingFrom)}.` : ""}</p><p>Retour ou échange sous ${CFG.returnDays} jours, article non porté avec ses étiquettes.</p></div></details>
+            </div>
+          </div>
         </div>
-        <div>
-          <div class="pdp__price">${priceHTML(p)}${isSale(p) ? `<span class="badge badge--sale">-${Math.round((1 - p.price / p.oldPrice) * 100)}%</span>` : ""}</div>
-          <div class="pdp__tax">TVA incluse. Frais de livraison calculés à la commande.</div>
-        </div>
-        <div>
-          <div class="pdp__label">Coloris <span>${esc(p.color)}</span></div>
-        </div>
-        <div>
-          <div class="pdp__label">Taille ${isShoe ? "(EU)" : "(US)"} <span id="size-picked">Choisis ta taille</span></div>
-          <div class="sizes" id="sizes">${p.sizes.map((s) => {
-            const out = p.soldOut || soldOutSizes.includes(s);
-            return `<button class="size${out ? " is-soldout" : ""}" data-size="${esc(s)}" ${out ? 'aria-disabled="true" title="Épuisé"' : ""}>${esc(s)}</button>`;
-          }).join("")}</div>
-          <div class="size-error" id="size-error"></div>
-        </div>
-        <div class="pdp__actions">
-          <button class="btn btn--block" id="add-to-cart" ${p.soldOut ? "disabled" : ""}>${p.soldOut ? "Épuisé" : "Ajouter au panier"}</button>
-          ${CFG.whatsapp ? `<a class="btn btn--outline btn--block" id="wa-order" href="#" target="_blank" rel="noopener">${ICON.whatsapp.replace("<svg", '<svg width="18" height="18"')} Commander sur WhatsApp</a>` : ""}
-        </div>
-        <div class="pdp__trust">
-          <div>${ICON.shield}<span><strong>100% authentique</strong> — chaque pièce est vérifiée avant envoi.</span></div>
-          <div>${ICON.plane}<span>Importé directement des États-Unis.</span></div>
-          <div>${ICON.truck}<span>Livraison suivie en ${esc(CFG.deliveryTime)}${CFG.freeShippingFrom ? ` · offerte dès ${money(CFG.freeShippingFrom)}` : ""}.</span></div>
-        </div>
-        <div class="accordion">
-          <details open><summary>Description</summary><div class="acc-body"><p>${esc(p.description)}</p><p>Coloris : ${esc(p.color)}</p></div></details>
-          <details><summary>Guide des tailles</summary><div class="acc-body">${sizeGuide}</div></details>
-          <details><summary>Authenticité</summary><div class="acc-body"><p>Tous nos produits proviennent directement des États-Unis et sont 100% authentiques. Chaque article est contrôlé (étiquettes, coutures, matières, boîte) avant d'être expédié. Si un produit n'était pas authentique, tu serais intégralement remboursé.</p></div></details>
-          <details><summary>Livraison & retours</summary><div class="acc-body"><p>Expédition suivie sous 24-48h, livraison en ${esc(CFG.deliveryTime)}.</p><p>Échange ou retour possible sous 14 jours, article non porté avec étiquettes.</p></div></details>
-        </div>
-      </div>`;
+      </div>
+
+      ${related.length ? `<section class="band" style="padding-top:24px"><div class="wrap"><div class="sec-head"><div><h2 class="h-xl">Tu aimeras aussi</h2></div>${railCtrl("rail-rel")}</div>${railHTML("rail-rel", related)}</div></section>` : ""}
+      ${recent.length ? `<section class="band" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><h2 class="h-md">Vus récemment</h2></div></div>${railHTML("rail-recent", recent)}</div></section>` : ""}
+    `;
 
     let picked = null;
-    const updateWA = () => {
-      const a = $("#wa-order"); if (!a) return;
-      const txt = `Bonjour ${CFG.storeName} ! Je souhaite commander :\n• ${p.name}\n• Taille : ${picked || "à préciser"}\n• Prix : ${money(p.price)}\n${location.href}`;
-      a.href = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(txt)}`;
-    };
+    const msg = $("#size-msg");
+    const atc = $("#atc");
+    const wa = $("#wa-buy");
+    function updateWA() {
+      if (!wa) return;
+      const txt = soldOut
+        ? `Bonjour ${CFG.storeName} ! Pouvez-vous me prévenir quand ce produit revient en stock ?\n${p.name} — ${p.color}${picked ? `\nTaille : ${picked}` : ""}`
+        : `Bonjour ${CFG.storeName} ! Je voudrais commander :\n${p.name} — ${p.color}\nTaille : ${picked || "à préciser"}\nPrix : ${moneyExact(p.price)}`;
+      wa.href = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(txt)}`;
+    }
+    function setAtcLabel() { if (!soldOut) atc.textContent = picked ? `Ajouter au panier · ${money(p.price)}` : "Ajouter au panier"; }
     updateWA();
 
     $("#sizes").addEventListener("click", (e) => {
-      const b = e.target.closest(".size"); if (!b || b.classList.contains("is-soldout")) return;
-      $$(".size", root).forEach((x) => x.classList.remove("is-active"));
-      b.classList.add("is-active");
-      picked = b.dataset.size;
-      $("#size-picked").textContent = picked;
-      $("#size-error").textContent = "";
-      updateWA();
+      const b = e.target.closest(".size"); if (!b) return;
+      const s = b.dataset.size;
+      if (b.classList.contains("is-out")) {
+        msg.className = "size-msg";
+        msg.innerHTML = CFG.whatsapp ? `Taille ${esc(s)} épuisée. <a class="link" target="_blank" rel="noopener" href="https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(`Bonjour ! Pouvez-vous me prévenir du restock de : ${p.name} — ${p.color}, taille ${s} ?`)}">Me prévenir du restock</a>` : `Taille ${esc(s)} épuisée.`;
+        return;
+      }
+      picked = s;
+      $$(".size", main).forEach((x) => { x.classList.toggle("is-on", x === b); x.setAttribute("aria-checked", x === b); });
+      if (low.includes(s)) { msg.className = "size-msg low"; msg.textContent = `Dernières pièces en ${s}`; }
+      else { msg.className = "size-msg ok"; msg.textContent = `Taille ${s} en stock, prête à partir`; }
+      setAtcLabel(); updateWA(); updateSticky();
     });
-    $("#add-to-cart").addEventListener("click", () => {
-      if (!picked) { $("#size-error").textContent = "Merci de choisir une taille."; return; }
-      Cart.add(p.id, picked);
-      openDrawer("#cart-drawer");
+    atc.addEventListener("click", () => {
+      if (!picked) {
+        msg.className = "size-msg err"; msg.textContent = "Choisis ta taille pour ajouter au panier.";
+        $("#sizes").animate([{ transform: "translateX(0)" }, { transform: "translateX(-6px)" }, { transform: "translateX(6px)" }, { transform: "translateX(0)" }], { duration: 260 });
+        return;
+      }
+      addToCart(p.id, picked);
     });
 
-    const related = PRODUCTS.filter((x) => x.id !== p.id && (x.brand === p.brand || x.category === p.category))
-      .sort((a, b) => (b.brand === p.brand) - (a.brand === p.brand)).slice(0, 8);
-    $("#related").innerHTML = related.map(cardHTML).join("");
+    // Galerie mobile : compteur
+    const gal = $("#gallery");
+    gal.addEventListener("scroll", () => { const i = Math.round(gal.scrollLeft / gal.clientWidth); $("#gallery-count").textContent = `${i + 1} / ${views.length}`; }, { passive: true });
+
+    // Barre d'achat collante (mobile)
+    const sticky = $("#sticky-buy");
+    function updateSticky() {
+      sticky.innerHTML = `<div class="sticky-buy__info"><b>${esc(p.name)}</b><span class="price">${priceHTML(p)}</span></div><button class="btn btn--sm" type="button" id="sticky-atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Épuisé" : picked ? `Ajouter · ${esc(picked)}` : "Choisir ma taille"}</button>`;
+      $("#sticky-atc").onclick = () => { if (picked) addToCart(p.id, picked); else $("#sizes").scrollIntoView({ behavior: "smooth", block: "center" }); };
+    }
+    updateSticky();
+    if ("IntersectionObserver" in window) {
+      stickyObs = new IntersectionObserver(([en]) => {
+        const on = !en.isIntersecting && en.boundingClientRect.top < 0;
+        sticky.classList.toggle("is-on", on); sticky.setAttribute("aria-hidden", !on);
+        document.body.classList.toggle("has-sticky-buy", on);
+      });
+      stickyObs.observe($("#buy-ctas"));
+    }
+  }
+  let stickyObs = null;
+  function stickyOff() {
+    if (stickyObs) { stickyObs.disconnect(); stickyObs = null; }
+    const s = $("#sticky-buy"); if (s) { s.classList.remove("is-on"); s.setAttribute("aria-hidden", "true"); }
+    document.body.classList.remove("has-sticky-buy");
   }
 
-  /* ---------------- Commande ---------------- */
-  function renderCheckoutSummary() {
+  /* =================== Commande =================== */
+  const DRAFT_KEY = "base_checkout_draft";
+  function renderSummary() {
     const box = $("#summary"); if (!box) return;
+    if (!Cart.items.length) { viewCheckout($("#main")); return; }
+    box.innerHTML = `<h2 class="h-md">Ta commande</h2>${Cart.items.map((it, i) => lineHTML(it, i, false)).join("")}${totalsHTML()}
+      <div class="foot-trust" style="justify-content:flex-start"><span>${I.shield} 100% authentique</span><span>${I.ret} Retours ${CFG.returnDays} j</span></div>`;
+  }
+
+  function viewCheckout(main) {
+    setMeta("Commande", "Finalise ta commande BASE.");
     if (!Cart.items.length) {
-      if (!$("#checkout-done").hidden) return;
-      $("#checkout").innerHTML = `<div class="empty-state" style="grid-column:1/-1"><h1>Ton panier est vide</h1><a class="btn" href="shop.html">Découvrir la boutique</a></div>`;
+      main.innerHTML = `<div class="wrap"><div class="empty" style="padding-block:96px"><h1 class="h-xl">Ton panier est vide</h1><p class="muted">Ajoute un article pour passer commande.</p><a class="btn" href="${L.shop()}">Découvrir le shop</a></div></div>`;
       return;
     }
-    const ship = Cart.shipping();
-    box.innerHTML = `
-      <h2>Récapitulatif</h2>
-      ${Cart.items.map((it, i) => cartLineHTML(it, i, false)).join("")}
-      <div class="summary__line"><span>Sous-total</span><span>${money(Cart.subtotal())}</span></div>
-      <div class="summary__line"><span>Livraison</span><span>${ship ? money(ship) : "Offerte"}</span></div>
-      <div class="summary__total"><span>Total</span><span>${money(Cart.subtotal() + ship)}</span></div>`;
-  }
-
-  function initCheckout() {
-    renderCheckoutSummary();
-    const form = $("#checkout-form");
-    if (!form) return;
-    if (!CFG.whatsapp) { const o = $('input[value="whatsapp"]'); if (o) o.closest(".pay-option").remove(); }
-    if (!CFG.instagram) { const o = $('input[value="instagram"]'); if (o) o.closest(".pay-option").remove(); }
-    const first = $('input[name="channel"]'); if (first) first.checked = true;
-
+    const d = store.get(DRAFT_KEY, {});
+    const v = (k) => esc(d[k] || "");
+    const channels = [
+      CFG.whatsapp && ["whatsapp", "WhatsApp", "Réponse la plus rapide. On te confirme ta taille et t'envoie le lien de paiement.", I.wa],
+      CFG.instagram && ["instagram", "Instagram", `Tu nous envoies ta commande en message privé à @${esc(CFG.instagram)}.`, I.ig],
+      CFG.email && ["email", "E-mail", `Tu nous envoies ta commande à ${esc(CFG.email)}.`, I.mail]
+    ].filter(Boolean);
+    main.innerHTML = `<div class="wrap co">
+      <form id="co-form" novalidate>
+        <nav class="progress" aria-label="Étapes"><span>Panier</span>${I.chev}<b>Informations</b>${I.chev}<span>Confirmation</span></nav>
+        <h1 class="h-xl" style="margin-bottom:8px">Commande</h1>
+        <p class="muted" style="margin-bottom:8px">Pas de compte à créer. Ça prend une minute.</p>
+        <div class="fieldset"><h2>Contact</h2><div class="fields">
+          ${field("firstname", "Prénom", "given-name", v("firstname"))}${field("lastname", "Nom", "family-name", v("lastname"))}
+          ${field("phone", "Téléphone", "tel", v("phone"), "tel")}${field("email", "E-mail", "email", v("email"), "email")}
+        </div></div>
+        <div class="fieldset"><h2>Livraison</h2><div class="fields">
+          ${field("address", "Adresse", "street-address", v("address"), "text", "full")}
+          ${field("zip", "Code postal", "postal-code", v("zip"))}${field("city", "Ville", "address-level2", v("city"))}
+          <div class="field full"><label for="f-country">Pays</label><select id="f-country" name="country">${["France", "Belgique", "Suisse", "Luxembourg"].map((c) => `<option${d.country === c ? " selected" : ""}>${c}</option>`).join("")}</select></div>
+          <div class="field full"><label for="f-notes">Note (optionnel)</label><textarea id="f-notes" name="notes" placeholder="Code d'entrée, précision sur une taille…">${v("notes")}</textarea></div>
+        </div></div>
+        <div class="fieldset"><h2>Envoyer ma commande par</h2>
+          <div class="channels">${channels.map(([k, t, s, ic], i) => `<label class="channel"><input type="radio" name="channel" value="${k}" ${(d.channel ? d.channel === k : i === 0) ? "checked" : ""}><span><b>${t}</b><small>${s}</small></span>${ic}</label>`).join("")}</div>
+          <p class="muted" style="font-size:var(--fs-sm)">Le paiement (carte, PayPal ou virement) se fait après la confirmation de ta taille. Tu ne paies rien maintenant.</p>
+        </div>
+        <button class="btn btn--block" type="submit">Valider ma commande · <span id="co-total">${moneyExact(Cart.total())}</span></button>
+        <p class="muted" style="font-size:var(--fs-xs);margin-top:12px;text-align:center">En validant, tu acceptes nos <a class="link" href="${L.legal}">conditions de vente</a>.</p>
+      </form>
+      <aside class="summary" id="summary"></aside>
+    </div>`;
+    renderSummary();
+    const form = $("#co-form");
+    form.addEventListener("input", () => store.set(DRAFT_KEY, Object.fromEntries(new FormData(form))));
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const d = Object.fromEntries(new FormData(form));
-      const required = ["firstname", "lastname", "phone", "email", "address", "zip", "city"];
-      if (required.some((k) => !String(d[k] || "").trim())) { $("#form-error").textContent = "Merci de remplir tous les champs obligatoires."; return; }
-      $("#form-error").textContent = "";
-
+      const data = Object.fromEntries(new FormData(form));
+      const rules = {
+        firstname: [(x) => x.trim().length > 0, "Indique ton prénom."],
+        lastname: [(x) => x.trim().length > 0, "Indique ton nom."],
+        phone: [(x) => x.replace(/\D/g, "").length >= 9, "Indique un numéro de téléphone valide."],
+        email: [(x) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x.trim()), "Indique une adresse e-mail valide, par exemple prenom@mail.com."],
+        address: [(x) => x.trim().length > 3, "Indique ton adresse (numéro et rue)."],
+        zip: [(x) => /^\d{4,5}$/.test(x.trim()), "Le code postal doit contenir 4 ou 5 chiffres."],
+        city: [(x) => x.trim().length > 1, "Indique ta ville."]
+      };
+      let first = null;
+      Object.entries(rules).forEach(([k, [ok, m]]) => {
+        const f = form.querySelector(`[name="${k}"]`).closest(".field");
+        const good = ok(data[k] || "");
+        f.classList.toggle("has-err", !good);
+        f.querySelector(".err").textContent = good ? "" : m;
+        if (!good && !first) first = f.querySelector("input");
+      });
+      if (first) { first.focus(); return; }
       const ref = "BASE-" + Date.now().toString(36).toUpperCase().slice(-6);
-      const ship = Cart.shipping();
-      const lines = Cart.items.map((it) => { const p = byId(it.id); return `• ${it.qty} x ${p.name} — Taille ${it.size} — ${money(p.price * it.qty)}`; });
-      const msg = [
-        `Nouvelle commande ${ref}`,
-        "",
-        ...lines,
-        "",
-        `Sous-total : ${money(Cart.subtotal())}`,
-        `Livraison : ${ship ? money(ship) : "Offerte"}`,
-        `TOTAL : ${money(Cart.subtotal() + ship)}`,
-        "",
-        `Client : ${d.firstname} ${d.lastname}`,
-        `Tél : ${d.phone}`,
-        `E-mail : ${d.email}`,
-        `Adresse : ${d.address}, ${d.zip} ${d.city}, ${d.country || "France"}`,
-        d.notes ? `Note : ${d.notes}` : ""
-      ].filter((l, i, a) => l !== "" || a[i - 1] !== "").join("\n");
+      const order = { ref, data, items: Cart.items.map((i) => ({ ...i })), subtotal: Cart.subtotal(), shipping: Cart.shipping(), total: Cart.total() };
+      store.set("base_last_order", order);
+      lastOrder = order;
+      location.hash = "#/merci";
+    });
+  }
+  function field(name, label, ac, val, type = "text", cls = "") {
+    return `<div class="field ${cls}"><label for="f-${name}">${label}</label><input id="f-${name}" name="${name}" type="${type}" autocomplete="${ac}" value="${val}" required><span class="err" aria-live="polite"></span></div>`;
+  }
 
-      let url;
-      if (d.channel === "whatsapp") url = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(msg)}`;
-      else if (d.channel === "instagram") {
-        try { navigator.clipboard && navigator.clipboard.writeText(msg); } catch (err) { /* ignore */ }
-        url = `https://ig.me/m/${CFG.instagram}`;
-      } else url = `mailto:${CFG.email}?subject=${encodeURIComponent("Commande " + ref)}&body=${encodeURIComponent(msg)}`;
+  let lastOrder = null;
+  function orderText(o) {
+    const lines = o.items.map((it) => { const p = byId(it.id); return `• ${it.qty} × ${p.name} — ${p.color} — Taille ${it.size} — ${moneyExact(p.price * it.qty)}`; });
+    const d = o.data;
+    return [`Commande ${o.ref}`, "", ...lines, "", `Sous-total : ${moneyExact(o.subtotal)}`, `Livraison : ${o.shipping ? moneyExact(o.shipping) : "Offerte"}`, `Total : ${moneyExact(o.total)}`, "",
+      `${d.firstname} ${d.lastname}`, `Tél : ${d.phone}`, `E-mail : ${d.email}`, `${d.address}, ${d.zip} ${d.city}, ${d.country}`, d.notes ? `Note : ${d.notes}` : ""].filter((x, i, a) => !(x === "" && a[i - 1] === "")).join("\n").trim();
+  }
 
-      window.open(url, "_blank", "noopener");
-      $("#checkout").hidden = true;
-      $("#checkout-done").hidden = false;
-      Cart.clear();
-      $("#order-ref").textContent = ref;
-      $("#order-msg").textContent = msg;
-      $("#order-retry").href = url;
-      $("#order-channel-note").textContent = d.channel === "instagram"
-        ? "Ton récapitulatif a été copié : colle-le dans la conversation Instagram qui vient de s'ouvrir."
-        : "Envoie le message pré-rempli qui vient de s'ouvrir pour valider ta commande.";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  function viewDone(main) {
+    const o = lastOrder || store.get("base_last_order", null);
+    setMeta("Confirmation", "");
+    if (!o) { main.innerHTML = `<div class="wrap"><div class="empty" style="padding-block:96px"><h1 class="h-xl">Aucune commande en cours</h1><a class="btn" href="${L.shop()}">Découvrir le shop</a></div></div>`; return; }
+    const txt = orderText(o);
+    const ch = o.data.channel || "whatsapp";
+    const href = ch === "whatsapp" ? `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(txt)}`
+      : ch === "instagram" ? `https://ig.me/m/${CFG.instagram}`
+      : `mailto:${CFG.email}?subject=${encodeURIComponent("Commande " + o.ref)}&body=${encodeURIComponent(txt)}`;
+    const label = ch === "whatsapp" ? `${I.wa} Envoyer sur WhatsApp` : ch === "instagram" ? `${I.ig} Ouvrir Instagram` : `${I.mail} Envoyer par e-mail`;
+    main.innerHTML = `<div class="wrap"><div class="done">
+      <nav class="progress" aria-label="Étapes"><span>Panier</span>${I.chev}<span>Informations</span>${I.chev}<b>Confirmation</b></nav>
+      <span class="eyebrow">Commande ${esc(o.ref)}</span>
+      <h1 class="display">Plus qu'une étape.</h1>
+      <p style="font-size:1.0625rem;color:var(--ink-2)">${ch === "instagram" ? `Copie le récapitulatif ci-dessous et envoie-le en message privé à <b>@${esc(CFG.instagram)}</b>.` : `Envoie le message pré-rempli ci-dessous${ch === "email" ? ` à <b>${esc(CFG.email)}</b>` : ""}. On te confirme ta taille et on t'envoie le lien de paiement.`}</p>
+      <div class="done__card">
+        <div class="send-row">
+          <a class="btn btn--block" id="send-order" href="${esc(href)}" target="_blank" rel="noopener">${label}</a>
+          <button class="btn btn--ghost btn--block" type="button" id="copy-order">Copier le récapitulatif</button>
+        </div>
+        <pre class="recap" id="recap">${esc(txt)}</pre>
+        ${ch !== "whatsapp" && CFG.whatsapp ? `<p class="muted" style="font-size:var(--fs-sm)">Tu peux aussi l'envoyer sur WhatsApp au <b class="tnum">+${esc(CFG.whatsapp)}</b>.</p>` : ""}
+      </div>
+      <div class="perks">
+        <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">Après confirmation du paiement.</span></div></div>
+        <div class="perk">${I.shield}<div><b>100% authentique, garanti</b></div></div>
+      </div>
+      <a class="link" href="${L.shop()}">Continuer mes achats</a>
+    </div></div>`;
+    const clearAfterSend = () => { if (Cart.items.length) { Cart.clear(); try { localStorage.removeItem(DRAFT_KEY); } catch (e) { /* ignore */ } } };
+    $("#send-order").addEventListener("click", clearAfterSend);
+    $("#copy-order").addEventListener("click", () => {
+      const done = () => { toast("Récapitulatif copié"); clearAfterSend(); };
+      const fallback = () => { const r = document.createRange(); r.selectNodeContents($("#recap")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Texte sélectionné : copie-le avec Ctrl+C ou un appui long"); };
+      try { navigator.clipboard.writeText(txt).then(done, fallback); } catch (e) { fallback(); }
     });
   }
 
-  /* ---------------- Démarrage ---------------- */
-  document.addEventListener("DOMContentLoaded", () => {
-    renderChrome();
-    const page = document.body.dataset.page;
-    if (page === "home") initHome();
-    if (page === "shop") initShop();
-    if (page === "product") initProduct();
-    if (page === "checkout") initCheckout();
-    renderCart();
-  });
+  /* =================== Aide & mentions =================== */
+  const FAQ = [
+    ["authenticite", "Vos produits sont-ils vraiment authentiques ?", "Oui, 100%. Chaque pièce est achetée aux États-Unis par notre fournisseur, puis contrôlée à la main avant l'envoi : étiquettes, coutures, matières, codes produit et boîte. Si un article n'était pas authentique, tu serais remboursé intégralement, livraison comprise."],
+    ["commande", "Comment se passe une commande ?", "Ajoute tes articles au panier, remplis tes coordonnées, puis envoie le récapitulatif par WhatsApp, Instagram ou e-mail. On te confirme la disponibilité de ta taille et on t'envoie un lien de paiement sécurisé. Ta commande part dès réception du paiement."],
+    ["livraison", "Quels sont les délais et frais de livraison ?", `Expédition sous 24 à 48 h après paiement, avec suivi. Livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${CFG.freeShippingFrom ? `La livraison coûte ${moneyExact(CFG.shippingPrice)} et elle est offerte dès ${money(CFG.freeShippingFrom)} d'achat.` : ""}`],
+    ["retours", "Puis-je retourner ou échanger un article ?", `Oui, sous ${CFG.returnDays} jours après réception, pour un article non porté, avec ses étiquettes et dans son emballage d'origine. Écris-nous pour lancer le retour ou l'échange de taille.`],
+    ["tailles", "Comment choisir ma taille ?", "Les vêtements sont en tailles US, les chaussures en pointures EU. Essentials et Alo ont une coupe oversize : prends ta taille habituelle pour un rendu ample. Un guide des tailles est disponible sur chaque fiche produit, et on peut te conseiller sur WhatsApp."],
+    ["paiement", "Quels moyens de paiement acceptez-vous ?", "Carte bancaire, PayPal, Apple Pay et virement. Tu ne paies qu'une fois ta taille confirmée."],
+    ["officiel", "Êtes-vous un revendeur officiel des marques ?", `Non. ${CFG.storeName} est un revendeur indépendant, non affilié, non sponsorisé et non autorisé officiellement par les marques présentées. Les produits sont authentiques et achetés aux États-Unis.`]
+  ];
+  const faqItem = ([id, q, a], i, arr, openId) => `<details id="faq-${id}"${openId === id ? " open" : ""}><summary>${esc(q)}</summary><div class="ans"><p>${esc(a)}</p></div></details>`;
 
-  window.BASE = { Cart, money, toast };
+  function viewFaq(main, parts, q) {
+    setMeta("Aide & contact", "Authenticité, livraison, retours, tailles : toutes les réponses.");
+    const openId = q.get("q");
+    main.innerHTML = `<div class="wrap">
+      <div class="shop-head"><nav class="crumbs" aria-label="Fil d'Ariane"><a href="${L.home}">Accueil</a><span>/</span><span>Aide</span></nav><h1 class="display">Aide</h1></div>
+      <div class="two-col" style="padding-bottom:96px">
+        <div style="display:grid;gap:14px;align-content:start" id="faq-contact">
+          <h2 class="h-md">Nous contacter</h2>
+          <p class="muted">Une question sur une taille, un délai ou une commande ? On répond vite.</p>
+          ${CFG.whatsapp ? `<a class="btn" href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener">${I.wa} WhatsApp</a><p class="muted tnum" style="font-size:var(--fs-sm)">+${esc(CFG.whatsapp)}</p>` : ""}
+          ${CFG.instagram ? `<a class="btn btn--ghost" href="https://instagram.com/${esc(CFG.instagram)}" target="_blank" rel="noopener">${I.ig} @${esc(CFG.instagram)}</a>` : ""}
+          ${CFG.email ? `<p style="font-size:var(--fs-sm)">E-mail : <b style="user-select:all">${esc(CFG.email)}</b></p>` : ""}
+        </div>
+        <div class="faq">${FAQ.map((f, i, a) => faqItem(f, i, a, openId)).join("")}</div>
+      </div>
+    </div>`;
+    if (openId) { const el = openId === "contact" ? $("#faq-contact") : $("#faq-" + openId); if (el) setTimeout(() => el.scrollIntoView({ block: "center" }), 50); }
+  }
+
+  function viewLegal(main) {
+    setMeta("Mentions légales & CGV", "");
+    main.innerHTML = `<div class="wrap">
+      <div class="shop-head"><nav class="crumbs" aria-label="Fil d'Ariane"><a href="${L.home}">Accueil</a><span>/</span><span>Mentions légales</span></nav><h1 class="h-xl">Mentions légales & CGV</h1></div>
+      <div class="prose">
+        <p><b>À compléter avant la mise en ligne</b> (remplace les crochets par tes informations).</p>
+        <h2>Éditeur du site</h2><p>[Nom ou raison sociale] · [Statut : micro-entreprise, SAS…] · SIRET [numéro] · [Adresse] · [E-mail]</p>
+        <h2>Hébergement</h2><p>[Nom et adresse de l'hébergeur]</p>
+        <h2>Marques</h2><p>${esc(CFG.storeName)} est un revendeur indépendant, non affilié, non sponsorisé et non autorisé officiellement par les marques présentées. Fear of God Essentials, Ralph Lauren, On, Alo, Salomon, Mizuno, Saucony, Asics et C.P. Company sont des marques de leurs propriétaires respectifs, citées uniquement pour désigner les produits authentiques revendus.</p>
+        <h2>Produits et prix</h2><p>Les produits sont neufs et authentiques. Les prix sont indiqués en euros TTC, hors frais de livraison.</p>
+        <h2>Commande et paiement</h2><p>La commande est définitive après confirmation de la disponibilité et réception du paiement.</p>
+        <h2>Livraison</h2><p>Expédition sous 24 à 48 h après paiement, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés.</p>
+        <h2>Droit de rétractation</h2><p>Tu disposes de 14 jours à compter de la réception pour exercer ton droit de rétractation. L'article doit être retourné non porté, avec ses étiquettes et dans son emballage d'origine.</p>
+        <h2>Données personnelles</h2><p>Les informations saisies servent uniquement à traiter et livrer ta commande. Elles ne sont jamais revendues. Pour y accéder ou les supprimer, contacte-nous.</p>
+      </div>
+    </div>`;
+  }
+
+  function view404(main) {
+    setMeta("Page introuvable", "");
+    main.innerHTML = `<div class="wrap"><div class="empty" style="padding-block:120px"><span class="eyebrow">Erreur 404</span><h1 class="h-xl">Cette page n'existe pas</h1><p class="muted">Le produit a peut-être été retiré. Les best-sellers, eux, sont toujours là.</p><a class="btn" href="${L.shop()}">Voir le shop</a></div></div>`;
+  }
+
+  /* =================== Événements globaux =================== */
+  function bind() {
+    document.addEventListener("click", (e) => {
+      const t = e.target;
+      const o = t.closest("[data-open]");
+      if (o) { e.preventDefault(); open(o.dataset.open); return; }
+      if (t.closest("[data-close]")) { closeAll(); return; }
+      const qa = t.closest("[data-quick-add]");
+      if (qa) { e.preventDefault(); addToCart(qa.dataset.quickAdd, qa.dataset.size); return; }
+      const qs2 = t.closest("[data-quick-sheet]");
+      if (qs2) { e.preventDefault(); openSheet(qs2.dataset.quickSheet); return; }
+      const g = t.closest("[data-guide]");
+      if (g) { $("#guide-body").innerHTML = guideHTML(g.dataset.guide); open("guide"); return; }
+      const q = t.closest("[data-qty]");
+      if (q) { const i = +q.dataset.qty; Cart.setQty(i, Cart.items[i].qty + +q.dataset.d); return; }
+      const r = t.closest("[data-rm]");
+      if (r) { Cart.setQty(+r.dataset.rm, 0); return; }
+      const rl = t.closest("[data-rail]");
+      if (rl) { const el = document.getElementById(rl.dataset.rail); if (el) el.scrollBy({ left: el.clientWidth * 0.9 * +rl.dataset.dir, behavior: "smooth" }); return; }
+      const s = t.closest("[data-search]");
+      if (s) { $("#search-input").value = s.dataset.search; runSearch(); return; }
+      // Un clic sur un lien interne ferme les panneaux
+      const a = t.closest('a[href^="#/"]');
+      if (a && a.getAttribute("href") === location.hash) { closeAll(true); window.scrollTo(0, 0); }
+    });
+    // Survol des pastilles : aperçu du coloris
+    document.addEventListener("mouseover", (e) => {
+      const sw = e.target.closest("[data-sw]"); if (!sw) return;
+      const card = sw.closest(".card"); if (!card) return;
+      const v = byId(sw.dataset.sw); if (!v) return;
+      const media = card.querySelector(".card__media");
+      if (media.dataset.showing === v.id) return;
+      media.dataset.showing = v.id;
+      media.href = L.product(v.id);
+      media.innerHTML = `<div class="badges">${badgesHTML(v)}</div>${art(v, 0)}`;
+      card.querySelector(".card__name a").href = L.product(v.id);
+      card.querySelector(".card__meta").textContent = v.color;
+      card.querySelector(".price").innerHTML = priceHTML(v);
+      $$(".sw", card).forEach((x) => x.classList.toggle("is-on", x === sw));
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAll(); });
+    $("#search-input").addEventListener("input", runSearch);
+    $("#search-form").addEventListener("submit", (e) => { e.preventDefault(); const v = $("#search-input").value.trim(); if (v) location.hash = L.shop({ q: v }); });
+    window.addEventListener("hashchange", go);
+  }
+  function runSearch() {
+    const v = $("#search-input").value.trim();
+    const res = v.length < 2 ? [] : onePerGroup(search(v)).slice(0, 8);
+    $("#search-results").innerHTML = v.length < 2 ? "" : res.length
+      ? res.map(miniHTML).join("") + `<a class="link" style="grid-column:1/-1" href="${L.shop({ q: v })}">Voir les ${search(v).length} résultats pour « ${esc(v)} »</a>`
+      : `<p class="muted" style="grid-column:1/-1">Aucun résultat pour « ${esc(v)} ». Essaie une marque, comme Essentials ou Salomon.</p>`;
+  }
+
+  /* =================== Démarrage =================== */
+  function start() {
+    shell();
+    bind();
+    renderCart();
+    go();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
+
+  window.BASE = { Cart, go };
 })();

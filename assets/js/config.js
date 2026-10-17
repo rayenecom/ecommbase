@@ -1,32 +1,37 @@
 /* ==========================================================
-   BASE — Configuration de la boutique
-   Modifie ces valeurs pour personnaliser ton site.
+   BASE — Réglages de la boutique
+   Modifie ces valeurs : tout le site se met à jour.
    ========================================================== */
 window.BASE_CONFIG = {
   storeName: "BASE",
-  tagline: "100% authentique. Importé des États-Unis.",
 
-  // Devise et format des prix
+  // Prix
   currency: "EUR",
   locale: "fr-FR",
 
   // Livraison
-  shippingPrice: 7.9,       // prix de la livraison standard
-  freeShippingFrom: 150,    // livraison offerte à partir de ce montant (0 = jamais)
-  deliveryTime: "3 à 7 jours ouvrés",
+  shippingPrice: 7.9,          // livraison standard
+  freeShippingFrom: 150,       // livraison offerte dès ce montant (0 = jamais)
+  deliveryDays: [3, 6],        // délai de livraison en jours ouvrés [min, max]
+  returnDays: 14,              // délai de retour
+
+  // Paiement en plusieurs fois (ex : PayPal 4x). Mets 0 si tu ne le proposes pas.
+  installments: 0,
 
   // Contact / prise de commande
-  // WhatsApp : numéro au format international, sans "+" ni espaces (ex : 33612345678)
+  // WhatsApp : format international sans "+" ni espaces (ex : 33612345678)
   whatsapp: "33600000000",
-  instagram: "base.store",            // sans le @
-  tiktok: "base.store",               // sans le @
+  instagram: "base.store",     // sans le @
+  tiktok: "base.store",        // sans le @
   email: "contact@base-store.fr",
 
-  // Bandeau défilant en haut du site
+  // Messages du bandeau en haut du site (ils défilent un par un)
   announcements: [
     "Livraison offerte dès 150 €",
-    "100% authentique — vérifié avant chaque envoi",
-    "Importé directement des États-Unis",
-    "Paiement sécurisé • Envoi suivi"
-  ]
+    "100% authentique · importé des États-Unis",
+    "Retours sous 14 jours"
+  ],
+
+  // Recherches proposées dans la barre de recherche
+  popularSearches: ["Essentials", "Cloud 6", "XT-6", "Gel-Kayano 14", "Alo", "C.P. Company"]
 };

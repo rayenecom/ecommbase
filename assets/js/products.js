@@ -1,363 +1,379 @@
 /* ==========================================================
-   BASE — Catalogue produits
+   BASE — Catalogue
    ----------------------------------------------------------
-   Pour ajouter un produit, copie un bloc { ... } et modifie-le.
+   Pour ajouter un produit : copie un bloc { ... } et modifie-le.
 
-   id        : identifiant unique (sans espaces ni accents)
-   name      : nom affiché
-   brand     : une des clés de BASE_BRANDS ci-dessous
-   category  : "ensembles" | "chaussures" | "doudounes"
-   price     : prix de vente
-   oldPrice  : (optionnel) ancien prix barré -> affiche un badge promo
-   sizes     : tailles disponibles
-   soldOutSizes : (optionnel) tailles épuisées
-   color     : coloris
-   images    : (optionnel) liste de photos, ex : ["images/products/essentials-oatmeal-1.jpg"]
-               Sans photo, un visuel provisoire est affiché.
-   tags      : (optionnel) "new" = Nouveauté, "best" = Best-seller
-   soldOut   : (optionnel) true = produit entièrement épuisé
-   description : texte de la fiche produit
+   id           identifiant unique, sans espace ni accent
+   group        même valeur pour les coloris d'un même modèle
+                (ils s'affichent en pastilles de couleur)
+   name         nom du modèle (sans le coloris)
+   color        nom du coloris
+   swatch       couleur de la pastille (code hexadécimal)
+   brand        une clé de BASE_BRANDS
+   category     "ensembles" | "chaussures" | "doudounes"
+   price        prix de vente
+   oldPrice     (optionnel) ancien prix barré
+   sizes        tailles proposées
+   soldOutSizes (optionnel) tailles épuisées
+   lowStock     (optionnel) tailles avec très peu de pièces
+                -> affiche « Dernières pièces »
+   images       (optionnel) tes photos, ex :
+                ["images/products/xt6-noir-1.jpg", "images/products/xt6-noir-2.jpg"]
+                Sans photo, une illustration provisoire s'affiche.
+   tags         (optionnel) "new" = Nouveauté, "best" = Best-seller
+   soldOut      (optionnel) true = entièrement épuisé
+   description  texte de la fiche produit
+   details      (optionnel) liste de points clés
    ========================================================== */
 
 window.BASE_BRANDS = {
-  essentials:  { name: "Essentials",       tint: "#e9e3d8" },
-  ralphlauren: { name: "Ralph Lauren",     tint: "#dfe3ea" },
-  on:          { name: "On",               tint: "#e4e7e4" },
-  alo:         { name: "Alo",              tint: "#ece6e3" },
-  salomon:     { name: "Salomon",          tint: "#e2e5e8" },
-  mizuno:      { name: "Mizuno",           tint: "#e1e6ee" },
-  saucony:     { name: "Saucony",          tint: "#ebe5df" },
-  asics:       { name: "Asics",            tint: "#e3e8ec" },
-  cpcompany:   { name: "C.P. Company",     tint: "#e2e4df" }
+  essentials:  { name: "Essentials",   tint: "#ece9e2", line: "Fear of God" },
+  ralphlauren: { name: "Ralph Lauren", tint: "#e6e9ee", line: "Polo" },
+  on:          { name: "On",           tint: "#e9ecea", line: "Swiss engineered" },
+  alo:         { name: "Alo",          tint: "#efebe8", line: "Alo Yoga" },
+  salomon:     { name: "Salomon",      tint: "#e7eaec", line: "Sportstyle" },
+  mizuno:      { name: "Mizuno",       tint: "#e6eaf0", line: "Since 1906" },
+  saucony:     { name: "Saucony",      tint: "#eeeae6", line: "Originals" },
+  asics:       { name: "Asics",        tint: "#e7ebee", line: "SportStyle" },
+  cpcompany:   { name: "C.P. Company", tint: "#e8eae5", line: "Est. 1971" }
 };
 
 window.BASE_CATEGORIES = {
-  ensembles:  "Ensembles",
-  chaussures: "Chaussures",
-  doudounes:  "Doudounes"
+  ensembles:  { name: "Ensembles",  one: "Ensemble" },
+  chaussures: { name: "Chaussures", one: "Chaussure" },
+  doudounes:  { name: "Doudounes",  one: "Doudoune" }
 };
 
-const SIZES_CLOTHING = ["XS", "S", "M", "L", "XL", "XXL"];
-const SIZES_SHOES = ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"];
+const CLOTHING = ["XS", "S", "M", "L", "XL", "XXL"];
+const SHOES = ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"];
+const SHOES_W = ["35", "36", "37", "38", "39", "40", "41", "42"];
 
 window.BASE_PRODUCTS = [
-  /* ---------------- ESSENTIALS ---------------- */
+  /* ---------- ESSENTIALS ---------- */
   {
-    id: "essentials-ensemble-dark-oatmeal",
-    name: "Ensemble Essentials Hoodie + Jogging — Dark Oatmeal",
-    brand: "essentials", category: "ensembles",
-    price: 239, sizes: SIZES_CLOTHING, soldOutSizes: ["XS"],
-    color: "Dark Oatmeal", tags: ["best"],
-    description: "Ensemble Fear of God Essentials composé du hoodie et du jogging assortis. Molleton épais, coupe oversize, logo caoutchouté. Taille grand : prends ta taille habituelle pour un rendu oversize ou une taille en dessous pour un rendu ajusté."
+    id: "essentials-set-dark-oatmeal", group: "essentials-set",
+    name: "Ensemble Essentials Hoodie + Jogging", color: "Dark Oatmeal", swatch: "#b9a98f",
+    brand: "essentials", category: "ensembles", price: 239,
+    sizes: CLOTHING, soldOutSizes: ["XS"], lowStock: ["M"], tags: ["best"],
+    description: "L'ensemble le plus demandé. Hoodie et jogging Fear of God Essentials assortis, en molleton épais au toucher brossé. Coupe oversize, logo caoutchouté.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe oversize : taille grand", "Logo Essentials caoutchouté"]
   },
   {
-    id: "essentials-ensemble-jet-black",
-    name: "Ensemble Essentials Hoodie + Jogging — Jet Black",
-    brand: "essentials", category: "ensembles",
-    price: 239, sizes: SIZES_CLOTHING,
-    color: "Jet Black", tags: ["new"],
-    description: "Le classique tout noir. Hoodie et jogging Essentials assortis, molleton épais et coupe oversize signature."
+    id: "essentials-set-jet-black", group: "essentials-set",
+    name: "Ensemble Essentials Hoodie + Jogging", color: "Jet Black", swatch: "#1d1d1d",
+    brand: "essentials", category: "ensembles", price: 239,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le classique tout noir. Hoodie et jogging Essentials assortis, molleton épais et coupe oversize.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe oversize : taille grand", "Logo Essentials caoutchouté"]
   },
   {
-    id: "essentials-ensemble-light-heather-grey",
-    name: "Ensemble Essentials Hoodie + Jogging — Light Heather Grey",
-    brand: "essentials", category: "ensembles",
-    price: 249, oldPrice: 279, sizes: SIZES_CLOTHING,
-    color: "Light Heather Grey",
-    description: "Ensemble Essentials gris chiné. Hoodie à capuche doublée et jogging à chevilles élastiquées."
+    id: "essentials-set-light-heather-grey", group: "essentials-set",
+    name: "Ensemble Essentials Hoodie + Jogging", color: "Light Heather Grey", swatch: "#b8b9b8",
+    brand: "essentials", category: "ensembles", price: 239, oldPrice: 269,
+    sizes: CLOTHING,
+    description: "Ensemble Essentials gris chiné. Hoodie à capuche doublée et jogging à chevilles élastiquées.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe oversize : taille grand"]
   },
   {
-    id: "essentials-ensemble-desert-sand",
-    name: "Ensemble Essentials Crewneck + Short — Desert Sand",
-    brand: "essentials", category: "ensembles",
-    price: 189, sizes: SIZES_CLOTHING, soldOutSizes: ["XS", "XXL"],
-    color: "Desert Sand", tags: ["new"],
-    description: "Version été : sweat col rond et short molleton Essentials assortis."
-  },
-
-  /* ---------------- RALPH LAUREN ---------------- */
-  {
-    id: "ralph-lauren-ensemble-double-knit-navy",
-    name: "Ensemble Polo Ralph Lauren Double-Knit — Navy",
-    brand: "ralphlauren", category: "ensembles",
-    price: 279, sizes: SIZES_CLOTHING,
-    color: "Navy", tags: ["best"],
-    description: "Ensemble Polo Ralph Lauren en jersey double maille : veste zippée à capuche et jogging assorti, brodé du célèbre Pony."
-  },
-  {
-    id: "ralph-lauren-ensemble-double-knit-grey",
-    name: "Ensemble Polo Ralph Lauren Double-Knit — Gris chiné",
-    brand: "ralphlauren", category: "ensembles",
-    price: 279, sizes: SIZES_CLOTHING,
-    color: "Gris chiné",
-    description: "Ensemble Polo Ralph Lauren double maille gris chiné. Veste zippée et jogging, Pony brodé contrasté."
-  },
-  {
-    id: "ralph-lauren-ensemble-black",
-    name: "Ensemble Polo Ralph Lauren Fleece — Black",
-    brand: "ralphlauren", category: "ensembles",
-    price: 259, oldPrice: 299, sizes: SIZES_CLOTHING, soldOutSizes: ["S"],
-    color: "Black", tags: ["new"],
-    description: "Hoodie et jogging Polo Ralph Lauren en molleton, noir avec Pony brodé."
+    id: "essentials-set-desert-sand", group: "essentials-set",
+    name: "Ensemble Essentials Hoodie + Jogging", color: "Desert Sand", swatch: "#cdb998",
+    brand: "essentials", category: "ensembles", price: 239,
+    sizes: CLOTHING, soldOutSizes: ["XS", "XXL"], tags: ["new"],
+    description: "Le coloris sable de la saison. Hoodie et jogging Essentials assortis.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe oversize : taille grand"]
   },
 
-  /* ---------------- ON (chaussures) ---------------- */
+  /* ---------- RALPH LAUREN ---------- */
   {
-    id: "on-cloud-6-all-black",
-    name: "On Cloud 6 — All Black",
-    brand: "on", category: "chaussures",
-    price: 169, sizes: SIZES_SHOES,
-    color: "Black / Black", tags: ["best"],
-    description: "La On Cloud 6, légère et ultra-confortable au quotidien. Semelle CloudTec®, laçage élastique."
+    id: "rl-double-knit-navy", group: "rl-double-knit",
+    name: "Ensemble Polo Ralph Lauren Double-Knit", color: "Navy", swatch: "#1f2a44",
+    brand: "ralphlauren", category: "ensembles", price: 279,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Veste zippée à capuche et jogging assorti en jersey double maille, brodés du Pony.",
+    details: ["Veste zippée + jogging", "Jersey double maille", "Pony brodé contrasté", "Coupe droite, taille normalement"]
   },
   {
-    id: "on-cloud-6-white",
-    name: "On Cloud 6 — Undyed White",
-    brand: "on", category: "chaussures",
-    price: 169, sizes: SIZES_SHOES, soldOutSizes: ["36", "46"],
-    color: "Undyed White / White",
-    description: "La On Cloud 6 en blanc, idéale pour tous les jours."
+    id: "rl-double-knit-grey", group: "rl-double-knit",
+    name: "Ensemble Polo Ralph Lauren Double-Knit", color: "Gris chiné", swatch: "#9d9e9f",
+    brand: "ralphlauren", category: "ensembles", price: 279,
+    sizes: CLOTHING, lowStock: ["L"],
+    description: "Veste zippée et jogging Polo Ralph Lauren double maille gris chiné, Pony brodé.",
+    details: ["Veste zippée + jogging", "Jersey double maille", "Pony brodé contrasté"]
   },
   {
-    id: "on-cloudmonster-black",
-    name: "On Cloudmonster — Black / Magnet",
-    brand: "on", category: "chaussures",
-    price: 189, sizes: SIZES_SHOES,
-    color: "Black / Magnet", tags: ["new"],
-    description: "Amorti maximal et sensation de rebond : la Cloudmonster pour courir ou marcher toute la journée."
-  },
-  {
-    id: "on-cloudtilt-ivory",
-    name: "On Cloudtilt — Ivory / Black",
-    brand: "on", category: "chaussures",
-    price: 179, sizes: SIZES_SHOES,
-    color: "Ivory / Black",
-    description: "Le modèle lifestyle d'On : silhouette épurée et amorti CloudTec Phase®."
+    id: "rl-double-knit-black", group: "rl-double-knit",
+    name: "Ensemble Polo Ralph Lauren Double-Knit", color: "Black", swatch: "#171717",
+    brand: "ralphlauren", category: "ensembles", price: 259, oldPrice: 299,
+    sizes: CLOTHING, soldOutSizes: ["S"], tags: ["new"],
+    description: "Hoodie et jogging Polo Ralph Lauren noirs, Pony brodé.",
+    details: ["Veste zippée + jogging", "Jersey double maille", "Pony brodé ton sur ton"]
   },
 
-  /* ---------------- ON (ensembles) ---------------- */
+  /* ---------- ON — chaussures ---------- */
   {
-    id: "on-ensemble-club-hoodie-black",
-    name: "Ensemble On Club Hoodie + Pants — Black",
-    brand: "on", category: "ensembles",
-    price: 229, sizes: SIZES_CLOTHING,
-    color: "Black", tags: ["new"],
-    description: "Ensemble On en coton bio : hoodie et pantalon assortis, logo On discret."
+    id: "on-cloud-6-black", group: "on-cloud-6",
+    name: "On Cloud 6", color: "Black / Black", swatch: "#1a1a1a",
+    brand: "on", category: "chaussures", price: 169,
+    sizes: SHOES, tags: ["best"],
+    description: "La On Cloud 6, légère et confortable du matin au soir. Semelle CloudTec®, laçage élastique qu'on n'a jamais besoin de refaire.",
+    details: ["Semelle CloudTec®", "Laçage élastique speed-lacing", "Ultra-légère", "Taille normalement"]
   },
   {
-    id: "on-ensemble-zip-hoodie-grey",
-    name: "Ensemble On Zip Hoodie + Sweat Pants — Grey",
-    brand: "on", category: "ensembles",
-    price: 239, sizes: SIZES_CLOTHING,
-    color: "Grey",
-    description: "Veste zippée et jogging On, matière douce et respirante."
-  },
-
-  /* ---------------- ALO (ensembles) ---------------- */
-  {
-    id: "alo-ensemble-accolade-black",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant — Black",
-    brand: "alo", category: "ensembles",
-    price: 249, sizes: SIZES_CLOTHING,
-    color: "Black", tags: ["best"],
-    description: "Le best-seller Alo : hoodie Accolade et sweatpant assortis, molleton brossé ultra-doux."
+    id: "on-cloud-6-white", group: "on-cloud-6",
+    name: "On Cloud 6", color: "Undyed White / White", swatch: "#f1f0ec",
+    brand: "on", category: "chaussures", price: 169,
+    sizes: SHOES, soldOutSizes: ["36", "46"], tags: ["best"],
+    description: "La On Cloud 6 en blanc, la paire du quotidien par excellence.",
+    details: ["Semelle CloudTec®", "Laçage élastique speed-lacing", "Taille normalement"]
   },
   {
-    id: "alo-ensemble-accolade-athletic-heather",
-    name: "Ensemble Alo Accolade — Athletic Heather Grey",
-    brand: "alo", category: "ensembles",
-    price: 249, sizes: SIZES_CLOTHING, soldOutSizes: ["XL"],
-    color: "Athletic Heather Grey",
-    description: "Hoodie Accolade et sweatpant Alo Yoga en gris chiné."
+    id: "on-cloud-6-glacier", group: "on-cloud-6",
+    name: "On Cloud 6", color: "Glacier / Grey", swatch: "#c9ced1",
+    brand: "on", category: "chaussures", price: 169,
+    sizes: SHOES, tags: ["new"],
+    description: "La On Cloud 6 dans un gris glacier très facile à porter.",
+    details: ["Semelle CloudTec®", "Laçage élastique speed-lacing", "Taille normalement"]
   },
   {
-    id: "alo-ensemble-muse-bone",
-    name: "Ensemble Alo Muse Hoodie + Sweatpant — Bone",
-    brand: "alo", category: "ensembles",
-    price: 259, sizes: SIZES_CLOTHING,
-    color: "Bone", tags: ["new"],
-    description: "Ensemble Alo Muse, coupe relax et coloris crème."
+    id: "on-cloudmonster-black", group: "on-cloudmonster",
+    name: "On Cloudmonster", color: "Black / Magnet", swatch: "#232323",
+    brand: "on", category: "chaussures", price: 189,
+    sizes: SHOES, lowStock: ["42", "43"], tags: ["new"],
+    description: "Amorti maximal et effet rebond. La Cloudmonster se porte aussi bien pour courir que pour marcher toute la journée.",
+    details: ["Amorti maximal CloudTec®", "Speedboard® pour le rebond", "Taille normalement"]
+  },
+  {
+    id: "on-cloudtilt-ivory", group: "on-cloudtilt",
+    name: "On Cloudtilt", color: "Ivory / Black", swatch: "#ece6d8",
+    brand: "on", category: "chaussures", price: 179,
+    sizes: SHOES,
+    description: "Le modèle lifestyle d'On : silhouette épurée et amorti CloudTec Phase®.",
+    details: ["Amorti CloudTec Phase®", "Silhouette lifestyle", "Taille normalement"]
   },
 
-  /* ---------------- ALO (chaussures) ---------------- */
+  /* ---------- ON — ensembles ---------- */
   {
-    id: "alo-recovery-mode-sneaker-white",
-    name: "Alo Recovery Mode Sneaker — White / Bone",
-    brand: "alo", category: "chaussures",
-    price: 199, sizes: SIZES_SHOES.slice(0, 9),
-    color: "White / Bone", tags: ["new"],
-    description: "La sneaker Alo pensée pour le confort : semelle légère et amortissante, look clean."
+    id: "on-club-set-black", group: "on-club-set",
+    name: "Ensemble On Club Hoodie + Pants", color: "Black", swatch: "#1c1c1c",
+    brand: "on", category: "ensembles", price: 229,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Hoodie et pantalon On en coton bio, logo discret. Le confort On au quotidien.",
+    details: ["Hoodie + pantalon", "Coton biologique", "Logo On discret"]
   },
   {
-    id: "alo-sunset-sneaker-black",
-    name: "Alo Sunset Sneaker — Black",
-    brand: "alo", category: "chaussures",
-    price: 189, sizes: SIZES_SHOES.slice(0, 9),
-    color: "Black",
-    description: "Sneaker Alo au design minimaliste, parfaite avec un ensemble Alo."
-  },
-
-  /* ---------------- SALOMON (chaussures) ---------------- */
-  {
-    id: "salomon-xt-6-black-phantom",
-    name: "Salomon XT-6 — Black / Phantom",
-    brand: "salomon", category: "chaussures",
-    price: 199, sizes: SIZES_SHOES,
-    color: "Black / Black / Phantom", tags: ["best"],
-    description: "L'icône gorpcore. La XT-6 allie la technicité du trail au style urbain. Laçage Quicklace™."
-  },
-  {
-    id: "salomon-xt-6-vanilla-ice",
-    name: "Salomon XT-6 — Vanilla Ice / Almond Milk",
-    brand: "salomon", category: "chaussures",
-    price: 209, sizes: SIZES_SHOES, soldOutSizes: ["44"],
-    color: "Vanilla Ice / Almond Milk",
-    description: "La XT-6 dans un coloris clair très recherché."
-  },
-  {
-    id: "salomon-acs-pro-grey",
-    name: "Salomon ACS Pro — Lunar Rock / Silver",
-    brand: "salomon", category: "chaussures",
-    price: 199, sizes: SIZES_SHOES,
-    color: "Lunar Rock / Silver", tags: ["new"],
-    description: "Silhouette rétro-tech, maintien et amorti pour un look affirmé."
-  },
-  {
-    id: "salomon-speedcross-6-black",
-    name: "Salomon Speedcross 6 — Black",
-    brand: "salomon", category: "chaussures",
-    price: 159, oldPrice: 179, sizes: SIZES_SHOES,
-    color: "Black / Black / Phantom",
-    description: "Accroche légendaire et look agressif : la Speedcross 6."
+    id: "on-club-set-grey", group: "on-club-set",
+    name: "Ensemble On Club Hoodie + Pants", color: "Grey", swatch: "#a3a5a4",
+    brand: "on", category: "ensembles", price: 229,
+    sizes: CLOTHING,
+    description: "Hoodie et pantalon On gris, matière douce et respirante.",
+    details: ["Hoodie + pantalon", "Coton biologique", "Logo On discret"]
   },
 
-  /* ---------------- SALOMON (ensembles) ---------------- */
+  /* ---------- ALO — ensembles ---------- */
   {
-    id: "salomon-ensemble-outline-black",
-    name: "Ensemble Salomon Hoodie + Pants — Deep Black",
-    brand: "salomon", category: "ensembles",
-    price: 219, sizes: SIZES_CLOTHING,
-    color: "Deep Black", tags: ["new"],
-    description: "Ensemble Salomon sweat à capuche et pantalon assortis, logo brodé."
+    id: "alo-accolade-black", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Black", swatch: "#161616",
+    brand: "alo", category: "ensembles", price: 249,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le best-seller Alo Yoga : hoodie Accolade et sweatpant assortis, molleton brossé ultra-doux.",
+    details: ["Hoodie + sweatpant", "Molleton brossé ultra-doux", "Coupe relax"]
   },
   {
-    id: "salomon-ensemble-track-grey",
-    name: "Ensemble Salomon Track Jacket + Pants — Grey",
-    brand: "salomon", category: "ensembles",
-    price: 229, sizes: SIZES_CLOTHING,
-    color: "Grey",
-    description: "Survêtement Salomon technique : veste zippée et pantalon, matière légère et respirante."
-  },
-
-  /* ---------------- MIZUNO ---------------- */
-  {
-    id: "mizuno-wave-rider-10-silver",
-    name: "Mizuno Wave Rider 10 — White / Silver",
-    brand: "mizuno", category: "chaussures",
-    price: 159, sizes: SIZES_SHOES,
-    color: "White / Silver", tags: ["best"],
-    description: "Le retour du running rétro des années 2000. Plaque Wave pour la stabilité et l'amorti."
+    id: "alo-accolade-heather", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Athletic Heather Grey", swatch: "#b3b3b1",
+    brand: "alo", category: "ensembles", price: 249,
+    sizes: CLOTHING, soldOutSizes: ["XL"],
+    description: "Hoodie Accolade et sweatpant Alo Yoga en gris chiné.",
+    details: ["Hoodie + sweatpant", "Molleton brossé ultra-doux", "Coupe relax"]
   },
   {
-    id: "mizuno-wave-prophecy-ls-black",
-    name: "Mizuno Wave Prophecy LS — Black",
-    brand: "mizuno", category: "chaussures",
-    price: 189, sizes: SIZES_SHOES,
-    color: "Black / Black", tags: ["new"],
-    description: "Semelle Infinity Wave iconique pour un style futuriste."
-  },
-  {
-    id: "mizuno-contender-white-navy",
-    name: "Mizuno Contender — White / Navy",
-    brand: "mizuno", category: "chaussures",
-    price: 139, sizes: SIZES_SHOES,
-    color: "White / Navy",
-    description: "Silhouette running vintage Mizuno, confortable et légère."
+    id: "alo-accolade-bone", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Bone", swatch: "#e2dbcd",
+    brand: "alo", category: "ensembles", price: 249,
+    sizes: CLOTHING, tags: ["new"],
+    description: "L'ensemble Alo Accolade dans son coloris crème signature.",
+    details: ["Hoodie + sweatpant", "Molleton brossé ultra-doux", "Coupe relax"]
   },
 
-  /* ---------------- SAUCONY ---------------- */
+  /* ---------- ALO — chaussures ---------- */
   {
-    id: "saucony-shadow-6000-grey",
-    name: "Saucony Shadow 6000 — Grey / Silver",
-    brand: "saucony", category: "chaussures",
-    price: 149, sizes: SIZES_SHOES,
-    color: "Grey / Silver", tags: ["best"],
-    description: "Classique du running rétro, daim et mesh, semelle confortable."
+    id: "alo-recovery-white", group: "alo-recovery",
+    name: "Alo Recovery Mode Sneaker", color: "White / Bone", swatch: "#f3f1ec",
+    brand: "alo", category: "chaussures", price: 199,
+    sizes: SHOES_W, tags: ["new"],
+    description: "La sneaker Alo pensée pour le confort : semelle légère et amortissante, look clean.",
+    details: ["Semelle légère amortissante", "Look minimaliste", "Taille normalement"]
   },
   {
-    id: "saucony-progrid-triumph-4-silver",
-    name: "Saucony ProGrid Triumph 4 — Silver / Black",
-    brand: "saucony", category: "chaussures",
-    price: 159, sizes: SIZES_SHOES, soldOutSizes: ["41"],
-    color: "Silver / Black", tags: ["new"],
-    description: "Le modèle tendance de Saucony, look Y2K et amorti ProGrid."
-  },
-  {
-    id: "saucony-grid-omni-9-cream",
-    name: "Saucony Grid Omni 9 — Cream / Brown",
-    brand: "saucony", category: "chaussures",
-    price: 139, sizes: SIZES_SHOES,
-    color: "Cream / Brown",
-    description: "Sneaker rétro aux tons chauds, facile à porter."
+    id: "alo-recovery-black", group: "alo-recovery",
+    name: "Alo Recovery Mode Sneaker", color: "Black", swatch: "#1b1b1b",
+    brand: "alo", category: "chaussures", price: 199,
+    sizes: SHOES_W,
+    description: "La Recovery Mode Alo en noir, parfaite avec un ensemble Accolade.",
+    details: ["Semelle légère amortissante", "Look minimaliste", "Taille normalement"]
   },
 
-  /* ---------------- ASICS ---------------- */
+  /* ---------- SALOMON — chaussures ---------- */
   {
-    id: "asics-gel-kayano-14-white-silver",
-    name: "Asics Gel-Kayano 14 — White / Pure Silver",
-    brand: "asics", category: "chaussures",
-    price: 169, sizes: SIZES_SHOES,
-    color: "White / Pure Silver", tags: ["best"],
-    description: "La Gel-Kayano 14, star du running rétro. Amorti GEL® et détails métalliques."
+    id: "salomon-xt6-black", group: "salomon-xt6",
+    name: "Salomon XT-6", color: "Black / Phantom", swatch: "#1e1f21",
+    brand: "salomon", category: "chaussures", price: 199,
+    sizes: SHOES, tags: ["best"],
+    description: "L'icône gorpcore. La XT-6 allie la technicité du trail au style urbain, avec le laçage rapide Quicklace™.",
+    details: ["Laçage Quicklace™", "Châssis SensiFit™", "Accroche Contagrip®", "Taille normalement"]
   },
   {
-    id: "asics-gel-nyc-oyster-grey",
-    name: "Asics Gel-NYC — Oyster Grey / Carbon",
-    brand: "asics", category: "chaussures",
-    price: 159, sizes: SIZES_SHOES,
-    color: "Oyster Grey / Carbon", tags: ["new"],
-    description: "Inspirée des archives Asics, la Gel-NYC mélange plusieurs modèles cultes."
+    id: "salomon-xt6-vanilla", group: "salomon-xt6",
+    name: "Salomon XT-6", color: "Vanilla Ice / Almond Milk", swatch: "#ede6d6",
+    brand: "salomon", category: "chaussures", price: 209,
+    sizes: SHOES, soldOutSizes: ["44"], lowStock: ["42"],
+    description: "La XT-6 dans un coloris clair très recherché.",
+    details: ["Laçage Quicklace™", "Châssis SensiFit™", "Taille normalement"]
   },
   {
-    id: "asics-gel-1130-white-clay",
-    name: "Asics Gel-1130 — White / Clay Canyon",
-    brand: "asics", category: "chaussures",
-    price: 129, oldPrice: 149, sizes: SIZES_SHOES,
-    color: "White / Clay Canyon",
-    description: "Silhouette running 2000s, légère et polyvalente."
+    id: "salomon-acs-pro-lunar", group: "salomon-acs-pro",
+    name: "Salomon ACS Pro", color: "Lunar Rock / Silver", swatch: "#bfc1c3",
+    brand: "salomon", category: "chaussures", price: 199,
+    sizes: SHOES, tags: ["new"],
+    description: "Silhouette rétro-tech, maintien et amorti pour un look affirmé.",
+    details: ["Laçage Quicklace™", "Amorti EnergyCell™", "Taille normalement"]
   },
   {
-    id: "asics-gt-2160-cream",
-    name: "Asics GT-2160 — Cream / Pure Silver",
-    brand: "asics", category: "chaussures",
-    price: 149, sizes: SIZES_SHOES, soldOutSizes: ["39", "40"],
-    color: "Cream / Pure Silver",
-    description: "Modèle rétro-running au style technique, très confortable."
+    id: "salomon-speedcross-6-black", group: "salomon-speedcross-6",
+    name: "Salomon Speedcross 6", color: "Black / Phantom", swatch: "#202020",
+    brand: "salomon", category: "chaussures", price: 159, oldPrice: 179,
+    sizes: SHOES,
+    description: "Accroche légendaire et look affirmé : la Speedcross 6.",
+    details: ["Crampons Contagrip®", "Laçage Quicklace™", "Taille normalement"]
   },
 
-  /* ---------------- C.P. COMPANY ---------------- */
+  /* ---------- SALOMON — ensembles ---------- */
   {
-    id: "cp-company-doudoune-goggle-black",
-    name: "Doudoune C.P. Company Goggle — Black",
-    brand: "cpcompany", category: "doudounes",
-    price: 549, sizes: SIZES_CLOTHING.slice(1),
-    color: "Black", tags: ["best"],
-    description: "La doudoune C.P. Company iconique avec lunettes Goggle intégrées à la capuche. Garnissage en duvet, coupe-vent."
+    id: "salomon-set-black", group: "salomon-set",
+    name: "Ensemble Salomon Hoodie + Pants", color: "Deep Black", swatch: "#161718",
+    brand: "salomon", category: "ensembles", price: 219,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Sweat à capuche et pantalon Salomon assortis, logo brodé.",
+    details: ["Hoodie + pantalon", "Logo brodé", "Coupe droite"]
   },
   {
-    id: "cp-company-doudoune-eco-chrome-navy",
-    name: "Doudoune C.P. Company Eco-Chrome R — Navy",
-    brand: "cpcompany", category: "doudounes",
-    price: 499, sizes: SIZES_CLOTHING.slice(1),
-    color: "Total Eclipse", tags: ["new"],
-    description: "Doudoune à capuche en nylon Eco-Chrome R, lentille signature sur la manche."
+    id: "salomon-set-grey", group: "salomon-set",
+    name: "Ensemble Salomon Hoodie + Pants", color: "Ghost Grey", swatch: "#a7a9aa",
+    brand: "salomon", category: "ensembles", price: 219,
+    sizes: CLOTHING,
+    description: "Sweat à capuche et pantalon Salomon gris, logo brodé.",
+    details: ["Hoodie + pantalon", "Logo brodé", "Coupe droite"]
+  },
+
+  /* ---------- MIZUNO ---------- */
+  {
+    id: "mizuno-wave-rider-10-silver", group: "mizuno-wave-rider-10",
+    name: "Mizuno Wave Rider 10", color: "White / Silver", swatch: "#d9dadc",
+    brand: "mizuno", category: "chaussures", price: 159,
+    sizes: SHOES, tags: ["best"],
+    description: "Le running rétro des années 2000 est de retour. Plaque Wave pour la stabilité et l'amorti.",
+    details: ["Plaque Mizuno Wave", "Look running Y2K", "Taille normalement"]
   },
   {
-    id: "cp-company-doudoune-nycra-olive",
-    name: "Doudoune C.P. Company Nycra-R — Olive",
-    brand: "cpcompany", category: "doudounes",
-    price: 469, oldPrice: 529, sizes: SIZES_CLOTHING.slice(1), soldOutSizes: ["S"],
-    color: "Ivy Green",
-    description: "Doudoune légère C.P. Company en Nycra-R, idéale de l'automne au printemps."
+    id: "mizuno-wave-prophecy-black", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Black", swatch: "#1d1d1d",
+    brand: "mizuno", category: "chaussures", price: 189,
+    sizes: SHOES, tags: ["new"],
+    description: "La semelle Infinity Wave iconique pour un style futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-contender-white-navy", group: "mizuno-contender",
+    name: "Mizuno Contender", color: "White / Navy", swatch: "#e9ebef",
+    brand: "mizuno", category: "chaussures", price: 139,
+    sizes: SHOES,
+    description: "Silhouette running vintage Mizuno, confortable et légère.",
+    details: ["Look vintage", "Légère", "Taille normalement"]
+  },
+
+  /* ---------- SAUCONY ---------- */
+  {
+    id: "saucony-shadow-6000-grey", group: "saucony-shadow-6000",
+    name: "Saucony Shadow 6000", color: "Grey / Silver", swatch: "#a9a9a7",
+    brand: "saucony", category: "chaussures", price: 149,
+    sizes: SHOES, tags: ["best"],
+    description: "Classique du running rétro, daim et mesh, semelle confortable.",
+    details: ["Daim et mesh", "Semelle confortable", "Taille normalement"]
+  },
+  {
+    id: "saucony-progrid-triumph-4-silver", group: "saucony-progrid-triumph-4",
+    name: "Saucony ProGrid Triumph 4", color: "Silver / Black", swatch: "#c7c8ca",
+    brand: "saucony", category: "chaussures", price: 159,
+    sizes: SHOES, soldOutSizes: ["41"], tags: ["new"],
+    description: "Le modèle tendance de Saucony, look Y2K et amorti ProGrid.",
+    details: ["Amorti ProGrid", "Look Y2K", "Taille normalement"]
+  },
+  {
+    id: "saucony-grid-omni-9-cream", group: "saucony-grid-omni-9",
+    name: "Saucony Grid Omni 9", color: "Cream / Brown", swatch: "#e5dccb",
+    brand: "saucony", category: "chaussures", price: 139,
+    sizes: SHOES,
+    description: "Sneaker rétro aux tons chauds, facile à porter.",
+    details: ["Look rétro", "Tons chauds", "Taille normalement"]
+  },
+
+  /* ---------- ASICS ---------- */
+  {
+    id: "asics-gel-kayano-14-silver", group: "asics-gel-kayano-14",
+    name: "Asics Gel-Kayano 14", color: "White / Pure Silver", swatch: "#dcdddf",
+    brand: "asics", category: "chaussures", price: 169,
+    sizes: SHOES, tags: ["best"], lowStock: ["44"],
+    description: "La Gel-Kayano 14, star du running rétro. Amorti GEL® et détails métalliques.",
+    details: ["Amorti GEL®", "Détails métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-kayano-14-black", group: "asics-gel-kayano-14",
+    name: "Asics Gel-Kayano 14", color: "Black / Pure Silver", swatch: "#202022",
+    brand: "asics", category: "chaussures", price: 169,
+    sizes: SHOES,
+    description: "La Gel-Kayano 14 en noir et argent.",
+    details: ["Amorti GEL®", "Détails métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-nyc-oyster", group: "asics-gel-nyc",
+    name: "Asics Gel-NYC", color: "Oyster Grey / Carbon", swatch: "#cfccc5",
+    brand: "asics", category: "chaussures", price: 159,
+    sizes: SHOES, tags: ["new"],
+    description: "Inspirée des archives Asics, la Gel-NYC mélange plusieurs modèles cultes.",
+    details: ["Amorti GEL®", "Design inspiré des archives", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-clay", group: "asics-gel-1130",
+    name: "Asics Gel-1130", color: "White / Clay Canyon", swatch: "#d9c2ab",
+    brand: "asics", category: "chaussures", price: 129, oldPrice: 149,
+    sizes: SHOES,
+    description: "Silhouette running des années 2000, légère et polyvalente.",
+    details: ["Amorti GEL®", "Légère", "Taille normalement"]
+  },
+
+  /* ---------- C.P. COMPANY ---------- */
+  {
+    id: "cp-goggle-down-black", group: "cp-goggle-down",
+    name: "Doudoune C.P. Company Goggle", color: "Black", swatch: "#151515",
+    brand: "cpcompany", category: "doudounes", price: 549,
+    sizes: CLOTHING.slice(1), tags: ["best"], lowStock: ["L"],
+    description: "La doudoune C.P. Company iconique, avec les lunettes Goggle intégrées à la capuche. Garnissage en duvet, coupe-vent.",
+    details: ["Lunettes Goggle sur la capuche", "Garnissage duvet", "Coupe-vent", "Taille normalement"]
+  },
+  {
+    id: "cp-goggle-down-navy", group: "cp-goggle-down",
+    name: "Doudoune C.P. Company Goggle", color: "Total Eclipse", swatch: "#1e2638",
+    brand: "cpcompany", category: "doudounes", price: 549,
+    sizes: CLOTHING.slice(1), tags: ["new"],
+    description: "La doudoune Goggle dans le bleu nuit signature de la marque.",
+    details: ["Lunettes Goggle sur la capuche", "Garnissage duvet", "Coupe-vent"]
+  },
+  {
+    id: "cp-nycra-down-olive", group: "cp-nycra-down",
+    name: "Doudoune C.P. Company Nycra-R", color: "Ivy Green", swatch: "#4f5641",
+    brand: "cpcompany", category: "doudounes", price: 469, oldPrice: 529,
+    sizes: CLOTHING.slice(1), soldOutSizes: ["S"],
+    description: "Doudoune légère C.P. Company en Nycra-R, lentille signature sur la manche.",
+    details: ["Lentille signature sur la manche", "Nylon Nycra-R", "Légère et chaude"]
   }
 ];
