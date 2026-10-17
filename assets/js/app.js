@@ -499,16 +499,16 @@
   /* =================== Accueil =================== */
   function viewHome(main) {
     setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Salomon et sneakers On, Salomon, Asics, Mizuno, Saucony. 100% authentiques, importés des États-Unis.");
-    const hero = ["cp-goggle-down-black", "on-cloud-6-white", "essentials-set-dark-oatmeal"].map(byId).filter(Boolean);
+    const hero = ["cp-dd-shell-puffer-andorra", "salomon-xt6-black-coffee", "essentials-set-black"].map(byId).filter(Boolean);
     const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
     const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
     const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
-    const duoA = byId("essentials-set-dark-oatmeal"), duoB = byId("on-cloud-6-white");
+    const duoA = byId("essentials-set-oatmeal-heather"), duoB = byId("on-cloud-6-white");
     const catTiles = [
-      ["Ensembles", L.shop({ cat: "ensembles" }), byId("alo-accolade-bone"), countIn((p) => p.category === "ensembles")],
-      ["Chaussures", L.shop({ cat: "chaussures" }), byId("salomon-xt6-black"), countIn((p) => p.category === "chaussures")],
-      ["Doudounes", L.shop({ cat: "doudounes" }), byId("cp-goggle-down-navy"), countIn((p) => p.category === "doudounes")],
-      ["Promos", L.shop({ filter: "sale" }), byId("rl-double-knit-black"), countIn(isSale)]
+      ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-set-oatmeal-heather"), countIn((p) => p.category === "ensembles")],
+      ["Chaussures", L.shop({ cat: "chaussures" }), byId("on-cloud-6-white"), countIn((p) => p.category === "chaussures")],
+      ["Doudounes", L.shop({ cat: "doudounes" }), byId("cp-explorer-lens-down-blue"), countIn((p) => p.category === "doudounes")],
+      ["Promos", L.shop({ filter: "sale" }), byId("asics-gel-1130-clay"), countIn(isSale)]
     ];
 
     main.innerHTML = `
@@ -529,7 +529,7 @@
             </div>
           </div>
           <div class="hero__stage">
-            ${hero.map((p) => `<a class="hero__tile" href="${L.product(p.id)}">${art(p)}<span class="tag"><b>${esc(p.name.replace(/^Ensemble |^Doudoune /, ""))}</b><span>${money(p.price)}</span></span></a>`).join("")}
+            ${hero.map((p) => `<a class="hero__tile" href="${L.product(p.id)}">${art(p)}<span class="tag"><b>${esc(p.name.replace(/^Ensemble |^Doudoune /, "").replace(/ Classic Hoodie \+ Sweatpant$/, ""))}</b><span>${money(p.price)}</span></span></a>`).join("")}
           </div>
         </div>
       </section>
@@ -564,7 +564,7 @@
         <div class="duo__copy">
           <span class="eyebrow">Le look du moment</span>
           <h2 class="h-xl">Ensemble + sneakers, le duo qui part le plus</h2>
-          <p class="muted" style="max-width:44ch">L'ensemble Essentials Dark Oatmeal avec la On Cloud 6 blanche. Commande les deux et la livraison est offerte.</p>
+          <p class="muted" style="max-width:44ch">L'ensemble Essentials ${esc(duoA.color)} avec la ${esc(duoB.name)} ${esc(duoB.color)}. Commande les deux et la livraison est offerte.</p>
           <div class="duo__total"><strong>${money(duoA.price + duoB.price)}</strong><span class="muted">les deux pièces</span></div>
           <div class="hero__ctas"><a class="btn" href="${L.product(duoA.id)}">Choisir l'ensemble</a><a class="btn btn--ghost" href="${L.product(duoB.id)}">Choisir les sneakers</a></div>
         </div>

@@ -21,6 +21,10 @@ Site statique (HTML / CSS / JavaScript), sans serveur ni installation. Ouvre `in
 | Couleurs et polices | variables en haut de `assets/css/style.css` |
 
 ## Ajouter tes photos (le plus important pour vendre)
+> Les photos actuelles proviennent des sites des marques et de revendeurs (Fear of God, Alo, Kith, DTLR…).
+> Elles appartiennent à leurs auteurs : remplace-les par tes propres photos dès que possible.
+> Les ensembles On et Salomon n'ont pas encore de photo (illustration provisoire).
+
 Ouvre `assets/js/photos.js` : chaque produit y est déjà listé. Colle les liens ou chemins de tes photos entre les crochets :
 ```js
 "salomon-xt6-black": ["images/products/xt6-noir-1.jpg", "images/products/xt6-noir-2.jpg"],
