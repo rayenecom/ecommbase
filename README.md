@@ -21,12 +21,13 @@ Site statique (HTML / CSS / JavaScript), sans serveur ni installation. Ouvre `in
 | Couleurs et polices | variables en haut de `assets/css/style.css` |
 
 ## Ajouter tes photos (le plus important pour vendre)
-1. Mets tes photos dans `images/products/` (format carré, fond clair uni, 1200 × 1200 px).
-2. Dans `products.js`, ajoute au produit :
-   ```js
-   images: ["images/products/xt6-noir-1.jpg", "images/products/xt6-noir-2.jpg", "images/products/xt6-noir-3.jpg"],
-   ```
-   La 2ᵉ photo s'affiche au survol dans la boutique. Sans photo, une illustration provisoire est affichée.
+Ouvre `assets/js/photos.js` : chaque produit y est déjà listé. Colle les liens ou chemins de tes photos entre les crochets :
+```js
+"salomon-xt6-black": ["images/products/xt6-noir-1.jpg", "images/products/xt6-noir-2.jpg"],
+```
+Tu peux mettre tes fichiers dans `images/products/` ou coller une adresse web (https://…).
+La 1re photo est la principale, la 2e s'affiche au survol. Sans photo, une illustration provisoire s'affiche.
+Format conseillé : carré, fond clair uni, 1200 × 1200 px.
 
 ## Mettre en ligne (gratuit)
 - **GitHub Pages** : Settings → Pages → Branch → `/ (root)`.

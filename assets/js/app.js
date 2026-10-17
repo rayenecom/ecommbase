@@ -12,6 +12,9 @@
   const CATS = window.BASE_CATEGORIES;
   const PRODUCTS = window.BASE_PRODUCTS;
   const ART = window.BASE_ART;
+  // Photos déclarées dans photos.js (prioritaires sur le champ images de products.js)
+  const PHOTOS = window.BASE_PHOTOS || {};
+  PRODUCTS.forEach((p) => { const ph = (PHOTOS[p.id] || []).filter(Boolean); if (ph.length) p.images = ph; });
 
   /* =================== Utilitaires =================== */
   const $ = (s, r = document) => r.querySelector(s);
