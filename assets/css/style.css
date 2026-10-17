@@ -6,12 +6,12 @@
    ========================================================== */
 :root {
   --paper: #ffffff;         /* fond principal */
-  --mist: #f2f3f1;          /* fond des visuels produit / bandes */
-  --mist-2: #e7e9e6;        /* survol, séparateurs forts */
+  --mist: #eee7db;          /* fond crème des photos produit / bandes */
+  --mist-2: #e2d9c9;        /* survol, séparateurs forts */
+  --line: #e6e1d8;
   --ink: #101211;           /* texte, boutons */
   --ink-2: #3a3e3c;         /* texte secondaire fort */
   --muted: #6b706d;         /* texte discret */
-  --line: #e1e4e0;          /* filets */
   --sale: #c4122f;          /* promos */
   --ok: #17734a;            /* stock, livraison */
   --warn: #a35a00;          /* dernières pièces */
@@ -107,9 +107,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- En-tête ---------- */
 .header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--paper); border-bottom: 1px solid var(--line); }
-.header .wrap { height: var(--header-h); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+.header .wrap { height: var(--header-h); display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: "logo nav actions"; align-items: center; gap: 16px; }
+.header__left { display: contents; }
+.header .logo { grid-area: logo; justify-self: start; }
+.header__nav { grid-area: nav; justify-content: center; }
+.header__actions { grid-area: actions; }
 .header__nav { display: flex; gap: 2px; align-items: center; }
-.header__nav > .nav-item > a { display: inline-flex; align-items: center; height: var(--header-h); padding: 0 12px; font-size: var(--fs-sm); font-weight: 500; }
+.header__nav > .nav-item > a { display: inline-flex; align-items: center; height: var(--header-h); padding: 0 11px; font-size: var(--fs-sm); font-weight: 500; }
 .header__nav > .nav-item > a:hover, .header__nav > .nav-item > a.is-active { text-decoration: underline; text-underline-offset: 6px; }
 .header__nav .is-sale { color: var(--sale); }
 .logo { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-size: 1.625rem; letter-spacing: -0.06em; line-height: 1; justify-self: center; }
@@ -134,9 +138,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 1179px) {
   .header__nav { display: none; }
-  .menu-btn { display: inline-grid; }
-  .header .wrap { grid-template-columns: auto 1fr auto; }
-  .header__left { display: flex; }
+  .menu-btn { display: inline-grid; grid-area: menu; }
+  .header .wrap { grid-template-columns: 1fr auto 1fr; grid-template-areas: "menu logo actions"; }
+  .header .logo { justify-self: center; }
   .hide-sm { display: none !important; }
 }
 

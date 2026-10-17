@@ -58,16 +58,35 @@
     return `${f.format(addBusinessDays(now, CFG.deliveryDays[0]))} et le ${f.format(addBusinessDays(now, CFG.deliveryDays[1]))}`;
   }
 
-  function colorFamily(p) {
-    const c = norm(p.color.split("/")[0]);
-    if (/black|noir|magnet/.test(c)) return "Noir";
-    if (/navy|eclipse|blue|bleu/.test(c)) return "Bleu";
-    if (/green|ivy|olive|vert/.test(c)) return "Vert";
-    if (/oatmeal|sand|clay|taupe|beige|brown/.test(c)) return "Beige";
-    if (/white|ivory|bone|cream|vanilla|undyed/.test(c)) return "Blanc";
-    return "Gris";
+  // Famille de couleur calculée depuis la pastille (teinte réelle de la photo)
+  function famFromHex(hex) {
+    const n = parseInt(String(hex || "#888888").slice(1), 16);
+    const r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, d = mx - mn;
+    const s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+    let h = 0;
+    if (d) { h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; h *= 60; if (h < 0) h += 360; }
+    if (l < 0.16) return "Noir";
+    if (s < 0.12 || (s < 0.2 && l > 0.7)) return l > 0.8 ? "Blanc" : "Gris";
+    if (l > 0.88) return "Blanc";
+    if (h < 15 || h >= 345) return l > 0.62 ? "Rose" : "Rouge";
+    if (h < 45) return s < 0.45 && l > 0.55 ? "Beige" : l < 0.42 ? "Marron" : "Orange";
+    if (h < 68) return s < 0.45 && l > 0.5 ? "Beige" : "Jaune";
+    if (h < 170) return "Vert";
+    if (h < 255) return "Bleu";
+    if (h < 300) return "Violet";
+    return "Rose";
   }
-  const FAMILY_SW = { Noir: "#171717", Blanc: "#f3f1ec", Gris: "#a9abaa", Beige: "#c9b79a", Bleu: "#1f2a44", Vert: "#4f5641" };
+  function colorFamily(p) {
+    if (p._fam) return p._fam;
+    const c = norm(p.color.split("/")[0]);
+    let f = /^(black|noir|jet black|deep black)/.test(c) ? "Noir" : /^(white|bright white|undyed)/.test(c) ? "Blanc" : famFromHex(p.swatch);
+    p._fam = f; return f;
+  }
+  const FAMILY_SW = { Noir: "#171717", Blanc: "#f3f1ec", Gris: "#a9abaa", Beige: "#d6c6a8", Marron: "#7a5a3c", Rouge: "#a8262c", Rose: "#e8a0b4", Orange: "#e07b2e", Jaune: "#e6c84a", Vert: "#5b6b45", Bleu: "#2b4a8a", Violet: "#7b5aa6" };
+  const TYPES = window.BASE_TYPES || {};
+  const GENDERS = { femme: "Femme", homme: "Homme" };
+  const genderOk = (p, g) => !g || p.gender === g || p.gender === "unisexe" || !p.gender;
 
   /* =================== Icônes =================== */
   const I = {
@@ -164,8 +183,8 @@
     if (isOut(p)) return "";
     const out = p.soldOutSizes || [];
     return `<div class="quick" aria-label="Ajout rapide">
-      <div class="quick__label"><span>Ajout rapide</span><span class="muted">${p.category === "chaussures" ? "EU" : "US"}</span></div>
-      <div class="quick__sizes">${p.sizes.map((s) => `<button type="button" data-quick-add="${esc(p.id)}" data-size="${esc(s)}" ${out.includes(s) ? "disabled" : ""}>${esc(s)}</button>`).join("")}</div>
+      <div class="quick__label"><span>Ajout rapide</span><span class="muted">${(p.category === "chaussures" ? "EU" : p.category === "accessoires" ? "" : "US")}</span></div>
+      <div class="quick__sizes">${p.sizes.map((s) => `<button type="button" data-quick-add="${esc(p.id)}" data-size="${esc(s)}" ${out.includes(s) ? "disabled" : ""}>${s === "TU" ? "Unique" : esc(s)}</button>`).join("")}</div>
     </div>
     <button class="plus" type="button" data-quick-sheet="${esc(p.id)}" aria-label="Ajout rapide : ${esc(p.name)}">${I.plus}</button>`;
   }
@@ -208,10 +227,11 @@
 
   // Produits pour compléter un look
   function lookFor(p, n = 3, exclude = []) {
-    const want = p.category === "chaussures" ? ["ensembles", "doudounes"] : ["chaussures"];
+    const want = p.category === "chaussures" ? ["ensembles", "doudounes"] : p.category === "accessoires" ? ["ensembles"] : ["chaussures", "accessoires"];
     const ex = new Set([p.id, ...exclude]);
-    const pool = onePerGroup(PRODUCTS.filter((x) => want.includes(x.category) && !ex.has(x.id) && !isOut(x)));
-    pool.sort((a, b) => (b.brand === p.brand) - (a.brand === p.brand) || isBest(b) - isBest(a));
+    const g = p.gender === "unisexe" ? "" : p.gender;
+    const pool = onePerGroup(PRODUCTS.filter((x) => want.includes(x.category) && !ex.has(x.id) && !isOut(x) && genderOk(x, g)));
+    pool.sort((a, b) => (b.brand === p.brand) - (a.brand === p.brand) || (b.category === want[0]) - (a.category === want[0]) || isBest(b) - isBest(a));
     return pool.slice(0, n);
   }
 
@@ -219,7 +239,7 @@
     const words = norm(q).split(/\s+/).filter(Boolean);
     if (!words.length) return [];
     return PRODUCTS.filter((p) => {
-      const hay = norm([p.name, brandOf(p).name, CATS[p.category].name, CATS[p.category].one, p.color, colorFamily(p)].join(" ")).replace(/-/g, " ");
+      const hay = norm([p.name, brandOf(p).name, CATS[p.category].name, CATS[p.category].one, p.color, colorFamily(p), GENDERS[p.gender] || "", TYPES[p.type] || ""].join(" ")).replace(/-/g, " ");
       return words.every((w) => hay.includes(w.replace(/-/g, " ")));
     });
   }
@@ -228,10 +248,30 @@
   function brandsIn(cat) { return Object.keys(BRANDS).filter((b) => PRODUCTS.some((p) => p.brand === b && p.category === cat)); }
   function countIn(f) { return PRODUCTS.filter(f).length; }
 
+  function genderMega(g) {
+    const cats = ["ensembles", "chaussures", "accessoires", "doudounes"].filter((c) => PRODUCTS.some((p) => p.category === c && p.gender === g));
+    const brands = Object.keys(BRANDS).filter((b) => PRODUCTS.some((p) => p.brand === b && p.gender === g));
+    const feat = onePerGroup(PRODUCTS.filter((p) => p.gender === g && isBest(p))).slice(0, 3);
+    return `<div class="mega"><div class="wrap">
+      <div><h4 class="eyebrow">${GENDERS[g]}</h4><ul><li><a href="${L.shop({ g })}"><b>Tout voir</b></a></li>${cats.map((c) => `<li><a href="${L.shop({ cat: c, g })}">${CATS[c].name}</a></li>`).join("")}<li><a href="${L.shop({ g, filter: "new" })}">Nouveautés</a></li></ul></div>
+      <div><h4 class="eyebrow">Marques</h4><ul>${brands.map((b) => `<li><a href="${L.shop({ g, brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></div>
+      <div class="mega__feature">${feat.map((p) => `<a href="${L.product(p.id)}"><div class="art">${art(p)}</div>${esc(p.name)}</a>`).join("")}</div>
+    </div></div>`;
+  }
+  function accMega() {
+    const types = Object.keys(TYPES).filter((t) => PRODUCTS.some((p) => p.type === t));
+    const feat = onePerGroup(PRODUCTS.filter((p) => p.category === "accessoires" && isBest(p))).slice(0, 3);
+    return `<div class="mega"><div class="wrap">
+      <div><h4 class="eyebrow">Accessoires</h4><ul><li><a href="${L.shop({ cat: "accessoires" })}"><b>Tout voir</b></a></li>${types.map((t) => `<li><a href="${L.shop({ cat: "accessoires", type: t })}">${TYPES[t]}</a></li>`).join("")}</ul></div>
+      <div><h4 class="eyebrow">Par marque</h4><ul>${brandsIn("accessoires").map((b) => `<li><a href="${L.shop({ cat: "accessoires", brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></div>
+      <div class="mega__feature">${feat.map((p) => `<a href="${L.product(p.id)}"><div class="art">${art(p)}</div>${esc(p.name)}</a>`).join("")}</div>
+    </div></div>`;
+  }
+
   function megaHTML(cat) {
     const feat = onePerGroup(PRODUCTS.filter((p) => p.category === cat && isBest(p))).slice(0, 3);
-    const extra = cat === "ensembles" ? [["Nouveautés", L.shop({ cat, filter: "new" })], ["Promos", L.shop({ cat, filter: "sale" })]]
-      : [["Nouveautés", L.shop({ cat, filter: "new" })], ["Promos", L.shop({ cat, filter: "sale" })], ["Doudounes", L.shop({ cat: "doudounes" })]];
+    const extra = [["Femme", L.shop({ cat, g: "femme" })], ["Homme", L.shop({ cat, g: "homme" })], ["Nouveautés", L.shop({ cat, filter: "new" })], ["Promos", L.shop({ cat, filter: "sale" })]]
+      .concat(cat === "ensembles" ? [["Doudounes", L.shop({ cat: "doudounes" })]] : []);
     return `<div class="mega"><div class="wrap">
       <div><h4 class="eyebrow">Par marque</h4><ul><li><a href="${L.shop({ cat })}"><b>Tous les ${CATS[cat].name.toLowerCase()}</b></a></li>${brandsIn(cat).map((b) => `<li><a href="${L.shop({ cat, brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></div>
       <div><h4 class="eyebrow">Explorer</h4><ul>${extra.map(([t, h]) => `<li><a href="${h}">${t}</a></li>`).join("")}</ul></div>
@@ -242,9 +282,11 @@
   function shell() {
     const nav = [
       ["Nouveautés", L.shop({ filter: "new" }), ""],
+      ["Femme", L.shop({ g: "femme" }), genderMega("femme")],
+      ["Homme", L.shop({ g: "homme" }), genderMega("homme")],
       ["Ensembles", L.shop({ cat: "ensembles" }), megaHTML("ensembles")],
       ["Chaussures", L.shop({ cat: "chaussures" }), megaHTML("chaussures")],
-      ["Doudounes", L.shop({ cat: "doudounes" }), ""],
+      ["Accessoires", L.shop({ cat: "accessoires" }), accMega()],
       ["Marques", "#/marques", ""],
       ["Promos", L.shop({ filter: "sale" }), ""]
     ];
@@ -276,7 +318,10 @@
         <div class="drawer__head"><span class="logo" style="font-size:1.375rem">${esc(CFG.storeName)}</span><button class="icon-btn" data-close aria-label="Fermer">${I.close}</button></div>
         <div class="drawer__body mobile-nav">
           <a href="${L.shop({ filter: "new" })}">Nouveautés ${I.chev}</a>
+          <a href="${L.shop({ g: "femme" })}">Femme ${I.chev}</a>
+          <a href="${L.shop({ g: "homme" })}">Homme ${I.chev}</a>
           ${["ensembles", "chaussures"].map((c) => `<details><summary>${CATS[c].name} ${I.chev}</summary><ul><li><a href="${L.shop({ cat: c })}"><b>Tout voir</b></a></li>${brandsIn(c).map((b) => `<li><a href="${L.shop({ cat: c, brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></details>`).join("")}
+          <details><summary>Accessoires ${I.chev}</summary><ul><li><a href="${L.shop({ cat: "accessoires" })}"><b>Tout voir</b></a></li>${Object.keys(TYPES).map((t) => `<li><a href="${L.shop({ cat: "accessoires", type: t })}">${TYPES[t]}</a></li>`).join("")}</ul></details>
           <a href="${L.shop({ cat: "doudounes" })}">Doudounes ${I.chev}</a>
           <a href="#/marques">Marques ${I.chev}</a>
           <a href="${L.shop({ filter: "sale" })}" style="color:var(--sale)">Promos ${I.chev}</a>
@@ -337,6 +382,9 @@
           <li><a href="${L.shop({ filter: "new" })}">Nouveautés</a></li>
           <li><a href="${L.shop({ cat: "ensembles" })}">Ensembles</a></li>
           <li><a href="${L.shop({ cat: "chaussures" })}">Chaussures</a></li>
+          <li><a href="${L.shop({ g: "femme" })}">Femme</a></li>
+          <li><a href="${L.shop({ g: "homme" })}">Homme</a></li>
+          <li><a href="${L.shop({ cat: "accessoires" })}">Accessoires</a></li>
           <li><a href="${L.shop({ cat: "doudounes" })}">Doudounes</a></li>
           <li><a href="${L.shop({ filter: "sale" })}">Promos</a></li>
         </ul></div>
@@ -456,11 +504,16 @@
 
   /* =================== Guide des tailles =================== */
   function guideHTML(cat) {
+    if (cat === "accessoires") {
+      return `<p style="margin-bottom:16px">Casquettes et bonnets : taille unique, réglable ou extensible.</p>
+        <div class="size-table-wrap"><table class="size-table"><thead><tr><th>Chaussettes</th><th>Pointure EU</th></tr></thead><tbody><tr><td>S</td><td>35–38</td></tr><tr><td>M</td><td>39–42</td></tr><tr><td>L</td><td>43–46</td></tr></tbody></table></div>
+        <div class="size-table-wrap" style="margin-top:16px"><table class="size-table"><thead><tr><th>Caleçons</th><th>Tour de taille</th></tr></thead><tbody><tr><td>S</td><td>71–76 cm</td></tr><tr><td>M</td><td>76–84 cm</td></tr><tr><td>L</td><td>84–91 cm</td></tr><tr><td>XL</td><td>91–99 cm</td></tr><tr><td>XXL</td><td>99–107 cm</td></tr></tbody></table></div>`;
+    }
     if (cat === "chaussures") {
       const rows = [["36", "4", "5.5", "22.5"], ["37", "4.5", "6", "23"], ["38", "5.5", "7", "24"], ["39", "6.5", "8", "24.5"], ["40", "7", "8.5", "25"], ["41", "8", "9.5", "26"], ["42", "8.5", "10", "26.5"], ["43", "9.5", "11", "27.5"], ["44", "10", "11.5", "28"], ["45", "11", "12.5", "29"], ["46", "12", "13.5", "30"]];
       return `<p style="margin-bottom:16px">Pointures EU. Mesure ton pied du talon au plus long orteil et compare avec la colonne CM.</p>
         <div class="size-table-wrap"><table class="size-table"><thead><tr><th>EU</th><th>US homme</th><th>US femme</th><th>CM</th></tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
-        <p class="muted" style="margin-top:16px;font-size:var(--fs-sm)">On, Salomon, Asics, Mizuno et Saucony taillent normalement. Entre deux tailles, prends la plus grande. Un doute ? Écris-nous sur WhatsApp avec ta pointure habituelle.</p>`;
+        <p class="muted" style="margin-top:16px;font-size:var(--fs-sm)">Les modèles On Femme et Homme ont des formes différentes : choisis la version de ton genre. On, Salomon, Asics, Mizuno et Saucony taillent normalement. Entre deux tailles, prends la plus grande. Un doute ? Écris-nous sur WhatsApp avec ta pointure habituelle.</p>`;
     }
     const rows = [["XS", "86–91", "71–76", "165–170"], ["S", "91–96", "76–81", "170–175"], ["M", "96–101", "81–86", "175–180"], ["L", "101–106", "86–91", "180–185"], ["XL", "106–111", "91–96", "185–190"], ["XXL", "111–116", "96–101", "190–195"]];
     return `<p style="margin-bottom:16px">Tailles US, mesures du corps en centimètres.</p>
@@ -499,16 +552,19 @@
   /* =================== Accueil =================== */
   function viewHome(main) {
     setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Salomon et sneakers On, Salomon, Asics, Mizuno, Saucony. 100% authentiques, importés des États-Unis.");
-    const hero = ["cp-dd-shell-puffer-andorra", "salomon-xt6-black-coffee", "essentials-set-black"].map(byId).filter(Boolean);
+    const firstOf = (grp) => PRODUCTS.find((p) => p.group === grp);
+    const hero = [byId("ugg-tasman-set-dusty-rose") || byId("essentials-set-black"), firstOf("on-cloudtilt-m") || byId("salomon-xt6-black-coffee"), byId("nocta-cs-set-black") || byId("cp-dd-shell-puffer-andorra")].filter(Boolean);
+    const bestWomen = onePerGroup(PRODUCTS.filter((p) => p.gender === "femme" && isBest(p)).concat(PRODUCTS.filter((p) => p.gender === "femme")));
+    const bestAcc = onePerGroup(PRODUCTS.filter((p) => p.category === "accessoires" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "accessoires")));
     const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
     const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
     const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
-    const duoA = byId("essentials-set-oatmeal-heather"), duoB = byId("on-cloud-6-white");
+    const duoA = byId("essentials-set-oatmeal-heather"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
     const catTiles = [
       ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-set-oatmeal-heather"), countIn((p) => p.category === "ensembles")],
-      ["Chaussures", L.shop({ cat: "chaussures" }), byId("on-cloud-6-white"), countIn((p) => p.category === "chaussures")],
-      ["Doudounes", L.shop({ cat: "doudounes" }), byId("cp-explorer-lens-down-blue"), countIn((p) => p.category === "doudounes")],
-      ["Promos", L.shop({ filter: "sale" }), byId("asics-gel-1130-clay"), countIn(isSale)]
+      ["Chaussures", L.shop({ cat: "chaussures" }), duoB, countIn((p) => p.category === "chaussures")],
+      ["Accessoires", L.shop({ cat: "accessoires" }), byId("cp-goggle-beanie-black") || byId("courreges-cap-ac-black"), countIn((p) => p.category === "accessoires")],
+      ["Femme", L.shop({ g: "femme" }), byId("lulu-scuba-set-porcelain-pink") || byId("alo-muse-set-ivory"), countIn((p) => p.gender === "femme")]
     ];
 
     main.innerHTML = `
@@ -517,7 +573,7 @@
           <div class="hero__copy">
             <span class="eyebrow">Authentique · Importé des États-Unis</span>
             <h1 class="display">Les essentiels.<br>Les vrais.</h1>
-            <p class="hero__lede">Ensembles Essentials, Ralph Lauren, Alo et sneakers On, Salomon, Asics. Achetés aux États-Unis, contrôlés pièce par pièce, livrés chez toi en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours.</p>
+            <p class="hero__lede">Ensembles Essentials, UGG, Nocta, Lululemon, Alo et sneakers On, Salomon, Asics. Achetés aux États-Unis, contrôlés pièce par pièce, livrés chez toi en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours.</p>
             <div class="hero__ctas">
               <a class="btn" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
               <a class="btn btn--ghost" href="${L.shop({ cat: "chaussures" })}">Shop les chaussures</a>
@@ -548,12 +604,16 @@
             <div class="tabs" role="tablist">
               <button class="chip is-on" role="tab" aria-selected="true" data-tab="sets">Ensembles</button>
               <button class="chip" role="tab" aria-selected="false" data-tab="shoes">Chaussures</button>
+              <button class="chip" role="tab" aria-selected="false" data-tab="women">Femme</button>
+              <button class="chip" role="tab" aria-selected="false" data-tab="acc">Accessoires</button>
             </div>
             ${railCtrl("rail-best")}
           </div>
         </div>
         <div id="best-sets">${railHTML("rail-best", bestSets.slice(0, 8))}</div>
         <div id="best-shoes" hidden>${railHTML("rail-best-shoes", bestShoes.slice(0, 8))}</div>
+        <div id="best-women" hidden>${railHTML("rail-best-women", bestWomen.slice(0, 8))}</div>
+        <div id="best-acc" hidden>${railHTML("rail-best-acc", bestAcc.slice(0, 8))}</div>
       </div></section>
 
       <section class="band band--tight" style="padding-top:0"><div class="wrap">
@@ -564,7 +624,7 @@
         <div class="duo__copy">
           <span class="eyebrow">Le look du moment</span>
           <h2 class="h-xl">Ensemble + sneakers, le duo qui part le plus</h2>
-          <p class="muted" style="max-width:44ch">L'ensemble Essentials ${esc(duoA.color)} avec la ${esc(duoB.name)} ${esc(duoB.color)}. Commande les deux et la livraison est offerte.</p>
+          <p class="muted" style="max-width:44ch">L'ensemble Essentials ${esc(duoA.color)} avec la ${esc(duoB.name.replace(/ (Homme|Femme)$/, ""))} ${esc(duoB.color)}. Commande les deux et la livraison est offerte.</p>
           <div class="duo__total"><strong>${money(duoA.price + duoB.price)}</strong><span class="muted">les deux pièces</span></div>
           <div class="hero__ctas"><a class="btn" href="${L.product(duoA.id)}">Choisir l'ensemble</a><a class="btn btn--ghost" href="${L.product(duoB.id)}">Choisir les sneakers</a></div>
         </div>
@@ -617,9 +677,9 @@
     // Onglets best-sellers
     $$("[data-tab]", main).forEach((b) => b.addEventListener("click", () => {
       $$("[data-tab]", main).forEach((x) => { x.classList.toggle("is-on", x === b); x.setAttribute("aria-selected", x === b); });
-      const sets = b.dataset.tab === "sets";
-      $("#best-sets").hidden = !sets; $("#best-shoes").hidden = sets;
-      $$("[data-rail]", main).forEach((r) => (r.dataset.rail = sets ? "rail-best" : "rail-best-shoes"));
+      const tabs = { sets: ["best-sets", "rail-best"], shoes: ["best-shoes", "rail-best-shoes"], women: ["best-women", "rail-best-women"], acc: ["best-acc", "rail-best-acc"] };
+      Object.entries(tabs).forEach(([k, [box]]) => { $("#" + box).hidden = k !== b.dataset.tab; });
+      $$("[data-rail]", main).forEach((r) => (r.dataset.rail = tabs[b.dataset.tab][1]));
     }));
     $("#news-form").addEventListener("submit", (e) => {
       e.preventDefault();
@@ -650,7 +710,7 @@
 
   function viewShop(main, parts, q) {
     const st = {
-      cat: q.get("cat") || "", filter: q.get("filter") || "", q: q.get("q") || "",
+      cat: q.get("cat") || "", filter: q.get("filter") || "", q: q.get("q") || "", g: q.get("g") || "", type: q.get("type") || "",
       brands: new Set((q.get("brand") || "").split(",").filter(Boolean)),
       sizes: new Set(), colors: new Set(), price: "", sort: "featured"
     };
@@ -658,6 +718,8 @@
     function base() {
       let l = PRODUCTS.slice();
       if (st.cat) l = l.filter((p) => p.category === st.cat);
+      if (st.type) l = l.filter((p) => p.type === st.type);
+      if (st.g) l = l.filter((p) => genderOk(p, st.g));
       if (st.filter === "new") l = l.filter(isNew);
       if (st.filter === "sale") l = l.filter(isSale);
       if (st.q) { const ids = new Set(search(st.q).map((p) => p.id)); l = l.filter((p) => ids.has(p.id)); }
@@ -680,17 +742,23 @@
       return l;
     }
     function heading() {
+      const [h, d] = heading0();
+      if (!st.g || st.q) return [h, d];
+      return [h === "Tout le shop" ? GENDERS[st.g] : `${h} ${GENDERS[st.g]}`, st.g === "femme" ? "Ensembles, sneakers et accessoires pour femme, 100% authentiques." : "Ensembles, sneakers et accessoires pour homme, 100% authentiques."];
+    }
+    function heading0() {
       const b = st.brands.size === 1 ? BRANDS[[...st.brands][0]] : null;
+      if (st.type && !st.q) return [TYPES[st.type] || "Accessoires", "Casquettes, bonnets, chaussettes et caleçons 100% authentiques."];
       if (st.q) return ["Recherche", `Résultats pour « ${st.q} »`];
       if (st.filter === "new") return ["Nouveautés", "Les dernières pièces arrivées des États-Unis."];
       if (st.filter === "sale") return ["Promos", "Pièces authentiques à prix réduit, dans la limite des tailles disponibles."];
       if (st.cat && b) return [`${CATS[st.cat].name} ${b.name}`, `Tous nos ${CATS[st.cat].name.toLowerCase()} ${b.name}, 100% authentiques.`];
-      if (st.cat) return [CATS[st.cat].name, { ensembles: "Ensembles Essentials, Ralph Lauren, Alo, On et Salomon. Hoodie et bas assortis, vendus ensemble.", chaussures: "On, Salomon, Asics, Mizuno, Saucony et Alo. Pointures EU du 35 au 46.", doudounes: "Doudounes C.P. Company Goggle et Nycra-R, garnissage duvet." }[st.cat]];
+      if (st.cat) return [CATS[st.cat].name, { ensembles: "Essentials, Ralph Lauren, UGG, Nocta, Lululemon, Alo, On et Salomon. Haut et bas assortis, vendus ensemble.", chaussures: "On Cloudtilt, Cloudtilt Arc, Cloudtilt Remix et Cloudsurfer Max en Femme et Homme, Salomon, Asics, Mizuno, Saucony et Alo.", doudounes: "Doudounes C.P. Company, garnissage duvet.", accessoires: "Casquettes Courrèges, Alo, Columbia, bonnets C.P. Company, Ralph Lauren, Sweet Pants, chaussettes et caleçons Alo et Lululemon." }[st.cat]];
       if (b) return [b.name, `Toute la sélection ${b.name}, 100% authentique.`];
       return ["Tout le shop", "Ensembles, sneakers et doudounes 100% authentiques, importés des États-Unis."];
     }
     function syncHash() {
-      const o = { cat: st.cat, filter: st.filter, brand: [...st.brands].join(","), q: st.q };
+      const o = { cat: st.cat, type: st.type, g: st.g, filter: st.filter, brand: [...st.brands].join(","), q: st.q };
       const h = L.shop(o);
       if (location.hash !== h) { try { history.replaceState(null, "", h); } catch (e) { /* navigateur restreint */ } }
     }
@@ -698,7 +766,10 @@
       const brandKeys = Object.keys(BRANDS).filter((k) => pool.some((p) => p.brand === k) || st.brands.has(k));
       const sizes = [...new Set(pool.flatMap((p) => p.sizes))].sort(sortSizes);
       const fams = Object.keys(FAMILY_SW).filter((f) => pool.some((p) => colorFamily(p) === f));
+      const types = Object.keys(TYPES).filter((t) => pool.some((p) => p.type === t));
       return `
+        <details class="fgroup" open><summary>Genre</summary><div class="opts">${[["", "Tous"], ["femme", "Femme"], ["homme", "Homme"]].map(([k, t]) => `<label class="fopt"><input type="radio" name="g-${Math.random().toString(36).slice(2, 6)}" data-f="g" value="${k}" ${st.g === k ? "checked" : ""}> ${t}</label>`).join("")}</div></details>
+        ${types.length > 1 || st.type ? `<details class="fgroup" open><summary>Type</summary><div class="opts">${[["", "Tous"]].concat(types.map((t) => [t, TYPES[t]])).map(([k, t]) => `<label class="fopt"><input type="radio" name="t-${Math.random().toString(36).slice(2, 6)}" data-f="type" value="${k}" ${st.type === k ? "checked" : ""}> ${t}</label>`).join("")}</div></details>` : ""}
         <details class="fgroup" open><summary>Marque</summary><div class="opts">${brandKeys.map((k) => `<label class="fopt"><input type="checkbox" data-f="brand" value="${k}" ${st.brands.has(k) ? "checked" : ""}> ${esc(BRANDS[k].name)} <span class="n">${pool.filter((p) => p.brand === k).length}</span></label>`).join("")}</div></details>
         <details class="fgroup" open><summary>Taille disponible</summary><div class="fsizes">${sizes.map((s) => `<button type="button" data-f="size" data-v="${esc(s)}" class="${st.sizes.has(s) ? "is-on" : ""}" aria-pressed="${st.sizes.has(s)}">${esc(s)}</button>`).join("")}</div></details>
         <details class="fgroup" open><summary>Couleur</summary><div class="fcolors">${fams.map((f) => `<button type="button" data-f="color" data-v="${f}" class="${st.colors.has(f) ? "is-on" : ""}" aria-pressed="${st.colors.has(f)}"><span class="sw" style="background:${FAMILY_SW[f]}"></span>${f}</button>`).join("")}</div></details>
@@ -710,6 +781,8 @@
       st.sizes.forEach((s) => pills.push(["size", s, "Taille " + s]));
       st.colors.forEach((c) => pills.push(["color", c, c]));
       if (st.price) pills.push(["price", st.price, PRICE_RANGES.find((r) => r[0] === st.price)[1]]);
+      if (st.g) pills.push(["g", st.g, GENDERS[st.g]]);
+      if (st.type) pills.push(["type", st.type, TYPES[st.type]]);
       if (!pills.length) return "";
       return `<div class="active-filters">${pills.map(([f, v, t]) => `<button class="chip" type="button" data-rmf="${f}" data-v="${esc(v)}">${esc(t)} ${I.close}</button>`).join("")}<button class="link" type="button" data-clear style="font-size:var(--fs-sm)">Tout effacer</button></div>`;
     }
@@ -722,9 +795,9 @@
       $("#shop-title").textContent = h;
       $("#shop-desc").textContent = d;
       $("#crumb").textContent = h;
-      const chips = [["", "", "Tout"], ["ensembles", "", "Ensembles"], ["chaussures", "", "Chaussures"], ["doudounes", "", "Doudounes"], ["", "new", "Nouveautés"], ["", "sale", "Promos"]];
+      const chips = [["", "", "Tout"], ["ensembles", "", "Ensembles"], ["chaussures", "", "Chaussures"], ["accessoires", "", "Accessoires"], ["doudounes", "", "Doudounes"], ["", "new", "Nouveautés"], ["", "sale", "Promos"]];
       $("#shop-chips").innerHTML = chips.map(([c, f, t]) => `<button class="chip${st.cat === c && st.filter === f && !st.q ? " is-on" : ""}" type="button" data-cat="${c}" data-filter="${f}">${t}</button>`).join("");
-      const nActive = st.brands.size + st.sizes.size + st.colors.size + (st.price ? 1 : 0);
+      const nActive = st.brands.size + st.sizes.size + st.colors.size + (st.price ? 1 : 0) + (st.g ? 1 : 0) + (st.type ? 1 : 0);
       $("#filters-btn").innerHTML = `${I.filter} Filtrer${nActive ? ` (${nActive})` : ""}`;
       $("#shop-count").textContent = `${list.length} produit${list.length > 1 ? "s" : ""}`;
       const fh = filtersHTML(pool);
@@ -761,16 +834,17 @@
       const f = t.dataset.f;
       if (f === "brand") { t.checked ? st.brands.add(t.value) : st.brands.delete(t.value); syncHash(); }
       if (f === "price") st.price = t.value;
+      if (f === "g" || f === "type") { st[f] = t.value; syncHash(); }
       if (f === "size" || f === "color") { const set = f === "size" ? st.sizes : st.colors; set.has(t.dataset.v) ? set.delete(t.dataset.v) : set.add(t.dataset.v); }
       render();
     };
     ["#shop-filters", "#filters-body"].forEach((s) => { $(s).onchange = onFilter; $(s).onclick = (e) => { if (e.target.closest("button[data-f]")) onFilter(e); }; });
     main.addEventListener("click", (e) => {
       const c = e.target.closest("#shop-chips .chip");
-      if (c) { st.cat = c.dataset.cat; st.filter = c.dataset.filter; st.q = ""; syncHash(); render(); return; }
+      if (c) { st.cat = c.dataset.cat; st.filter = c.dataset.filter; st.q = ""; if (st.cat !== "accessoires") st.type = ""; syncHash(); render(); return; }
       const r = e.target.closest("[data-rmf]");
-      if (r) { const f = r.dataset.rmf, v = r.dataset.v; if (f === "brand") { st.brands.delete(v); syncHash(); } if (f === "size") st.sizes.delete(v); if (f === "color") st.colors.delete(v); if (f === "price") st.price = ""; render(); return; }
-      if (e.target.closest("[data-clear]")) { st.brands.clear(); st.sizes.clear(); st.colors.clear(); st.price = ""; syncHash(); render(); }
+      if (r) { const f = r.dataset.rmf, v = r.dataset.v; if (f === "brand") { st.brands.delete(v); syncHash(); } if (f === "size") st.sizes.delete(v); if (f === "color") st.colors.delete(v); if (f === "price") st.price = ""; if (f === "g" || f === "type") { st[f] = ""; syncHash(); } render(); return; }
+      if (e.target.closest("[data-clear]")) { st.brands.clear(); st.sizes.clear(); st.colors.clear(); st.price = ""; st.g = ""; st.type = ""; syncHash(); render(); }
     });
     $("#shop-sort").addEventListener("change", (e) => { st.sort = e.target.value; render(); });
     render();
@@ -791,7 +865,8 @@
     const related = onePerGroup(PRODUCTS.filter((x) => x.group !== p.group && (x.brand === p.brand || x.category === p.category))
       .sort((a, b) => (b.category === p.category) - (a.category === p.category) || (b.brand === p.brand) - (a.brand === p.brand) || isBest(b) - isBest(a))).slice(0, 8);
     const recent = store.get(RV_KEY, []).filter((id) => id !== p.id).map(byId).filter(Boolean).slice(0, 8);
-    const unit = p.category === "chaussures" ? "EU" : "US";
+    const unit = p.category === "chaussures" ? "EU" : p.category === "accessoires" ? "" : "US";
+    const oneSize = p.sizes.length === 1;
     const soldOut = isOut(p);
 
     main.innerHTML = `
@@ -816,10 +891,10 @@
             </div>
 
             <div>
-              <div class="opt-head"><b>Taille (${unit})</b><button class="link" type="button" data-guide="${esc(p.category)}" style="font-size:var(--fs-sm)">Guide des tailles</button></div>
+              <div class="opt-head"><b>${oneSize ? "Taille unique" : unit ? `Taille (${unit})` : "Taille"}</b>${oneSize ? "" : `<button class="link" type="button" data-guide="${esc(p.category)}" style="font-size:var(--fs-sm)">Guide des tailles</button>`}</div>
               <div class="sizes" id="sizes" role="radiogroup" aria-label="Taille">${p.sizes.map((s) => {
                 const o = soldOut || out.includes(s);
-                return `<button type="button" class="size${o ? " is-out" : ""}${!o && low.includes(s) ? " is-low" : ""}" data-size="${esc(s)}" role="radio" aria-checked="false" ${o ? 'aria-disabled="true"' : ""} aria-label="Taille ${esc(s)}${o ? ", épuisée" : low.includes(s) ? ", dernières pièces" : ""}">${esc(s)}</button>`;
+                return `<button type="button" class="size${o ? " is-out" : ""}${!o && low.includes(s) ? " is-low" : ""}${oneSize && !o ? " is-on" : ""}" data-size="${esc(s)}" role="radio" aria-checked="${oneSize && !o}" ${o ? 'aria-disabled="true"' : ""} aria-label="Taille ${esc(s)}${o ? ", épuisée" : low.includes(s) ? ", dernières pièces" : ""}">${s === "TU" ? "Unique" : esc(s)}</button>`;
               }).join("")}</div>
               <p class="size-msg" id="size-msg" aria-live="polite">${low.length && !soldOut ? `<span class="muted">Point orange : dernières pièces dans cette taille.</span>` : ""}</p>
             </div>
@@ -850,7 +925,7 @@
       ${recent.length ? `<section class="band" style="padding-top:0"><div class="wrap"><div class="sec-head"><div><h2 class="h-md">Vus récemment</h2></div></div>${railHTML("rail-recent", recent)}</div></section>` : ""}
     `;
 
-    let picked = null;
+    let picked = oneSize && !soldOut ? p.sizes[0] : null;
     const msg = $("#size-msg");
     const atc = $("#atc");
     const wa = $("#wa-buy");
