@@ -150,22 +150,22 @@ window.BASE_PRODUCTS = [
     details: ["Amorti CloudTec Phase®", "Silhouette lifestyle", "Taille normalement"]
   },
 
-  /* ---------- ON — ensembles (pas encore de photos) ---------- */
+  /* ---------- ON — ensembles ---------- */
   {
     id: "on-club-set-black", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Black", swatch: "#1c1c1c",
-    brand: "on", category: "ensembles", price: 239,
+    brand: "on", category: "ensembles", price: 269,
     sizes: CLOTHING, tags: ["new"],
-    description: "Hoodie et pantalon On Club, coton et polyester recyclé, logo discret. Le confort On au quotidien.",
-    details: ["Hoodie + pantalon", "Coton et polyester recyclé", "Logo On discret"]
+    description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé. Coupe relax, pensée pour la vie en dehors de la piste.",
+    details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On brodé", "Coupe relax"]
   },
   {
-    id: "on-club-set-grey", group: "on-club-set",
-    name: "Ensemble On Club Hoodie + Pants", color: "Grey", swatch: "#a3a5a4",
-    brand: "on", category: "ensembles", price: 239,
+    id: "on-club-set-crater", group: "on-club-set",
+    name: "Ensemble On Club Hoodie + Pants", color: "Crater", swatch: "#c4c5c4",
+    brand: "on", category: "ensembles", price: 269,
     sizes: CLOTHING,
-    description: "Hoodie et pantalon On Club gris, matière douce et respirante.",
-    details: ["Hoodie + pantalon", "Coton et polyester recyclé", "Logo On discret"]
+    description: "L'ensemble On Club en gris chiné Crater, logo On brodé.",
+    details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On brodé", "Coupe relax"]
   },
 
   /* ---------- ALO — ensembles ---------- */
@@ -254,22 +254,22 @@ window.BASE_PRODUCTS = [
     details: ["Crampons Contagrip®", "Laçage Quicklace™", "Taille normalement"]
   },
 
-  /* ---------- SALOMON — ensembles (pas encore de photos) ---------- */
+  /* ---------- SALOMON — ensembles ---------- */
   {
     id: "salomon-set-black", group: "salomon-set",
-    name: "Ensemble Salomon Hoodie + Pants", color: "Deep Black", swatch: "#161718",
-    brand: "salomon", category: "ensembles", price: 219,
+    name: "Ensemble Salomon Logo Hoodie + Shakeout Pants", color: "Deep Black", swatch: "#161718",
+    brand: "salomon", category: "ensembles", price: 229,
     sizes: CLOTHING, tags: ["new"],
-    description: "Sweat à capuche et pantalon Salomon assortis, logo brodé.",
-    details: ["Hoodie + pantalon", "Logo brodé", "Coupe droite"]
+    description: "Hoodie Salomon Logo et pantalon Shakeout Core, tout en noir. Le look sportstyle Salomon, à porter avec une XT-6.",
+    details: ["Hoodie Salomon Logo + pantalon Shakeout Core", "Grand logo Salomon sur la poitrine", "Pantalon léger avec poche zippée", "Taille normalement"]
   },
   {
-    id: "salomon-set-grey", group: "salomon-set",
-    name: "Ensemble Salomon Hoodie + Pants", color: "Ghost Grey", swatch: "#a7a9aa",
+    id: "salomon-set-white", group: "salomon-set",
+    name: "Ensemble Salomon Logo Hoodie + Shakeout Pants", color: "Whisper White / Deep Black", swatch: "#efece4",
     brand: "salomon", category: "ensembles", price: 219,
     sizes: CLOTHING,
-    description: "Sweat à capuche et pantalon Salomon gris, logo brodé.",
-    details: ["Hoodie + pantalon", "Logo brodé", "Coupe droite"]
+    description: "Hoodie Salomon Logo blanc cassé et pantalon Shakeout Core noir.",
+    details: ["Hoodie Salomon Logo + pantalon Shakeout Core", "Grand logo Salomon sur la poitrine", "Pantalon léger avec poche zippée", "Taille normalement"]
   },
 
   /* ---------- MIZUNO ---------- */

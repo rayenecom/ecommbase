@@ -112,9 +112,19 @@ window.BASE_PHOTOS = {
   ],
 
   // Ensemble On Club Hoodie + Pants — Black
-  "on-club-set-black": [],  // pas encore de photo
-  // Ensemble On Club Hoodie + Pants — Grey
-  "on-club-set-grey": [],  // pas encore de photo
+  "on-club-set-black": [
+    "images/products/on-club-set-black-1.jpg",
+    "images/products/on-club-set-black-2.jpg",
+    "images/products/on-club-set-black-3.jpg"
+  ],
+
+  // Ensemble On Club Hoodie + Pants — Crater
+  "on-club-set-crater": [
+    "images/products/on-club-set-crater-1.jpg",
+    "images/products/on-club-set-crater-2.jpg",
+    "images/products/on-club-set-crater-3.jpg"
+  ],
+
   // Ensemble Alo Accolade Hoodie + Sweatpant — Black
   "alo-accolade-black": [
     "images/products/alo-accolade-black-1.jpg",
@@ -195,10 +205,22 @@ window.BASE_PHOTOS = {
     "images/products/salomon-speedcross-3-4.jpg"
   ],
 
-  // Ensemble Salomon Hoodie + Pants — Deep Black
-  "salomon-set-black": [],  // pas encore de photo
-  // Ensemble Salomon Hoodie + Pants — Ghost Grey
-  "salomon-set-grey": [],  // pas encore de photo
+  // Ensemble Salomon Logo Hoodie + Shakeout Pants — Deep Black
+  "salomon-set-black": [
+    "images/products/salomon-set-black-1.jpg",
+    "images/products/salomon-set-black-2.jpg",
+    "images/products/salomon-set-black-3.jpg",
+    "images/products/salomon-set-black-4.jpg"
+  ],
+
+  // Ensemble Salomon Logo Hoodie + Shakeout Pants — Whisper White / Deep Black
+  "salomon-set-white": [
+    "images/products/salomon-set-white-1.jpg",
+    "images/products/salomon-set-white-2.jpg",
+    "images/products/salomon-set-white-3.jpg",
+    "images/products/salomon-set-white-4.jpg"
+  ],
+
   // Mizuno Wave Rider 10 — White / Silver Cloud
   "mizuno-wave-rider-10": [
     "images/products/mizuno-wave-rider-10-1.jpg",
