@@ -47,30 +47,6 @@ window.BASE_PHOTOS = {
     "images/products/essentials-set-homestead-heather-3.jpg"
   ],
 
-  // Ensemble Polo Ralph Lauren Double-Knit — Heather Grey
-  "rl-double-knit-heather-grey": [
-    "images/products/rl-double-knit-heather-grey-1.jpg",
-    "images/products/rl-double-knit-heather-grey-2.jpg",
-    "images/products/rl-double-knit-heather-grey-3.jpg",
-    "images/products/rl-double-knit-heather-grey-4.jpg"
-  ],
-
-  // Ensemble Polo Ralph Lauren Double-Knit — Tan
-  "rl-double-knit-tan": [
-    "images/products/rl-double-knit-tan-1.jpg",
-    "images/products/rl-double-knit-tan-2.jpg",
-    "images/products/rl-double-knit-tan-3.jpg",
-    "images/products/rl-double-knit-tan-4.jpg"
-  ],
-
-  // Ensemble Polo Ralph Lauren Double-Knit — Royal Blue
-  "rl-double-knit-royal-blue": [
-    "images/products/rl-double-knit-royal-blue-1.jpg",
-    "images/products/rl-double-knit-royal-blue-2.jpg",
-    "images/products/rl-double-knit-royal-blue-3.jpg",
-    "images/products/rl-double-knit-royal-blue-4.jpg"
-  ],
-
   // Ensemble On Club Hoodie + Pants — Black
   "on-club-set-black": [
     "images/products/on-club-set-black-1.jpg",
@@ -109,146 +85,10 @@ window.BASE_PHOTOS = {
     "images/products/alo-accolade-ivory-4.jpg"
   ],
 
-  // Alo Recovery Mode Sneaker — Natural White
-  "alo-recovery-natural-white": [
-    "images/products/alo-recovery-natural-white-1.jpg",
-    "images/products/alo-recovery-natural-white-2.jpg",
-    "images/products/alo-recovery-natural-white-3.jpg"
-  ],
-
-  // Alo Recovery Mode Sneaker — Black / Gum
-  "alo-recovery-black-gum": [
-    "images/products/alo-recovery-black-gum-1.jpg",
-    "images/products/alo-recovery-black-gum-2.jpg",
-    "images/products/alo-recovery-black-gum-3.jpg"
-  ],
-
-  // Salomon XT-6 — Black Coffee / French Roast
-  "salomon-xt6-black-coffee": [
-    "images/products/salomon-xt6-black-coffee-1.jpg",
-    "images/products/salomon-xt6-black-coffee-2.jpg",
-    "images/products/salomon-xt6-black-coffee-3.jpg"
-  ],
-
-  // Salomon XT-6 — Rainy Day / Paloma / Silver
-  "salomon-xt6-rainy-day": [
-    "images/products/salomon-xt6-rainy-day-1.jpg",
-    "images/products/salomon-xt6-rainy-day-2.jpg",
-    "images/products/salomon-xt6-rainy-day-3.jpg"
-  ],
-
-  // Salomon XT-6 ADV — Black / Phantom
-  "salomon-xt6-adv-black": [
-    "images/products/salomon-xt6-adv-black-1.jpg",
-    "images/products/salomon-xt6-adv-black-2.jpg",
-    "images/products/salomon-xt6-adv-black-3.jpg"
-  ],
-
-  // Salomon ACS Pro — White / Jade / Celadon
-  "salomon-acs-pro-white": [
-    "images/products/salomon-acs-pro-white-1.jpg",
-    "images/products/salomon-acs-pro-white-2.jpg",
-    "images/products/salomon-acs-pro-white-3.jpg"
-  ],
-
-  // Salomon Speedcross 3 — Black / Pink / Lime
-  "salomon-speedcross-3": [
-    "images/products/salomon-speedcross-3-1.jpg",
-    "images/products/salomon-speedcross-3-2.jpg",
-    "images/products/salomon-speedcross-3-3.jpg"
-  ],
-
-  // Ensemble Salomon Logo Hoodie + Shakeout Pants — Deep Black
-  "salomon-set-black": [
-    "images/products/salomon-set-black-1.jpg",
-    "images/products/salomon-set-black-2.jpg",
-    "images/products/salomon-set-black-3.jpg",
-    "images/products/salomon-set-black-4.jpg"
-  ],
-
-  // Ensemble Salomon Logo Hoodie + Shakeout Pants — Whisper White / Deep Black
-  "salomon-set-white": [
-    "images/products/salomon-set-white-1.jpg",
-    "images/products/salomon-set-white-2.jpg",
-    "images/products/salomon-set-white-3.jpg",
-    "images/products/salomon-set-white-4.jpg"
-  ],
-
-  // Mizuno Wave Rider 10 — White / Silver Cloud
-  "mizuno-wave-rider-10": [
-    "images/products/mizuno-wave-rider-10-1.jpg",
-    "images/products/mizuno-wave-rider-10-2.jpg",
-    "images/products/mizuno-wave-rider-10-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Silver Cloud / White Sand
-  "mizuno-wave-prophecy-ls": [
-    "images/products/mizuno-wave-prophecy-ls-1.jpg",
-    "images/products/mizuno-wave-prophecy-ls-2.jpg",
-    "images/products/mizuno-wave-prophecy-ls-3.jpg"
-  ],
-
-  // Mizuno Wave Rider β — White / Silver Cloud
-  "mizuno-wave-rider-beta": [
-    "images/products/mizuno-wave-rider-beta-1.jpg",
-    "images/products/mizuno-wave-rider-beta-2.jpg",
-    "images/products/mizuno-wave-rider-beta-3.jpg"
-  ],
-
-  // Saucony Shadow 6000 — White / Grey / Navy
-  "saucony-shadow-6000": [
-    "images/products/saucony-shadow-6000-1.jpg",
-    "images/products/saucony-shadow-6000-2.jpg",
-    "images/products/saucony-shadow-6000-3.jpg"
-  ],
-
-  // Saucony ProGrid Triumph 4 — Black / Silver
-  "saucony-progrid-triumph-4": [
-    "images/products/saucony-progrid-triumph-4-1.jpg",
-    "images/products/saucony-progrid-triumph-4-2.jpg",
-    "images/products/saucony-progrid-triumph-4-3.jpg"
-  ],
-
-  // Saucony ProGrid Omni 9 — White / Brown
-  "saucony-progrid-omni-9": [
-    "images/products/saucony-progrid-omni-9-1.jpg",
-    "images/products/saucony-progrid-omni-9-2.jpg",
-    "images/products/saucony-progrid-omni-9-3.jpg"
-  ],
-
-  // Asics Gel-Kayano 14 — Birch / Pure Silver
-  "asics-gel-kayano-14-birch": [
-    "images/products/asics-gel-kayano-14-birch-1.jpg",
-    "images/products/asics-gel-kayano-14-birch-2.jpg",
-    "images/products/asics-gel-kayano-14-birch-3.jpg"
-  ],
-
-  // Asics Gel-Kayano 14 — Black / Pure Silver
-  "asics-gel-kayano-14-black": [
-    "images/products/asics-gel-kayano-14-black-1.jpg",
-    "images/products/asics-gel-kayano-14-black-2.jpg",
-    "images/products/asics-gel-kayano-14-black-3.jpg"
-  ],
-
-  // Asics Gel-NYC — Khaki / Pure Silver
-  "asics-gel-nyc-khaki": [
-    "images/products/asics-gel-nyc-khaki-1.jpg",
-    "images/products/asics-gel-nyc-khaki-2.jpg",
-    "images/products/asics-gel-nyc-khaki-3.jpg"
-  ],
-
-  // Asics Gel-1130 — White / Clay Canyon
-  "asics-gel-1130-clay": [
-    "images/products/asics-gel-1130-clay-1.jpg",
-    "images/products/asics-gel-1130-clay-2.jpg",
-    "images/products/asics-gel-1130-clay-3.jpg"
-  ],
-
   // Doudoune C.P. Company Eco-Chrome R Goggle — Re-Color Brown
   "cp-goggle-down-brown": [
     "images/products/cp-goggle-down-brown-1.jpg",
-    "images/products/cp-goggle-down-brown-2.jpg",
-    "images/products/cp-goggle-down-brown-3.jpg"
+    "images/products/cp-goggle-down-brown-2.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Flint Grey
@@ -759,8 +599,7 @@ window.BASE_PHOTOS = {
   "ugg-tasman-set-black": [
     "images/products/ugg-tasman-set-black-1.jpg",
     "images/products/ugg-tasman-set-black-2.jpg",
-    "images/products/ugg-tasman-set-black-3.jpg",
-    "images/products/ugg-tasman-set-black-4.jpg"
+    "images/products/ugg-tasman-set-black-3.jpg"
   ],
 
   // Ensemble UGG Tasman Hoodie + Jogger — Dusty Rose
@@ -775,8 +614,7 @@ window.BASE_PHOTOS = {
   "ugg-tasman-set-green": [
     "images/products/ugg-tasman-set-green-1.jpg",
     "images/products/ugg-tasman-set-green-2.jpg",
-    "images/products/ugg-tasman-set-green-3.jpg",
-    "images/products/ugg-tasman-set-green-4.jpg"
+    "images/products/ugg-tasman-set-green-3.jpg"
   ],
 
   // Ensemble Nocta Fleece CS Hoodie + Sweatpant — Black
@@ -801,93 +639,6 @@ window.BASE_PHOTOS = {
     "images/products/nocta-cs-set-work-blue-2.jpg",
     "images/products/nocta-cs-set-work-blue-3.jpg",
     "images/products/nocta-cs-set-work-blue-4.jpg"
-  ],
-
-  // Ensemble Lululemon Steady State Hoodie + Jogger — Black
-  "lulu-steady-state-set-black": [
-    "images/products/lulu-steady-state-set-black-1.jpg",
-    "images/products/lulu-steady-state-set-black-2.jpg",
-    "images/products/lulu-steady-state-set-black-3.jpg"
-  ],
-
-  // Ensemble Lululemon Steady State Hoodie + Jogger — True Navy
-  "lulu-steady-state-set-true-navy": [
-    "images/products/lulu-steady-state-set-true-navy-1.jpg",
-    "images/products/lulu-steady-state-set-true-navy-2.jpg",
-    "images/products/lulu-steady-state-set-true-navy-3.jpg"
-  ],
-
-  // Ensemble Lululemon Steady State Hoodie + Jogger — Light Ivory
-  "lulu-steady-state-set-light-ivory": [
-    "images/products/lulu-steady-state-set-light-ivory-1.jpg",
-    "images/products/lulu-steady-state-set-light-ivory-2.jpg",
-    "images/products/lulu-steady-state-set-light-ivory-3.jpg"
-  ],
-
-  // Ensemble Lululemon Steady State Hoodie + Jogger — Nomad
-  "lulu-steady-state-set-nomad": [
-    "images/products/lulu-steady-state-set-nomad-1.jpg",
-    "images/products/lulu-steady-state-set-nomad-2.jpg",
-    "images/products/lulu-steady-state-set-nomad-3.jpg"
-  ],
-
-  // Ensemble Lululemon Scuba Full-Zip + Wide-Leg — Light Ivory
-  "lulu-scuba-set-light-ivory": [
-    "images/products/lulu-scuba-set-light-ivory-1.jpg",
-    "images/products/lulu-scuba-set-light-ivory-2.jpg",
-    "images/products/lulu-scuba-set-light-ivory-3.jpg"
-  ],
-
-  // Ensemble Lululemon Scuba Full-Zip + Wide-Leg — Porcelain Pink
-  "lulu-scuba-set-porcelain-pink": [
-    "images/products/lulu-scuba-set-porcelain-pink-1.jpg",
-    "images/products/lulu-scuba-set-porcelain-pink-2.jpg",
-    "images/products/lulu-scuba-set-porcelain-pink-3.jpg"
-  ],
-
-  // Ensemble Lululemon Scuba Full-Zip + Wide-Leg — Graphite Grey
-  "lulu-scuba-set-graphite-grey": [
-    "images/products/lulu-scuba-set-graphite-grey-1.jpg",
-    "images/products/lulu-scuba-set-graphite-grey-2.jpg",
-    "images/products/lulu-scuba-set-graphite-grey-3.jpg"
-  ],
-
-  // Ensemble Lululemon Softstreme Half-Zip + Pant — Black
-  "lulu-softstreme-set-black": [
-    "images/products/lulu-softstreme-set-black-1.jpg",
-    "images/products/lulu-softstreme-set-black-2.jpg",
-    "images/products/lulu-softstreme-set-black-3.jpg"
-  ],
-
-  // Ensemble Lululemon Softstreme Half-Zip + Pant — Light Ivory
-  "lulu-softstreme-set-light-ivory": [
-    "images/products/lulu-softstreme-set-light-ivory-1.jpg",
-    "images/products/lulu-softstreme-set-light-ivory-2.jpg",
-    "images/products/lulu-softstreme-set-light-ivory-3.jpg"
-  ],
-
-  // Ensemble Alo Muse Hoodie + Sweatpant — Ivory
-  "alo-muse-set-ivory": [
-    "images/products/alo-muse-set-ivory-1.jpg",
-    "images/products/alo-muse-set-ivory-2.jpg",
-    "images/products/alo-muse-set-ivory-3.jpg",
-    "images/products/alo-muse-set-ivory-4.jpg"
-  ],
-
-  // Ensemble Alo Muse Hoodie + Sweatpant — Athletic Heather Grey
-  "alo-muse-set-athletic-heather-grey": [
-    "images/products/alo-muse-set-athletic-heather-grey-1.jpg",
-    "images/products/alo-muse-set-athletic-heather-grey-2.jpg",
-    "images/products/alo-muse-set-athletic-heather-grey-3.jpg",
-    "images/products/alo-muse-set-athletic-heather-grey-4.jpg"
-  ],
-
-  // Ensemble Alo Muse Hoodie + Sweatpant — Navy
-  "alo-muse-set-navy": [
-    "images/products/alo-muse-set-navy-1.jpg",
-    "images/products/alo-muse-set-navy-2.jpg",
-    "images/products/alo-muse-set-navy-3.jpg",
-    "images/products/alo-muse-set-navy-4.jpg"
   ],
 
   // Ensemble On Club Hoodie + Pants Femme — Flurry
@@ -953,7 +704,7 @@ window.BASE_PHOTOS = {
     "images/products/courreges-cap-ac-black-3.jpg"
   ],
 
-  // Casquette Courrèges Signature AC — Heritage White
+  // Casquette Courrèges Signature AC — Burgundy
   "courreges-cap-ac-4010": [
     "images/products/courreges-cap-ac-4010-1.jpg",
     "images/products/courreges-cap-ac-4010-2.jpg",
@@ -967,7 +718,7 @@ window.BASE_PHOTOS = {
     "images/products/courreges-cap-vinyl-black-3.jpg"
   ],
 
-  // Casquette Courrèges ReEdition Vinyl — Heritage White
+  // Casquette Courrèges ReEdition Vinyl — Burgundy
   "courreges-cap-vinyl-4010": [
     "images/products/courreges-cap-vinyl-4010-1.jpg",
     "images/products/courreges-cap-vinyl-4010-2.jpg",
@@ -1120,8 +871,1891 @@ window.BASE_PHOTOS = {
     "images/products/alo-boxer-white-2.jpg"
   ],
 
-  // Caleçon Lululemon Always In Motion Boxer — Black
+  // Caleçons Lululemon Always In Motion (pack de 5) — Black
   "lulu-aim-boxer-black": [
     "images/products/lulu-aim-boxer-black-1.jpg"
+  ],
+
+  // Survêtement Polo Ralph Lauren Double-Knit — Black
+  "rl-dk-set-black": [
+    "images/products/rl-dk-set-black-1.jpg",
+    "images/products/rl-dk-set-black-2.jpg",
+    "images/products/rl-dk-set-black-3.jpg",
+    "images/products/rl-dk-set-black-4.jpg"
+  ],
+
+  // Survêtement Polo Ralph Lauren Double-Knit — Navy
+  "rl-dk-set-navy": [
+    "images/products/rl-dk-set-navy-1.jpg",
+    "images/products/rl-dk-set-navy-2.jpg",
+    "images/products/rl-dk-set-navy-3.jpg"
+  ],
+
+  // Survêtement Polo Ralph Lauren Double-Knit — Grey
+  "rl-dk-set-grey": [
+    "images/products/rl-dk-set-grey-1.jpg",
+    "images/products/rl-dk-set-grey-2.jpg",
+    "images/products/rl-dk-set-grey-3.jpg",
+    "images/products/rl-dk-set-grey-4.jpg"
+  ],
+
+  // Ensemble The RL Fleece Zippé + Jogging — Black / Red Pony
+  "rl-fleece-zip-set-black": [
+    "images/products/rl-fleece-zip-set-black-1.jpg",
+    "images/products/rl-fleece-zip-set-black-2.jpg",
+    "images/products/rl-fleece-zip-set-black-3.jpg"
+  ],
+
+  // Sweat à capuche The RL Fleece — Black / Red Pony
+  "rl-fleece-hoodie-black": [
+    "images/products/rl-fleece-hoodie-black-1.jpg",
+    "images/products/rl-fleece-hoodie-black-2.jpg"
+  ],
+
+  // Ensemble Essentials Signature Hoodie + Flare Sweatpant — Marble Heather
+  "essentials-signature-set-marble-heather": [
+    "images/products/essentials-signature-set-marble-heather-1.jpg",
+    "images/products/essentials-signature-set-marble-heather-2.jpg",
+    "images/products/essentials-signature-set-marble-heather-3.jpg",
+    "images/products/essentials-signature-set-marble-heather-4.jpg"
+  ],
+
+  // Ensemble Essentials Signature Hoodie + Flare Sweatpant — Pyrite Heather
+  "essentials-signature-set-pyrite-heather": [
+    "images/products/essentials-signature-set-pyrite-heather-1.jpg",
+    "images/products/essentials-signature-set-pyrite-heather-2.jpg",
+    "images/products/essentials-signature-set-pyrite-heather-3.jpg",
+    "images/products/essentials-signature-set-pyrite-heather-4.jpg"
+  ],
+
+  // Ensemble Essentials Signature Hoodie + Flare Sweatpant — Ash Heather
+  "essentials-signature-set-ash-heather": [
+    "images/products/essentials-signature-set-ash-heather-1.jpg",
+    "images/products/essentials-signature-set-ash-heather-2.jpg",
+    "images/products/essentials-signature-set-ash-heather-3.jpg"
+  ],
+
+  // Ensemble Essentials Classic Zip-Up + Sweatpant — Black
+  "essentials-zip-set-black": [
+    "images/products/essentials-zip-set-black-1.jpg",
+    "images/products/essentials-zip-set-black-2.jpg",
+    "images/products/essentials-zip-set-black-3.jpg",
+    "images/products/essentials-zip-set-black-4.jpg"
+  ],
+
+  // Ensemble Essentials Classic Zip-Up + Sweatpant — Oatmeal Heather
+  "essentials-zip-set-oatmeal-heather": [
+    "images/products/essentials-zip-set-oatmeal-heather-1.jpg",
+    "images/products/essentials-zip-set-oatmeal-heather-2.jpg",
+    "images/products/essentials-zip-set-oatmeal-heather-3.jpg",
+    "images/products/essentials-zip-set-oatmeal-heather-4.jpg"
+  ],
+
+  // Ensemble Essentials Classic Zip-Up + Sweatpant — Warm Heather
+  "essentials-zip-set-warm-heather": [
+    "images/products/essentials-zip-set-warm-heather-1.jpg",
+    "images/products/essentials-zip-set-warm-heather-2.jpg",
+    "images/products/essentials-zip-set-warm-heather-3.jpg",
+    "images/products/essentials-zip-set-warm-heather-4.jpg"
+  ],
+
+  // Ensemble Essentials Classic Hoodie + Sweatpant — Vintage Black
+  "essentials-set-vintage-black": [
+    "images/products/essentials-set-vintage-black-1.jpg",
+    "images/products/essentials-set-vintage-black-2.jpg",
+    "images/products/essentials-set-vintage-black-3.jpg"
+  ],
+
+  // Ensemble Essentials 1977 Hoodie + Sweatpant — Dark Oatmeal
+  "essentials-1977-set-dark-oatmeal": [
+    "images/products/essentials-1977-set-dark-oatmeal-1.jpg",
+    "images/products/essentials-1977-set-dark-oatmeal-2.jpg",
+    "images/products/essentials-1977-set-dark-oatmeal-3.jpg"
+  ],
+
+  // Ensemble Essentials 1977 Hoodie + Sweatpant — Iron
+  "essentials-1977-set-iron": [
+    "images/products/essentials-1977-set-iron-1.jpg",
+    "images/products/essentials-1977-set-iron-2.jpg",
+    "images/products/essentials-1977-set-iron-3.jpg"
+  ],
+
+  // Ensemble Essentials 1977 Hoodie + Sweatpant — Light Oatmeal
+  "essentials-1977-set-light-oatmeal": [
+    "images/products/essentials-1977-set-light-oatmeal-1.jpg",
+    "images/products/essentials-1977-set-light-oatmeal-2.jpg",
+    "images/products/essentials-1977-set-light-oatmeal-3.jpg"
+  ],
+
+  // Ensemble Essentials NBA Hoodie + Sweatpant — Heather Stone
+  "essentials-nba-set-heather-stone": [
+    "images/products/essentials-nba-set-heather-stone-1.jpg",
+    "images/products/essentials-nba-set-heather-stone-2.jpg",
+    "images/products/essentials-nba-set-heather-stone-3.jpg",
+    "images/products/essentials-nba-set-heather-stone-4.jpg"
+  ],
+
+  // Ensemble Essentials NBA Hoodie + Sweatpant — Faded Black
+  "essentials-nba-set-faded-black": [
+    "images/products/essentials-nba-set-faded-black-1.jpg",
+    "images/products/essentials-nba-set-faded-black-2.jpg",
+    "images/products/essentials-nba-set-faded-black-3.jpg",
+    "images/products/essentials-nba-set-faded-black-4.jpg"
+  ],
+
+  // Ensemble Essentials NBA Hoodie + Sweatpant — Oatmeal Heather
+  "essentials-nba-set-oatmeal-heather": [
+    "images/products/essentials-nba-set-oatmeal-heather-1.jpg",
+    "images/products/essentials-nba-set-oatmeal-heather-2.jpg",
+    "images/products/essentials-nba-set-oatmeal-heather-3.jpg",
+    "images/products/essentials-nba-set-oatmeal-heather-4.jpg"
+  ],
+
+  // Ensemble On Club Hoodie + Pants — Storm
+  "on-club-set-storm": [
+    "images/products/on-club-set-storm-1.jpg",
+    "images/products/on-club-set-storm-2.jpg",
+    "images/products/on-club-set-storm-3.jpg"
+  ],
+
+  // Ensemble On Club Hoodie + Pants — Jay
+  "on-club-set-jay": [
+    "images/products/on-club-set-jay-1.jpg",
+    "images/products/on-club-set-jay-2.jpg",
+    "images/products/on-club-set-jay-3.jpg"
+  ],
+
+  // Ensemble On Club Hoodie + Pants — Desert
+  "on-club-set-desert": [
+    "images/products/on-club-set-desert-1.jpg",
+    "images/products/on-club-set-desert-2.jpg",
+    "images/products/on-club-set-desert-3.jpg"
+  ],
+
+  // Ensemble On Club Collective Hoodie + Pants — Crater
+  "on-club-collective-set-crater": [
+    "images/products/on-club-collective-set-crater-1.jpg",
+    "images/products/on-club-collective-set-crater-2.jpg",
+    "images/products/on-club-collective-set-crater-3.jpg"
+  ],
+
+  // Ensemble On Club Collective Hoodie + Pants — Black
+  "on-club-collective-set-black": [
+    "images/products/on-club-collective-set-black-1.jpg",
+    "images/products/on-club-collective-set-black-2.jpg",
+    "images/products/on-club-collective-set-black-3.jpg"
+  ],
+
+  // Ensemble On Club Collective Hoodie + Pants — Ember
+  "on-club-collective-set-ember": [
+    "images/products/on-club-collective-set-ember-1.jpg",
+    "images/products/on-club-collective-set-ember-2.jpg",
+    "images/products/on-club-collective-set-ember-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Bark
+  "on-focus-tech-set-bark": [
+    "images/products/on-focus-tech-set-bark-1.jpg",
+    "images/products/on-focus-tech-set-bark-2.jpg",
+    "images/products/on-focus-tech-set-bark-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Shadow
+  "on-focus-tech-set-shadow": [
+    "images/products/on-focus-tech-set-shadow-1.jpg",
+    "images/products/on-focus-tech-set-shadow-2.jpg",
+    "images/products/on-focus-tech-set-shadow-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Black
+  "on-focus-tech-set-black": [
+    "images/products/on-focus-tech-set-black-1.jpg",
+    "images/products/on-focus-tech-set-black-2.jpg",
+    "images/products/on-focus-tech-set-black-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Jay
+  "on-focus-tech-set-jay": [
+    "images/products/on-focus-tech-set-jay-1.jpg",
+    "images/products/on-focus-tech-set-jay-2.jpg",
+    "images/products/on-focus-tech-set-jay-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Agave
+  "on-focus-tech-set-agave": [
+    "images/products/on-focus-tech-set-agave-1.jpg",
+    "images/products/on-focus-tech-set-agave-2.jpg",
+    "images/products/on-focus-tech-set-agave-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Navy
+  "on-focus-tech-set-navy": [
+    "images/products/on-focus-tech-set-navy-1.jpg",
+    "images/products/on-focus-tech-set-navy-2.jpg",
+    "images/products/on-focus-tech-set-navy-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Basalt
+  "on-focus-tech-set-basalt": [
+    "images/products/on-focus-tech-set-basalt-1.jpg",
+    "images/products/on-focus-tech-set-basalt-2.jpg",
+    "images/products/on-focus-tech-set-basalt-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants — Desert
+  "on-focus-tech-set-desert": [
+    "images/products/on-focus-tech-set-desert-1.jpg",
+    "images/products/on-focus-tech-set-desert-2.jpg",
+    "images/products/on-focus-tech-set-desert-3.jpg"
+  ],
+
+  // Ensemble On Club Collective Hoodie + Pants Femme — Clove
+  "on-club-collective-set-w-clove": [
+    "images/products/on-club-collective-set-w-clove-1.jpg",
+    "images/products/on-club-collective-set-w-clove-2.jpg",
+    "images/products/on-club-collective-set-w-clove-3.jpg"
+  ],
+
+  // Ensemble On Club Collective Hoodie + Pants Femme — Ember
+  "on-club-collective-set-w-ember": [
+    "images/products/on-club-collective-set-w-ember-1.jpg",
+    "images/products/on-club-collective-set-w-ember-2.jpg",
+    "images/products/on-club-collective-set-w-ember-3.jpg"
+  ],
+
+  // Ensemble On Club Collective Hoodie + Pants Femme — Crater
+  "on-club-collective-set-w-crater": [
+    "images/products/on-club-collective-set-w-crater-1.jpg",
+    "images/products/on-club-collective-set-w-crater-2.jpg",
+    "images/products/on-club-collective-set-w-crater-3.jpg"
+  ],
+
+  // Ensemble On Club Collective Hoodie + Pants Femme — Black
+  "on-club-collective-set-w-black": [
+    "images/products/on-club-collective-set-w-black-1.jpg",
+    "images/products/on-club-collective-set-w-black-2.jpg",
+    "images/products/on-club-collective-set-w-black-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants Femme — Crater
+  "on-focus-tech-set-w-crater": [
+    "images/products/on-focus-tech-set-w-crater-1.jpg",
+    "images/products/on-focus-tech-set-w-crater-2.jpg",
+    "images/products/on-focus-tech-set-w-crater-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants Femme — Agave
+  "on-focus-tech-set-w-agave": [
+    "images/products/on-focus-tech-set-w-agave-1.jpg",
+    "images/products/on-focus-tech-set-w-agave-2.jpg",
+    "images/products/on-focus-tech-set-w-agave-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants Femme — Black
+  "on-focus-tech-set-w-black": [
+    "images/products/on-focus-tech-set-w-black-1.jpg",
+    "images/products/on-focus-tech-set-w-black-2.jpg",
+    "images/products/on-focus-tech-set-w-black-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants Femme — Flurry
+  "on-focus-tech-set-w-flurry": [
+    "images/products/on-focus-tech-set-w-flurry-1.jpg",
+    "images/products/on-focus-tech-set-w-flurry-2.jpg",
+    "images/products/on-focus-tech-set-w-flurry-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants Femme — Magnolia
+  "on-focus-tech-set-w-magnolia": [
+    "images/products/on-focus-tech-set-w-magnolia-1.jpg",
+    "images/products/on-focus-tech-set-w-magnolia-2.jpg",
+    "images/products/on-focus-tech-set-w-magnolia-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants Femme — Barberry
+  "on-focus-tech-set-w-barberry": [
+    "images/products/on-focus-tech-set-w-barberry-1.jpg",
+    "images/products/on-focus-tech-set-w-barberry-2.jpg",
+    "images/products/on-focus-tech-set-w-barberry-3.jpg"
+  ],
+
+  // Ensemble On Focus Tech Hoodie + Sweatpants Femme — Desert
+  "on-focus-tech-set-w-desert": [
+    "images/products/on-focus-tech-set-w-desert-1.jpg",
+    "images/products/on-focus-tech-set-w-desert-2.jpg",
+    "images/products/on-focus-tech-set-w-desert-3.jpg"
+  ],
+
+  // Alo Runner — Black / Black
+  "alo-runner-black-black": [
+    "images/products/alo-runner-black-black-1.jpg",
+    "images/products/alo-runner-black-black-3.jpg"
+  ],
+
+  // Alo Runner — White / White
+  "alo-runner-white-white": [
+    "images/products/alo-runner-white-white-1.jpg",
+    "images/products/alo-runner-white-white-3.jpg"
+  ],
+
+  // Alo Runner — Espresso
+  "alo-runner-espresso": [
+    "images/products/alo-runner-espresso-1.jpg",
+    "images/products/alo-runner-espresso-3.jpg"
+  ],
+
+  // Alo Runner — Gravel
+  "alo-runner-gravel": [
+    "images/products/alo-runner-gravel-1.jpg",
+    "images/products/alo-runner-gravel-3.jpg"
+  ],
+
+  // Alo Runner — Grey / Grey
+  "alo-runner-grey-grey": [
+    "images/products/alo-runner-grey-grey-1.jpg"
+  ],
+
+  // Alo Runner — Navy
+  "alo-runner-navy": [
+    "images/products/alo-runner-navy-1.jpg",
+    "images/products/alo-runner-navy-2.jpg",
+    "images/products/alo-runner-navy-3.jpg"
+  ],
+
+  // Alo Runner — Dune Grass
+  "alo-runner-dune-grass": [
+    "images/products/alo-runner-dune-grass-1.jpg",
+    "images/products/alo-runner-dune-grass-2.jpg",
+    "images/products/alo-runner-dune-grass-3.jpg"
+  ],
+
+  // Alo Runner — Seashell Blue
+  "alo-runner-seashell-blue": [
+    "images/products/alo-runner-seashell-blue-1.jpg",
+    "images/products/alo-runner-seashell-blue-2.jpg",
+    "images/products/alo-runner-seashell-blue-3.jpg"
+  ],
+
+  // Alo Runner — Pink Marshmallow
+  "alo-runner-pink-marshmallow": [
+    "images/products/alo-runner-pink-marshmallow-1.jpg",
+    "images/products/alo-runner-pink-marshmallow-2.jpg",
+    "images/products/alo-runner-pink-marshmallow-3.jpg"
+  ],
+
+  // Alo Runner — Candy Heart Pink
+  "alo-runner-candy-heart-pink": [
+    "images/products/alo-runner-candy-heart-pink-1.jpg",
+    "images/products/alo-runner-candy-heart-pink-2.jpg",
+    "images/products/alo-runner-candy-heart-pink-3.jpg"
+  ],
+
+  // Alo Runner — Crystal Clear Blue
+  "alo-runner-crystal-clear-blue": [
+    "images/products/alo-runner-crystal-clear-blue-1.jpg",
+    "images/products/alo-runner-crystal-clear-blue-3.jpg"
+  ],
+
+  // Alo Runner — Satsuma Breeze
+  "alo-runner-satsuma-breeze": [
+    "images/products/alo-runner-satsuma-breeze-1.jpg",
+    "images/products/alo-runner-satsuma-breeze-2.jpg",
+    "images/products/alo-runner-satsuma-breeze-3.jpg"
+  ],
+
+  // Alo Runner — Smoky Quartz
+  "alo-runner-smoky-quartz": [
+    "images/products/alo-runner-smoky-quartz-1.jpg",
+    "images/products/alo-runner-smoky-quartz-3.jpg"
+  ],
+
+  // Ensemble Alo Accolade Hoodie + Sweatpant — Bone
+  "alo-accolade-bone": [
+    "images/products/alo-accolade-bone-1.jpg",
+    "images/products/alo-accolade-bone-2.jpg",
+    "images/products/alo-accolade-bone-3.jpg",
+    "images/products/alo-accolade-bone-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade Hoodie + Sweatpant — Espresso
+  "alo-accolade-espresso": [
+    "images/products/alo-accolade-espresso-1.jpg",
+    "images/products/alo-accolade-espresso-2.jpg",
+    "images/products/alo-accolade-espresso-3.jpg",
+    "images/products/alo-accolade-espresso-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade Hoodie + Sweatpant — Navy
+  "alo-accolade-navy": [
+    "images/products/alo-accolade-navy-1.jpg",
+    "images/products/alo-accolade-navy-2.jpg",
+    "images/products/alo-accolade-navy-3.jpg",
+    "images/products/alo-accolade-navy-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade Hoodie + Sweatpant — Steel Grey
+  "alo-accolade-steel-grey": [
+    "images/products/alo-accolade-steel-grey-1.jpg",
+    "images/products/alo-accolade-steel-grey-2.jpg",
+    "images/products/alo-accolade-steel-grey-3.jpg",
+    "images/products/alo-accolade-steel-grey-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade Hoodie + Sweatpant — Smoky Quartz
+  "alo-accolade-smoky-quartz": [
+    "images/products/alo-accolade-smoky-quartz-1.jpg",
+    "images/products/alo-accolade-smoky-quartz-2.jpg",
+    "images/products/alo-accolade-smoky-quartz-3.jpg",
+    "images/products/alo-accolade-smoky-quartz-4.jpg"
+  ],
+
+  // Survêtement Alo Co-Op (Veste + Pantalon) — Black
+  "alo-coop-set-black": [
+    "images/products/alo-coop-set-black-1.jpg",
+    "images/products/alo-coop-set-black-2.jpg",
+    "images/products/alo-coop-set-black-3.jpg",
+    "images/products/alo-coop-set-black-4.jpg"
+  ],
+
+  // Survêtement Alo Co-Op (Veste + Pantalon) — Espresso
+  "alo-coop-set-espresso": [
+    "images/products/alo-coop-set-espresso-1.jpg",
+    "images/products/alo-coop-set-espresso-2.jpg",
+    "images/products/alo-coop-set-espresso-3.jpg",
+    "images/products/alo-coop-set-espresso-4.jpg"
+  ],
+
+  // Survêtement Alo Co-Op (Veste + Pantalon) — Gravel
+  "alo-coop-set-gravel": [
+    "images/products/alo-coop-set-gravel-1.jpg",
+    "images/products/alo-coop-set-gravel-2.jpg",
+    "images/products/alo-coop-set-gravel-3.jpg",
+    "images/products/alo-coop-set-gravel-4.jpg"
+  ],
+
+  // Ensemble Alo Alpha Shell Veste + Pantalon — Black
+  "alo-alpha-shell-set-black": [
+    "images/products/alo-alpha-shell-set-black-1.jpg",
+    "images/products/alo-alpha-shell-set-black-2.jpg",
+    "images/products/alo-alpha-shell-set-black-3.jpg",
+    "images/products/alo-alpha-shell-set-black-4.jpg"
+  ],
+
+  // Ensemble Alo Alpha Shell Veste + Pantalon — Bone
+  "alo-alpha-shell-set-bone": [
+    "images/products/alo-alpha-shell-set-bone-1.jpg",
+    "images/products/alo-alpha-shell-set-bone-2.jpg",
+    "images/products/alo-alpha-shell-set-bone-3.jpg"
+  ],
+
+  // Ensemble Alo Alpha Shell Veste + Pantalon — Espresso
+  "alo-alpha-shell-set-espresso": [
+    "images/products/alo-alpha-shell-set-espresso-1.jpg",
+    "images/products/alo-alpha-shell-set-espresso-2.jpg",
+    "images/products/alo-alpha-shell-set-espresso-3.jpg",
+    "images/products/alo-alpha-shell-set-espresso-4.jpg"
+  ],
+
+  // Ensemble Alo Alpha Shell Veste + Pantalon — Lunar Grey
+  "alo-alpha-shell-set-lunar-grey": [
+    "images/products/alo-alpha-shell-set-lunar-grey-1.jpg",
+    "images/products/alo-alpha-shell-set-lunar-grey-2.jpg",
+    "images/products/alo-alpha-shell-set-lunar-grey-3.jpg",
+    "images/products/alo-alpha-shell-set-lunar-grey-4.jpg"
+  ],
+
+  // Ensemble Alo Alpha Shell Veste + Pantalon — Navy
+  "alo-alpha-shell-set-navy": [
+    "images/products/alo-alpha-shell-set-navy-1.jpg",
+    "images/products/alo-alpha-shell-set-navy-2.jpg",
+    "images/products/alo-alpha-shell-set-navy-3.jpg",
+    "images/products/alo-alpha-shell-set-navy-4.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — Black
+  "lulu-pace-breaker-set-black": [
+    "images/products/lulu-pace-breaker-set-black-1.jpg",
+    "images/products/lulu-pace-breaker-set-black-2.jpg",
+    "images/products/lulu-pace-breaker-set-black-3.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — Beige (Downtown Tan)
+  "lulu-pace-breaker-set-downtown-tan": [
+    "images/products/lulu-pace-breaker-set-downtown-tan-1.jpg",
+    "images/products/lulu-pace-breaker-set-downtown-tan-2.jpg",
+    "images/products/lulu-pace-breaker-set-downtown-tan-3.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — Rouge (Burgundy Bay)
+  "lulu-pace-breaker-set-burgundy-bay": [
+    "images/products/lulu-pace-breaker-set-burgundy-bay-1.jpg",
+    "images/products/lulu-pace-breaker-set-burgundy-bay-2.jpg",
+    "images/products/lulu-pace-breaker-set-burgundy-bay-3.jpg",
+    "images/products/lulu-pace-breaker-set-burgundy-bay-4.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Glyde Track Jacket + Pant — Black
+  "lulu-pace-breaker-glyde-set-black": [
+    "images/products/lulu-pace-breaker-glyde-set-black-1.jpg",
+    "images/products/lulu-pace-breaker-glyde-set-black-2.jpg",
+    "images/products/lulu-pace-breaker-glyde-set-black-3.jpg",
+    "images/products/lulu-pace-breaker-glyde-set-black-4.jpg"
+  ],
+
+  // Ensemble Salomon GORE-TEX Moon Patrol Veste + Pantalon — Deep Black
+  "salomon-gtx-set-deep-black": [
+    "images/products/salomon-gtx-set-deep-black-1.jpg",
+    "images/products/salomon-gtx-set-deep-black-2.jpg",
+    "images/products/salomon-gtx-set-deep-black-3.jpg",
+    "images/products/salomon-gtx-set-deep-black-4.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Tradewinds / Stormy Weather / Bog
+  "salomon-xt-6-l492148": [
+    "images/products/salomon-xt-6-l492148-1.jpg",
+    "images/products/salomon-xt-6-l492148-2.jpg",
+    "images/products/salomon-xt-6-l492148-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Pearl Blue / Asphalt / Black
+  "salomon-xt-6-l492402": [
+    "images/products/salomon-xt-6-l492402-1.jpg",
+    "images/products/salomon-xt-6-l492402-2.jpg",
+    "images/products/salomon-xt-6-l492402-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Vanilla Ice / Bog / Shadow Green
+  "salomon-xt-6-l492157": [
+    "images/products/salomon-xt-6-l492157-1.jpg",
+    "images/products/salomon-xt-6-l492157-2.jpg",
+    "images/products/salomon-xt-6-l492157-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Black / Icy Pink / Dawn Pink
+  "salomon-xt-6-l492156": [
+    "images/products/salomon-xt-6-l492156-1.jpg",
+    "images/products/salomon-xt-6-l492156-2.jpg",
+    "images/products/salomon-xt-6-l492156-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — White Pepper / Silver Sage / Dark Gull
+  "salomon-xt-6-l492151": [
+    "images/products/salomon-xt-6-l492151-1.jpg",
+    "images/products/salomon-xt-6-l492151-2.jpg",
+    "images/products/salomon-xt-6-l492151-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Sea Foam / Green Milieu / Black
+  "salomon-xt-6-l493068": [
+    "images/products/salomon-xt-6-l493068-1.jpg",
+    "images/products/salomon-xt-6-l493068-2.jpg",
+    "images/products/salomon-xt-6-l493068-3.jpg"
+  ],
+
+  // Salomon XT-6 — Black Coffee / Burro / Bitter Chocolate
+  "salomon-xt-6-l493066": [
+    "images/products/salomon-xt-6-l493066-1.jpg",
+    "images/products/salomon-xt-6-l493066-2.jpg",
+    "images/products/salomon-xt-6-l493066-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Black / Black / Asphalt
+  "salomon-xt-6-l454169": [
+    "images/products/salomon-xt-6-l454169-1.jpg",
+    "images/products/salomon-xt-6-l454169-2.jpg",
+    "images/products/salomon-xt-6-l454169-3.jpg"
+  ],
+
+  // Salomon XT-6 — Pearl Blue / Grisaille / Vanilla
+  "salomon-xt-6-l454728": [
+    "images/products/salomon-xt-6-l454728-1.jpg",
+    "images/products/salomon-xt-6-l454728-2.jpg",
+    "images/products/salomon-xt-6-l454728-3.jpg"
+  ],
+
+  // Salomon XT-6 — Black Coffee / French Roast / Vanilla Ice
+  "salomon-xt-6-l478661": [
+    "images/products/salomon-xt-6-l478661-1.jpg",
+    "images/products/salomon-xt-6-l478661-2.jpg",
+    "images/products/salomon-xt-6-l478661-3.jpg"
+  ],
+
+  // Salomon XT-6 — Almond Milk / Portabella / Ice Flow
+  "salomon-xt-6-l475822": [
+    "images/products/salomon-xt-6-l475822-1.jpg",
+    "images/products/salomon-xt-6-l475822-2.jpg",
+    "images/products/salomon-xt-6-l475822-3.jpg"
+  ],
+
+  // Salomon XT-6 — Ghost Gray / Ghost Gray / Gray Flannel
+  "salomon-xt-6-l474448": [
+    "images/products/salomon-xt-6-l474448-1.jpg",
+    "images/products/salomon-xt-6-l474448-2.jpg",
+    "images/products/salomon-xt-6-l474448-3.jpg"
+  ],
+
+  // Salomon XT-6 — Aloe Wash / Hazelnut / Feather Gray
+  "salomon-xt-6-l472937": [
+    "images/products/salomon-xt-6-l472937-1.jpg",
+    "images/products/salomon-xt-6-l472937-2.jpg",
+    "images/products/salomon-xt-6-l472937-3.jpg"
+  ],
+
+  // Salomon XT-6 — Black / Fiery Red / Silver
+  "salomon-xt-6-l479882": [
+    "images/products/salomon-xt-6-l479882-1.jpg",
+    "images/products/salomon-xt-6-l479882-2.jpg",
+    "images/products/salomon-xt-6-l479882-3.jpg"
+  ],
+
+  // Salomon XT-6 — Black / White / Blue Curacao
+  "salomon-xt-6-l491433": [
+    "images/products/salomon-xt-6-l491433-1.jpg",
+    "images/products/salomon-xt-6-l491433-2.jpg",
+    "images/products/salomon-xt-6-l491433-3.jpg"
+  ],
+
+  // Salomon XT-6 — Cloudburst / Icy Pink / Tapioca
+  "salomon-xt-6-l491546": [
+    "images/products/salomon-xt-6-l491546-1.jpg",
+    "images/products/salomon-xt-6-l491546-2.jpg",
+    "images/products/salomon-xt-6-l491546-3.jpg"
+  ],
+
+  // Salomon XT-6 — Black / Almond Cream
+  "salomon-xt-6-l491543": [
+    "images/products/salomon-xt-6-l491543-1.jpg",
+    "images/products/salomon-xt-6-l491543-2.jpg",
+    "images/products/salomon-xt-6-l491543-3.jpg"
+  ],
+
+  // Salomon XT-6 — Black / Grape Leaf
+  "salomon-xt-6-l491544": [
+    "images/products/salomon-xt-6-l491544-1.jpg",
+    "images/products/salomon-xt-6-l491544-2.jpg",
+    "images/products/salomon-xt-6-l491544-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Niagara / Sunny Lime
+  "salomon-xt-6-l491587": [
+    "images/products/salomon-xt-6-l491587-1.jpg",
+    "images/products/salomon-xt-6-l491587-2.jpg",
+    "images/products/salomon-xt-6-l491587-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Black / Ebony / Lunar Rock
+  "salomon-xt-6-l416635": [
+    "images/products/salomon-xt-6-l416635-1.jpg",
+    "images/products/salomon-xt-6-l416635-2.jpg",
+    "images/products/salomon-xt-6-l416635-3.jpg"
+  ],
+
+  // Salomon XT-6 — Dried Herb / Deep Lichen Green / Bright Green
+  "salomon-xt-6-l472935": [
+    "images/products/salomon-xt-6-l472935-1.jpg",
+    "images/products/salomon-xt-6-l472935-2.jpg",
+    "images/products/salomon-xt-6-l472935-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Blue Print / Heather / White
+  "salomon-xt-6-l472919": [
+    "images/products/salomon-xt-6-l472919-1.jpg",
+    "images/products/salomon-xt-6-l472919-2.jpg",
+    "images/products/salomon-xt-6-l472919-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Black / Black / Silver
+  "salomon-xt-6-l474506": [
+    "images/products/salomon-xt-6-l474506-1.jpg",
+    "images/products/salomon-xt-6-l474506-2.jpg",
+    "images/products/salomon-xt-6-l474506-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Safari / Safari / Black
+  "salomon-xt-6-l474455": [
+    "images/products/salomon-xt-6-l474455-1.jpg",
+    "images/products/salomon-xt-6-l474455-2.jpg",
+    "images/products/salomon-xt-6-l474455-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — White / White / Silver
+  "salomon-xt-6-l475811": [
+    "images/products/salomon-xt-6-l475811-1.jpg",
+    "images/products/salomon-xt-6-l475811-2.jpg",
+    "images/products/salomon-xt-6-l475811-3.jpg"
+  ],
+
+  // Salomon XT-6 — Icicle / Nirvana / Nine Iron
+  "salomon-xt-6-l477376": [
+    "images/products/salomon-xt-6-l477376-1.jpg",
+    "images/products/salomon-xt-6-l477376-2.jpg",
+    "images/products/salomon-xt-6-l477376-3.jpg"
+  ],
+
+  // Salomon XT-6 — Roasted Clay / Burnt Ochre / Almond Milk
+  "salomon-xt-6-l477375": [
+    "images/products/salomon-xt-6-l477375-1.jpg",
+    "images/products/salomon-xt-6-l477375-2.jpg",
+    "images/products/salomon-xt-6-l477375-3.jpg"
+  ],
+
+  // Salomon XT-6 — Oxford Tan / Carbon / Clearly Aqua
+  "salomon-xt-6-l477374": [
+    "images/products/salomon-xt-6-l477374-1.jpg",
+    "images/products/salomon-xt-6-l477374-2.jpg",
+    "images/products/salomon-xt-6-l477374-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Iron / Etherea / Seagrass
+  "salomon-xt-6-l477326": [
+    "images/products/salomon-xt-6-l477326-1.jpg",
+    "images/products/salomon-xt-6-l477326-2.jpg",
+    "images/products/salomon-xt-6-l477326-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Almond Milk / Feather Gray / Pale Mauve
+  "salomon-xt-6-l475812": [
+    "images/products/salomon-xt-6-l475812-1.jpg",
+    "images/products/salomon-xt-6-l475812-2.jpg",
+    "images/products/salomon-xt-6-l475812-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Urban Chic / Black / Lime Cream
+  "salomon-xt-6-l475813": [
+    "images/products/salomon-xt-6-l475813-1.jpg",
+    "images/products/salomon-xt-6-l475813-2.jpg",
+    "images/products/salomon-xt-6-l475813-3.jpg"
+  ],
+
+  // Salomon XT-6 — Vanilla Ice / Iron / Etherea
+  "salomon-xt-6-l477377": [
+    "images/products/salomon-xt-6-l477377-1.jpg",
+    "images/products/salomon-xt-6-l477377-2.jpg",
+    "images/products/salomon-xt-6-l477377-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Black / Flame Scarlet / Vanilla Ice
+  "salomon-xt-6-l479749": [
+    "images/products/salomon-xt-6-l479749-1.jpg",
+    "images/products/salomon-xt-6-l479749-2.jpg",
+    "images/products/salomon-xt-6-l479749-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Tea / Peat
+  "salomon-xt-6-l478638": [
+    "images/products/salomon-xt-6-l478638-1.jpg",
+    "images/products/salomon-xt-6-l478638-2.jpg",
+    "images/products/salomon-xt-6-l478638-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Mahogany Rose / Tawny Port / Black
+  "salomon-xt-6-l478637": [
+    "images/products/salomon-xt-6-l478637-1.jpg",
+    "images/products/salomon-xt-6-l478637-2.jpg",
+    "images/products/salomon-xt-6-l478637-3.jpg"
+  ],
+
+  // Salomon XT-6 — Nine Iron / Excalibur / Plum Perfect
+  "salomon-xt-6-l478641": [
+    "images/products/salomon-xt-6-l478641-1.jpg",
+    "images/products/salomon-xt-6-l478641-2.jpg",
+    "images/products/salomon-xt-6-l478641-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — North Atlantic / Black / Silver
+  "salomon-xt-6-l478615": [
+    "images/products/salomon-xt-6-l478615-1.jpg",
+    "images/products/salomon-xt-6-l478615-2.jpg",
+    "images/products/salomon-xt-6-l478615-3.jpg"
+  ],
+
+  // Salomon XT-6 GORE-TEX — Blue Nights / Astral Aura / Plum Kitten
+  "salomon-xt-6-l478616": [
+    "images/products/salomon-xt-6-l478616-1.jpg",
+    "images/products/salomon-xt-6-l478616-2.jpg",
+    "images/products/salomon-xt-6-l478616-3.jpg"
+  ],
+
+  // Salomon XT-6 — Ultramarine / Silver / Black
+  "salomon-xt-6-l478651": [
+    "images/products/salomon-xt-6-l478651-1.jpg",
+    "images/products/salomon-xt-6-l478651-2.jpg",
+    "images/products/salomon-xt-6-l478651-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Storm Cloud
+  "asics-gel-1130-1203b077-100": [
+    "images/products/asics-gel-1130-1203b077-100-1.jpg",
+    "images/products/asics-gel-1130-1203b077-100-2.jpg",
+    "images/products/asics-gel-1130-1203b077-100-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Cream / Pinkcloud
+  "asics-gel-1130-1203b077-101": [
+    "images/products/asics-gel-1130-1203b077-101-1.jpg",
+    "images/products/asics-gel-1130-1203b077-101-2.jpg",
+    "images/products/asics-gel-1130-1203b077-101-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Oatmeal / Obsidian Grey
+  "asics-gel-1130-1203b045-250": [
+    "images/products/asics-gel-1130-1203b045-250-1.jpg",
+    "images/products/asics-gel-1130-1203b045-250-2.jpg",
+    "images/products/asics-gel-1130-1203b045-250-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Evergreen / Black
+  "asics-gel-1130-1203a609-301": [
+    "images/products/asics-gel-1130-1203a609-301-1.jpg",
+    "images/products/asics-gel-1130-1203a609-301-2.jpg",
+    "images/products/asics-gel-1130-1203a609-301-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Cream / Cocoa Powder
+  "asics-gel-1130-1203a609-114": [
+    "images/products/asics-gel-1130-1203a609-114-1.jpg",
+    "images/products/asics-gel-1130-1203a609-114-2.jpg",
+    "images/products/asics-gel-1130-1203a609-114-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Rusted Rock
+  "asics-gel-1130-1203a609-117": [
+    "images/products/asics-gel-1130-1203a609-117-1.jpg",
+    "images/products/asics-gel-1130-1203a609-117-2.jpg",
+    "images/products/asics-gel-1130-1203a609-117-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Glacier Grey / Pure Silver
+  "asics-gel-1130-1203a609-023": [
+    "images/products/asics-gel-1130-1203a609-023-1.jpg",
+    "images/products/asics-gel-1130-1203a609-023-2.jpg",
+    "images/products/asics-gel-1130-1203a609-023-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Cream / Pink Cloud
+  "asics-gel-1130-1203a899-105": [
+    "images/products/asics-gel-1130-1203a899-105-1.jpg",
+    "images/products/asics-gel-1130-1203a899-105-2.jpg",
+    "images/products/asics-gel-1130-1203a899-105-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Taro Purple
+  "asics-gel-1130-1203a899-100": [
+    "images/products/asics-gel-1130-1203a899-100-1.jpg",
+    "images/products/asics-gel-1130-1203a899-100-2.jpg",
+    "images/products/asics-gel-1130-1203a899-100-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Cream / Carrier Grey
+  "asics-gel-1130-1203a899-101": [
+    "images/products/asics-gel-1130-1203a899-101-1.jpg",
+    "images/products/asics-gel-1130-1203a899-101-2.jpg",
+    "images/products/asics-gel-1130-1203a899-101-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Clay Canyon
+  "asics-gel-1130-1201a256-113": [
+    "images/products/asics-gel-1130-1201a256-113-1.jpg",
+    "images/products/asics-gel-1130-1201a256-113-2.jpg",
+    "images/products/asics-gel-1130-1201a256-113-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Mid Grey
+  "asics-gel-1130-1201a256-114": [
+    "images/products/asics-gel-1130-1201a256-114-1.jpg",
+    "images/products/asics-gel-1130-1201a256-114-2.jpg",
+    "images/products/asics-gel-1130-1201a256-114-3.jpg"
+  ],
+
+  // Asics GEL-1130 Femme — White / Jade
+  "asics-gel-1130-1202a164-112": [
+    "images/products/asics-gel-1130-1202a164-112-1.jpg",
+    "images/products/asics-gel-1130-1202a164-112-2.jpg",
+    "images/products/asics-gel-1130-1202a164-112-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Cream / Ironclad
+  "asics-gel-1130-1201a256-115": [
+    "images/products/asics-gel-1130-1201a256-115-1.jpg",
+    "images/products/asics-gel-1130-1201a256-115-2.jpg",
+    "images/products/asics-gel-1130-1201a256-115-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Oyster Grey / Clay Grey
+  "asics-gel-1130-1201a255-028": [
+    "images/products/asics-gel-1130-1201a255-028-1.jpg",
+    "images/products/asics-gel-1130-1201a255-028-2.jpg",
+    "images/products/asics-gel-1130-1201a255-028-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Smoke Grey / Honey Beige
+  "asics-gel-1130-1201a255-030": [
+    "images/products/asics-gel-1130-1201a255-030-1.jpg",
+    "images/products/asics-gel-1130-1201a255-030-2.jpg",
+    "images/products/asics-gel-1130-1201a255-030-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Vanilla / White Sage
+  "asics-gel-1130-1201a255-252": [
+    "images/products/asics-gel-1130-1201a255-252-1.jpg",
+    "images/products/asics-gel-1130-1201a255-252-2.jpg",
+    "images/products/asics-gel-1130-1201a255-252-3.jpg"
+  ],
+
+  // Asics GEL-1130 Femme — White / Malachite Green
+  "asics-gel-1130-1202a164-114": [
+    "images/products/asics-gel-1130-1202a164-114-1.jpg",
+    "images/products/asics-gel-1130-1202a164-114-2.jpg",
+    "images/products/asics-gel-1130-1202a164-114-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Cloud Grey
+  "asics-gel-1130-1201a256-118": [
+    "images/products/asics-gel-1130-1201a256-118-1.jpg",
+    "images/products/asics-gel-1130-1201a256-118-2.jpg",
+    "images/products/asics-gel-1130-1201a256-118-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Clay Grey / Pure Silver
+  "asics-gel-1130-1201a256-026": [
+    "images/products/asics-gel-1130-1201a256-026-1.jpg",
+    "images/products/asics-gel-1130-1201a256-026-2.jpg",
+    "images/products/asics-gel-1130-1201a256-026-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Black / Pure Silver
+  "asics-gel-1130-1201a906-001": [
+    "images/products/asics-gel-1130-1201a906-001-1.jpg",
+    "images/products/asics-gel-1130-1201a906-001-2.jpg",
+    "images/products/asics-gel-1130-1201a906-001-3.jpg"
+  ],
+
+  // Asics GEL-1130 — Cream / Blueberry
+  "asics-gel-1130-1203a609-101": [
+    "images/products/asics-gel-1130-1203a609-101-1.jpg",
+    "images/products/asics-gel-1130-1203a609-101-2.jpg",
+    "images/products/asics-gel-1130-1203a609-101-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Desert Red
+  "asics-gel-1130-1203a609-102": [
+    "images/products/asics-gel-1130-1203a609-102-1.jpg",
+    "images/products/asics-gel-1130-1203a609-102-2.jpg",
+    "images/products/asics-gel-1130-1203a609-102-3.jpg"
+  ],
+
+  // Asics GEL-1130 — White / Shamrock Green
+  "asics-gel-1130-1204a182-100": [
+    "images/products/asics-gel-1130-1204a182-100-1.jpg",
+    "images/products/asics-gel-1130-1204a182-100-2.jpg",
+    "images/products/asics-gel-1130-1204a182-100-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Carrier Grey / Black
+  "asics-kayano-14-1203a537-026": [
+    "images/products/asics-kayano-14-1203a537-026-1.jpg",
+    "images/products/asics-kayano-14-1203a537-026-2.jpg",
+    "images/products/asics-kayano-14-1203a537-026-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Cream / Cocoa Powder
+  "asics-kayano-14-1203a537-118": [
+    "images/products/asics-kayano-14-1203a537-118-1.jpg",
+    "images/products/asics-kayano-14-1203a537-118-2.jpg",
+    "images/products/asics-kayano-14-1203a537-118-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Black / Cream
+  "asics-kayano-14-1203a537-002": [
+    "images/products/asics-kayano-14-1203a537-002-1.jpg",
+    "images/products/asics-kayano-14-1203a537-002-2.jpg",
+    "images/products/asics-kayano-14-1203a537-002-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Birch / Pure Silver
+  "asics-kayano-14-1203a537-200": [
+    "images/products/asics-kayano-14-1203a537-200-1.jpg",
+    "images/products/asics-kayano-14-1203a537-200-2.jpg",
+    "images/products/asics-kayano-14-1203a537-200-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Cream / Obsidian Grey
+  "asics-kayano-14-1203a537-113": [
+    "images/products/asics-kayano-14-1203a537-113-1.jpg",
+    "images/products/asics-kayano-14-1203a537-113-2.jpg",
+    "images/products/asics-kayano-14-1203a537-113-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Concrete / Pure Silver
+  "asics-kayano-14-1203a537-025": [
+    "images/products/asics-kayano-14-1203a537-025-1.jpg",
+    "images/products/asics-kayano-14-1203a537-025-2.jpg",
+    "images/products/asics-kayano-14-1203a537-025-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — White / Piquant Orange
+  "asics-kayano-14-1201a019-109": [
+    "images/products/asics-kayano-14-1201a019-109-1.jpg",
+    "images/products/asics-kayano-14-1201a019-109-2.jpg",
+    "images/products/asics-kayano-14-1201a019-109-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 Femme — White / Dark Grape
+  "asics-kayano-14-1202a056-111": [
+    "images/products/asics-kayano-14-1202a056-111-1.jpg",
+    "images/products/asics-kayano-14-1202a056-111-2.jpg",
+    "images/products/asics-kayano-14-1202a056-111-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Simply Taupe / Oatmeal
+  "asics-kayano-14-1201a161-251": [
+    "images/products/asics-kayano-14-1201a161-251-1.jpg",
+    "images/products/asics-kayano-14-1201a161-251-2.jpg",
+    "images/products/asics-kayano-14-1201a161-251-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 Femme — White / Smoke Grey
+  "asics-kayano-14-1202a105-103": [
+    "images/products/asics-kayano-14-1202a105-103-1.jpg",
+    "images/products/asics-kayano-14-1202a105-103-2.jpg",
+    "images/products/asics-kayano-14-1202a105-103-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Black / Pure Silver
+  "asics-kayano-14-1201a019-006": [
+    "images/products/asics-kayano-14-1201a019-006-1.jpg",
+    "images/products/asics-kayano-14-1201a019-006-2.jpg",
+    "images/products/asics-kayano-14-1201a019-006-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Birch / Dark Pewter
+  "asics-kayano-14-1201a019-200": [
+    "images/products/asics-kayano-14-1201a019-200-1.jpg",
+    "images/products/asics-kayano-14-1201a019-200-2.jpg",
+    "images/products/asics-kayano-14-1201a019-200-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — White / Malachite Green
+  "asics-kayano-14-1201a019-110": [
+    "images/products/asics-kayano-14-1201a019-110-1.jpg",
+    "images/products/asics-kayano-14-1201a019-110-2.jpg",
+    "images/products/asics-kayano-14-1201a019-110-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Arctic Sky / Pure Silver
+  "asics-kayano-14-1203a537-400": [
+    "images/products/asics-kayano-14-1203a537-400-1.jpg",
+    "images/products/asics-kayano-14-1203a537-400-2.jpg",
+    "images/products/asics-kayano-14-1203a537-400-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — White / Fjord Grey
+  "asics-kayano-14-1203a537-106": [
+    "images/products/asics-kayano-14-1203a537-106-1.jpg",
+    "images/products/asics-kayano-14-1203a537-106-2.jpg",
+    "images/products/asics-kayano-14-1203a537-106-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — White / Graphite Grey
+  "asics-kayano-14-1203a537-110": [
+    "images/products/asics-kayano-14-1203a537-110-1.jpg",
+    "images/products/asics-kayano-14-1203a537-110-2.jpg",
+    "images/products/asics-kayano-14-1203a537-110-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Cream / Ironclad
+  "asics-kayano-14-1203a537-109": [
+    "images/products/asics-kayano-14-1203a537-109-1.jpg",
+    "images/products/asics-kayano-14-1203a537-109-2.jpg",
+    "images/products/asics-kayano-14-1203a537-109-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — White / Pure Gold
+  "asics-kayano-14-1201a019-102": [
+    "images/products/asics-kayano-14-1201a019-102-1.jpg",
+    "images/products/asics-kayano-14-1201a019-102-2.jpg",
+    "images/products/asics-kayano-14-1201a019-102-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Dolphin Grey / Pure Silver
+  "asics-kayano-14-1203a537-401": [
+    "images/products/asics-kayano-14-1203a537-401-1.jpg",
+    "images/products/asics-kayano-14-1203a537-401-2.jpg",
+    "images/products/asics-kayano-14-1203a537-401-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — Dried Leaf Green / Pure Silver
+  "asics-kayano-14-1203a537-300": [
+    "images/products/asics-kayano-14-1203a537-300-1.jpg",
+    "images/products/asics-kayano-14-1203a537-300-2.jpg",
+    "images/products/asics-kayano-14-1203a537-300-3.jpg"
+  ],
+
+  // Asics GEL-Kayano 14 — White / Light Sage
+  "asics-kayano-14-1203a537-117": [
+    "images/products/asics-kayano-14-1203a537-117-1.jpg",
+    "images/products/asics-kayano-14-1203a537-117-2.jpg",
+    "images/products/asics-kayano-14-1203a537-117-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy Beta — White
+  "mizuno-wave-prophecy-mud1ga227608": [
+    "images/products/mizuno-wave-prophecy-mud1ga227608-1.jpg",
+    "images/products/mizuno-wave-prophecy-mud1ga227608-2.jpg",
+    "images/products/mizuno-wave-prophecy-mud1ga227608-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Silver Cloud / White Sand / Cedar Green
+  "mizuno-wave-prophecy-mud1ga238701": [
+    "images/products/mizuno-wave-prophecy-mud1ga238701-1.jpg",
+    "images/products/mizuno-wave-prophecy-mud1ga238701-2.jpg",
+    "images/products/mizuno-wave-prophecy-mud1ga238701-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Wind Chime / Fallen Rock
+  "mizuno-wave-prophecy-590063-wc8q": [
+    "images/products/mizuno-wave-prophecy-590063-wc8q-1.jpg",
+    "images/products/mizuno-wave-prophecy-590063-wc8q-2.jpg",
+    "images/products/mizuno-wave-prophecy-590063-wc8q-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy 1 — Iron Gate / Silver
+  "mizuno-wave-prophecy-590148-9673": [
+    "images/products/mizuno-wave-prophecy-590148-9673-1.jpg",
+    "images/products/mizuno-wave-prophecy-590148-9673-2.jpg",
+    "images/products/mizuno-wave-prophecy-590148-9673-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Black Sand / Iron Gate
+  "mizuno-wave-prophecy-590126-bs96": [
+    "images/products/mizuno-wave-prophecy-590126-bs96-1.jpg",
+    "images/products/mizuno-wave-prophecy-590126-bs96-2.jpg",
+    "images/products/mizuno-wave-prophecy-590126-bs96-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Harvest Gold / Silver
+  "mizuno-wave-prophecy-590187-7773": [
+    "images/products/mizuno-wave-prophecy-590187-7773-1.jpg",
+    "images/products/mizuno-wave-prophecy-590187-7773-2.jpg",
+    "images/products/mizuno-wave-prophecy-590187-7773-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Spring Crocus / Silver
+  "mizuno-wave-prophecy-590187-6j73": [
+    "images/products/mizuno-wave-prophecy-590187-6j73-1.jpg",
+    "images/products/mizuno-wave-prophecy-590187-6j73-2.jpg"
+  ],
+
+  // Mizuno Wave Prophecy 1 — Artisan's Gold / Zinnia / Strong Blue
+  "mizuno-wave-prophecy-590188-792a": [
+    "images/products/mizuno-wave-prophecy-590188-792a-1.jpg",
+    "images/products/mizuno-wave-prophecy-590188-792a-2.jpg",
+    "images/products/mizuno-wave-prophecy-590188-792a-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy 1 — Harbor Mist / Chinese Red
+  "mizuno-wave-prophecy-590148-hm1f": [
+    "images/products/mizuno-wave-prophecy-590148-hm1f-1.jpg",
+    "images/products/mizuno-wave-prophecy-590148-hm1f-2.jpg",
+    "images/products/mizuno-wave-prophecy-590148-hm1f-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Salute Navy Blazer
+  "mizuno-wave-prophecy-590091-59nl": [
+    "images/products/mizuno-wave-prophecy-590091-59nl-1.jpg",
+    "images/products/mizuno-wave-prophecy-590091-59nl-2.jpg",
+    "images/products/mizuno-wave-prophecy-590091-59nl-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Sun Dried Tomato / Barbados Cherry
+  "mizuno-wave-prophecy-590091-1k16": [
+    "images/products/mizuno-wave-prophecy-590091-1k16-1.jpg",
+    "images/products/mizuno-wave-prophecy-590091-1k16-2.jpg",
+    "images/products/mizuno-wave-prophecy-590091-1k16-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Black
+  "mizuno-wave-prophecy-590126-5p90": [
+    "images/products/mizuno-wave-prophecy-590126-5p90-1.jpg",
+    "images/products/mizuno-wave-prophecy-590126-5p90-2.jpg",
+    "images/products/mizuno-wave-prophecy-590126-5p90-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Black
+  "mizuno-wave-prophecy-590091-9690": [
+    "images/products/mizuno-wave-prophecy-590091-9690-1.jpg",
+    "images/products/mizuno-wave-prophecy-590091-9690-2.jpg",
+    "images/products/mizuno-wave-prophecy-590091-9690-3.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Basic — Black
+  "sweetpants-3d-basic-cap-black": [
+    "images/products/sweetpants-3d-basic-cap-black-1.jpg",
+    "images/products/sweetpants-3d-basic-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Basic — Clay
+  "sweetpants-3d-basic-cap-clay": [
+    "images/products/sweetpants-3d-basic-cap-clay-1.jpg",
+    "images/products/sweetpants-3d-basic-cap-clay-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Basic — Kaki
+  "sweetpants-3d-basic-cap-kaki": [
+    "images/products/sweetpants-3d-basic-cap-kaki-1.jpg",
+    "images/products/sweetpants-3d-basic-cap-kaki-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Basic — Leaf
+  "sweetpants-3d-basic-cap-leaf": [
+    "images/products/sweetpants-3d-basic-cap-leaf-1.jpg",
+    "images/products/sweetpants-3d-basic-cap-leaf-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Basic — Navy
+  "sweetpants-3d-basic-cap-navy": [
+    "images/products/sweetpants-3d-basic-cap-navy-1.jpg",
+    "images/products/sweetpants-3d-basic-cap-navy-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Basic — Sauge
+  "sweetpants-3d-basic-cap-sauge": [
+    "images/products/sweetpants-3d-basic-cap-sauge-1.jpg",
+    "images/products/sweetpants-3d-basic-cap-sauge-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Air Blue
+  "sweetpants-3d-uni-cap-air-blue": [
+    "images/products/sweetpants-3d-uni-cap-air-blue-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-air-blue-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Black
+  "sweetpants-3d-uni-cap-black": [
+    "images/products/sweetpants-3d-uni-cap-black-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Electrik
+  "sweetpants-3d-uni-cap-electrik": [
+    "images/products/sweetpants-3d-uni-cap-electrik-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-electrik-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Fudge
+  "sweetpants-3d-uni-cap-fudge": [
+    "images/products/sweetpants-3d-uni-cap-fudge-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-fudge-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Karmin
+  "sweetpants-3d-uni-cap-karmin": [
+    "images/products/sweetpants-3d-uni-cap-karmin-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-karmin-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Mirage
+  "sweetpants-3d-uni-cap-mirage": [
+    "images/products/sweetpants-3d-uni-cap-mirage-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-mirage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Night
+  "sweetpants-3d-uni-cap-night": [
+    "images/products/sweetpants-3d-uni-cap-night-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Primrose
+  "sweetpants-3d-uni-cap-primrose": [
+    "images/products/sweetpants-3d-uni-cap-primrose-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-primrose-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Sage
+  "sweetpants-3d-uni-cap-sage": [
+    "images/products/sweetpants-3d-uni-cap-sage-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-sage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Yarrow
+  "sweetpants-3d-uni-cap-yarrow": [
+    "images/products/sweetpants-3d-uni-cap-yarrow-1.jpg",
+    "images/products/sweetpants-3d-uni-cap-yarrow-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Off White
+  "sweetpants-3d-uni-capoff-white": [
+    "images/products/sweetpants-3d-uni-capoff-white-1.jpg",
+    "images/products/sweetpants-3d-uni-capoff-white-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Peony
+  "sweetpants-3d-uni-cappeony": [
+    "images/products/sweetpants-3d-uni-cappeony-1.jpg",
+    "images/products/sweetpants-3d-uni-cappeony-2.jpg"
+  ],
+
+  // Casquette Sweet Pants 3D Uni — Rocky
+  "sweetpants-3d-uni-caprocky": [
+    "images/products/sweetpants-3d-uni-caprocky-1.jpg",
+    "images/products/sweetpants-3d-uni-caprocky-2.jpg"
+  ],
+
+  // Casquette Sweet Pants American — Electrik
+  "sweetpants-american-cap-electrik": [
+    "images/products/sweetpants-american-cap-electrik-1.jpg",
+    "images/products/sweetpants-american-cap-electrik-2.jpg"
+  ],
+
+  // Casquette Sweet Pants American — Karmin
+  "sweetpants-american-cap-karmin": [
+    "images/products/sweetpants-american-cap-karmin-1.jpg",
+    "images/products/sweetpants-american-cap-karmin-2.jpg"
+  ],
+
+  // Casquette Sweet Pants American — Night
+  "sweetpants-american-cap-night": [
+    "images/products/sweetpants-american-cap-night-1.jpg",
+    "images/products/sweetpants-american-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Basic CT — Black
+  "sweetpants-basic-ct-cap-black": [
+    "images/products/sweetpants-basic-ct-cap-black-1.jpg",
+    "images/products/sweetpants-basic-ct-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Basic CT — Night
+  "sweetpants-basic-ct-cap-night": [
+    "images/products/sweetpants-basic-ct-cap-night-1.jpg",
+    "images/products/sweetpants-basic-ct-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Bijoux — Azure
+  "sweetpants-bijoux-cap-azure": [
+    "images/products/sweetpants-bijoux-cap-azure-1.jpg",
+    "images/products/sweetpants-bijoux-cap-azure-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Bijoux — Black Chaine
+  "sweetpants-bijoux-cap-black-chaine": [
+    "images/products/sweetpants-bijoux-cap-black-chaine-1.jpg",
+    "images/products/sweetpants-bijoux-cap-black-chaine-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Bijoux — Black Perle
+  "sweetpants-bijoux-cap-black-perle": [
+    "images/products/sweetpants-bijoux-cap-black-perle-1.jpg",
+    "images/products/sweetpants-bijoux-cap-black-perle-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Bijoux — Night
+  "sweetpants-bijoux-cap-night": [
+    "images/products/sweetpants-bijoux-cap-night-1.jpg",
+    "images/products/sweetpants-bijoux-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Bijoux — Primrose
+  "sweetpants-bijoux-cap-primrose": [
+    "images/products/sweetpants-bijoux-cap-primrose-1.jpg",
+    "images/products/sweetpants-bijoux-cap-primrose-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Bijoux — Sage
+  "sweetpants-bijoux-cap-sage": [
+    "images/products/sweetpants-bijoux-cap-sage-1.jpg",
+    "images/products/sweetpants-bijoux-cap-sage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Bijoux — White Pepper
+  "sweetpants-bijoux-cap-white-pepper": [
+    "images/products/sweetpants-bijoux-cap-white-pepper-1.jpg",
+    "images/products/sweetpants-bijoux-cap-white-pepper-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Canvas — Night
+  "sweetpants-canvas-cap-night": [
+    "images/products/sweetpants-canvas-cap-night-1.jpg",
+    "images/products/sweetpants-canvas-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Canvas — Toffee
+  "sweetpants-canvas-cap-toffee": [
+    "images/products/sweetpants-canvas-cap-toffee-1.jpg",
+    "images/products/sweetpants-canvas-cap-toffee-2.jpg"
+  ],
+
+  // Casquette Sweet Pants La Army — Camouflage
+  "sweetpants-casquette-snapback-camouflage": [
+    "images/products/sweetpants-casquette-snapback-camouflage-1.jpg",
+    "images/products/sweetpants-casquette-snapback-camouflage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Coach — Night
+  "sweetpants-coach-cap-night": [
+    "images/products/sweetpants-coach-cap-night-1.jpg",
+    "images/products/sweetpants-coach-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Coach — Off White
+  "sweetpants-coach-cap-off-white": [
+    "images/products/sweetpants-coach-cap-off-white-1.jpg"
+  ],
+
+  // Casquette Sweet Pants Coach — White Pepper
+  "sweetpants-coach-cap-white-pepper": [
+    "images/products/sweetpants-coach-cap-white-pepper-1.jpg",
+    "images/products/sweetpants-coach-cap-white-pepper-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Coach — Windsor
+  "sweetpants-coach-cap-windsor": [
+    "images/products/sweetpants-coach-cap-windsor-1.jpg",
+    "images/products/sweetpants-coach-cap-windsor-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Denim Used — Blue Vintage
+  "sweetpants-denim-used-cap-blue-vintage": [
+    "images/products/sweetpants-denim-used-cap-blue-vintage-1.jpg",
+    "images/products/sweetpants-denim-used-cap-blue-vintage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Denim Used — Dark Blue
+  "sweetpants-denim-used-cap-dark-blue": [
+    "images/products/sweetpants-denim-used-cap-dark-blue-1.jpg",
+    "images/products/sweetpants-denim-used-cap-dark-blue-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Denim Used — Snow
+  "sweetpants-denim-used-cap-snow": [
+    "images/products/sweetpants-denim-used-cap-snow-1.jpg",
+    "images/products/sweetpants-denim-used-cap-snow-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Gym — Black
+  "sweetpants-gym-cap-black": [
+    "images/products/sweetpants-gym-cap-black-1.jpg",
+    "images/products/sweetpants-gym-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Gym — Camouflage
+  "sweetpants-gym-cap-camouflage": [
+    "images/products/sweetpants-gym-cap-camouflage-1.jpg",
+    "images/products/sweetpants-gym-cap-camouflage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Gym — Electrik
+  "sweetpants-gym-cap-electrik": [
+    "images/products/sweetpants-gym-cap-electrik-1.jpg",
+    "images/products/sweetpants-gym-cap-electrik-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Gym — Karmin
+  "sweetpants-gym-cap-karmin": [
+    "images/products/sweetpants-gym-cap-karmin-1.jpg",
+    "images/products/sweetpants-gym-cap-karmin-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Gym — Leopard
+  "sweetpants-gym-cap-leopard": [
+    "images/products/sweetpants-gym-cap-leopard-1.jpg",
+    "images/products/sweetpants-gym-cap-leopard-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Gym — Night
+  "sweetpants-gym-cap-night": [
+    "images/products/sweetpants-gym-cap-night-1.jpg",
+    "images/products/sweetpants-gym-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Gym — Toffee
+  "sweetpants-gym-cap-toffee": [
+    "images/products/sweetpants-gym-cap-toffee-1.jpg",
+    "images/products/sweetpants-gym-cap-toffee-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heart — Electrik
+  "sweetpants-heart-cap-electrik": [
+    "images/products/sweetpants-heart-cap-electrik-1.jpg",
+    "images/products/sweetpants-heart-cap-electrik-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heart — Milk
+  "sweetpants-heart-cap-milk": [
+    "images/products/sweetpants-heart-cap-milk-1.jpg",
+    "images/products/sweetpants-heart-cap-milk-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heart — Night
+  "sweetpants-heart-cap-night": [
+    "images/products/sweetpants-heart-cap-night-1.jpg",
+    "images/products/sweetpants-heart-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heart Foam — Electrik
+  "sweetpants-heart-foam-cap-electrik": [
+    "images/products/sweetpants-heart-foam-cap-electrik-1.jpg",
+    "images/products/sweetpants-heart-foam-cap-electrik-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heart Foam — Karmin
+  "sweetpants-heart-foam-cap-karmin": [
+    "images/products/sweetpants-heart-foam-cap-karmin-1.jpg",
+    "images/products/sweetpants-heart-foam-cap-karmin-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heart Foam — Night
+  "sweetpants-heart-foam-cap-night": [
+    "images/products/sweetpants-heart-foam-cap-night-1.jpg",
+    "images/products/sweetpants-heart-foam-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heritage — Night
+  "sweetpants-heritage-cap-night": [
+    "images/products/sweetpants-heritage-cap-night-1.jpg",
+    "images/products/sweetpants-heritage-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Heritage — Off White
+  "sweetpants-heritage-cap-off-white": [
+    "images/products/sweetpants-heritage-cap-off-white-1.jpg",
+    "images/products/sweetpants-heritage-cap-off-white-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Aluminium
+  "sweetpants-home-run-cap-aluminium": [
+    "images/products/sweetpants-home-run-cap-aluminium-1.jpg",
+    "images/products/sweetpants-home-run-cap-aluminium-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Argile
+  "sweetpants-home-run-cap-argile": [
+    "images/products/sweetpants-home-run-cap-argile-1.jpg",
+    "images/products/sweetpants-home-run-cap-argile-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Azure
+  "sweetpants-home-run-cap-azure": [
+    "images/products/sweetpants-home-run-cap-azure-1.jpg",
+    "images/products/sweetpants-home-run-cap-azure-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Baltique
+  "sweetpants-home-run-cap-baltique": [
+    "images/products/sweetpants-home-run-cap-baltique-1.jpg",
+    "images/products/sweetpants-home-run-cap-baltique-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Black
+  "sweetpants-home-run-cap-black": [
+    "images/products/sweetpants-home-run-cap-black-1.jpg",
+    "images/products/sweetpants-home-run-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Candy
+  "sweetpants-home-run-cap-candy": [
+    "images/products/sweetpants-home-run-cap-candy-1.jpg",
+    "images/products/sweetpants-home-run-cap-candy-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Grey
+  "sweetpants-home-run-cap-grey": [
+    "images/products/sweetpants-home-run-cap-grey-1.jpg",
+    "images/products/sweetpants-home-run-cap-grey-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Imperial
+  "sweetpants-home-run-cap-imperial": [
+    "images/products/sweetpants-home-run-cap-imperial-1.jpg",
+    "images/products/sweetpants-home-run-cap-imperial-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Kaki
+  "sweetpants-home-run-cap-kaki": [
+    "images/products/sweetpants-home-run-cap-kaki-1.jpg",
+    "images/products/sweetpants-home-run-cap-kaki-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Light Clay
+  "sweetpants-home-run-cap-light-clay": [
+    "images/products/sweetpants-home-run-cap-light-clay-1.jpg",
+    "images/products/sweetpants-home-run-cap-light-clay-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Night
+  "sweetpants-home-run-cap-night": [
+    "images/products/sweetpants-home-run-cap-night-1.jpg",
+    "images/products/sweetpants-home-run-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Peony
+  "sweetpants-home-run-cap-peony": [
+    "images/products/sweetpants-home-run-cap-peony-1.jpg",
+    "images/products/sweetpants-home-run-cap-peony-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Primrose
+  "sweetpants-home-run-cap-primrose": [
+    "images/products/sweetpants-home-run-cap-primrose-1.jpg",
+    "images/products/sweetpants-home-run-cap-primrose-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Sage
+  "sweetpants-home-run-cap-sage": [
+    "images/products/sweetpants-home-run-cap-sage-1.jpg",
+    "images/products/sweetpants-home-run-cap-sage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Varsity Blue
+  "sweetpants-home-run-cap-varsity-blue": [
+    "images/products/sweetpants-home-run-cap-varsity-blue-1.jpg",
+    "images/products/sweetpants-home-run-cap-varsity-blue-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Home Run — Windsor
+  "sweetpants-home-run-cap-windsor": [
+    "images/products/sweetpants-home-run-cap-windsor-1.jpg",
+    "images/products/sweetpants-home-run-cap-windsor-2.jpg"
+  ],
+
+  // Casquette Sweet Pants La Leo — Leopard
+  "sweetpants-la-leo-cap": [
+    "images/products/sweetpants-la-leo-cap-1.jpg",
+    "images/products/sweetpants-la-leo-cap-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Ninetys — Black
+  "sweetpants-ninetys-cap-black": [
+    "images/products/sweetpants-ninetys-cap-black-1.jpg",
+    "images/products/sweetpants-ninetys-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Ninetys — Fudge
+  "sweetpants-ninetys-cap-fudge": [
+    "images/products/sweetpants-ninetys-cap-fudge-1.jpg",
+    "images/products/sweetpants-ninetys-cap-fudge-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Ninetys — Night
+  "sweetpants-ninetys-cap-night": [
+    "images/products/sweetpants-ninetys-cap-night-1.jpg",
+    "images/products/sweetpants-ninetys-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Nylon — Black
+  "sweetpants-nylon-cap-black": [
+    "images/products/sweetpants-nylon-cap-black-1.jpg",
+    "images/products/sweetpants-nylon-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Nylon — Fudge
+  "sweetpants-nylon-cap-fudge": [
+    "images/products/sweetpants-nylon-cap-fudge-1.jpg",
+    "images/products/sweetpants-nylon-cap-fudge-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Nylon — Night
+  "sweetpants-nylon-cap-night": [
+    "images/products/sweetpants-nylon-cap-night-1.jpg",
+    "images/products/sweetpants-nylon-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Black
+  "sweetpants-patchwork-cap-black": [
+    "images/products/sweetpants-patchwork-cap-black-1.jpg",
+    "images/products/sweetpants-patchwork-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Electrik
+  "sweetpants-patchwork-cap-electrik": [
+    "images/products/sweetpants-patchwork-cap-electrik-1.jpg",
+    "images/products/sweetpants-patchwork-cap-electrik-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Fudge
+  "sweetpants-patchwork-cap-fudge": [
+    "images/products/sweetpants-patchwork-cap-fudge-1.jpg",
+    "images/products/sweetpants-patchwork-cap-fudge-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Karmin
+  "sweetpants-patchwork-cap-karmin": [
+    "images/products/sweetpants-patchwork-cap-karmin-1.jpg",
+    "images/products/sweetpants-patchwork-cap-karmin-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Night
+  "sweetpants-patchwork-cap-night": [
+    "images/products/sweetpants-patchwork-cap-night-2.jpg",
+    "images/products/sweetpants-patchwork-cap-night-1.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Primrose
+  "sweetpants-patchwork-cap-primrose": [
+    "images/products/sweetpants-patchwork-cap-primrose-1.jpg",
+    "images/products/sweetpants-patchwork-cap-primrose-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Seaweed
+  "sweetpants-patchwork-cap-seaweed": [
+    "images/products/sweetpants-patchwork-cap-seaweed-1.jpg",
+    "images/products/sweetpants-patchwork-cap-seaweed-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — Toffee
+  "sweetpants-patchwork-cap-toffee": [
+    "images/products/sweetpants-patchwork-cap-toffee-1.jpg",
+    "images/products/sweetpants-patchwork-cap-toffee-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Patchwork — White Pepper
+  "sweetpants-patchwork-cap-white-pepper": [
+    "images/products/sweetpants-patchwork-cap-white-pepper-1.jpg",
+    "images/products/sweetpants-patchwork-cap-white-pepper-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sign — Black
+  "sweetpants-sign-cap-black": [
+    "images/products/sweetpants-sign-cap-black-1.jpg",
+    "images/products/sweetpants-sign-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sign — Fudge
+  "sweetpants-sign-cap-fudge": [
+    "images/products/sweetpants-sign-cap-fudge-1.jpg",
+    "images/products/sweetpants-sign-cap-fudge-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sign — Night
+  "sweetpants-sign-cap-night": [
+    "images/products/sweetpants-sign-cap-night-1.jpg",
+    "images/products/sweetpants-sign-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Air Blue
+  "sweetpants-smart-cap-air-blue": [
+    "images/products/sweetpants-smart-cap-air-blue-1.jpg",
+    "images/products/sweetpants-smart-cap-air-blue-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Black
+  "sweetpants-smart-cap-black": [
+    "images/products/sweetpants-smart-cap-black-1.jpg",
+    "images/products/sweetpants-smart-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Dark Earth
+  "sweetpants-smart-cap-dark-earth": [
+    "images/products/sweetpants-smart-cap-dark-earth-1.jpg",
+    "images/products/sweetpants-smart-cap-dark-earth-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Leaf
+  "sweetpants-smart-cap-leaf": [
+    "images/products/sweetpants-smart-cap-leaf-1.jpg",
+    "images/products/sweetpants-smart-cap-leaf-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Milk
+  "sweetpants-smart-cap-milk": [
+    "images/products/sweetpants-smart-cap-milk-1.jpg",
+    "images/products/sweetpants-smart-cap-milk-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Night
+  "sweetpants-smart-cap-night": [
+    "images/products/sweetpants-smart-cap-night-1.jpg",
+    "images/products/sweetpants-smart-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Primrose
+  "sweetpants-smart-cap-primrose": [
+    "images/products/sweetpants-smart-cap-primrose-1.jpg",
+    "images/products/sweetpants-smart-cap-primrose-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Sage
+  "sweetpants-smart-cap-sage": [
+    "images/products/sweetpants-smart-cap-sage-1.jpg",
+    "images/products/sweetpants-smart-cap-sage-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — White Pepper
+  "sweetpants-smart-cap-white-pepper": [
+    "images/products/sweetpants-smart-cap-white-pepper-1.jpg",
+    "images/products/sweetpants-smart-cap-white-pepper-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Smart — Windsor
+  "sweetpants-smart-cap-windsor": [
+    "images/products/sweetpants-smart-cap-windsor-1.jpg",
+    "images/products/sweetpants-smart-cap-windsor-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sunfaded — Black
+  "sweetpants-sunfaded-cap-black": [
+    "images/products/sweetpants-sunfaded-cap-black-1.jpg",
+    "images/products/sweetpants-sunfaded-cap-black-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sunfaded — Brown
+  "sweetpants-sunfaded-cap-brown": [
+    "images/products/sweetpants-sunfaded-cap-brown-1.jpg",
+    "images/products/sweetpants-sunfaded-cap-brown-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sunfaded — Electrik
+  "sweetpants-sunfaded-cap-electrik": [
+    "images/products/sweetpants-sunfaded-cap-electrik-1.jpg",
+    "images/products/sweetpants-sunfaded-cap-electrik-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sunfaded — Karmin
+  "sweetpants-sunfaded-cap-karmin": [
+    "images/products/sweetpants-sunfaded-cap-karmin-1.jpg",
+    "images/products/sweetpants-sunfaded-cap-karmin-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Sunfaded — Milk
+  "sweetpants-sunfaded-cap-milk": [
+    "images/products/sweetpants-sunfaded-cap-milk-1.jpg",
+    "images/products/sweetpants-sunfaded-cap-milk-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Velors — Army
+  "sweetpants-velors-cap-army": [
+    "images/products/sweetpants-velors-cap-army-1.jpg",
+    "images/products/sweetpants-velors-cap-army-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Velors — Eden
+  "sweetpants-velors-cap-eden": [
+    "images/products/sweetpants-velors-cap-eden-1.jpg",
+    "images/products/sweetpants-velors-cap-eden-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Velors — Imperial
+  "sweetpants-velors-cap-imperial": [
+    "images/products/sweetpants-velors-cap-imperial-1.jpg",
+    "images/products/sweetpants-velors-cap-imperial-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Velors — Night
+  "sweetpants-velors-cap-night": [
+    "images/products/sweetpants-velors-cap-night-1.jpg",
+    "images/products/sweetpants-velors-cap-night-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Velors — White Pepper
+  "sweetpants-velors-cap-white-pepper": [
+    "images/products/sweetpants-velors-cap-white-pepper-1.jpg",
+    "images/products/sweetpants-velors-cap-white-pepper-2.jpg"
+  ],
+
+  // Casquette Sweet Pants Velors — Windsor
+  "sweetpants-velors-cap-windsor": [
+    "images/products/sweetpants-velors-cap-windsor-1.jpg",
+    "images/products/sweetpants-velors-cap-windsor-2.jpg"
   ]
 };

@@ -33,7 +33,6 @@ window.BASE_BRANDS = {
   alo:         { name: "Alo",          tint: "#efebe8", line: "Alo Yoga" },
   salomon:     { name: "Salomon",      tint: "#e7eaec", line: "Sportstyle" },
   mizuno:      { name: "Mizuno",       tint: "#e6eaf0", line: "Since 1906" },
-  saucony:     { name: "Saucony",      tint: "#eeeae6", line: "Originals" },
   asics:       { name: "Asics",        tint: "#e7ebee", line: "SportStyle" },
   cpcompany:   { name: "C.P. Company", tint: "#e8eae5", line: "Est. 1971" },
   ugg:         { name: "UGG",          tint: "#ece6de", line: "Since 1978" },
@@ -101,33 +100,6 @@ window.BASE_PRODUCTS = [
     details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe ample : taille grand"]
   },
 
-  /* ---------- RALPH LAUREN ---------- */
-  {
-    id: "rl-double-knit-heather-grey", group: "rl-double-knit",
-    name: "Ensemble Polo Ralph Lauren Double-Knit", color: "Heather Grey", swatch: "#5d5459",
-    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 249,
-    sizes: CLOTHING, tags: ["best"],
-    description: "Veste zippée à capuche et jogging Polo Ralph Lauren en molleton double maille, brodés du Pony.",
-    details: ["Veste zippée + jogging", "Molleton double maille", "Pony brodé", "Coupe droite, taille normalement"]
-  },
-  {
-    id: "rl-double-knit-tan", group: "rl-double-knit",
-    name: "Ensemble Polo Ralph Lauren Double-Knit", color: "Tan", swatch: "#926f4e",
-    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 249,
-    sizes: CLOTHING, lowStock: ["L"], tags: ["new"],
-    description: "Veste zippée et jogging Polo Ralph Lauren double maille, coloris camel, Pony brodé.",
-    details: ["Veste zippée + jogging", "Molleton double maille", "Pony brodé"]
-  },
-  {
-    id: "rl-double-knit-royal-blue", group: "rl-double-knit",
-    name: "Ensemble Polo Ralph Lauren Double-Knit", color: "Royal Blue", swatch: "#10409f",
-    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING, soldOutSizes: ["S"],
-    description: "Veste zippée et jogging Polo Ralph Lauren Double-Knit Tech en bleu roi, Pony brodé.",
-    details: ["Veste zippée + jogging", "Molleton double maille technique", "Pony brodé ton sur ton"]
-  },
-
-
   /* ---------- ON — ensembles ---------- */
   {
     id: "on-club-set-black", group: "on-club-set",
@@ -170,170 +142,6 @@ window.BASE_PRODUCTS = [
     sizes: CLOTHING, tags: ["new"],
     description: "L'ensemble Alo Accolade dans son coloris ivoire signature.",
     details: ["Hoodie + sweatpant", "Molleton brossé ultra-doux", "Coupe relax"]
-  },
-
-  /* ---------- ALO — chaussures ---------- */
-  {
-    id: "alo-recovery-natural-white", group: "alo-recovery",
-    name: "Alo Recovery Mode Sneaker", color: "Natural White", swatch: "#d4d4d4",
-    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
-    sizes: SHOES_W, tags: ["new"],
-    description: "La sneaker Alo pensée pour le confort : semelle légère et amortissante, look clean.",
-    details: ["Semelle légère amortissante", "Cuir lisse", "Taille normalement"]
-  },
-  {
-    id: "alo-recovery-black-gum", group: "alo-recovery",
-    name: "Alo Recovery Mode Sneaker", color: "Black / Gum", swatch: "#464443",
-    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
-    sizes: SHOES_W,
-    description: "La Recovery Mode Alo en noir avec semelle gomme, parfaite avec un ensemble Accolade.",
-    details: ["Semelle gomme", "Cuir lisse", "Taille normalement"]
-  },
-
-  /* ---------- SALOMON — chaussures ---------- */
-  {
-    id: "salomon-xt6-black-coffee", group: "salomon-xt6",
-    name: "Salomon XT-6", color: "Black Coffee / French Roast", swatch: "#cfcdc4",
-    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
-    sizes: SHOES, tags: ["best"],
-    description: "L'icône gorpcore. La XT-6 allie la technicité du trail au style urbain, avec le laçage rapide Quicklace™.",
-    details: ["Laçage Quicklace™", "Châssis SensiFit™", "Accroche Contagrip®", "Taille normalement"]
-  },
-  {
-    id: "salomon-xt6-rainy-day", group: "salomon-xt6",
-    name: "Salomon XT-6", color: "Rainy Day / Paloma / Silver", swatch: "#c3c0be",
-    brand: "salomon", category: "chaussures", gender: "unisexe", price: 209,
-    sizes: SHOES, soldOutSizes: ["44"], lowStock: ["42"],
-    description: "La XT-6 dans un coloris clair très recherché.",
-    details: ["Laçage Quicklace™", "Châssis SensiFit™", "Taille normalement"]
-  },
-  {
-    id: "salomon-xt6-adv-black", group: "salomon-xt6-adv",
-    name: "Salomon XT-6 ADV", color: "Black / Phantom", swatch: "#2a272a",
-    brand: "salomon", category: "chaussures", gender: "unisexe", price: 209,
-    sizes: SHOES, tags: ["best"],
-    description: "La XT-6 Advanced tout en noir, le modèle qui a lancé la tendance.",
-    details: ["Laçage Quicklace™", "Châssis SensiFit™", "Accroche Contagrip®", "Taille normalement"]
-  },
-  {
-    id: "salomon-acs-pro-white", group: "salomon-acs-pro",
-    name: "Salomon ACS Pro", color: "White / Jade / Celadon", swatch: "#a7a186",
-    brand: "salomon", category: "chaussures", gender: "unisexe", price: 179, oldPrice: 199,
-    sizes: SHOES, tags: ["new"],
-    description: "Silhouette rétro-tech, maintien et amorti pour un look affirmé.",
-    details: ["Laçage Quicklace™", "Amorti EnergyCell™", "Taille normalement"]
-  },
-  {
-    id: "salomon-speedcross-3", group: "salomon-speedcross-3",
-    name: "Salomon Speedcross 3", color: "Black / Pink / Lime", swatch: "#333131",
-    brand: "salomon", category: "chaussures", gender: "unisexe", price: 139,
-    sizes: SHOES,
-    description: "Accroche légendaire et look affirmé : la Speedcross 3.",
-    details: ["Crampons Contagrip®", "Laçage Quicklace™", "Taille normalement"]
-  },
-
-  /* ---------- SALOMON — ensembles ---------- */
-  {
-    id: "salomon-set-black", group: "salomon-set",
-    name: "Ensemble Salomon Logo Hoodie + Shakeout Pants", color: "Deep Black", swatch: "#313131",
-    brand: "salomon", category: "ensembles", gender: "homme", price: 229,
-    sizes: CLOTHING, tags: ["new"],
-    description: "Hoodie Salomon Logo et pantalon Shakeout Core, tout en noir. Le look sportstyle Salomon, à porter avec une XT-6.",
-    details: ["Hoodie Salomon Logo + pantalon Shakeout Core", "Grand logo Salomon sur la poitrine", "Pantalon léger avec poche zippée", "Taille normalement"]
-  },
-  {
-    id: "salomon-set-white", group: "salomon-set",
-    name: "Ensemble Salomon Logo Hoodie + Shakeout Pants", color: "Whisper White / Deep Black", swatch: "#ede7e1",
-    brand: "salomon", category: "ensembles", gender: "homme", price: 219,
-    sizes: CLOTHING,
-    description: "Hoodie Salomon Logo blanc cassé et pantalon Shakeout Core noir.",
-    details: ["Hoodie Salomon Logo + pantalon Shakeout Core", "Grand logo Salomon sur la poitrine", "Pantalon léger avec poche zippée", "Taille normalement"]
-  },
-
-  /* ---------- MIZUNO ---------- */
-  {
-    id: "mizuno-wave-rider-10", group: "mizuno-wave-rider-10",
-    name: "Mizuno Wave Rider 10", color: "White / Silver Cloud", swatch: "#bebdb7",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 169,
-    sizes: SHOES, tags: ["best"],
-    description: "Le running rétro des années 2000 est de retour. Plaque Wave pour la stabilité et l'amorti.",
-    details: ["Plaque Mizuno Wave", "Look running Y2K", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-ls", group: "mizuno-wave-prophecy-ls",
-    name: "Mizuno Wave Prophecy LS", color: "Silver Cloud / White Sand", swatch: "#b1a694",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 259,
-    sizes: SHOES, tags: ["new"],
-    description: "La semelle Infinity Wave iconique pour un style futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-rider-beta", group: "mizuno-wave-rider-beta",
-    name: "Mizuno Wave Rider β", color: "White / Silver Cloud", swatch: "#a3a297",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 199,
-    sizes: SHOES,
-    description: "Réédition d'un modèle running Mizuno des années 2000, confortable et léger.",
-    details: ["Plaque Mizuno Wave", "Look vintage", "Taille normalement"]
-  },
-
-  /* ---------- SAUCONY ---------- */
-  {
-    id: "saucony-shadow-6000", group: "saucony-shadow-6000",
-    name: "Saucony Shadow 6000", color: "White / Grey / Navy", swatch: "#a7a5a1",
-    brand: "saucony", category: "chaussures", gender: "unisexe", price: 149,
-    sizes: SHOES, tags: ["best"],
-    description: "Classique du running rétro, daim et mesh, semelle confortable.",
-    details: ["Daim et mesh", "Semelle confortable", "Taille normalement"]
-  },
-  {
-    id: "saucony-progrid-triumph-4", group: "saucony-progrid-triumph-4",
-    name: "Saucony ProGrid Triumph 4", color: "Black / Silver", swatch: "#373637",
-    brand: "saucony", category: "chaussures", gender: "unisexe", price: 169,
-    sizes: SHOES, soldOutSizes: ["41"], tags: ["new"],
-    description: "Le modèle tendance de Saucony, look Y2K et amorti ProGrid.",
-    details: ["Amorti ProGrid", "Look Y2K", "Taille normalement"]
-  },
-  {
-    id: "saucony-progrid-omni-9", group: "saucony-progrid-omni-9",
-    name: "Saucony ProGrid Omni 9", color: "White / Brown", swatch: "#deddde",
-    brand: "saucony", category: "chaussures", gender: "unisexe", price: 159, oldPrice: 179,
-    sizes: SHOES,
-    description: "Sneaker rétro aux tons chauds, facile à porter.",
-    details: ["Amorti ProGrid", "Look rétro", "Taille normalement"]
-  },
-
-  /* ---------- ASICS ---------- */
-  {
-    id: "asics-gel-kayano-14-birch", group: "asics-gel-kayano-14",
-    name: "Asics Gel-Kayano 14", color: "Birch / Pure Silver", swatch: "#8f8b86",
-    brand: "asics", category: "chaussures", gender: "unisexe", price: 169,
-    sizes: SHOES, tags: ["best"], lowStock: ["44"],
-    description: "La Gel-Kayano 14, star du running rétro. Amorti GEL® et détails métalliques.",
-    details: ["Amorti GEL®", "Détails métallisés", "Taille normalement"]
-  },
-  {
-    id: "asics-gel-kayano-14-black", group: "asics-gel-kayano-14",
-    name: "Asics Gel-Kayano 14", color: "Black / Pure Silver", swatch: "#2f3032",
-    brand: "asics", category: "chaussures", gender: "unisexe", price: 169,
-    sizes: SHOES,
-    description: "La Gel-Kayano 14 en noir et argent.",
-    details: ["Amorti GEL®", "Détails métallisés", "Taille normalement"]
-  },
-  {
-    id: "asics-gel-nyc-khaki", group: "asics-gel-nyc",
-    name: "Asics Gel-NYC", color: "Khaki / Pure Silver", swatch: "#a9a898",
-    brand: "asics", category: "chaussures", gender: "unisexe", price: 159,
-    sizes: SHOES, tags: ["new"],
-    description: "Inspirée des archives Asics, la Gel-NYC mélange plusieurs modèles cultes.",
-    details: ["Amorti GEL®", "Design inspiré des archives", "Taille normalement"]
-  },
-  {
-    id: "asics-gel-1130-clay", group: "asics-gel-1130",
-    name: "Asics Gel-1130", color: "White / Clay Canyon", swatch: "#413b38",
-    brand: "asics", category: "chaussures", gender: "unisexe", price: 129, oldPrice: 149,
-    sizes: SHOES,
-    description: "Silhouette running des années 2000, légère et polyvalente.",
-    details: ["Amorti GEL®", "Légère", "Taille normalement"]
   },
 
   /* ---------- C.P. COMPANY ---------- */
@@ -974,102 +782,6 @@ window.BASE_PRODUCTS = [
     details: ["Hoodie + jogging", "Molleton épais", "Coupe oversize", "Logo Nocta brodé"]
   },
   {
-    id: "lulu-steady-state-set-black", group: "lulu-steady-state-set",
-    name: "Ensemble Lululemon Steady State Hoodie + Jogger", color: "Black", swatch: "#1b181b",
-    brand: "lululemon", category: "ensembles", gender: "homme", price: 229,
-    sizes: CLOTHING, tags: ["best"],
-    description: "Hoodie et jogger Lululemon Steady State en molleton SuperLoft, ultra-doux et chaud.",
-    details: ["Hoodie + jogger", "Molleton SuperLoft", "Coupe classique", "Taille normalement"]
-  },
-  {
-    id: "lulu-steady-state-set-true-navy", group: "lulu-steady-state-set",
-    name: "Ensemble Lululemon Steady State Hoodie + Jogger", color: "True Navy", swatch: "#242430",
-    brand: "lululemon", category: "ensembles", gender: "homme", price: 229,
-    sizes: CLOTHING,
-    description: "Hoodie et jogger Lululemon Steady State en molleton SuperLoft, ultra-doux et chaud.",
-    details: ["Hoodie + jogger", "Molleton SuperLoft", "Coupe classique", "Taille normalement"]
-  },
-  {
-    id: "lulu-steady-state-set-light-ivory", group: "lulu-steady-state-set",
-    name: "Ensemble Lululemon Steady State Hoodie + Jogger", color: "Light Ivory", swatch: "#ccc3b7",
-    brand: "lululemon", category: "ensembles", gender: "homme", price: 229,
-    sizes: CLOTHING, tags: ["new"],
-    description: "Hoodie et jogger Lululemon Steady State en molleton SuperLoft, ultra-doux et chaud.",
-    details: ["Hoodie + jogger", "Molleton SuperLoft", "Coupe classique", "Taille normalement"]
-  },
-  {
-    id: "lulu-steady-state-set-nomad", group: "lulu-steady-state-set",
-    name: "Ensemble Lululemon Steady State Hoodie + Jogger", color: "Nomad", swatch: "#41352f",
-    brand: "lululemon", category: "ensembles", gender: "homme", price: 229,
-    sizes: CLOTHING,
-    description: "Hoodie et jogger Lululemon Steady State en molleton SuperLoft, ultra-doux et chaud.",
-    details: ["Hoodie + jogger", "Molleton SuperLoft", "Coupe classique", "Taille normalement"]
-  },
-  {
-    id: "lulu-scuba-set-light-ivory", group: "lulu-scuba-set",
-    name: "Ensemble Lululemon Scuba Full-Zip + Wide-Leg", color: "Light Ivory", swatch: "#d2c2b3",
-    brand: "lululemon", category: "ensembles", gender: "femme", price: 299,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"], tags: ["best"],
-    description: "Le duo viral Lululemon : veste Scuba oversize zippée et pantalon Scuba large, en molleton coton doux.",
-    details: ["Veste zippée + pantalon large", "Molleton coton doux", "Coupe oversize", "Taille normalement"]
-  },
-  {
-    id: "lulu-scuba-set-porcelain-pink", group: "lulu-scuba-set",
-    name: "Ensemble Lululemon Scuba Full-Zip + Wide-Leg", color: "Porcelain Pink", swatch: "#a3898d",
-    brand: "lululemon", category: "ensembles", gender: "femme", price: 299,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"], tags: ["new"],
-    description: "Le duo viral Lululemon : veste Scuba oversize zippée et pantalon Scuba large, en molleton coton doux.",
-    details: ["Veste zippée + pantalon large", "Molleton coton doux", "Coupe oversize", "Taille normalement"]
-  },
-  {
-    id: "lulu-scuba-set-graphite-grey", group: "lulu-scuba-set",
-    name: "Ensemble Lululemon Scuba Full-Zip + Wide-Leg", color: "Graphite Grey", swatch: "#363336",
-    brand: "lululemon", category: "ensembles", gender: "femme", price: 299,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"],
-    description: "Le duo viral Lululemon : veste Scuba oversize zippée et pantalon Scuba large, en molleton coton doux.",
-    details: ["Veste zippée + pantalon large", "Molleton coton doux", "Coupe oversize", "Taille normalement"]
-  },
-  {
-    id: "lulu-softstreme-set-black", group: "lulu-softstreme-set",
-    name: "Ensemble Lululemon Softstreme Half-Zip + Pant", color: "Black", swatch: "#272729",
-    brand: "lululemon", category: "ensembles", gender: "femme", price: 249,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"],
-    description: "Sweat demi-zip et pantalon taille haute Lululemon Softstreme, matière fluide et ultra-douce.",
-    details: ["Demi-zip + pantalon", "Tissu Softstreme fluide", "Taille haute"]
-  },
-  {
-    id: "lulu-softstreme-set-light-ivory", group: "lulu-softstreme-set",
-    name: "Ensemble Lululemon Softstreme Half-Zip + Pant", color: "Light Ivory", swatch: "#160e10",
-    brand: "lululemon", category: "ensembles", gender: "femme", price: 249,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"], tags: ["new"],
-    description: "Sweat demi-zip et pantalon taille haute Lululemon Softstreme, matière fluide et ultra-douce.",
-    details: ["Demi-zip + pantalon", "Tissu Softstreme fluide", "Taille haute"]
-  },
-  {
-    id: "alo-muse-set-ivory", group: "alo-muse-set",
-    name: "Ensemble Alo Muse Hoodie + Sweatpant", color: "Ivory", swatch: "#a78977",
-    brand: "alo", category: "ensembles", gender: "femme", price: 279,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"], tags: ["best"],
-    description: "Le set Alo Muse pour femme : hoodie et sweatpant assortis, molleton brossé et coupe relax.",
-    details: ["Hoodie + sweatpant", "Molleton brossé", "Coupe relax"]
-  },
-  {
-    id: "alo-muse-set-athletic-heather-grey", group: "alo-muse-set",
-    name: "Ensemble Alo Muse Hoodie + Sweatpant", color: "Athletic Heather Grey", swatch: "#a1a09e",
-    brand: "alo", category: "ensembles", gender: "femme", price: 279,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"],
-    description: "Le set Alo Muse pour femme : hoodie et sweatpant assortis, molleton brossé et coupe relax.",
-    details: ["Hoodie + sweatpant", "Molleton brossé", "Coupe relax"]
-  },
-  {
-    id: "alo-muse-set-navy", group: "alo-muse-set",
-    name: "Ensemble Alo Muse Hoodie + Sweatpant", color: "Navy", swatch: "#172636",
-    brand: "alo", category: "ensembles", gender: "femme", price: 279,
-    sizes: ["XXS", "XS", "S", "M", "L", "XL"], tags: ["new"],
-    description: "Le set Alo Muse pour femme : hoodie et sweatpant assortis, molleton brossé et coupe relax.",
-    details: ["Hoodie + sweatpant", "Molleton brossé", "Coupe relax"]
-  },
-  {
     id: "on-club-set-w-flurry", group: "on-club-set-w",
     name: "Ensemble On Club Hoodie + Pants Femme", color: "Flurry", swatch: "#c2dddb",
     brand: "on", category: "ensembles", gender: "femme", price: 249,
@@ -1382,5 +1094,2287 @@ window.BASE_PRODUCTS = [
     sizes: CLOTHING.slice(1), tags: ["best"],
     description: "Le pack de 5 boxers Lululemon Always In Motion, tissu respirant et anti-frottements.",
     details: ["Tissu respirant", "Anti-frottements", "Entrejambe 13 cm (5 pouces)"]
+  },
+
+  /* ---------- RALPH LAUREN — survêtements Polo & RL Fleece ---------- */
+  {
+    id: "rl-dk-set-black", group: "rl-dk-set",
+    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Black", swatch: "#17171a",
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 259,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Veste zippée à capuche et jogging Polo Ralph Lauren en molleton double maille, Pony brodé.",
+    details: ["Sweat à capuche zippé + pantalon de jogging", "Molleton double maille", "Pony brodé", "Taille normalement"]
+  },
+  {
+    id: "rl-dk-set-navy", group: "rl-dk-set",
+    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Navy", swatch: "#1d212d",
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 259,
+    sizes: CLOTHING,
+    description: "Veste zippée à capuche et jogging Polo Ralph Lauren en molleton double maille, Pony brodé.",
+    details: ["Sweat à capuche zippé + pantalon de jogging", "Molleton double maille", "Pony brodé", "Taille normalement"]
+  },
+  {
+    id: "rl-dk-set-grey", group: "rl-dk-set",
+    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Grey", swatch: "#404142",
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 259,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Veste zippée à capuche et jogging Polo Ralph Lauren en molleton double maille, Pony brodé.",
+    details: ["Sweat à capuche zippé + pantalon de jogging", "Molleton double maille", "Pony brodé", "Taille normalement"]
+  },
+  {
+    id: "rl-fleece-zip-set-black", group: "rl-fleece-zip-set",
+    name: "Ensemble The RL Fleece Zippé + Jogging", color: "Black / Red Pony", swatch: "#13131a",
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING, tags: ["best"],
+    description: "THE RL FLEECE : sweat zippé à capuche noir et pantalon de jogging assorti, Pony rouge brodé. Le classique Ralph Lauren.",
+    details: ["Sweat zippé à capuche + pantalon", "Molleton RL Fleece doux", "Pony rouge brodé", "Taille normalement"]
+  },
+  {
+    id: "rl-fleece-hoodie-black", group: "rl-fleece-hoodie",
+    name: "Sweat à capuche The RL Fleece", color: "Black / Red Pony", swatch: "#222022",
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 149,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le sweat à capuche THE RL FLEECE vendu seul : molleton doux, poche kangourou et Pony rouge brodé.",
+    details: ["Sweat à capuche (vendu seul)", "Molleton RL Fleece", "Pony rouge brodé", "Taille normalement"]
+  },
+
+  /* ---------- ESSENTIALS — Classic, Signature, Zip, 1977, NBA ---------- */
+  {
+    id: "essentials-signature-set-marble-heather", group: "essentials-signature-set",
+    name: "Ensemble Essentials Signature Hoodie + Flare Sweatpant", color: "Marble Heather", swatch: "#d2ccc1",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING,
+    description: "La ligne Signature d'Essentials : hoodie Classic et jogging flare assortis, molleton chiné.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand", "Jogging coupe flare"]
+  },
+  {
+    id: "essentials-signature-set-pyrite-heather", group: "essentials-signature-set",
+    name: "Ensemble Essentials Signature Hoodie + Flare Sweatpant", color: "Pyrite Heather", swatch: "#a39e93",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING,
+    description: "La ligne Signature d'Essentials : hoodie Classic et jogging flare assortis, molleton chiné.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand", "Jogging coupe flare"]
+  },
+  {
+    id: "essentials-signature-set-ash-heather", group: "essentials-signature-set",
+    name: "Ensemble Essentials Signature Hoodie + Flare Sweatpant", color: "Ash Heather", swatch: "#4b4942",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING, tags: ["new"],
+    description: "La ligne Signature d'Essentials : hoodie Classic et jogging flare assortis, molleton chiné.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand", "Jogging coupe flare"]
+  },
+  {
+    id: "essentials-zip-set-black", group: "essentials-zip-set",
+    name: "Ensemble Essentials Classic Zip-Up + Sweatpant", color: "Black", swatch: "#11131a",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le hoodie zippé Essentials Classic et son jogging assorti : la version zip du survêtement le plus porté.",
+    details: ["Hoodie zippé + jogging", "Molleton épais", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-zip-set-oatmeal-heather", group: "essentials-zip-set",
+    name: "Ensemble Essentials Classic Zip-Up + Sweatpant", color: "Oatmeal Heather", swatch: "#e6e3dd",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING,
+    description: "Le hoodie zippé Essentials Classic et son jogging assorti : la version zip du survêtement le plus porté.",
+    details: ["Hoodie zippé + jogging", "Molleton épais", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-zip-set-warm-heather", group: "essentials-zip-set",
+    name: "Ensemble Essentials Classic Zip-Up + Sweatpant", color: "Warm Heather", swatch: "#a9a59a",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING,
+    description: "Le hoodie zippé Essentials Classic et son jogging assorti : la version zip du survêtement le plus porté.",
+    details: ["Hoodie zippé + jogging", "Molleton épais", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-set-vintage-black", group: "essentials-set",
+    name: "Ensemble Essentials Classic Hoodie + Sweatpant", color: "Vintage Black", swatch: "#1e212b",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING,
+    description: "Hoodie et jogging Essentials Classic en noir délavé Vintage Black.",
+    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-1977-set-dark-oatmeal", group: "essentials-1977-set",
+    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#aaa594",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
+    details: ["Hoodie + jogging", "Flocage 1977 en relief", "Molleton épais", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-1977-set-iron", group: "essentials-1977-set",
+    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Iron", swatch: "#322f30",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING,
+    description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
+    details: ["Hoodie + jogging", "Flocage 1977 en relief", "Molleton épais", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-1977-set-light-oatmeal", group: "essentials-1977-set",
+    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#dbd6d0",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING,
+    description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
+    details: ["Hoodie + jogging", "Flocage 1977 en relief", "Molleton épais", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-nba-set-heather-stone", group: "essentials-nba-set",
+    name: "Ensemble Essentials NBA Hoodie + Sweatpant", color: "Heather Stone", swatch: "#9e7765",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING, tags: ["new"],
+    description: "La collection officielle Essentials x NBA : hoodie 90s et jogging assortis aux graphismes NBA.",
+    details: ["Hoodie 90s + jogging", "Collaboration officielle NBA", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "essentials-nba-set-faded-black", group: "essentials-nba-set",
+    name: "Ensemble Essentials NBA Hoodie + Sweatpant", color: "Faded Black", swatch: "#c3c6c7",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "La collection officielle Essentials x NBA : hoodie 90s et jogging assortis aux graphismes NBA.",
+    details: ["Hoodie 90s + jogging", "Collaboration officielle NBA", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "essentials-nba-set-oatmeal-heather", group: "essentials-nba-set",
+    name: "Ensemble Essentials NBA Hoodie + Sweatpant", color: "Oatmeal Heather", swatch: "#dedbd6",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "La collection officielle Essentials x NBA : hoodie 90s et jogging assortis aux graphismes NBA.",
+    details: ["Hoodie 90s + jogging", "Collaboration officielle NBA", "Molleton épais", "Coupe ample"]
+  },
+
+  /* ---------- ON — ensembles Club, Club Collective, Focus Tech ---------- */
+  {
+    id: "on-club-set-storm", group: "on-club-set",
+    name: "Ensemble On Club Hoodie + Pants", color: "Storm", swatch: "#386f75",
+    brand: "on", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING,
+    description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
+    details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
+  },
+  {
+    id: "on-club-set-jay", group: "on-club-set",
+    name: "Ensemble On Club Hoodie + Pants", color: "Jay", swatch: "#3477b7",
+    brand: "on", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING,
+    description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
+    details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
+  },
+  {
+    id: "on-club-set-desert", group: "on-club-set",
+    name: "Ensemble On Club Hoodie + Pants", color: "Desert", swatch: "#ad937a",
+    brand: "on", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING,
+    description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
+    details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
+  },
+  {
+    id: "on-club-collective-set-crater", group: "on-club-collective-set",
+    name: "Ensemble On Club Collective Hoodie + Pants", color: "Crater", swatch: "#d6d4db",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "Le survêtement On Club Collective : molleton épais, coupe ample et finitions premium.",
+    details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "on-club-collective-set-black", group: "on-club-collective-set",
+    name: "Ensemble On Club Collective Hoodie + Pants", color: "Black", swatch: "#0d1010",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "Le survêtement On Club Collective : molleton épais, coupe ample et finitions premium.",
+    details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "on-club-collective-set-ember", group: "on-club-collective-set",
+    name: "Ensemble On Club Collective Hoodie + Pants", color: "Ember", swatch: "#625c5d",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le survêtement On Club Collective : molleton épais, coupe ample et finitions premium.",
+    details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "on-focus-tech-set-bark", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Bark", swatch: "#555141",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING,
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-shadow", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Shadow", swatch: "#4c4c46",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING,
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-black", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Black", swatch: "#171113",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-jay", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Jay", swatch: "#266eb3",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING,
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-agave", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Agave", swatch: "#678487",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING,
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-navy", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Navy", swatch: "#272f40",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING,
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-basalt", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Basalt", swatch: "#8a8e8e",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING,
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-desert", group: "on-focus-tech-set",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Desert", swatch: "#c4af9a",
+    brand: "on", category: "ensembles", gender: "homme", price: 309,
+    sizes: CLOTHING,
+    description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-club-collective-set-w-clove", group: "on-club-collective-set-w",
+    name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Clove", swatch: "#806559",
+    brand: "on", category: "ensembles", gender: "femme", price: 299,
+    sizes: ["XS", "S", "M", "L", "XL"], tags: ["best"],
+    description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
+    details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "on-club-collective-set-w-ember", group: "on-club-collective-set-w",
+    name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Ember", swatch: "#605856",
+    brand: "on", category: "ensembles", gender: "femme", price: 299,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
+    details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "on-club-collective-set-w-crater", group: "on-club-collective-set-w",
+    name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Crater", swatch: "#d6d6dc",
+    brand: "on", category: "ensembles", gender: "femme", price: 299,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
+    details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "on-club-collective-set-w-black", group: "on-club-collective-set-w",
+    name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Black", swatch: "#111315",
+    brand: "on", category: "ensembles", gender: "femme", price: 299,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
+    details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
+  },
+  {
+    id: "on-focus-tech-set-w-crater", group: "on-focus-tech-set-w",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Crater", swatch: "#dadae2",
+    brand: "on", category: "ensembles", gender: "femme", price: 309,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-w-agave", group: "on-focus-tech-set-w",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Agave", swatch: "#6b888c",
+    brand: "on", category: "ensembles", gender: "femme", price: 309,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-w-black", group: "on-focus-tech-set-w",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Black", swatch: "#191516",
+    brand: "on", category: "ensembles", gender: "femme", price: 309,
+    sizes: ["XS", "S", "M", "L", "XL"], tags: ["best"],
+    description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-w-flurry", group: "on-focus-tech-set-w",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Flurry", swatch: "#c6e0dd",
+    brand: "on", category: "ensembles", gender: "femme", price: 309,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-w-magnolia", group: "on-focus-tech-set-w",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Magnolia", swatch: "#eea7bc",
+    brand: "on", category: "ensembles", gender: "femme", price: 309,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-w-barberry", group: "on-focus-tech-set-w",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Barberry", swatch: "#885052",
+    brand: "on", category: "ensembles", gender: "femme", price: 309,
+    sizes: ["XS", "S", "M", "L", "XL"], tags: ["best"],
+    description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+  {
+    id: "on-focus-tech-set-w-desert", group: "on-focus-tech-set-w",
+    name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Desert", swatch: "#c7b099",
+    brand: "on", category: "ensembles", gender: "femme", price: 309,
+    sizes: ["XS", "S", "M", "L", "XL"],
+    description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
+    details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
+  },
+
+  /* ---------- ALO — Accolade, Co-Op, Alpha Shell, Alo Runner ---------- */
+  {
+    id: "alo-runner-black-black", group: "alo-runner",
+    name: "Alo Runner", color: "Black / Black", swatch: "#2a2a2a",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-white-white", group: "alo-runner",
+    name: "Alo Runner", color: "White / White", swatch: "#d2d2d2",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-espresso", group: "alo-runner",
+    name: "Alo Runner", color: "Espresso", swatch: "#473427",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-gravel", group: "alo-runner",
+    name: "Alo Runner", color: "Gravel", swatch: "#9c8978",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-grey-grey", group: "alo-runner",
+    name: "Alo Runner", color: "Grey / Grey", swatch: "#cbcbcb",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-navy", group: "alo-runner",
+    name: "Alo Runner", color: "Navy", swatch: "#2f3649",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-dune-grass", group: "alo-runner",
+    name: "Alo Runner", color: "Dune Grass", swatch: "#909f82",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-seashell-blue", group: "alo-runner",
+    name: "Alo Runner", color: "Seashell Blue", swatch: "#8b6e64",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-pink-marshmallow", group: "alo-runner",
+    name: "Alo Runner", color: "Pink Marshmallow", swatch: "#e3b2c4",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-candy-heart-pink", group: "alo-runner",
+    name: "Alo Runner", color: "Candy Heart Pink", swatch: "#ea9bcc",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-crystal-clear-blue", group: "alo-runner",
+    name: "Alo Runner", color: "Crystal Clear Blue", swatch: "#7b96cd",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-satsuma-breeze", group: "alo-runner",
+    name: "Alo Runner", color: "Satsuma Breeze", swatch: "#fb8f2b",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-runner-smoky-quartz", group: "alo-runner",
+    name: "Alo Runner", color: "Smoky Quartz", swatch: "#9f787e",
+    brand: "alo", category: "chaussures", gender: "unisexe", price: 209,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
+    details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
+  },
+  {
+    id: "alo-accolade-bone", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Bone", swatch: "#d3ccc1",
+    brand: "alo", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING,
+    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
+    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
+  },
+  {
+    id: "alo-accolade-espresso", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Espresso", swatch: "#39281b",
+    brand: "alo", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING,
+    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
+    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
+  },
+  {
+    id: "alo-accolade-navy", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Navy", swatch: "#222634",
+    brand: "alo", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING,
+    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
+    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
+  },
+  {
+    id: "alo-accolade-steel-grey", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Steel Grey", swatch: "#82838c",
+    brand: "alo", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING,
+    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
+    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
+  },
+  {
+    id: "alo-accolade-smoky-quartz", group: "alo-accolade",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Smoky Quartz", swatch: "#3f282b",
+    brand: "alo", category: "ensembles", gender: "homme", price: 279,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
+    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
+  },
+  {
+    id: "alo-coop-set-black", group: "alo-coop-set",
+    name: "Survêtement Alo Co-Op (Veste + Pantalon)", color: "Black", swatch: "#181b1e",
+    brand: "alo", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le pantalon Alo Co-Op et sa veste zippée Elemental assortie, même tissu technique léger et déperlant.",
+    details: ["Veste zippée Elemental + pantalon Co-Op", "Tissu technique déperlant", "Stretch 4 sens", "Taille normalement"]
+  },
+  {
+    id: "alo-coop-set-espresso", group: "alo-coop-set",
+    name: "Survêtement Alo Co-Op (Veste + Pantalon)", color: "Espresso", swatch: "#332316",
+    brand: "alo", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "Le pantalon Alo Co-Op et sa veste zippée Elemental assortie, même tissu technique léger et déperlant.",
+    details: ["Veste zippée Elemental + pantalon Co-Op", "Tissu technique déperlant", "Stretch 4 sens", "Taille normalement"]
+  },
+  {
+    id: "alo-coop-set-gravel", group: "alo-coop-set",
+    name: "Survêtement Alo Co-Op (Veste + Pantalon)", color: "Gravel", swatch: "#705c4c",
+    brand: "alo", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le pantalon Alo Co-Op et sa veste zippée Elemental assortie, même tissu technique léger et déperlant.",
+    details: ["Veste zippée Elemental + pantalon Co-Op", "Tissu technique déperlant", "Stretch 4 sens", "Taille normalement"]
+  },
+  {
+    id: "alo-alpha-shell-set-black", group: "alo-alpha-shell-set",
+    name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Black", swatch: "#2c313b",
+    brand: "alo", category: "ensembles", gender: "homme", price: 549,
+    sizes: CLOTHING, tags: ["best"],
+    description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
+    details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
+  },
+  {
+    id: "alo-alpha-shell-set-bone", group: "alo-alpha-shell-set",
+    name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Bone", swatch: "#c4bdb1",
+    brand: "alo", category: "ensembles", gender: "homme", price: 549,
+    sizes: CLOTHING, tags: ["new"],
+    description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
+    details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
+  },
+  {
+    id: "alo-alpha-shell-set-espresso", group: "alo-alpha-shell-set",
+    name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Espresso", swatch: "#2f2116",
+    brand: "alo", category: "ensembles", gender: "homme", price: 549,
+    sizes: CLOTHING,
+    description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
+    details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
+  },
+  {
+    id: "alo-alpha-shell-set-lunar-grey", group: "alo-alpha-shell-set",
+    name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Lunar Grey", swatch: "#7c8585",
+    brand: "alo", category: "ensembles", gender: "homme", price: 549,
+    sizes: CLOTHING,
+    description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
+    details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
+  },
+  {
+    id: "alo-alpha-shell-set-navy", group: "alo-alpha-shell-set",
+    name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Navy", swatch: "#141929",
+    brand: "alo", category: "ensembles", gender: "homme", price: 549,
+    sizes: CLOTHING,
+    description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
+    details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
+  },
+
+  /* ---------- LULULEMON — Pace Breaker ---------- */
+  {
+    id: "lulu-pace-breaker-set-black", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Black", swatch: "#1e1b1e",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée + jogger", "Tissu léger et stretch", "Poches zippées", "Taille normalement"]
+  },
+  {
+    id: "lulu-pace-breaker-set-downtown-tan", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Beige (Downtown Tan)", swatch: "#b2a79f",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée + jogger", "Tissu léger et stretch", "Poches zippées", "Taille normalement"]
+  },
+  {
+    id: "lulu-pace-breaker-set-burgundy-bay", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Rouge (Burgundy Bay)", swatch: "#511e2b",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING,
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée + jogger", "Tissu léger et stretch", "Poches zippées", "Taille normalement"]
+  },
+  {
+    id: "lulu-pace-breaker-glyde-set-black", group: "lulu-pace-breaker-glyde-set",
+    name: "Ensemble Lululemon Pace Breaker Glyde Track Jacket + Pant", color: "Black", swatch: "#222122",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING, tags: ["new"],
+    description: "La Pace Breaker en tissu Glyde déperlant : track jacket coupe relax et pantalon Pace Breaker assorti.",
+    details: ["Track jacket Glyde + pantalon", "Tissu Glyde déperlant", "Coupe relax", "Taille normalement"]
+  },
+
+  /* ---------- SALOMON — ensemble GORE-TEX & XT-6 (tous coloris) ---------- */
+  {
+    id: "salomon-gtx-set-deep-black", group: "salomon-gtx-set",
+    name: "Ensemble Salomon GORE-TEX Moon Patrol Veste + Pantalon", color: "Deep Black", swatch: "#313131",
+    brand: "salomon", category: "ensembles", gender: "homme", price: 699,
+    sizes: CLOTHING, tags: ["new"],
+    description: "L'ensemble Salomon en GORE-TEX : veste et pantalon Moon Patrol 100 % imperméables et respirants.",
+    details: ["Veste + pantalon GORE-TEX", "Imperméable et respirant", "Coutures étanchées", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l492148", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Tradewinds / Stormy Weather / Bog", swatch: "#272726",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l492402", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Pearl Blue / Asphalt / Black", swatch: "#9b9c9e",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l492157", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Vanilla Ice / Bog / Shadow Green", swatch: "#2c2b2a",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l492156", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Black / Icy Pink / Dawn Pink", swatch: "#e1ccd0",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l492151", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "White Pepper / Silver Sage / Dark Gull", swatch: "#9c8f81",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l493068", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Sea Foam / Green Milieu / Black", swatch: "#363636",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l493066", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Black Coffee / Burro / Bitter Chocolate", swatch: "#d2cdc6",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l454169", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Black / Black / Asphalt", swatch: "#232427",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l454728", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Pearl Blue / Grisaille / Vanilla", swatch: "#bcb8b2",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l478661", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Black Coffee / French Roast / Vanilla Ice", swatch: "#cfcdc4",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l475822", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Almond Milk / Portabella / Ice Flow", swatch: "#ccc8bc",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l474448", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Ghost Gray / Ghost Gray / Gray Flannel", swatch: "#a29e95",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l472937", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Aloe Wash / Hazelnut / Feather Gray", swatch: "#d1c4a9",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l479882", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Black / Fiery Red / Silver", swatch: "#30282a",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l491433", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Black / White / Blue Curacao", swatch: "#ccd2d4",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l491546", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Cloudburst / Icy Pink / Tapioca", swatch: "#d6cccb",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l491543", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Black / Almond Cream", swatch: "#262222",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l491544", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Black / Grape Leaf", swatch: "#2e2c2b",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l491587", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Niagara / Sunny Lime", swatch: "#ced49c",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l416635", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Black / Ebony / Lunar Rock", swatch: "#59575b",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l472935", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Dried Herb / Deep Lichen Green / Bright Green", swatch: "#8d7d55",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l472919", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Blue Print / Heather / White", swatch: "#dde0e4",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l474506", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Black / Black / Silver", swatch: "#aaabac",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l474455", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Safari / Safari / Black", swatch: "#af9e80",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l475811", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "White / White / Silver", swatch: "#dddede",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l477376", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Icicle / Nirvana / Nine Iron", swatch: "#3b3a3d",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l477375", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Roasted Clay / Burnt Ochre / Almond Milk", swatch: "#392c2a",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l477374", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Oxford Tan / Carbon / Clearly Aqua", swatch: "#948875",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l477326", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Iron / Etherea / Seagrass", swatch: "#665852",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l475812", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Almond Milk / Feather Gray / Pale Mauve", swatch: "#b49d8d",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l475813", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Urban Chic / Black / Lime Cream", swatch: "#676e73",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l477377", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Vanilla Ice / Iron / Etherea", swatch: "#d4cec1",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l479749", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Black / Flame Scarlet / Vanilla Ice", swatch: "#181819",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l478638", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Tea / Peat", swatch: "#a09f82",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l478637", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Mahogany Rose / Tawny Port / Black", swatch: "#ecdbd0",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l478641", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Nine Iron / Excalibur / Plum Perfect", swatch: "#4b494d",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l478615", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "North Atlantic / Black / Silver", swatch: "#647d80",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l478616", group: "salomon-xt-6",
+    name: "Salomon XT-6 GORE-TEX", color: "Blue Nights / Astral Aura / Plum Kitten", swatch: "#3b424d",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 219,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+  {
+    id: "salomon-xt-6-l478651", group: "salomon-xt-6",
+    name: "Salomon XT-6", color: "Ultramarine / Silver / Black", swatch: "#c9cac0",
+    brand: "salomon", category: "chaussures", gender: "unisexe", price: 199,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Salomon XT-6 : la trail mythique devenue culte en sportstyle, laçage Quicklace et grip Contagrip.",
+    details: ["Laçage rapide Quicklace", "Semelle Contagrip", "Taille normalement"]
+  },
+
+  /* ---------- ASICS — GEL-1130 & GEL-Kayano 14 (tous coloris) ---------- */
+  {
+    id: "asics-gel-1130-1203b077-100", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Storm Cloud", swatch: "#9ab4bb",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203b077-101", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Cream / Pinkcloud", swatch: "#c5c3c0",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203b045-250", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Oatmeal / Obsidian Grey", swatch: "#c7c7c2",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a609-301", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Evergreen / Black", swatch: "#151b1a",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a609-114", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Cream / Cocoa Powder", swatch: "#c9c5bd",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a609-117", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Rusted Rock", swatch: "#bcb6b5",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a609-023", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Glacier Grey / Pure Silver", swatch: "#909194",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a899-105", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Cream / Pink Cloud", swatch: "#c0bbb6",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a899-100", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Taro Purple", swatch: "#a8a4a5",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a899-101", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Cream / Carrier Grey", swatch: "#c8c7bc",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a256-113", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Clay Canyon", swatch: "#413b38",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a256-114", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Mid Grey", swatch: "#b8b8b8",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1202a164-112", group: "asics-gel-1130-w",
+    name: "Asics GEL-1130 Femme", color: "White / Jade", swatch: "#c3c3c2",
+    brand: "asics", category: "chaussures", gender: "femme", price: 129,
+    sizes: ["36", "36.5", "37", "37.5", "38", "38.5", "39", "40", "40.5", "41"], tags: ["best"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a256-115", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Cream / Ironclad", swatch: "#afafac",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a255-028", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Oyster Grey / Clay Grey", swatch: "#aba6a1",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a255-030", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Smoke Grey / Honey Beige", swatch: "#dcd6c6",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a255-252", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Vanilla / White Sage", swatch: "#c9c7b9",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1202a164-114", group: "asics-gel-1130-w",
+    name: "Asics GEL-1130 Femme", color: "White / Malachite Green", swatch: "#c9cdc8",
+    brand: "asics", category: "chaussures", gender: "femme", price: 129,
+    sizes: ["36", "36.5", "37", "37.5", "38", "38.5", "39", "40", "40.5", "41"], tags: ["best"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a256-118", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Cloud Grey", swatch: "#ceccc9",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a256-026", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Clay Grey / Pure Silver", swatch: "#838383",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1201a906-001", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Black / Pure Silver", swatch: "#232123",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a609-101", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "Cream / Blueberry", swatch: "#a1a3a6",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1203a609-102", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Desert Red", swatch: "#d4d0c9",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-gel-1130-1204a182-100", group: "asics-gel-1130",
+    name: "Asics GEL-1130", color: "White / Shamrock Green", swatch: "#b2b3b3",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-1130 d'Asics : silhouette running 2000s, amorti GEL et lignes argentées rétro.",
+    details: ["Amorti GEL", "Look running Y2K", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-026", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Carrier Grey / Black", swatch: "#292b2b",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-118", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Cream / Cocoa Powder", swatch: "#ada8a3",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-002", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Black / Cream", swatch: "#2b2a2c",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-200", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Birch / Pure Silver", swatch: "#8f8b86",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-113", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Cream / Obsidian Grey", swatch: "#e2d4c0",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-025", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Concrete / Pure Silver", swatch: "#cacbc8",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1201a019-109", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "White / Piquant Orange", swatch: "#4f362d",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1202a056-111", group: "asics-kayano-14-w",
+    name: "Asics GEL-Kayano 14 Femme", color: "White / Dark Grape", swatch: "#b2b1b2",
+    brand: "asics", category: "chaussures", gender: "femme", price: 179,
+    sizes: ["36", "36.5", "37", "37.5", "38", "38.5", "39", "40", "40.5", "41"], tags: ["best"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1201a161-251", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Simply Taupe / Oatmeal", swatch: "#bfb19d",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1202a105-103", group: "asics-kayano-14-w",
+    name: "Asics GEL-Kayano 14 Femme", color: "White / Smoke Grey", swatch: "#cbc6bb",
+    brand: "asics", category: "chaussures", gender: "femme", price: 179,
+    sizes: ["36", "36.5", "37", "37.5", "38", "38.5", "39", "40", "40.5", "41"], tags: ["best"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1201a019-006", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Black / Pure Silver", swatch: "#2f3031",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1201a019-200", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Birch / Dark Pewter", swatch: "#cdc9bd",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1201a019-110", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "White / Malachite Green", swatch: "#3a423e",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-400", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Arctic Sky / Pure Silver", swatch: "#caced3",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-106", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "White / Fjord Grey", swatch: "#93a0a6",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-110", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "White / Graphite Grey", swatch: "#b0b0b1",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-109", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Cream / Ironclad", swatch: "#b6b5b2",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1201a019-102", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "White / Pure Gold", swatch: "#7c746b",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-401", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Dolphin Grey / Pure Silver", swatch: "#9ea8a9",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-300", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "Dried Leaf Green / Pure Silver", swatch: "#989e94",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+  {
+    id: "asics-kayano-14-1203a537-117", group: "asics-kayano-14",
+    name: "Asics GEL-Kayano 14", color: "White / Light Sage", swatch: "#b0ada3",
+    brand: "asics", category: "chaussures", gender: "unisexe", price: 179,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La GEL-Kayano 14 : l'icône running 2008 revenue en sportswear, amorti GEL et overlays métallisés.",
+    details: ["Amorti GEL", "Overlays métallisés", "Taille normalement"]
+  },
+
+  /* ---------- MIZUNO — Wave Prophecy ---------- */
+  {
+    id: "mizuno-wave-prophecy-mud1ga227608", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy Beta", color: "White", swatch: "#b9b7b1",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-mud1ga238701", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Silver Cloud / White Sand / Cedar Green", swatch: "#b1a694",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590063-wc8q", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Wind Chime / Fallen Rock", swatch: "#aca397",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590148-9673", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy 1", color: "Iron Gate / Silver", swatch: "#424242",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590126-bs96", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Black Sand / Iron Gate", swatch: "#2d2c2c",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590187-7773", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Harvest Gold / Silver", swatch: "#352e2d",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590187-6j73", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Spring Crocus / Silver", swatch: "#201f21",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590188-792a", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy 1", color: "Artisan's Gold / Zinnia / Strong Blue", swatch: "#141d29",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590148-hm1f", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy 1", color: "Harbor Mist / Chinese Red", swatch: "#1c181a",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590091-59nl", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Salute Navy Blazer", swatch: "#27272a",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590091-1k16", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Sun Dried Tomato / Barbados Cherry", swatch: "#0d0d0d",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590126-5p90", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Black", swatch: "#312c31",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-590091-9690", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Black", swatch: "#1c1b1c",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
+    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
+    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
+  },
+
+  /* ---------- SWEET PANTS — casquettes ---------- */
+  {
+    id: "sweetpants-3d-basic-cap-black", group: "sweetpants-3d-basic-cap",
+    name: "Casquette Sweet Pants 3D Basic", color: "Black", swatch: "#2b2b2a",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-basic-cap-clay", group: "sweetpants-3d-basic-cap",
+    name: "Casquette Sweet Pants 3D Basic", color: "Clay", swatch: "#ce998f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-basic-cap-kaki", group: "sweetpants-3d-basic-cap",
+    name: "Casquette Sweet Pants 3D Basic", color: "Kaki", swatch: "#766444",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-basic-cap-leaf", group: "sweetpants-3d-basic-cap",
+    name: "Casquette Sweet Pants 3D Basic", color: "Leaf", swatch: "#3d3c2c",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-basic-cap-navy", group: "sweetpants-3d-basic-cap",
+    name: "Casquette Sweet Pants 3D Basic", color: "Navy", swatch: "#2d303a",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-basic-cap-sauge", group: "sweetpants-3d-basic-cap",
+    name: "Casquette Sweet Pants 3D Basic", color: "Sauge", swatch: "#a29477",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-air-blue", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Air Blue", swatch: "#89b2bf",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-black", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Black", swatch: "#242424",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-electrik", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Electrik", swatch: "#213d7e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-fudge", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Fudge", swatch: "#3d1a26",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-karmin", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Karmin", swatch: "#a90e2a",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-mirage", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Mirage", swatch: "#333d49",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-night", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Night", swatch: "#232b3c",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-primrose", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Primrose", swatch: "#d7bdbf",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-sage", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Sage", swatch: "#898257",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cap-yarrow", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Yarrow", swatch: "#fcda86",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-capoff-white", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Off White", swatch: "#e5e1d7",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-cappeony", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Peony", swatch: "#e2a1b9",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-3d-uni-caprocky", group: "sweetpants-3d-uni-cap",
+    name: "Casquette Sweet Pants 3D Uni", color: "Rocky", swatch: "#4f4f4f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-american-cap-electrik", group: "sweetpants-american-cap",
+    name: "Casquette Sweet Pants American", color: "Electrik", swatch: "#0d49bd",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 60,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-american-cap-karmin", group: "sweetpants-american-cap",
+    name: "Casquette Sweet Pants American", color: "Karmin", swatch: "#9a0e2f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 60,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-american-cap-night", group: "sweetpants-american-cap",
+    name: "Casquette Sweet Pants American", color: "Night", swatch: "#1c2438",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 60,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-basic-ct-cap-black", group: "sweetpants-basic-ct-cap",
+    name: "Casquette Sweet Pants Basic CT", color: "Black", swatch: "#322d2d",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 50,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-basic-ct-cap-night", group: "sweetpants-basic-ct-cap",
+    name: "Casquette Sweet Pants Basic CT", color: "Night", swatch: "#34303c",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 50,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-bijoux-cap-azure", group: "sweetpants-bijoux-cap",
+    name: "Casquette Sweet Pants Bijoux", color: "Azure", swatch: "#474a87",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-bijoux-cap-black-chaine", group: "sweetpants-bijoux-cap",
+    name: "Casquette Sweet Pants Bijoux", color: "Black Chaine", swatch: "#dedbd5",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-bijoux-cap-black-perle", group: "sweetpants-bijoux-cap",
+    name: "Casquette Sweet Pants Bijoux", color: "Black Perle", swatch: "#dfdbd4",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-bijoux-cap-night", group: "sweetpants-bijoux-cap",
+    name: "Casquette Sweet Pants Bijoux", color: "Night", swatch: "#262a3f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-bijoux-cap-primrose", group: "sweetpants-bijoux-cap",
+    name: "Casquette Sweet Pants Bijoux", color: "Primrose", swatch: "#e3cdcb",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-bijoux-cap-sage", group: "sweetpants-bijoux-cap",
+    name: "Casquette Sweet Pants Bijoux", color: "Sage", swatch: "#92896f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-bijoux-cap-white-pepper", group: "sweetpants-bijoux-cap",
+    name: "Casquette Sweet Pants Bijoux", color: "White Pepper", swatch: "#bdab95",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-canvas-cap-night", group: "sweetpants-canvas-cap",
+    name: "Casquette Sweet Pants Canvas", color: "Night", swatch: "#233349",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-canvas-cap-toffee", group: "sweetpants-canvas-cap",
+    name: "Casquette Sweet Pants Canvas", color: "Toffee", swatch: "#81574d",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-casquette-snapback-camouflage", group: "sweetpants-la-army-cap",
+    name: "Casquette Sweet Pants La Army", color: "Camouflage", swatch: "#343022",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 75,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-coach-cap-night", group: "sweetpants-coach-cap",
+    name: "Casquette Sweet Pants Coach", color: "Night", swatch: "#575879",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-coach-cap-off-white", group: "sweetpants-coach-cap",
+    name: "Casquette Sweet Pants Coach", color: "Off White", swatch: "#d6d5d5",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-coach-cap-white-pepper", group: "sweetpants-coach-cap",
+    name: "Casquette Sweet Pants Coach", color: "White Pepper", swatch: "#d7c6ad",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-coach-cap-windsor", group: "sweetpants-coach-cap",
+    name: "Casquette Sweet Pants Coach", color: "Windsor", swatch: "#521825",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-denim-used-cap-blue-vintage", group: "sweetpants-denim-used-cap",
+    name: "Casquette Sweet Pants Denim Used", color: "Blue Vintage", swatch: "#627699",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-denim-used-cap-dark-blue", group: "sweetpants-denim-used-cap",
+    name: "Casquette Sweet Pants Denim Used", color: "Dark Blue", swatch: "#34394b",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-denim-used-cap-snow", group: "sweetpants-denim-used-cap",
+    name: "Casquette Sweet Pants Denim Used", color: "Snow", swatch: "#8691a4",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-gym-cap-black", group: "sweetpants-gym-cap",
+    name: "Casquette Sweet Pants Gym", color: "Black", swatch: "#efebe7",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-gym-cap-camouflage", group: "sweetpants-gym-cap",
+    name: "Casquette Sweet Pants Gym", color: "Camouflage", swatch: "#ebe3d8",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-gym-cap-electrik", group: "sweetpants-gym-cap",
+    name: "Casquette Sweet Pants Gym", color: "Electrik", swatch: "#4a70ba",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-gym-cap-karmin", group: "sweetpants-gym-cap",
+    name: "Casquette Sweet Pants Gym", color: "Karmin", swatch: "#ece7e1",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-gym-cap-leopard", group: "sweetpants-gym-cap",
+    name: "Casquette Sweet Pants Gym", color: "Leopard", swatch: "#241f20",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-gym-cap-night", group: "sweetpants-gym-cap",
+    name: "Casquette Sweet Pants Gym", color: "Night", swatch: "#3a3147",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-gym-cap-toffee", group: "sweetpants-gym-cap",
+    name: "Casquette Sweet Pants Gym", color: "Toffee", swatch: "#864e3f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heart-cap-electrik", group: "sweetpants-heart-cap",
+    name: "Casquette Sweet Pants Heart", color: "Electrik", swatch: "#174dc4",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heart-cap-milk", group: "sweetpants-heart-cap",
+    name: "Casquette Sweet Pants Heart", color: "Milk", swatch: "#e4d9cd",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heart-cap-night", group: "sweetpants-heart-cap",
+    name: "Casquette Sweet Pants Heart", color: "Night", swatch: "#1f2636",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heart-foam-cap-electrik", group: "sweetpants-heart-foam-cap",
+    name: "Casquette Sweet Pants Heart Foam", color: "Electrik", swatch: "#0a45ca",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heart-foam-cap-karmin", group: "sweetpants-heart-foam-cap",
+    name: "Casquette Sweet Pants Heart Foam", color: "Karmin", swatch: "#cf071e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heart-foam-cap-night", group: "sweetpants-heart-foam-cap",
+    name: "Casquette Sweet Pants Heart Foam", color: "Night", swatch: "#ece8e2",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heritage-cap-night", group: "sweetpants-heritage-cap",
+    name: "Casquette Sweet Pants Heritage", color: "Night", swatch: "#05111d",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-heritage-cap-off-white", group: "sweetpants-heritage-cap",
+    name: "Casquette Sweet Pants Heritage", color: "Off White", swatch: "#e1e1e1",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-aluminium", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Aluminium", swatch: "#c5b2aa",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-argile", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Argile", swatch: "#d1c8b5",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-azure", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Azure", swatch: "#547ac7",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-baltique", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Baltique", swatch: "#9ea0b2",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-black", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Black", swatch: "#312b2b",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-candy", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Candy", swatch: "#c5153e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-grey", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Grey", swatch: "#ebe3e1",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-imperial", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Imperial", swatch: "#7f6c9a",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-kaki", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Kaki", swatch: "#bda07e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-light-clay", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Light Clay", swatch: "#e4c7c4",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-night", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Night", swatch: "#282d3e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-peony", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Peony", swatch: "#f4b2c8",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-primrose", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Primrose", swatch: "#e6c5c5",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-sage", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Sage", swatch: "#b5b08e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-varsity-blue", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Varsity Blue", swatch: "#e5dbd5",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-home-run-cap-windsor", group: "sweetpants-home-run-cap",
+    name: "Casquette Sweet Pants Home Run", color: "Windsor", swatch: "#7e273c",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-la-leo-cap", group: "sweetpants-la-leo-cap",
+    name: "Casquette Sweet Pants La Leo", color: "Leopard", swatch: "#544132",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 75,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-ninetys-cap-black", group: "sweetpants-ninetys-cap",
+    name: "Casquette Sweet Pants Ninetys", color: "Black", swatch: "#ebe7de",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-ninetys-cap-fudge", group: "sweetpants-ninetys-cap",
+    name: "Casquette Sweet Pants Ninetys", color: "Fudge", swatch: "#501b25",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-ninetys-cap-night", group: "sweetpants-ninetys-cap",
+    name: "Casquette Sweet Pants Ninetys", color: "Night", swatch: "#111927",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-nylon-cap-black", group: "sweetpants-nylon-cap",
+    name: "Casquette Sweet Pants Nylon", color: "Black", swatch: "#2d2e35",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-nylon-cap-fudge", group: "sweetpants-nylon-cap",
+    name: "Casquette Sweet Pants Nylon", color: "Fudge", swatch: "#45212d",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-nylon-cap-night", group: "sweetpants-nylon-cap",
+    name: "Casquette Sweet Pants Nylon", color: "Night", swatch: "#131e30",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-black", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Black", swatch: "#92a8be",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-electrik", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Electrik", swatch: "#89a3bd",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-fudge", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Fudge", swatch: "#8f9caf",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-karmin", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Karmin", swatch: "#dad0c7",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-night", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Night", swatch: "#0c0e10",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-primrose", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Primrose", swatch: "#adb9c8",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-seaweed", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Seaweed", swatch: "#97acc0",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-toffee", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "Toffee", swatch: "#9baebe",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-patchwork-cap-white-pepper", group: "sweetpants-patchwork-cap",
+    name: "Casquette Sweet Pants Patchwork", color: "White Pepper", swatch: "#faf7ed",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sign-cap-black", group: "sweetpants-sign-cap",
+    name: "Casquette Sweet Pants Sign", color: "Black", swatch: "#0c1116",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sign-cap-fudge", group: "sweetpants-sign-cap",
+    name: "Casquette Sweet Pants Sign", color: "Fudge", swatch: "#2b0f17",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sign-cap-night", group: "sweetpants-sign-cap",
+    name: "Casquette Sweet Pants Sign", color: "Night", swatch: "#04111f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-air-blue", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Air Blue", swatch: "#accee7",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-black", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Black", swatch: "#1c1c1e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-dark-earth", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Dark Earth", swatch: "#5b4740",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-leaf", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Leaf", swatch: "#615339",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-milk", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Milk", swatch: "#eee8dd",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-night", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Night", swatch: "#172b41",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-primrose", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Primrose", swatch: "#dbc9c9",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-sage", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Sage", swatch: "#aca592",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-white-pepper", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "White Pepper", swatch: "#dac7b2",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-smart-cap-windsor", group: "sweetpants-smart-cap",
+    name: "Casquette Sweet Pants Smart", color: "Windsor", swatch: "#67303d",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 55,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sunfaded-cap-black", group: "sweetpants-sunfaded-cap",
+    name: "Casquette Sweet Pants Sunfaded", color: "Black", swatch: "#38353a",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 70,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sunfaded-cap-brown", group: "sweetpants-sunfaded-cap",
+    name: "Casquette Sweet Pants Sunfaded", color: "Brown", swatch: "#5e433a",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 70,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sunfaded-cap-electrik", group: "sweetpants-sunfaded-cap",
+    name: "Casquette Sweet Pants Sunfaded", color: "Electrik", swatch: "#114f9e",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 70,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sunfaded-cap-karmin", group: "sweetpants-sunfaded-cap",
+    name: "Casquette Sweet Pants Sunfaded", color: "Karmin", swatch: "#bb1338",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 70,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-sunfaded-cap-milk", group: "sweetpants-sunfaded-cap",
+    name: "Casquette Sweet Pants Sunfaded", color: "Milk", swatch: "#dbdbda",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 70,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-velors-cap-army", group: "sweetpants-velors-cap",
+    name: "Casquette Sweet Pants Velors", color: "Army", swatch: "#554836",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-velors-cap-eden", group: "sweetpants-velors-cap",
+    name: "Casquette Sweet Pants Velors", color: "Eden", swatch: "#264b41",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-velors-cap-imperial", group: "sweetpants-velors-cap",
+    name: "Casquette Sweet Pants Velors", color: "Imperial", swatch: "#6d547f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-velors-cap-night", group: "sweetpants-velors-cap",
+    name: "Casquette Sweet Pants Velors", color: "Night", swatch: "#525c73",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-velors-cap-white-pepper", group: "sweetpants-velors-cap",
+    name: "Casquette Sweet Pants Velors", color: "White Pepper", swatch: "#ac946f",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+  {
+    id: "sweetpants-velors-cap-windsor", group: "sweetpants-velors-cap",
+    name: "Casquette Sweet Pants Velors", color: "Windsor", swatch: "#722c38",
+    brand: "sweetpants", category: "accessoires", gender: "unisexe", type: "casquettes", price: 65,
+    sizes: TU,
+    description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
+    details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
   }
 ];

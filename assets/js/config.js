@@ -33,5 +33,5 @@ window.BASE_CONFIG = {
   ],
 
   // Recherches proposées dans la barre de recherche
-  popularSearches: ["Essentials", "Cloudtilt", "UGG", "Nocta", "Lululemon", "Casquette", "Bonnet"]
+  popularSearches: ["Essentials 1977", "Cloudtilt", "XT-6", "Kayano 14", "Ralph Lauren", "Sweet Pants", "Alo Runner"]
 };
