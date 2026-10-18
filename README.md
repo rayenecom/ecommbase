@@ -1,7 +1,7 @@
 # BASE — Boutique en ligne
 
 Ensembles, sneakers et accessoires 100% authentiques importés des États-Unis :
-Essentials, Ralph Lauren, UGG, Nocta, Lululemon, Alo, On, Salomon, Mizuno, Saucony, Asics, C.P. Company,
+Essentials, Ralph Lauren, UGG, Nocta, Lululemon, Alo, On, Salomon, Mizuno, Asics, C.P. Company,
 Courrèges, Columbia, Sweet Pants.
 
 Site statique (HTML / CSS / JavaScript), sans serveur ni installation. Ouvre `index.html` pour le voir.

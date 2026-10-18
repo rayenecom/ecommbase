@@ -513,7 +513,7 @@
       const rows = [["36", "4", "5.5", "22.5"], ["37", "4.5", "6", "23"], ["38", "5.5", "7", "24"], ["39", "6.5", "8", "24.5"], ["40", "7", "8.5", "25"], ["41", "8", "9.5", "26"], ["42", "8.5", "10", "26.5"], ["43", "9.5", "11", "27.5"], ["44", "10", "11.5", "28"], ["45", "11", "12.5", "29"], ["46", "12", "13.5", "30"]];
       return `<p style="margin-bottom:16px">Pointures EU. Mesure ton pied du talon au plus long orteil et compare avec la colonne CM.</p>
         <div class="size-table-wrap"><table class="size-table"><thead><tr><th>EU</th><th>US homme</th><th>US femme</th><th>CM</th></tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
-        <p class="muted" style="margin-top:16px;font-size:var(--fs-sm)">Les modèles On Femme et Homme ont des formes différentes : choisis la version de ton genre. On, Salomon, Asics, Mizuno et Saucony taillent normalement. Entre deux tailles, prends la plus grande. Un doute ? Écris-nous sur WhatsApp avec ta pointure habituelle.</p>`;
+        <p class="muted" style="margin-top:16px;font-size:var(--fs-sm)">Les modèles On Femme et Homme ont des formes différentes : choisis la version de ton genre. On, Salomon, Asics, Mizuno et Alo taillent normalement. Entre deux tailles, prends la plus grande. Un doute ? Écris-nous sur WhatsApp avec ta pointure habituelle.</p>`;
     }
     const rows = [["XS", "86–91", "71–76", "165–170"], ["S", "91–96", "76–81", "170–175"], ["M", "96–101", "81–86", "175–180"], ["L", "101–106", "86–91", "180–185"], ["XL", "106–111", "91–96", "185–190"], ["XXL", "111–116", "96–101", "190–195"]];
     return `<p style="margin-bottom:16px">Tailles US, mesures du corps en centimètres.</p>
@@ -551,9 +551,9 @@
 
   /* =================== Accueil =================== */
   function viewHome(main) {
-    setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Salomon et sneakers On, Salomon, Asics, Mizuno, Saucony. 100% authentiques, importés des États-Unis.");
+    setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Lululemon, Salomon et sneakers On, Salomon XT-6, Asics, Mizuno, Alo Runner. 100% authentiques, importés des États-Unis.");
     const firstOf = (grp) => PRODUCTS.find((p) => p.group === grp);
-    const hero = [byId("ugg-tasman-set-dusty-rose") || byId("essentials-set-black"), firstOf("on-cloudtilt-m") || byId("salomon-xt6-black-coffee"), byId("nocta-cs-set-black") || byId("cp-dd-shell-puffer-andorra")].filter(Boolean);
+    const hero = [byId("ugg-tasman-set-dusty-rose") || byId("essentials-set-black"), firstOf("on-cloudtilt-m") || firstOf("salomon-xt-6"), byId("nocta-cs-set-black") || byId("cp-dd-shell-puffer-andorra")].filter(Boolean);
     const bestWomen = onePerGroup(PRODUCTS.filter((p) => p.gender === "femme" && isBest(p)).concat(PRODUCTS.filter((p) => p.gender === "femme")));
     const bestAcc = onePerGroup(PRODUCTS.filter((p) => p.category === "accessoires" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "accessoires")));
     const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
@@ -564,7 +564,7 @@
       ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-set-oatmeal-heather"), countIn((p) => p.category === "ensembles")],
       ["Chaussures", L.shop({ cat: "chaussures" }), duoB, countIn((p) => p.category === "chaussures")],
       ["Accessoires", L.shop({ cat: "accessoires" }), byId("cp-goggle-beanie-black") || byId("courreges-cap-ac-black"), countIn((p) => p.category === "accessoires")],
-      ["Femme", L.shop({ g: "femme" }), byId("lulu-scuba-set-porcelain-pink") || byId("alo-muse-set-ivory"), countIn((p) => p.gender === "femme")]
+      ["Femme", L.shop({ g: "femme" }), byId("on-club-set-w-barberry") || firstOf("on-focus-tech-set-w") || firstOf("on-club-set-w"), countIn((p) => p.gender === "femme")]
     ];
 
     main.innerHTML = `
@@ -753,7 +753,7 @@
       if (st.filter === "new") return ["Nouveautés", "Les dernières pièces arrivées des États-Unis."];
       if (st.filter === "sale") return ["Promos", "Pièces authentiques à prix réduit, dans la limite des tailles disponibles."];
       if (st.cat && b) return [`${CATS[st.cat].name} ${b.name}`, `Tous nos ${CATS[st.cat].name.toLowerCase()} ${b.name}, 100% authentiques.`];
-      if (st.cat) return [CATS[st.cat].name, { ensembles: "Essentials, Ralph Lauren, UGG, Nocta, Lululemon, Alo, On et Salomon. Haut et bas assortis, vendus ensemble.", chaussures: "On Cloudtilt, Cloudtilt Arc, Cloudtilt Remix et Cloudsurfer Max en Femme et Homme, Salomon, Asics, Mizuno, Saucony et Alo.", doudounes: "Doudounes C.P. Company, garnissage duvet.", accessoires: "Casquettes Courrèges, Alo, Columbia, bonnets C.P. Company, Ralph Lauren, Sweet Pants, chaussettes et caleçons Alo et Lululemon." }[st.cat]];
+      if (st.cat) return [CATS[st.cat].name, { ensembles: "Essentials (Classic, 1977, NBA), Ralph Lauren, On, Alo, Lululemon, UGG, Nocta et Salomon GORE-TEX. Haut et bas assortis, vendus ensemble.", chaussures: "On Cloudtilt, Cloudtilt Arc, Cloudtilt Remix et Cloudsurfer Max en Femme et Homme, Salomon XT-6, Asics GEL-1130 et Kayano 14, Mizuno Wave Prophecy et Alo Runner.", doudounes: "Doudounes C.P. Company, garnissage duvet.", accessoires: "Casquettes Sweet Pants, Courrèges, Alo, Columbia, bonnets C.P. Company, Ralph Lauren, Sweet Pants, chaussettes et caleçons Alo et Lululemon." }[st.cat]];
       if (b) return [b.name, `Toute la sélection ${b.name}, 100% authentique.`];
       return ["Tout le shop", "Ensembles, sneakers et doudounes 100% authentiques, importés des États-Unis."];
     }
@@ -1155,7 +1155,7 @@
         <p><b>À compléter avant la mise en ligne</b> (remplace les crochets par tes informations).</p>
         <h2>Éditeur du site</h2><p>[Nom ou raison sociale] · [Statut : micro-entreprise, SAS…] · SIRET [numéro] · [Adresse] · [E-mail]</p>
         <h2>Hébergement</h2><p>[Nom et adresse de l'hébergeur]</p>
-        <h2>Marques</h2><p>${esc(CFG.storeName)} est un revendeur indépendant, non affilié, non sponsorisé et non autorisé officiellement par les marques présentées. Fear of God Essentials, Ralph Lauren, On, Alo, Salomon, Mizuno, Saucony, Asics et C.P. Company sont des marques de leurs propriétaires respectifs, citées uniquement pour désigner les produits authentiques revendus.</p>
+        <h2>Marques</h2><p>${esc(CFG.storeName)} est un revendeur indépendant, non affilié, non sponsorisé et non autorisé officiellement par les marques présentées. Fear of God Essentials, Ralph Lauren, On, Alo, Lululemon, UGG, Nocta, Salomon, Mizuno, Asics, Sweet Pants, Courrèges, Columbia et C.P. Company sont des marques de leurs propriétaires respectifs, citées uniquement pour désigner les produits authentiques revendus.</p>
         <h2>Produits et prix</h2><p>Les produits sont neufs et authentiques. Les prix sont indiqués en euros TTC, hors frais de livraison.</p>
         <h2>Commande et paiement</h2><p>La commande est définitive après confirmation de la disponibilité et réception du paiement.</p>
         <h2>Livraison</h2><p>Expédition sous 24 à 48 h après paiement, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés.</p>
