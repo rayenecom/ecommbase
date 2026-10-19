@@ -16,37 +16,6 @@
    Toutes les photos sont sur le même fond crème (#EEE7DB), carrées, 1200 × 1200 px.
    ========================================================== */
 window.BASE_PHOTOS = {
-  // Ensemble Essentials Classic Hoodie + Sweatpant — Oatmeal Heather
-  "essentials-set-oatmeal-heather": [
-    "images/products/essentials-set-oatmeal-heather-1.jpg",
-    "images/products/essentials-set-oatmeal-heather-2.jpg",
-    "images/products/essentials-set-oatmeal-heather-3.jpg",
-    "images/products/essentials-set-oatmeal-heather-4.jpg"
-  ],
-
-  // Ensemble Essentials Classic Hoodie + Sweatpant — Black
-  "essentials-set-black": [
-    "images/products/essentials-set-black-1.jpg",
-    "images/products/essentials-set-black-2.jpg",
-    "images/products/essentials-set-black-3.jpg",
-    "images/products/essentials-set-black-4.jpg"
-  ],
-
-  // Ensemble Essentials Classic Hoodie + Sweatpant — Warm Heather
-  "essentials-set-warm-heather": [
-    "images/products/essentials-set-warm-heather-1.jpg",
-    "images/products/essentials-set-warm-heather-2.jpg",
-    "images/products/essentials-set-warm-heather-3.jpg",
-    "images/products/essentials-set-warm-heather-4.jpg"
-  ],
-
-  // Ensemble Essentials Classic Hoodie + Sweatpant — Homestead Heather
-  "essentials-set-homestead-heather": [
-    "images/products/essentials-set-homestead-heather-1.jpg",
-    "images/products/essentials-set-homestead-heather-2.jpg",
-    "images/products/essentials-set-homestead-heather-3.jpg"
-  ],
-
   // Ensemble On Club Hoodie + Pants — Black
   "on-club-set-black": [
     "images/products/on-club-set-black-1.jpg",
@@ -881,14 +850,16 @@ window.BASE_PHOTOS = {
     "images/products/rl-dk-set-black-1.jpg",
     "images/products/rl-dk-set-black-2.jpg",
     "images/products/rl-dk-set-black-3.jpg",
-    "images/products/rl-dk-set-black-4.jpg"
+    "images/products/rl-dk-set-black-4.jpg",
+    "images/products/rl-dk-set-black-5.jpg"
   ],
 
   // Survêtement Polo Ralph Lauren Double-Knit — Navy
   "rl-dk-set-navy": [
     "images/products/rl-dk-set-navy-1.jpg",
     "images/products/rl-dk-set-navy-2.jpg",
-    "images/products/rl-dk-set-navy-3.jpg"
+    "images/products/rl-dk-set-navy-3.jpg",
+    "images/products/rl-dk-set-navy-4.jpg"
   ],
 
   // Survêtement Polo Ralph Lauren Double-Knit — Grey
@@ -896,7 +867,8 @@ window.BASE_PHOTOS = {
     "images/products/rl-dk-set-grey-1.jpg",
     "images/products/rl-dk-set-grey-2.jpg",
     "images/products/rl-dk-set-grey-3.jpg",
-    "images/products/rl-dk-set-grey-4.jpg"
+    "images/products/rl-dk-set-grey-4.jpg",
+    "images/products/rl-dk-set-grey-5.jpg"
   ],
 
   // Ensemble The RL Fleece Zippé + Jogging — Black / Red Pony
@@ -912,103 +884,29 @@ window.BASE_PHOTOS = {
     "images/products/rl-fleece-hoodie-black-2.jpg"
   ],
 
-  // Ensemble Essentials Signature Hoodie + Flare Sweatpant — Marble Heather
-  "essentials-signature-set-marble-heather": [
-    "images/products/essentials-signature-set-marble-heather-1.jpg",
-    "images/products/essentials-signature-set-marble-heather-2.jpg",
-    "images/products/essentials-signature-set-marble-heather-3.jpg",
-    "images/products/essentials-signature-set-marble-heather-4.jpg"
-  ],
-
-  // Ensemble Essentials Signature Hoodie + Flare Sweatpant — Pyrite Heather
-  "essentials-signature-set-pyrite-heather": [
-    "images/products/essentials-signature-set-pyrite-heather-1.jpg",
-    "images/products/essentials-signature-set-pyrite-heather-2.jpg",
-    "images/products/essentials-signature-set-pyrite-heather-3.jpg",
-    "images/products/essentials-signature-set-pyrite-heather-4.jpg"
-  ],
-
-  // Ensemble Essentials Signature Hoodie + Flare Sweatpant — Ash Heather
-  "essentials-signature-set-ash-heather": [
-    "images/products/essentials-signature-set-ash-heather-1.jpg",
-    "images/products/essentials-signature-set-ash-heather-2.jpg",
-    "images/products/essentials-signature-set-ash-heather-3.jpg"
-  ],
-
-  // Ensemble Essentials Classic Zip-Up + Sweatpant — Black
-  "essentials-zip-set-black": [
-    "images/products/essentials-zip-set-black-1.jpg",
-    "images/products/essentials-zip-set-black-2.jpg",
-    "images/products/essentials-zip-set-black-3.jpg",
-    "images/products/essentials-zip-set-black-4.jpg"
-  ],
-
-  // Ensemble Essentials Classic Zip-Up + Sweatpant — Oatmeal Heather
-  "essentials-zip-set-oatmeal-heather": [
-    "images/products/essentials-zip-set-oatmeal-heather-1.jpg",
-    "images/products/essentials-zip-set-oatmeal-heather-2.jpg",
-    "images/products/essentials-zip-set-oatmeal-heather-3.jpg",
-    "images/products/essentials-zip-set-oatmeal-heather-4.jpg"
-  ],
-
-  // Ensemble Essentials Classic Zip-Up + Sweatpant — Warm Heather
-  "essentials-zip-set-warm-heather": [
-    "images/products/essentials-zip-set-warm-heather-1.jpg",
-    "images/products/essentials-zip-set-warm-heather-2.jpg",
-    "images/products/essentials-zip-set-warm-heather-3.jpg",
-    "images/products/essentials-zip-set-warm-heather-4.jpg"
-  ],
-
-  // Ensemble Essentials Classic Hoodie + Sweatpant — Vintage Black
-  "essentials-set-vintage-black": [
-    "images/products/essentials-set-vintage-black-1.jpg",
-    "images/products/essentials-set-vintage-black-2.jpg",
-    "images/products/essentials-set-vintage-black-3.jpg"
-  ],
-
   // Ensemble Essentials 1977 Hoodie + Sweatpant — Dark Oatmeal
   "essentials-1977-set-dark-oatmeal": [
     "images/products/essentials-1977-set-dark-oatmeal-1.jpg",
     "images/products/essentials-1977-set-dark-oatmeal-2.jpg",
-    "images/products/essentials-1977-set-dark-oatmeal-3.jpg"
+    "images/products/essentials-1977-set-dark-oatmeal-3.jpg",
+    "images/products/essentials-1977-set-dark-oatmeal-4.jpg"
   ],
 
   // Ensemble Essentials 1977 Hoodie + Sweatpant — Iron
   "essentials-1977-set-iron": [
     "images/products/essentials-1977-set-iron-1.jpg",
     "images/products/essentials-1977-set-iron-2.jpg",
-    "images/products/essentials-1977-set-iron-3.jpg"
+    "images/products/essentials-1977-set-iron-3.jpg",
+    "images/products/essentials-1977-set-iron-4.jpg",
+    "images/products/essentials-1977-set-iron-5.jpg"
   ],
 
   // Ensemble Essentials 1977 Hoodie + Sweatpant — Light Oatmeal
   "essentials-1977-set-light-oatmeal": [
     "images/products/essentials-1977-set-light-oatmeal-1.jpg",
     "images/products/essentials-1977-set-light-oatmeal-2.jpg",
-    "images/products/essentials-1977-set-light-oatmeal-3.jpg"
-  ],
-
-  // Ensemble Essentials NBA Hoodie + Sweatpant — Heather Stone
-  "essentials-nba-set-heather-stone": [
-    "images/products/essentials-nba-set-heather-stone-1.jpg",
-    "images/products/essentials-nba-set-heather-stone-2.jpg",
-    "images/products/essentials-nba-set-heather-stone-3.jpg",
-    "images/products/essentials-nba-set-heather-stone-4.jpg"
-  ],
-
-  // Ensemble Essentials NBA Hoodie + Sweatpant — Faded Black
-  "essentials-nba-set-faded-black": [
-    "images/products/essentials-nba-set-faded-black-1.jpg",
-    "images/products/essentials-nba-set-faded-black-2.jpg",
-    "images/products/essentials-nba-set-faded-black-3.jpg",
-    "images/products/essentials-nba-set-faded-black-4.jpg"
-  ],
-
-  // Ensemble Essentials NBA Hoodie + Sweatpant — Oatmeal Heather
-  "essentials-nba-set-oatmeal-heather": [
-    "images/products/essentials-nba-set-oatmeal-heather-1.jpg",
-    "images/products/essentials-nba-set-oatmeal-heather-2.jpg",
-    "images/products/essentials-nba-set-oatmeal-heather-3.jpg",
-    "images/products/essentials-nba-set-oatmeal-heather-4.jpg"
+    "images/products/essentials-1977-set-light-oatmeal-3.jpg",
+    "images/products/essentials-1977-set-light-oatmeal-4.jpg"
   ],
 
   // Ensemble On Club Hoodie + Pants — Storm
@@ -1376,7 +1274,10 @@ window.BASE_PHOTOS = {
   "lulu-pace-breaker-set-black": [
     "images/products/lulu-pace-breaker-set-black-1.jpg",
     "images/products/lulu-pace-breaker-set-black-2.jpg",
-    "images/products/lulu-pace-breaker-set-black-3.jpg"
+    "images/products/lulu-pace-breaker-set-black-3.jpg",
+    "images/products/lulu-pace-breaker-set-black-4.jpg",
+    "images/products/lulu-pace-breaker-set-black-5.jpg",
+    "images/products/lulu-pace-breaker-set-black-6.jpg"
   ],
 
   // Ensemble Lululemon Pace Breaker Veste + Jogger — Beige (Downtown Tan)
@@ -1391,7 +1292,8 @@ window.BASE_PHOTOS = {
     "images/products/lulu-pace-breaker-set-burgundy-bay-1.jpg",
     "images/products/lulu-pace-breaker-set-burgundy-bay-2.jpg",
     "images/products/lulu-pace-breaker-set-burgundy-bay-3.jpg",
-    "images/products/lulu-pace-breaker-set-burgundy-bay-4.jpg"
+    "images/products/lulu-pace-breaker-set-burgundy-bay-4.jpg",
+    "images/products/lulu-pace-breaker-set-burgundy-bay-5.jpg"
   ],
 
   // Ensemble Lululemon Pace Breaker Glyde Track Jacket + Pant — Black
@@ -2757,5 +2659,95 @@ window.BASE_PHOTOS = {
   "sweetpants-velors-cap-windsor": [
     "images/products/sweetpants-velors-cap-windsor-1.jpg",
     "images/products/sweetpants-velors-cap-windsor-2.jpg"
+  ],
+
+  // Ensemble Essentials Hoodie + Sweatpant — Black
+  "essentials-ss22-set-black": [
+    "images/products/essentials-ss22-set-black-1.jpg",
+    "images/products/essentials-ss22-set-black-2.jpg",
+    "images/products/essentials-ss22-set-black-3.jpg",
+    "images/products/essentials-ss22-set-black-4.jpg",
+    "images/products/essentials-ss22-set-black-5.jpg"
+  ],
+
+  // Ensemble Essentials Hoodie + Sweatpant — Light Oatmeal
+  "essentials-ss22-set-light-oatmeal": [
+    "images/products/essentials-ss22-set-light-oatmeal-1.jpg",
+    "images/products/essentials-ss22-set-light-oatmeal-2.jpg",
+    "images/products/essentials-ss22-set-light-oatmeal-3.jpg",
+    "images/products/essentials-ss22-set-light-oatmeal-4.jpg",
+    "images/products/essentials-ss22-set-light-oatmeal-5.jpg"
+  ],
+
+  // Ensemble Essentials Hoodie + Sweatpant — Dark Oatmeal
+  "essentials-ss22-set-dark-oatmeal": [
+    "images/products/essentials-ss22-set-dark-oatmeal-1.jpg",
+    "images/products/essentials-ss22-set-dark-oatmeal-2.jpg",
+    "images/products/essentials-ss22-set-dark-oatmeal-3.jpg",
+    "images/products/essentials-ss22-set-dark-oatmeal-4.jpg",
+    "images/products/essentials-ss22-set-dark-oatmeal-5.jpg"
+  ],
+
+  // Ensemble Essentials Hoodie + Sweatpant — Desert Taupe
+  "essentials-ss22-set-desert-taupe": [
+    "images/products/essentials-ss22-set-desert-taupe-1.jpg",
+    "images/products/essentials-ss22-set-desert-taupe-2.jpg",
+    "images/products/essentials-ss22-set-desert-taupe-3.jpg",
+    "images/products/essentials-ss22-set-desert-taupe-4.jpg"
+  ],
+
+  // Ensemble Essentials Hoodie + Sweatpant — Oak
+  "essentials-ss22-set-oak": [
+    "images/products/essentials-ss22-set-oak-1.jpg",
+    "images/products/essentials-ss22-set-oak-2.jpg",
+    "images/products/essentials-ss22-set-oak-3.jpg",
+    "images/products/essentials-ss22-set-oak-4.jpg"
+  ],
+
+  // Ensemble Essentials Hoodie + Sweatpant — Seafoam
+  "essentials-ss22-set-seafoam": [
+    "images/products/essentials-ss22-set-seafoam-1.jpg",
+    "images/products/essentials-ss22-set-seafoam-2.jpg",
+    "images/products/essentials-ss22-set-seafoam-3.jpg",
+    "images/products/essentials-ss22-set-seafoam-4.jpg",
+    "images/products/essentials-ss22-set-seafoam-5.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — Steel Blue
+  "lulu-pace-breaker-set-steel-blue": [
+    "images/products/lulu-pace-breaker-set-steel-blue-1.jpg",
+    "images/products/lulu-pace-breaker-set-steel-blue-2.jpg",
+    "images/products/lulu-pace-breaker-set-steel-blue-3.jpg",
+    "images/products/lulu-pace-breaker-set-steel-blue-4.jpg",
+    "images/products/lulu-pace-breaker-set-steel-blue-5.jpg",
+    "images/products/lulu-pace-breaker-set-steel-blue-6.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — True Navy
+  "lulu-pace-breaker-set-true-navy": [
+    "images/products/lulu-pace-breaker-set-true-navy-1.jpg",
+    "images/products/lulu-pace-breaker-set-true-navy-2.jpg",
+    "images/products/lulu-pace-breaker-set-true-navy-3.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — Onyx Grey
+  "lulu-pace-breaker-set-onyx-grey": [
+    "images/products/lulu-pace-breaker-set-onyx-grey-1.jpg",
+    "images/products/lulu-pace-breaker-set-onyx-grey-2.jpg",
+    "images/products/lulu-pace-breaker-set-onyx-grey-3.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — Oakwood Tan
+  "lulu-pace-breaker-set-oakwood-tan": [
+    "images/products/lulu-pace-breaker-set-oakwood-tan-1.jpg",
+    "images/products/lulu-pace-breaker-set-oakwood-tan-2.jpg",
+    "images/products/lulu-pace-breaker-set-oakwood-tan-3.jpg"
+  ],
+
+  // Ensemble Lululemon Pace Breaker Veste + Jogger — Silver Drop
+  "lulu-pace-breaker-set-silver-drop": [
+    "images/products/lulu-pace-breaker-set-silver-drop-1.jpg",
+    "images/products/lulu-pace-breaker-set-silver-drop-2.jpg",
+    "images/products/lulu-pace-breaker-set-silver-drop-3.jpg"
   ]
 };

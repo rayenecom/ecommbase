@@ -553,15 +553,15 @@
   function viewHome(main) {
     setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Lululemon, Salomon et sneakers On, Salomon XT-6, Asics, Mizuno, Alo Runner. 100% authentiques, importés des États-Unis.");
     const firstOf = (grp) => PRODUCTS.find((p) => p.group === grp);
-    const hero = [byId("ugg-tasman-set-dusty-rose") || byId("essentials-set-black"), firstOf("on-cloudtilt-m") || firstOf("salomon-xt-6"), byId("nocta-cs-set-black") || byId("cp-dd-shell-puffer-andorra")].filter(Boolean);
+    const hero = [byId("ugg-tasman-set-dusty-rose") || byId("essentials-ss22-set-black"), firstOf("on-cloudtilt-m") || firstOf("salomon-xt-6"), byId("nocta-cs-set-black") || byId("cp-dd-shell-puffer-andorra")].filter(Boolean);
     const bestWomen = onePerGroup(PRODUCTS.filter((p) => p.gender === "femme" && isBest(p)).concat(PRODUCTS.filter((p) => p.gender === "femme")));
     const bestAcc = onePerGroup(PRODUCTS.filter((p) => p.category === "accessoires" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "accessoires")));
     const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
     const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
     const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
-    const duoA = byId("essentials-set-oatmeal-heather"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
+    const duoA = byId("essentials-ss22-set-light-oatmeal"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
     const catTiles = [
-      ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-set-oatmeal-heather"), countIn((p) => p.category === "ensembles")],
+      ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-ss22-set-light-oatmeal"), countIn((p) => p.category === "ensembles")],
       ["Chaussures", L.shop({ cat: "chaussures" }), duoB, countIn((p) => p.category === "chaussures")],
       ["Accessoires", L.shop({ cat: "accessoires" }), byId("cp-goggle-beanie-black") || byId("courreges-cap-ac-black"), countIn((p) => p.category === "accessoires")],
       ["Femme", L.shop({ g: "femme" }), byId("on-club-set-w-barberry") || firstOf("on-focus-tech-set-w") || firstOf("on-club-set-w"), countIn((p) => p.gender === "femme")]

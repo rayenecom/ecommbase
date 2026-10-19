@@ -66,39 +66,6 @@ const SHOES_F = ["36", "36.5", "37", "37.5", "38", "38.5", "39", "40", "40.5", "
 const TU = ["TU"];
 
 window.BASE_PRODUCTS = [
-  /* ---------- ESSENTIALS ---------- */
-  {
-    id: "essentials-set-oatmeal-heather", group: "essentials-set",
-    name: "Ensemble Essentials Classic Hoodie + Sweatpant", color: "Oatmeal Heather", swatch: "#e4e1dc",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING, soldOutSizes: ["XS"], lowStock: ["M"], tags: ["best"],
-    description: "L'ensemble le plus demandé. Hoodie et jogging Fear of God Essentials Classic assortis, en molleton épais au toucher brossé. Coupe ample, logo caoutchouté.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe ample : taille grand", "Logo Essentials caoutchouté"]
-  },
-  {
-    id: "essentials-set-black", group: "essentials-set",
-    name: "Ensemble Essentials Classic Hoodie + Sweatpant", color: "Black", swatch: "#1a1a1a",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING, tags: ["best"],
-    description: "Le classique tout noir. Hoodie et jogging Essentials Classic assortis, molleton épais et coupe ample.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe ample : taille grand", "Logo Essentials caoutchouté"]
-  },
-  {
-    id: "essentials-set-warm-heather", group: "essentials-set",
-    name: "Ensemble Essentials Classic Hoodie + Sweatpant", color: "Warm Heather", swatch: "#a9a59a",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 269, oldPrice: 299,
-    sizes: CLOTHING,
-    description: "Ensemble Essentials gris chiné chaud. Hoodie à capuche doublée et jogging à chevilles élastiquées.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe ample : taille grand"]
-  },
-  {
-    id: "essentials-set-homestead-heather", group: "essentials-set",
-    name: "Ensemble Essentials Classic Hoodie + Sweatpant", color: "Homestead Heather", swatch: "#7a6b5a",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 249,
-    sizes: CLOTHING, soldOutSizes: ["XS", "XXL"], tags: ["new"],
-    description: "Le coloris taupe de la saison. Hoodie et jogging Essentials Classic assortis.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais, intérieur brossé", "Coupe ample : taille grand"]
-  },
 
   /* ---------- ON — ensembles ---------- */
   {
@@ -1099,27 +1066,27 @@ window.BASE_PRODUCTS = [
   /* ---------- RALPH LAUREN — survêtements Polo & RL Fleece ---------- */
   {
     id: "rl-dk-set-black", group: "rl-dk-set",
-    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Black", swatch: "#17171a",
+    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Black", swatch: "#111111",
     brand: "ralphlauren", category: "ensembles", gender: "homme", price: 259,
     sizes: CLOTHING, tags: ["best"],
-    description: "Veste zippée à capuche et jogging Polo Ralph Lauren en molleton double maille, Pony brodé.",
-    details: ["Sweat à capuche zippé + pantalon de jogging", "Molleton double maille", "Pony brodé", "Taille normalement"]
+    description: "Le survêtement Polo Ralph Lauren Double-Knit Tech : sweat zippé à capuche et jogging assortis, molleton double maille, Pony brodé.",
+    details: ["Sweat zippé à capuche + jogging", "Molleton double maille technique", "Pony brodé", "Taille normalement"]
   },
   {
     id: "rl-dk-set-navy", group: "rl-dk-set",
-    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Navy", swatch: "#1d212d",
+    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Navy", swatch: "#1c1d2a",
     brand: "ralphlauren", category: "ensembles", gender: "homme", price: 259,
     sizes: CLOTHING,
-    description: "Veste zippée à capuche et jogging Polo Ralph Lauren en molleton double maille, Pony brodé.",
-    details: ["Sweat à capuche zippé + pantalon de jogging", "Molleton double maille", "Pony brodé", "Taille normalement"]
+    description: "Le survêtement Polo Ralph Lauren Double-Knit Tech : sweat zippé à capuche et jogging assortis, molleton double maille, Pony brodé.",
+    details: ["Sweat zippé à capuche + jogging", "Molleton double maille technique", "Pony brodé", "Taille normalement"]
   },
   {
     id: "rl-dk-set-grey", group: "rl-dk-set",
-    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Grey", swatch: "#404142",
+    name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Grey", swatch: "#a3a29e",
     brand: "ralphlauren", category: "ensembles", gender: "homme", price: 259,
     sizes: CLOTHING, tags: ["new"],
-    description: "Veste zippée à capuche et jogging Polo Ralph Lauren en molleton double maille, Pony brodé.",
-    details: ["Sweat à capuche zippé + pantalon de jogging", "Molleton double maille", "Pony brodé", "Taille normalement"]
+    description: "Le survêtement Polo Ralph Lauren Double-Knit Tech : sweat zippé à capuche et jogging assortis, molleton double maille, Pony brodé.",
+    details: ["Sweat zippé à capuche + jogging", "Molleton double maille technique", "Pony brodé", "Taille normalement"]
   },
   {
     id: "rl-fleece-zip-set-black", group: "rl-fleece-zip-set",
@@ -1131,7 +1098,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "rl-fleece-hoodie-black", group: "rl-fleece-hoodie",
-    name: "Sweat à capuche The RL Fleece", color: "Black / Red Pony", swatch: "#222022",
+    name: "Sweat à capuche The RL Fleece", color: "Black / Red Pony", swatch: "#1e1d1e",
     brand: "ralphlauren", category: "ensembles", gender: "homme", price: 149,
     sizes: CLOTHING, tags: ["new"],
     description: "Le sweat à capuche THE RL FLEECE vendu seul : molleton doux, poche kangourou et Pony rouge brodé.",
@@ -1139,62 +1106,6 @@ window.BASE_PRODUCTS = [
   },
 
   /* ---------- ESSENTIALS — Classic, Signature, Zip, 1977, NBA ---------- */
-  {
-    id: "essentials-signature-set-marble-heather", group: "essentials-signature-set",
-    name: "Ensemble Essentials Signature Hoodie + Flare Sweatpant", color: "Marble Heather", swatch: "#d2ccc1",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
-    sizes: CLOTHING,
-    description: "La ligne Signature d'Essentials : hoodie Classic et jogging flare assortis, molleton chiné.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand", "Jogging coupe flare"]
-  },
-  {
-    id: "essentials-signature-set-pyrite-heather", group: "essentials-signature-set",
-    name: "Ensemble Essentials Signature Hoodie + Flare Sweatpant", color: "Pyrite Heather", swatch: "#a39e93",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
-    sizes: CLOTHING,
-    description: "La ligne Signature d'Essentials : hoodie Classic et jogging flare assortis, molleton chiné.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand", "Jogging coupe flare"]
-  },
-  {
-    id: "essentials-signature-set-ash-heather", group: "essentials-signature-set",
-    name: "Ensemble Essentials Signature Hoodie + Flare Sweatpant", color: "Ash Heather", swatch: "#4b4942",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
-    sizes: CLOTHING, tags: ["new"],
-    description: "La ligne Signature d'Essentials : hoodie Classic et jogging flare assortis, molleton chiné.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand", "Jogging coupe flare"]
-  },
-  {
-    id: "essentials-zip-set-black", group: "essentials-zip-set",
-    name: "Ensemble Essentials Classic Zip-Up + Sweatpant", color: "Black", swatch: "#11131a",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
-    sizes: CLOTHING, tags: ["best"],
-    description: "Le hoodie zippé Essentials Classic et son jogging assorti : la version zip du survêtement le plus porté.",
-    details: ["Hoodie zippé + jogging", "Molleton épais", "Coupe ample : taille grand"]
-  },
-  {
-    id: "essentials-zip-set-oatmeal-heather", group: "essentials-zip-set",
-    name: "Ensemble Essentials Classic Zip-Up + Sweatpant", color: "Oatmeal Heather", swatch: "#e6e3dd",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
-    sizes: CLOTHING,
-    description: "Le hoodie zippé Essentials Classic et son jogging assorti : la version zip du survêtement le plus porté.",
-    details: ["Hoodie zippé + jogging", "Molleton épais", "Coupe ample : taille grand"]
-  },
-  {
-    id: "essentials-zip-set-warm-heather", group: "essentials-zip-set",
-    name: "Ensemble Essentials Classic Zip-Up + Sweatpant", color: "Warm Heather", swatch: "#a9a59a",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 289,
-    sizes: CLOTHING,
-    description: "Le hoodie zippé Essentials Classic et son jogging assorti : la version zip du survêtement le plus porté.",
-    details: ["Hoodie zippé + jogging", "Molleton épais", "Coupe ample : taille grand"]
-  },
-  {
-    id: "essentials-set-vintage-black", group: "essentials-set",
-    name: "Ensemble Essentials Classic Hoodie + Sweatpant", color: "Vintage Black", swatch: "#1e212b",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING,
-    description: "Hoodie et jogging Essentials Classic en noir délavé Vintage Black.",
-    details: ["Hoodie + jogging vendus ensemble", "Molleton épais", "Coupe ample : taille grand"]
-  },
   {
     id: "essentials-1977-set-dark-oatmeal", group: "essentials-1977-set",
     name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#aaa594",
@@ -1205,7 +1116,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "essentials-1977-set-iron", group: "essentials-1977-set",
-    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Iron", swatch: "#322f30",
+    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Iron", swatch: "#312e2f",
     brand: "essentials", category: "ensembles", gender: "homme", price: 279,
     sizes: CLOTHING,
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
@@ -1218,30 +1129,6 @@ window.BASE_PRODUCTS = [
     sizes: CLOTHING,
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
     details: ["Hoodie + jogging", "Flocage 1977 en relief", "Molleton épais", "Coupe ample : taille grand"]
-  },
-  {
-    id: "essentials-nba-set-heather-stone", group: "essentials-nba-set",
-    name: "Ensemble Essentials NBA Hoodie + Sweatpant", color: "Heather Stone", swatch: "#9e7765",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 299,
-    sizes: CLOTHING, tags: ["new"],
-    description: "La collection officielle Essentials x NBA : hoodie 90s et jogging assortis aux graphismes NBA.",
-    details: ["Hoodie 90s + jogging", "Collaboration officielle NBA", "Molleton épais", "Coupe ample"]
-  },
-  {
-    id: "essentials-nba-set-faded-black", group: "essentials-nba-set",
-    name: "Ensemble Essentials NBA Hoodie + Sweatpant", color: "Faded Black", swatch: "#c3c6c7",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 299,
-    sizes: CLOTHING,
-    description: "La collection officielle Essentials x NBA : hoodie 90s et jogging assortis aux graphismes NBA.",
-    details: ["Hoodie 90s + jogging", "Collaboration officielle NBA", "Molleton épais", "Coupe ample"]
-  },
-  {
-    id: "essentials-nba-set-oatmeal-heather", group: "essentials-nba-set",
-    name: "Ensemble Essentials NBA Hoodie + Sweatpant", color: "Oatmeal Heather", swatch: "#dedbd6",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 299,
-    sizes: CLOTHING,
-    description: "La collection officielle Essentials x NBA : hoodie 90s et jogging assortis aux graphismes NBA.",
-    details: ["Hoodie 90s + jogging", "Collaboration officielle NBA", "Molleton épais", "Coupe ample"]
   },
 
   /* ---------- ON — ensembles Club, Club Collective, Focus Tech ---------- */
@@ -1569,7 +1456,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "alo-accolade-navy", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Navy", swatch: "#222634",
+    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Navy", swatch: "#242937",
     brand: "alo", category: "ensembles", gender: "homme", price: 279,
     sizes: CLOTHING,
     description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
@@ -1659,19 +1546,19 @@ window.BASE_PRODUCTS = [
   /* ---------- LULULEMON — Pace Breaker ---------- */
   {
     id: "lulu-pace-breaker-set-black", group: "lulu-pace-breaker-set",
-    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Black", swatch: "#1e1b1e",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Black", swatch: "#1a1718",
     brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
     sizes: CLOTHING, tags: ["best"],
     description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
-    details: ["Veste zippée + jogger", "Tissu léger et stretch", "Poches zippées", "Taille normalement"]
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
   },
   {
     id: "lulu-pace-breaker-set-downtown-tan", group: "lulu-pace-breaker-set",
     name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Beige (Downtown Tan)", swatch: "#b2a79f",
     brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
-    sizes: CLOTHING, tags: ["new"],
+    sizes: CLOTHING, tags: ["best"],
     description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
-    details: ["Veste zippée + jogger", "Tissu léger et stretch", "Poches zippées", "Taille normalement"]
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
   },
   {
     id: "lulu-pace-breaker-set-burgundy-bay", group: "lulu-pace-breaker-set",
@@ -1679,7 +1566,7 @@ window.BASE_PRODUCTS = [
     brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
     sizes: CLOTHING,
     description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
-    details: ["Veste zippée + jogger", "Tissu léger et stretch", "Poches zippées", "Taille normalement"]
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
   },
   {
     id: "lulu-pace-breaker-glyde-set-black", group: "lulu-pace-breaker-glyde-set",
@@ -3376,5 +3263,97 @@ window.BASE_PRODUCTS = [
     sizes: TU,
     description: "Casquette Sweet Pants, la marque parisienne : logo brodé, réglable.",
     details: ["Logo Sweet Pants brodé", "Réglable", "Taille unique"]
+  },
+
+  /* ---------- ESSENTIALS — basiques SS22 (logo en haut à droite) ---------- */
+  {
+    id: "essentials-ss22-set-black", group: "essentials-ss22-set",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Black", swatch: "#181818",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING, tags: ["best"],
+    description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
+    details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-ss22-set-light-oatmeal", group: "essentials-ss22-set",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#d5d2cd",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING, tags: ["best"],
+    description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
+    details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-ss22-set-dark-oatmeal", group: "essentials-ss22-set",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#9b9a96",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING,
+    description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
+    details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-ss22-set-desert-taupe", group: "essentials-ss22-set",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Desert Taupe", swatch: "#9d8877",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING, tags: ["new"],
+    description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
+    details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-ss22-set-oak", group: "essentials-ss22-set",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Oak", swatch: "#af8e6a",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING,
+    description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
+    details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
+  },
+  {
+    id: "essentials-ss22-set-seafoam", group: "essentials-ss22-set",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Seafoam", swatch: "#b5baa4",
+    brand: "essentials", category: "ensembles", gender: "homme", price: 269,
+    sizes: CLOTHING,
+    description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
+    details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
+  },
+
+  /* ---------- LULULEMON — Pace Breaker (tous coloris) ---------- */
+  {
+    id: "lulu-pace-breaker-set-steel-blue", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Steel Blue", swatch: "#657b8c",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
+  },
+  {
+    id: "lulu-pace-breaker-set-true-navy", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "True Navy", swatch: "#24242f",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING,
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
+  },
+  {
+    id: "lulu-pace-breaker-set-onyx-grey", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Onyx Grey", swatch: "#3f393a",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING,
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
+  },
+  {
+    id: "lulu-pace-breaker-set-oakwood-tan", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Oakwood Tan", swatch: "#947a5f",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING,
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
+  },
+  {
+    id: "lulu-pace-breaker-set-silver-drop", group: "lulu-pace-breaker-set",
+    name: "Ensemble Lululemon Pace Breaker Veste + Jogger", color: "Silver Drop", swatch: "#b9b8b9",
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 249,
+    sizes: CLOTHING,
+    description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
+    details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
   }
 ];
