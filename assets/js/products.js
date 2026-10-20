@@ -72,7 +72,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-black", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Black", swatch: "#141213",
     brand: "on", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING, tags: ["new"],
+    sizes: CLOTHING, tags: ["new"], soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé. Coupe relax, pensée pour la vie en dehors de la piste.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On brodé", "Coupe relax"]
   },
@@ -80,7 +80,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-crater", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Crater", swatch: "#bbb5b3",
     brand: "on", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING,
+    sizes: CLOTHING, soldOut: true,
     description: "L'ensemble On Club en gris chiné Crater, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On brodé", "Coupe relax"]
   },
@@ -113,36 +113,20 @@ window.BASE_PRODUCTS = [
 
   /* ---------- C.P. COMPANY ---------- */
   {
-    id: "cp-goggle-down-brown", group: "cp-goggle-down",
-    name: "Doudoune C.P. Company Eco-Chrome R Goggle", color: "Re-Color Brown", swatch: "#55422e",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 1190,
-    sizes: JACKETS, tags: ["new"], lowStock: ["L"],
-    description: "La doudoune C.P. Company iconique, avec les lunettes Goggle intégrées à la capuche. Nylon Eco-Chrome R teint en pièce, garnissage duvet.",
-    details: ["Lunettes Goggle sur la capuche", "Nylon Eco-Chrome R", "Garnissage duvet"]
-  },
-  {
     id: "cp-dd-shell-puffer-flint", group: "cp-dd-shell-puffer",
-    name: "Doudoune C.P. Company D.D. Shell", color: "Flint Grey", swatch: "#8f8d82",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Flint Grey", swatch: "#6f7165",
     brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
-    sizes: JACKETS, tags: ["best"],
-    description: "Doudoune à capuche en nylon D.D. Shell, matelassage carré et lentille signature sur la manche.",
-    details: ["Lentille signature sur la manche", "Nylon D.D. Shell", "Garnissage duvet", "Taille normalement"]
+    sizes: JACKETS,
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
   },
   {
     id: "cp-dd-shell-puffer-andorra", group: "cp-dd-shell-puffer",
-    name: "Doudoune C.P. Company D.D. Shell", color: "Andorra", swatch: "#3c1817",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Andorra Red", swatch: "#5c2021",
     brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
-    sizes: JACKETS, soldOutSizes: ["S"],
-    description: "La doudoune D.D. Shell dans un rouge profond, lentille signature sur la manche.",
-    details: ["Lentille signature sur la manche", "Nylon D.D. Shell", "Garnissage duvet"]
-  },
-  {
-    id: "cp-explorer-lens-down-blue", group: "cp-explorer-lens-down",
-    name: "Doudoune C.P. Company Explorer Lens", color: "Orion Blue", swatch: "#1e2832",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 699, oldPrice: 749,
     sizes: JACKETS,
-    description: "Doudoune Explorer en nylon D.D. Shell, lentille intégrée à la capuche.",
-    details: ["Lentille intégrée à la capuche", "Nylon D.D. Shell", "Garnissage duvet"]
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
   },
 
   /* ---------- ON — chaussures (Cloudtilt, Cloudtilt Arc, Cloudtilt Remix, Cloudsurfer Max) ---------- */
@@ -752,7 +736,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-w-flurry", group: "on-club-set-w",
     name: "Ensemble On Club Hoodie + Pants Femme", color: "Flurry", swatch: "#c2dddb",
     brand: "on", category: "ensembles", gender: "femme", price: 249,
-    sizes: ["XS", "S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M", "L", "XL"], soldOut: true,
     description: "Hoodie et pantalon On Club pour femme, coton bio et polyester recyclé, logo On. Coupe relax pour tous les jours.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -760,7 +744,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-w-bubblegum", group: "on-club-set-w",
     name: "Ensemble On Club Hoodie + Pants Femme", color: "Bubblegum", swatch: "#e77ea5",
     brand: "on", category: "ensembles", gender: "femme", price: 249,
-    sizes: ["XS", "S", "M", "L", "XL"], tags: ["new"],
+    sizes: ["XS", "S", "M", "L", "XL"], tags: ["new"], soldOut: true,
     description: "Hoodie et pantalon On Club pour femme, coton bio et polyester recyclé, logo On. Coupe relax pour tous les jours.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -768,7 +752,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-w-barberry", group: "on-club-set-w",
     name: "Ensemble On Club Hoodie + Pants Femme", color: "Barberry", swatch: "#864e50",
     brand: "on", category: "ensembles", gender: "femme", price: 249,
-    sizes: ["XS", "S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M", "L", "XL"], soldOut: true,
     description: "Hoodie et pantalon On Club pour femme, coton bio et polyester recyclé, logo On. Coupe relax pour tous les jours.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -776,7 +760,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-w-crater", group: "on-club-set-w",
     name: "Ensemble On Club Hoodie + Pants Femme", color: "Crater", swatch: "#d5d5d5",
     brand: "on", category: "ensembles", gender: "femme", price: 249,
-    sizes: ["XS", "S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M", "L", "XL"], soldOut: true,
     description: "Hoodie et pantalon On Club pour femme, coton bio et polyester recyclé, logo On. Coupe relax pour tous les jours.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -784,7 +768,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-w-black", group: "on-club-set-w",
     name: "Ensemble On Club Hoodie + Pants Femme", color: "Black", swatch: "#1d1d21",
     brand: "on", category: "ensembles", gender: "femme", price: 249,
-    sizes: ["XS", "S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M", "L", "XL"], soldOut: true,
     description: "Hoodie et pantalon On Club pour femme, coton bio et polyester recyclé, logo On. Coupe relax pour tous les jours.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -1090,7 +1074,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "rl-fleece-zip-set-black", group: "rl-fleece-zip-set",
-    name: "Ensemble The RL Fleece Zippé + Jogging", color: "Black / Red Pony", swatch: "#13131a",
+    name: "Ensemble The RL Fleece Zippé + Jogging", color: "Black / Red Pony", swatch: "#141416",
     brand: "ralphlauren", category: "ensembles", gender: "homme", price: 269,
     sizes: CLOTHING, tags: ["best"],
     description: "THE RL FLEECE : sweat zippé à capuche noir et pantalon de jogging assorti, Pony rouge brodé. Le classique Ralph Lauren.",
@@ -1108,7 +1092,7 @@ window.BASE_PRODUCTS = [
   /* ---------- ESSENTIALS — Classic, Signature, Zip, 1977, NBA ---------- */
   {
     id: "essentials-1977-set-dark-oatmeal", group: "essentials-1977-set",
-    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#aaa594",
+    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#979694",
     brand: "essentials", category: "ensembles", gender: "homme", price: 279,
     sizes: CLOTHING, tags: ["best"],
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
@@ -1116,7 +1100,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "essentials-1977-set-iron", group: "essentials-1977-set",
-    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Iron", swatch: "#312e2f",
+    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Iron", swatch: "#2a2a2b",
     brand: "essentials", category: "ensembles", gender: "homme", price: 279,
     sizes: CLOTHING,
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
@@ -1124,7 +1108,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "essentials-1977-set-light-oatmeal", group: "essentials-1977-set",
-    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#dbd6d0",
+    name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#ddd9d6",
     brand: "essentials", category: "ensembles", gender: "homme", price: 279,
     sizes: CLOTHING,
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
@@ -1136,7 +1120,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-storm", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Storm", swatch: "#386f75",
     brand: "on", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING,
+    sizes: CLOTHING, soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -1144,7 +1128,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-jay", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Jay", swatch: "#3477b7",
     brand: "on", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING,
+    sizes: CLOTHING, soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -1152,7 +1136,7 @@ window.BASE_PRODUCTS = [
     id: "on-club-set-desert", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Desert", swatch: "#ad937a",
     brand: "on", category: "ensembles", gender: "homme", price: 269,
-    sizes: CLOTHING,
+    sizes: CLOTHING, soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
   },
@@ -3268,7 +3252,7 @@ window.BASE_PRODUCTS = [
   /* ---------- ESSENTIALS — basiques SS22 (logo en haut à droite) ---------- */
   {
     id: "essentials-ss22-set-black", group: "essentials-ss22-set",
-    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Black", swatch: "#181818",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Black", swatch: "#1e1e1e",
     brand: "essentials", category: "ensembles", gender: "homme", price: 269,
     sizes: CLOTHING, tags: ["best"],
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
@@ -3276,7 +3260,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "essentials-ss22-set-light-oatmeal", group: "essentials-ss22-set",
-    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#d5d2cd",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#d2d1ce",
     brand: "essentials", category: "ensembles", gender: "homme", price: 269,
     sizes: CLOTHING, tags: ["best"],
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
@@ -3284,7 +3268,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "essentials-ss22-set-dark-oatmeal", group: "essentials-ss22-set",
-    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#9b9a96",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#979592",
     brand: "essentials", category: "ensembles", gender: "homme", price: 269,
     sizes: CLOTHING,
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
@@ -3292,7 +3276,7 @@ window.BASE_PRODUCTS = [
   },
   {
     id: "essentials-ss22-set-desert-taupe", group: "essentials-ss22-set",
-    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Desert Taupe", swatch: "#9d8877",
+    name: "Ensemble Essentials Hoodie + Sweatpant", color: "Desert Taupe", swatch: "#90897e",
     brand: "essentials", category: "ensembles", gender: "homme", price: 269,
     sizes: CLOTHING, tags: ["new"],
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
@@ -3355,5 +3339,103 @@ window.BASE_PRODUCTS = [
     sizes: CLOTHING,
     description: "Veste Pace Breaker et jogger Pace Breaker assortis : tissu léger, stretch et respirant, pensé pour bouger.",
     details: ["Veste zippée à capuche + jogger", "Tissu léger, stretch et déperlant", "Poches zippées", "Taille normalement"]
+  },
+
+  /* ---------- ON Core & C.P. Company D.D. Shell (tous coloris) ---------- */
+  {
+    id: "on-core-set-black", group: "on-core-set",
+    name: "Ensemble On Core Jacket + Core Pants", color: "Black", swatch: "#262629",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING, tags: ["best"],
+    description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
+    details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
+  },
+  {
+    id: "on-core-set-midnight", group: "on-core-set",
+    name: "Ensemble On Core Jacket + Core Pants", color: "Midnight", swatch: "#1a2435",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
+    details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
+  },
+  {
+    id: "on-core-set-bordeaux", group: "on-core-set",
+    name: "Ensemble On Core Jacket + Core Pants", color: "Bordeaux (Urchin / Barberry)", swatch: "#593e4a",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
+    details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
+  },
+  {
+    id: "on-core-set-apollo", group: "on-core-set",
+    name: "Ensemble On Core Jacket + Core Pants", color: "Apollo / Glacier", swatch: "#969c96",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
+    details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
+  },
+  {
+    id: "on-core-set-bark", group: "on-core-set",
+    name: "Ensemble On Core Jacket + Core Pants", color: "Bark / Vetiver", swatch: "#494538",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
+    details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
+  },
+  {
+    id: "on-core-set-jay", group: "on-core-set",
+    name: "Ensemble On Core Jacket + Core Pants", color: "Jay / Eclipse", swatch: "#2e77b9",
+    brand: "on", category: "ensembles", gender: "homme", price: 299,
+    sizes: CLOTHING,
+    description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
+    details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
+  },
+  {
+    id: "cp-dd-shell-puffer-black", group: "cp-dd-shell-puffer",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Black", swatch: "#232322",
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
+    sizes: JACKETS, tags: ["best"],
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
+  },
+  {
+    id: "cp-dd-shell-puffer-gauze-white", group: "cp-dd-shell-puffer",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Gauze White", swatch: "#d9d3c5",
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
+    sizes: JACKETS, tags: ["new"],
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
+  },
+  {
+    id: "cp-dd-shell-puffer-orion-blue", group: "cp-dd-shell-puffer",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Orion Blue", swatch: "#4b575e",
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
+    sizes: JACKETS,
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
+  },
+  {
+    id: "cp-dd-shell-puffer-light-blue", group: "cp-dd-shell-puffer",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Light Blue", swatch: "#6b8886",
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
+    sizes: JACKETS,
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
+  },
+  {
+    id: "cp-dd-shell-puffer-fallen-rock", group: "cp-dd-shell-puffer",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Fallen Rock", swatch: "#574525",
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
+    sizes: JACKETS,
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
+  },
+  {
+    id: "cp-dd-shell-puffer-pale-yellow", group: "cp-dd-shell-puffer",
+    name: "Doudoune C.P. Company D.D. Shell", color: "Pale Yellow", swatch: "#ac8e5a",
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 649,
+    sizes: JACKETS,
+    description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
+    details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
   }
 ];

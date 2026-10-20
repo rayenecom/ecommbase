@@ -163,7 +163,7 @@
 
   function badgesHTML(p) {
     const b = [];
-    if (isOut(p)) b.push('<span class="badge badge--out">Épuisé</span>');
+    if (isOut(p)) b.push('<span class="badge badge--out">Rupture de stock</span>');
     else {
       if (isSale(p)) b.push(`<span class="badge badge--sale">-${pct(p)}%</span>`);
       if (isNew(p)) b.push('<span class="badge badge--ink">Nouveau</span>');
@@ -910,7 +910,7 @@
             </div>
 
             <div class="buy__ctas" id="buy-ctas">
-              <button class="btn btn--block" type="button" id="atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Épuisé" : `Ajouter au panier`}</button>
+              <button class="btn btn--block" type="button" id="atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Rupture de stock" : `Ajouter au panier`}</button>
               ${CFG.whatsapp ? `<a class="btn btn--wa btn--block" id="wa-buy" href="#" target="_blank" rel="noopener">${I.wa} ${soldOut ? "Me prévenir du restock" : "Commander sur WhatsApp"}</a>` : ""}
             </div>
 
@@ -979,7 +979,7 @@
     // Barre d'achat collante (mobile)
     const sticky = $("#sticky-buy");
     function updateSticky() {
-      sticky.innerHTML = `<div class="sticky-buy__info"><b>${esc(p.name)}</b><span class="price">${priceHTML(p)}</span></div><button class="btn btn--sm" type="button" id="sticky-atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Épuisé" : picked ? `Ajouter · ${esc(picked)}` : "Choisir ma taille"}</button>`;
+      sticky.innerHTML = `<div class="sticky-buy__info"><b>${esc(p.name)}</b><span class="price">${priceHTML(p)}</span></div><button class="btn btn--sm" type="button" id="sticky-atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Rupture de stock" : picked ? `Ajouter · ${esc(picked)}` : "Choisir ma taille"}</button>`;
       $("#sticky-atc").onclick = () => { if (picked) addToCart(p.id, picked); else $("#sizes").scrollIntoView({ behavior: "smooth", block: "center" }); };
     }
     updateSticky();

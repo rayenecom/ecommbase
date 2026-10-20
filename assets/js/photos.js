@@ -54,31 +54,20 @@ window.BASE_PHOTOS = {
     "images/products/alo-accolade-ivory-4.jpg"
   ],
 
-  // Doudoune C.P. Company Eco-Chrome R Goggle — Re-Color Brown
-  "cp-goggle-down-brown": [
-    "images/products/cp-goggle-down-brown-1.jpg",
-    "images/products/cp-goggle-down-brown-2.jpg"
-  ],
-
   // Doudoune C.P. Company D.D. Shell — Flint Grey
   "cp-dd-shell-puffer-flint": [
     "images/products/cp-dd-shell-puffer-flint-1.jpg",
     "images/products/cp-dd-shell-puffer-flint-2.jpg",
-    "images/products/cp-dd-shell-puffer-flint-3.jpg"
+    "images/products/cp-dd-shell-puffer-flint-3.jpg",
+    "images/products/cp-dd-shell-puffer-flint-4.jpg"
   ],
 
-  // Doudoune C.P. Company D.D. Shell — Andorra
+  // Doudoune C.P. Company D.D. Shell — Andorra Red
   "cp-dd-shell-puffer-andorra": [
     "images/products/cp-dd-shell-puffer-andorra-1.jpg",
     "images/products/cp-dd-shell-puffer-andorra-2.jpg",
-    "images/products/cp-dd-shell-puffer-andorra-3.jpg"
-  ],
-
-  // Doudoune C.P. Company Explorer Lens — Orion Blue
-  "cp-explorer-lens-down-blue": [
-    "images/products/cp-explorer-lens-down-blue-1.jpg",
-    "images/products/cp-explorer-lens-down-blue-2.jpg",
-    "images/products/cp-explorer-lens-down-blue-3.jpg"
+    "images/products/cp-dd-shell-puffer-andorra-3.jpg",
+    "images/products/cp-dd-shell-puffer-andorra-4.jpg"
   ],
 
   // On Cloudsurfer Max Homme — Iceberg / Olive
@@ -896,17 +885,14 @@ window.BASE_PHOTOS = {
   "essentials-1977-set-iron": [
     "images/products/essentials-1977-set-iron-1.jpg",
     "images/products/essentials-1977-set-iron-2.jpg",
-    "images/products/essentials-1977-set-iron-3.jpg",
-    "images/products/essentials-1977-set-iron-4.jpg",
-    "images/products/essentials-1977-set-iron-5.jpg"
+    "images/products/essentials-1977-set-iron-3.jpg"
   ],
 
   // Ensemble Essentials 1977 Hoodie + Sweatpant — Light Oatmeal
   "essentials-1977-set-light-oatmeal": [
     "images/products/essentials-1977-set-light-oatmeal-1.jpg",
     "images/products/essentials-1977-set-light-oatmeal-2.jpg",
-    "images/products/essentials-1977-set-light-oatmeal-3.jpg",
-    "images/products/essentials-1977-set-light-oatmeal-4.jpg"
+    "images/products/essentials-1977-set-light-oatmeal-3.jpg"
   ],
 
   // Ensemble On Club Hoodie + Pants — Storm
@@ -2666,17 +2652,14 @@ window.BASE_PHOTOS = {
     "images/products/essentials-ss22-set-black-1.jpg",
     "images/products/essentials-ss22-set-black-2.jpg",
     "images/products/essentials-ss22-set-black-3.jpg",
-    "images/products/essentials-ss22-set-black-4.jpg",
-    "images/products/essentials-ss22-set-black-5.jpg"
+    "images/products/essentials-ss22-set-black-4.jpg"
   ],
 
   // Ensemble Essentials Hoodie + Sweatpant — Light Oatmeal
   "essentials-ss22-set-light-oatmeal": [
     "images/products/essentials-ss22-set-light-oatmeal-1.jpg",
     "images/products/essentials-ss22-set-light-oatmeal-2.jpg",
-    "images/products/essentials-ss22-set-light-oatmeal-3.jpg",
-    "images/products/essentials-ss22-set-light-oatmeal-4.jpg",
-    "images/products/essentials-ss22-set-light-oatmeal-5.jpg"
+    "images/products/essentials-ss22-set-light-oatmeal-3.jpg"
   ],
 
   // Ensemble Essentials Hoodie + Sweatpant — Dark Oatmeal
@@ -2684,16 +2667,14 @@ window.BASE_PHOTOS = {
     "images/products/essentials-ss22-set-dark-oatmeal-1.jpg",
     "images/products/essentials-ss22-set-dark-oatmeal-2.jpg",
     "images/products/essentials-ss22-set-dark-oatmeal-3.jpg",
-    "images/products/essentials-ss22-set-dark-oatmeal-4.jpg",
-    "images/products/essentials-ss22-set-dark-oatmeal-5.jpg"
+    "images/products/essentials-ss22-set-dark-oatmeal-4.jpg"
   ],
 
   // Ensemble Essentials Hoodie + Sweatpant — Desert Taupe
   "essentials-ss22-set-desert-taupe": [
     "images/products/essentials-ss22-set-desert-taupe-1.jpg",
     "images/products/essentials-ss22-set-desert-taupe-2.jpg",
-    "images/products/essentials-ss22-set-desert-taupe-3.jpg",
-    "images/products/essentials-ss22-set-desert-taupe-4.jpg"
+    "images/products/essentials-ss22-set-desert-taupe-3.jpg"
   ],
 
   // Ensemble Essentials Hoodie + Sweatpant — Oak
@@ -2749,5 +2730,95 @@ window.BASE_PHOTOS = {
     "images/products/lulu-pace-breaker-set-silver-drop-1.jpg",
     "images/products/lulu-pace-breaker-set-silver-drop-2.jpg",
     "images/products/lulu-pace-breaker-set-silver-drop-3.jpg"
+  ],
+
+  // Ensemble On Core Jacket + Core Pants — Black
+  "on-core-set-black": [
+    "images/products/on-core-set-black-1.jpg",
+    "images/products/on-core-set-black-2.jpg",
+    "images/products/on-core-set-black-3.jpg"
+  ],
+
+  // Ensemble On Core Jacket + Core Pants — Midnight
+  "on-core-set-midnight": [
+    "images/products/on-core-set-midnight-1.jpg",
+    "images/products/on-core-set-midnight-2.jpg",
+    "images/products/on-core-set-midnight-3.jpg"
+  ],
+
+  // Ensemble On Core Jacket + Core Pants — Bordeaux (Urchin / Barberry)
+  "on-core-set-bordeaux": [
+    "images/products/on-core-set-bordeaux-1.jpg",
+    "images/products/on-core-set-bordeaux-2.jpg",
+    "images/products/on-core-set-bordeaux-3.jpg"
+  ],
+
+  // Ensemble On Core Jacket + Core Pants — Apollo / Glacier
+  "on-core-set-apollo": [
+    "images/products/on-core-set-apollo-1.jpg",
+    "images/products/on-core-set-apollo-2.jpg",
+    "images/products/on-core-set-apollo-3.jpg"
+  ],
+
+  // Ensemble On Core Jacket + Core Pants — Bark / Vetiver
+  "on-core-set-bark": [
+    "images/products/on-core-set-bark-1.jpg",
+    "images/products/on-core-set-bark-2.jpg",
+    "images/products/on-core-set-bark-3.jpg"
+  ],
+
+  // Ensemble On Core Jacket + Core Pants — Jay / Eclipse
+  "on-core-set-jay": [
+    "images/products/on-core-set-jay-1.jpg",
+    "images/products/on-core-set-jay-2.jpg",
+    "images/products/on-core-set-jay-3.jpg"
+  ],
+
+  // Doudoune C.P. Company D.D. Shell — Black
+  "cp-dd-shell-puffer-black": [
+    "images/products/cp-dd-shell-puffer-black-1.jpg",
+    "images/products/cp-dd-shell-puffer-black-2.jpg",
+    "images/products/cp-dd-shell-puffer-black-3.jpg",
+    "images/products/cp-dd-shell-puffer-black-4.jpg"
+  ],
+
+  // Doudoune C.P. Company D.D. Shell — Gauze White
+  "cp-dd-shell-puffer-gauze-white": [
+    "images/products/cp-dd-shell-puffer-gauze-white-1.jpg",
+    "images/products/cp-dd-shell-puffer-gauze-white-2.jpg",
+    "images/products/cp-dd-shell-puffer-gauze-white-3.jpg",
+    "images/products/cp-dd-shell-puffer-gauze-white-4.jpg"
+  ],
+
+  // Doudoune C.P. Company D.D. Shell — Orion Blue
+  "cp-dd-shell-puffer-orion-blue": [
+    "images/products/cp-dd-shell-puffer-orion-blue-1.jpg",
+    "images/products/cp-dd-shell-puffer-orion-blue-2.jpg",
+    "images/products/cp-dd-shell-puffer-orion-blue-3.jpg",
+    "images/products/cp-dd-shell-puffer-orion-blue-4.jpg"
+  ],
+
+  // Doudoune C.P. Company D.D. Shell — Light Blue
+  "cp-dd-shell-puffer-light-blue": [
+    "images/products/cp-dd-shell-puffer-light-blue-1.jpg",
+    "images/products/cp-dd-shell-puffer-light-blue-2.jpg",
+    "images/products/cp-dd-shell-puffer-light-blue-3.jpg",
+    "images/products/cp-dd-shell-puffer-light-blue-4.jpg"
+  ],
+
+  // Doudoune C.P. Company D.D. Shell — Fallen Rock
+  "cp-dd-shell-puffer-fallen-rock": [
+    "images/products/cp-dd-shell-puffer-fallen-rock-1.jpg",
+    "images/products/cp-dd-shell-puffer-fallen-rock-2.jpg",
+    "images/products/cp-dd-shell-puffer-fallen-rock-3.jpg",
+    "images/products/cp-dd-shell-puffer-fallen-rock-4.jpg"
+  ],
+
+  // Doudoune C.P. Company D.D. Shell — Pale Yellow
+  "cp-dd-shell-puffer-pale-yellow": [
+    "images/products/cp-dd-shell-puffer-pale-yellow-1.jpg",
+    "images/products/cp-dd-shell-puffer-pale-yellow-2.jpg",
+    "images/products/cp-dd-shell-puffer-pale-yellow-3.jpg",
+    "images/products/cp-dd-shell-puffer-pale-yellow-4.jpg"
   ]
 };
