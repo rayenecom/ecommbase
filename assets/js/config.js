@@ -32,6 +32,12 @@ window.BASE_CONFIG = {
     "Retours sous 14 jours"
   ],
 
+  // Vidéo de la bannière d'accueil (sans son, idéalement < 5 Mo). Le navigateur lit le premier format qu'il supporte :
+  // .webm (Chrome, Firefox) puis .mp4 H.264 (Safari, iPhone). Une seule vidéo .mp4 suffit aussi : ["assets/video/ma-video.mp4"]
+  // Mets heroVideo: [] pour n'afficher que l'image.
+  heroVideo: ["assets/video/hero.webm", "assets/video/hero.mp4"],
+  heroPoster: "assets/video/hero.jpg",   // image affichée pendant le chargement
+
   // Recherches proposées dans la barre de recherche
   popularSearches: ["Essentials 1977", "Cloudtilt", "XT-6", "Kayano 14", "Ralph Lauren", "Sweet Pants", "Alo Runner"]
 };

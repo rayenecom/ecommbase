@@ -553,12 +553,12 @@
   function viewHome(main) {
     setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Lululemon, Salomon et sneakers On, Salomon XT-6, Asics, Mizuno, Alo Runner. 100% authentiques, importés des États-Unis.");
     const firstOf = (grp) => PRODUCTS.find((p) => p.group === grp);
-    const hero = [byId("ugg-tasman-set-dusty-rose") || byId("essentials-ss22-set-black"), firstOf("on-cloudtilt-m") || firstOf("salomon-xt-6"), byId("nocta-cs-set-black") || byId("cp-dd-shell-puffer-andorra")].filter(Boolean);
     const bestWomen = onePerGroup(PRODUCTS.filter((p) => p.gender === "femme" && isBest(p)).concat(PRODUCTS.filter((p) => p.gender === "femme")));
     const bestAcc = onePerGroup(PRODUCTS.filter((p) => p.category === "accessoires" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "accessoires")));
     const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
     const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
     const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
+    const heroSrc = [].concat(CFG.heroVideo || []);
     const duoA = byId("essentials-ss22-set-light-oatmeal"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
     const catTiles = [
       ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-ss22-set-light-oatmeal"), countIn((p) => p.category === "ensembles")],
@@ -569,14 +569,19 @@
 
     main.innerHTML = `
       <section class="hero">
+        <div class="hero__media" aria-hidden="true">
+          ${heroSrc.length
+            ? `<video class="hero__video" muted loop playsinline preload="auto"${CFG.heroPoster ? ` poster="${CFG.heroPoster}"` : ""}>${heroSrc.map((src) => `<source src="${src}" type="video/${src.split(".").pop() === "webm" ? "webm" : "mp4"}">`).join("")}</video>`
+            : CFG.heroPoster ? `<img class="hero__video" src="${CFG.heroPoster}" alt="">` : ""}
+        </div>
         <div class="wrap">
           <div class="hero__copy">
             <span class="eyebrow">Authentique · Importé des États-Unis</span>
             <h1 class="display">Les essentiels.<br>Les vrais.</h1>
-            <p class="hero__lede">Ensembles Essentials, UGG, Nocta, Lululemon, Alo et sneakers On, Salomon, Asics. Achetés aux États-Unis, contrôlés pièce par pièce, livrés chez toi en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours.</p>
+            <p class="hero__lede">Essentials, Ralph Lauren, Alo, Lululemon et sneakers On, Salomon, Asics. Achetés aux États-Unis, contrôlés pièce par pièce, livrés chez toi en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours.</p>
             <div class="hero__ctas">
-              <a class="btn" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
-              <a class="btn btn--ghost" href="${L.shop({ cat: "chaussures" })}">Shop les chaussures</a>
+              <a class="btn btn--light" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
+              <a class="btn btn--glass" href="${L.shop({ cat: "chaussures" })}">Shop les chaussures</a>
             </div>
             <div class="hero__proof">
               <span>${I.check} 100% authentique</span>
@@ -584,10 +589,8 @@
               <span>${I.check} Retours ${CFG.returnDays} jours</span>
             </div>
           </div>
-          <div class="hero__stage">
-            ${hero.map((p) => `<a class="hero__tile" href="${L.product(p.id)}">${art(p)}<span class="tag"><b>${esc(p.name.replace(/^Ensemble |^Doudoune /, "").replace(/ Classic Hoodie \+ Sweatpant$/, ""))}</b><span>${money(p.price)}</span></span></a>`).join("")}
-          </div>
         </div>
+        ${heroSrc.length ? `<button class="hero__toggle" type="button" aria-label="Mettre la vidéo en pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-play" d="M8 5l11 7-11 7z"/></svg></button>` : ""}
       </section>
 
       <section class="trust" aria-label="Nos engagements"><div class="wrap">
@@ -673,6 +676,18 @@
         </div>
       </div></section>
     `;
+
+    // Vidéo de la bannière : lecture auto (sauf « réduire les animations »), pause hors écran, bouton pause/lecture
+    const vid = $(".hero video", main), tog = $(".hero__toggle", main);
+    if (vid && tog) {
+      let wanted = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const sync = () => { tog.classList.toggle("is-paused", !wanted); tog.setAttribute("aria-label", wanted ? "Mettre la vidéo en pause" : "Lire la vidéo"); };
+      const play = () => vid.play().catch(() => { wanted = false; sync(); });
+      tog.addEventListener("click", () => { wanted = !wanted; wanted ? play() : vid.pause(); sync(); });
+      if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { e.isIntersecting && wanted ? play() : vid.pause(); }).observe(vid);
+      else if (wanted) play();
+      sync();
+    }
 
     // Onglets best-sellers
     $$("[data-tab]", main).forEach((b) => b.addEventListener("click", () => {
