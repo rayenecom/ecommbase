@@ -199,16 +199,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero { position: relative; isolation: isolate; overflow: hidden; background: #2a2724; color: #fff; min-height: min(86svh, 820px); display: flex; align-items: flex-end; }
 .hero__media { position: absolute; inset: 0; z-index: -1; }
 .hero__video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block; }
-.hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,14,12,.78) 0%, rgba(16,14,12,.38) 42%, rgba(16,14,12,.08) 72%), linear-gradient(to right, rgba(16,14,12,.42), transparent 62%); }
+.hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,11,10,.7) 0%, rgba(12,11,10,.25) 38%, transparent 62%), linear-gradient(to right, rgba(12,11,10,.35), transparent 55%); }
 .hero .wrap { width: 100%; padding-block: clamp(96px, 14vw, 160px) clamp(40px, 6vw, 80px); }
-.hero__copy { display: grid; gap: 20px; max-width: 640px; }
-.hero .eyebrow { color: rgba(255,255,255,.78); }
+.hero__copy { display: grid; gap: 24px; max-width: 640px; }
 .hero h1 { font-size: var(--fs-2xl); text-shadow: 0 2px 28px rgba(0,0,0,.25); }
-.hero__lede { font-size: clamp(1rem, .95rem + .3vw, 1.1875rem); color: rgba(255,255,255,.88); max-width: 46ch; }
 .hero__ctas { display: flex; gap: 10px; flex-wrap: wrap; }
-.hero__proof { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: var(--fs-sm); color: rgba(255,255,255,.85); }
-.hero__proof span { display: inline-flex; align-items: center; gap: 7px; }
-.hero__proof svg { width: 16px; height: 16px; color: #fff; }
 .btn--glass { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.7); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .btn--glass:hover { background: #fff; color: var(--ink); border-color: #fff; }
 .hero__toggle { position: absolute; right: clamp(16px, 3vw, 32px); top: clamp(16px, 3vw, 32px); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.45); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); cursor: pointer; transition: background .2s var(--ease); }

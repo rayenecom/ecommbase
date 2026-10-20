@@ -558,7 +558,9 @@
     const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
     const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
     const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
-    const heroSrc = [].concat(CFG.heroVideo || []);
+    const heroMobile = matchMedia("(max-width: 699px)").matches, heroSrcM = [].concat(CFG.heroVideoMobile || []);
+    const heroSrc = heroMobile && heroSrcM.length ? heroSrcM : [].concat(CFG.heroVideo || []);
+    const heroPoster = (heroMobile && CFG.heroPosterMobile) || CFG.heroPoster;
     const duoA = byId("essentials-ss22-set-light-oatmeal"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
     const catTiles = [
       ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-ss22-set-light-oatmeal"), countIn((p) => p.category === "ensembles")],
@@ -571,22 +573,15 @@
       <section class="hero">
         <div class="hero__media" aria-hidden="true">
           ${heroSrc.length
-            ? `<video class="hero__video" muted loop playsinline preload="auto"${CFG.heroPoster ? ` poster="${CFG.heroPoster}"` : ""}>${heroSrc.map((src) => `<source src="${src}" type="video/${src.split(".").pop() === "webm" ? "webm" : "mp4"}">`).join("")}</video>`
-            : CFG.heroPoster ? `<img class="hero__video" src="${CFG.heroPoster}" alt="">` : ""}
+            ? `<video class="hero__video" muted loop playsinline preload="auto"${heroPoster ? ` poster="${heroPoster}"` : ""}>${heroSrc.map((src) => `<source src="${src}" type="video/${src.split(".").pop() === "webm" ? "webm" : "mp4"}">`).join("")}</video>`
+            : heroPoster ? `<img class="hero__video" src="${heroPoster}" alt="">` : ""}
         </div>
         <div class="wrap">
           <div class="hero__copy">
-            <span class="eyebrow">Authentique · Importé des États-Unis</span>
             <h1 class="display">Les essentiels.<br>Les vrais.</h1>
-            <p class="hero__lede">Essentials, Ralph Lauren, Alo, Lululemon et sneakers On, Salomon, Asics. Achetés aux États-Unis, contrôlés pièce par pièce, livrés chez toi en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours.</p>
             <div class="hero__ctas">
               <a class="btn btn--light" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
               <a class="btn btn--glass" href="${L.shop({ cat: "chaussures" })}">Shop les chaussures</a>
-            </div>
-            <div class="hero__proof">
-              <span>${I.check} 100% authentique</span>
-              ${CFG.freeShippingFrom ? `<span>${I.check} Livraison offerte dès ${money(CFG.freeShippingFrom)}</span>` : ""}
-              <span>${I.check} Retours ${CFG.returnDays} jours</span>
             </div>
           </div>
         </div>

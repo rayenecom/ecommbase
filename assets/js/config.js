@@ -37,6 +37,9 @@ window.BASE_CONFIG = {
   // Mets heroVideo: [] pour n'afficher que l'image.
   heroVideo: ["assets/video/hero.webm", "assets/video/hero.mp4"],
   heroPoster: "assets/video/hero.jpg",   // image affichée pendant le chargement
+  // Version verticale pour téléphone (facultatif : sans elle, la vidéo ci-dessus est recadrée au centre)
+  heroVideoMobile: ["assets/video/hero-m.webm", "assets/video/hero-m.mp4"],
+  heroPosterMobile: "assets/video/hero-m.jpg",
 
   // Recherches proposées dans la barre de recherche
   popularSearches: ["Essentials 1977", "Cloudtilt", "XT-6", "Kayano 14", "Ralph Lauren", "Sweet Pants", "Alo Runner"]
