@@ -578,7 +578,7 @@
         </div>
         <div class="wrap">
           <div class="hero__copy">
-            <h1 class="display">Les essentiels.<br>Les vrais.</h1>
+            <h1 class="hero__title">Tout part<br>de la <em>base.</em></h1>
             <div class="hero__ctas">
               <a class="btn btn--light" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
               <a class="btn btn--glass" href="${L.shop({ cat: "chaussures" })}">Shop les chaussures</a>
