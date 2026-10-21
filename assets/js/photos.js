@@ -1072,26 +1072,22 @@ window.BASE_PHOTOS = {
 
   // Alo Runner — Black / Black
   "alo-runner-black-black": [
-    "images/products/alo-runner-black-black-1.jpg",
-    "images/products/alo-runner-black-black-3.jpg"
+    "images/products/alo-runner-black-black-1.jpg"
   ],
 
   // Alo Runner — White / White
   "alo-runner-white-white": [
-    "images/products/alo-runner-white-white-1.jpg",
-    "images/products/alo-runner-white-white-3.jpg"
+    "images/products/alo-runner-white-white-1.jpg"
   ],
 
   // Alo Runner — Espresso
   "alo-runner-espresso": [
-    "images/products/alo-runner-espresso-1.jpg",
-    "images/products/alo-runner-espresso-3.jpg"
+    "images/products/alo-runner-espresso-1.jpg"
   ],
 
   // Alo Runner — Gravel
   "alo-runner-gravel": [
-    "images/products/alo-runner-gravel-1.jpg",
-    "images/products/alo-runner-gravel-3.jpg"
+    "images/products/alo-runner-gravel-1.jpg"
   ],
 
   // Alo Runner — Grey / Grey
@@ -1101,56 +1097,42 @@ window.BASE_PHOTOS = {
 
   // Alo Runner — Navy
   "alo-runner-navy": [
-    "images/products/alo-runner-navy-1.jpg",
-    "images/products/alo-runner-navy-2.jpg",
-    "images/products/alo-runner-navy-3.jpg"
+    "images/products/alo-runner-navy-1.jpg"
   ],
 
   // Alo Runner — Dune Grass
   "alo-runner-dune-grass": [
-    "images/products/alo-runner-dune-grass-1.jpg",
-    "images/products/alo-runner-dune-grass-2.jpg",
-    "images/products/alo-runner-dune-grass-3.jpg"
+    "images/products/alo-runner-dune-grass-1.jpg"
   ],
 
   // Alo Runner — Seashell Blue
   "alo-runner-seashell-blue": [
-    "images/products/alo-runner-seashell-blue-1.jpg",
-    "images/products/alo-runner-seashell-blue-2.jpg",
-    "images/products/alo-runner-seashell-blue-3.jpg"
+    "images/products/alo-runner-seashell-blue-1.jpg"
   ],
 
   // Alo Runner — Pink Marshmallow
   "alo-runner-pink-marshmallow": [
-    "images/products/alo-runner-pink-marshmallow-1.jpg",
-    "images/products/alo-runner-pink-marshmallow-2.jpg",
-    "images/products/alo-runner-pink-marshmallow-3.jpg"
+    "images/products/alo-runner-pink-marshmallow-1.jpg"
   ],
 
   // Alo Runner — Candy Heart Pink
   "alo-runner-candy-heart-pink": [
-    "images/products/alo-runner-candy-heart-pink-1.jpg",
-    "images/products/alo-runner-candy-heart-pink-2.jpg",
-    "images/products/alo-runner-candy-heart-pink-3.jpg"
+    "images/products/alo-runner-candy-heart-pink-1.jpg"
   ],
 
   // Alo Runner — Crystal Clear Blue
   "alo-runner-crystal-clear-blue": [
-    "images/products/alo-runner-crystal-clear-blue-1.jpg",
-    "images/products/alo-runner-crystal-clear-blue-3.jpg"
+    "images/products/alo-runner-crystal-clear-blue-1.jpg"
   ],
 
   // Alo Runner — Satsuma Breeze
   "alo-runner-satsuma-breeze": [
-    "images/products/alo-runner-satsuma-breeze-1.jpg",
-    "images/products/alo-runner-satsuma-breeze-2.jpg",
-    "images/products/alo-runner-satsuma-breeze-3.jpg"
+    "images/products/alo-runner-satsuma-breeze-1.jpg"
   ],
 
   // Alo Runner — Smoky Quartz
   "alo-runner-smoky-quartz": [
-    "images/products/alo-runner-smoky-quartz-1.jpg",
-    "images/products/alo-runner-smoky-quartz-3.jpg"
+    "images/products/alo-runner-smoky-quartz-1.jpg"
   ],
 
   // Ensemble Alo Accolade Hoodie + Sweatpant — Bone
@@ -1301,7 +1283,6 @@ window.BASE_PHOTOS = {
   // Salomon XT-6 GORE-TEX — Tradewinds / Stormy Weather / Bog
   "salomon-xt-6-l492148": [
     "images/products/salomon-xt-6-l492148-1.jpg",
-    "images/products/salomon-xt-6-l492148-2.jpg",
     "images/products/salomon-xt-6-l492148-3.jpg"
   ],
 
@@ -1349,65 +1330,50 @@ window.BASE_PHOTOS = {
 
   // Salomon XT-6 GORE-TEX — Black / Black / Asphalt
   "salomon-xt-6-l454169": [
-    "images/products/salomon-xt-6-l454169-1.jpg",
-    "images/products/salomon-xt-6-l454169-2.jpg",
-    "images/products/salomon-xt-6-l454169-3.jpg"
+    "images/products/salomon-xt-6-l454169-1.jpg"
   ],
 
   // Salomon XT-6 — Pearl Blue / Grisaille / Vanilla
   "salomon-xt-6-l454728": [
-    "images/products/salomon-xt-6-l454728-1.jpg",
-    "images/products/salomon-xt-6-l454728-2.jpg",
-    "images/products/salomon-xt-6-l454728-3.jpg"
+    "images/products/salomon-xt-6-l454728-1.jpg"
   ],
 
   // Salomon XT-6 — Black Coffee / French Roast / Vanilla Ice
   "salomon-xt-6-l478661": [
     "images/products/salomon-xt-6-l478661-1.jpg",
-    "images/products/salomon-xt-6-l478661-2.jpg",
     "images/products/salomon-xt-6-l478661-3.jpg"
   ],
 
   // Salomon XT-6 — Almond Milk / Portabella / Ice Flow
   "salomon-xt-6-l475822": [
     "images/products/salomon-xt-6-l475822-1.jpg",
-    "images/products/salomon-xt-6-l475822-2.jpg",
     "images/products/salomon-xt-6-l475822-3.jpg"
   ],
 
   // Salomon XT-6 — Ghost Gray / Ghost Gray / Gray Flannel
   "salomon-xt-6-l474448": [
     "images/products/salomon-xt-6-l474448-1.jpg",
-    "images/products/salomon-xt-6-l474448-2.jpg",
     "images/products/salomon-xt-6-l474448-3.jpg"
   ],
 
   // Salomon XT-6 — Aloe Wash / Hazelnut / Feather Gray
   "salomon-xt-6-l472937": [
-    "images/products/salomon-xt-6-l472937-1.jpg",
-    "images/products/salomon-xt-6-l472937-2.jpg",
-    "images/products/salomon-xt-6-l472937-3.jpg"
+    "images/products/salomon-xt-6-l472937-1.jpg"
   ],
 
   // Salomon XT-6 — Black / Fiery Red / Silver
   "salomon-xt-6-l479882": [
-    "images/products/salomon-xt-6-l479882-1.jpg",
-    "images/products/salomon-xt-6-l479882-2.jpg",
-    "images/products/salomon-xt-6-l479882-3.jpg"
+    "images/products/salomon-xt-6-l479882-1.jpg"
   ],
 
   // Salomon XT-6 — Black / White / Blue Curacao
   "salomon-xt-6-l491433": [
-    "images/products/salomon-xt-6-l491433-1.jpg",
-    "images/products/salomon-xt-6-l491433-2.jpg",
-    "images/products/salomon-xt-6-l491433-3.jpg"
+    "images/products/salomon-xt-6-l491433-1.jpg"
   ],
 
   // Salomon XT-6 — Cloudburst / Icy Pink / Tapioca
   "salomon-xt-6-l491546": [
-    "images/products/salomon-xt-6-l491546-1.jpg",
-    "images/products/salomon-xt-6-l491546-2.jpg",
-    "images/products/salomon-xt-6-l491546-3.jpg"
+    "images/products/salomon-xt-6-l491546-1.jpg"
   ],
 
   // Salomon XT-6 — Black / Almond Cream
@@ -1419,9 +1385,7 @@ window.BASE_PHOTOS = {
 
   // Salomon XT-6 — Black / Grape Leaf
   "salomon-xt-6-l491544": [
-    "images/products/salomon-xt-6-l491544-1.jpg",
-    "images/products/salomon-xt-6-l491544-2.jpg",
-    "images/products/salomon-xt-6-l491544-3.jpg"
+    "images/products/salomon-xt-6-l491544-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Niagara / Sunny Lime
@@ -1433,141 +1397,112 @@ window.BASE_PHOTOS = {
 
   // Salomon XT-6 GORE-TEX — Black / Ebony / Lunar Rock
   "salomon-xt-6-l416635": [
-    "images/products/salomon-xt-6-l416635-1.jpg",
-    "images/products/salomon-xt-6-l416635-2.jpg",
-    "images/products/salomon-xt-6-l416635-3.jpg"
+    "images/products/salomon-xt-6-l416635-1.jpg"
   ],
 
   // Salomon XT-6 — Dried Herb / Deep Lichen Green / Bright Green
   "salomon-xt-6-l472935": [
-    "images/products/salomon-xt-6-l472935-1.jpg",
-    "images/products/salomon-xt-6-l472935-2.jpg",
-    "images/products/salomon-xt-6-l472935-3.jpg"
+    "images/products/salomon-xt-6-l472935-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Blue Print / Heather / White
   "salomon-xt-6-l472919": [
-    "images/products/salomon-xt-6-l472919-1.jpg",
-    "images/products/salomon-xt-6-l472919-2.jpg",
-    "images/products/salomon-xt-6-l472919-3.jpg"
+    "images/products/salomon-xt-6-l472919-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Black / Black / Silver
   "salomon-xt-6-l474506": [
-    "images/products/salomon-xt-6-l474506-1.jpg",
-    "images/products/salomon-xt-6-l474506-2.jpg",
-    "images/products/salomon-xt-6-l474506-3.jpg"
+    "images/products/salomon-xt-6-l474506-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Safari / Safari / Black
   "salomon-xt-6-l474455": [
     "images/products/salomon-xt-6-l474455-1.jpg",
-    "images/products/salomon-xt-6-l474455-2.jpg",
     "images/products/salomon-xt-6-l474455-3.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — White / White / Silver
   "salomon-xt-6-l475811": [
     "images/products/salomon-xt-6-l475811-1.jpg",
-    "images/products/salomon-xt-6-l475811-2.jpg",
     "images/products/salomon-xt-6-l475811-3.jpg"
   ],
 
   // Salomon XT-6 — Icicle / Nirvana / Nine Iron
   "salomon-xt-6-l477376": [
     "images/products/salomon-xt-6-l477376-1.jpg",
-    "images/products/salomon-xt-6-l477376-2.jpg",
     "images/products/salomon-xt-6-l477376-3.jpg"
   ],
 
   // Salomon XT-6 — Roasted Clay / Burnt Ochre / Almond Milk
   "salomon-xt-6-l477375": [
-    "images/products/salomon-xt-6-l477375-1.jpg",
-    "images/products/salomon-xt-6-l477375-2.jpg",
-    "images/products/salomon-xt-6-l477375-3.jpg"
+    "images/products/salomon-xt-6-l477375-1.jpg"
   ],
 
   // Salomon XT-6 — Oxford Tan / Carbon / Clearly Aqua
   "salomon-xt-6-l477374": [
-    "images/products/salomon-xt-6-l477374-1.jpg",
-    "images/products/salomon-xt-6-l477374-2.jpg",
-    "images/products/salomon-xt-6-l477374-3.jpg"
+    "images/products/salomon-xt-6-l477374-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Iron / Etherea / Seagrass
   "salomon-xt-6-l477326": [
-    "images/products/salomon-xt-6-l477326-1.jpg",
-    "images/products/salomon-xt-6-l477326-2.jpg",
-    "images/products/salomon-xt-6-l477326-3.jpg"
+    "images/products/salomon-xt-6-l477326-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Almond Milk / Feather Gray / Pale Mauve
   "salomon-xt-6-l475812": [
     "images/products/salomon-xt-6-l475812-1.jpg",
-    "images/products/salomon-xt-6-l475812-2.jpg",
     "images/products/salomon-xt-6-l475812-3.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Urban Chic / Black / Lime Cream
   "salomon-xt-6-l475813": [
     "images/products/salomon-xt-6-l475813-1.jpg",
-    "images/products/salomon-xt-6-l475813-2.jpg",
-    "images/products/salomon-xt-6-l475813-3.jpg"
+    "images/products/salomon-xt-6-l475813-2.jpg"
   ],
 
   // Salomon XT-6 — Vanilla Ice / Iron / Etherea
   "salomon-xt-6-l477377": [
-    "images/products/salomon-xt-6-l477377-1.jpg",
-    "images/products/salomon-xt-6-l477377-2.jpg",
-    "images/products/salomon-xt-6-l477377-3.jpg"
+    "images/products/salomon-xt-6-l477377-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Black / Flame Scarlet / Vanilla Ice
   "salomon-xt-6-l479749": [
-    "images/products/salomon-xt-6-l479749-1.jpg",
-    "images/products/salomon-xt-6-l479749-2.jpg",
-    "images/products/salomon-xt-6-l479749-3.jpg"
+    "images/products/salomon-xt-6-l479749-1.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Tea / Peat
   "salomon-xt-6-l478638": [
     "images/products/salomon-xt-6-l478638-1.jpg",
-    "images/products/salomon-xt-6-l478638-2.jpg",
     "images/products/salomon-xt-6-l478638-3.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Mahogany Rose / Tawny Port / Black
   "salomon-xt-6-l478637": [
     "images/products/salomon-xt-6-l478637-1.jpg",
-    "images/products/salomon-xt-6-l478637-2.jpg",
     "images/products/salomon-xt-6-l478637-3.jpg"
   ],
 
   // Salomon XT-6 — Nine Iron / Excalibur / Plum Perfect
   "salomon-xt-6-l478641": [
     "images/products/salomon-xt-6-l478641-1.jpg",
-    "images/products/salomon-xt-6-l478641-2.jpg",
     "images/products/salomon-xt-6-l478641-3.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — North Atlantic / Black / Silver
   "salomon-xt-6-l478615": [
     "images/products/salomon-xt-6-l478615-1.jpg",
-    "images/products/salomon-xt-6-l478615-2.jpg",
     "images/products/salomon-xt-6-l478615-3.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Blue Nights / Astral Aura / Plum Kitten
   "salomon-xt-6-l478616": [
     "images/products/salomon-xt-6-l478616-1.jpg",
-    "images/products/salomon-xt-6-l478616-2.jpg",
     "images/products/salomon-xt-6-l478616-3.jpg"
   ],
 
   // Salomon XT-6 — Ultramarine / Silver / Black
   "salomon-xt-6-l478651": [
     "images/products/salomon-xt-6-l478651-1.jpg",
-    "images/products/salomon-xt-6-l478651-2.jpg",
     "images/products/salomon-xt-6-l478651-3.jpg"
   ],
 
@@ -1601,30 +1536,22 @@ window.BASE_PHOTOS = {
 
   // Asics GEL-1130 — Cream / Cocoa Powder
   "asics-gel-1130-1203a609-114": [
-    "images/products/asics-gel-1130-1203a609-114-1.jpg",
-    "images/products/asics-gel-1130-1203a609-114-2.jpg",
-    "images/products/asics-gel-1130-1203a609-114-3.jpg"
+    "images/products/asics-gel-1130-1203a609-114-1.jpg"
   ],
 
   // Asics GEL-1130 — White / Rusted Rock
   "asics-gel-1130-1203a609-117": [
-    "images/products/asics-gel-1130-1203a609-117-1.jpg",
-    "images/products/asics-gel-1130-1203a609-117-2.jpg",
-    "images/products/asics-gel-1130-1203a609-117-3.jpg"
+    "images/products/asics-gel-1130-1203a609-117-1.jpg"
   ],
 
   // Asics GEL-1130 — Glacier Grey / Pure Silver
   "asics-gel-1130-1203a609-023": [
-    "images/products/asics-gel-1130-1203a609-023-1.jpg",
-    "images/products/asics-gel-1130-1203a609-023-2.jpg",
-    "images/products/asics-gel-1130-1203a609-023-3.jpg"
+    "images/products/asics-gel-1130-1203a609-023-1.jpg"
   ],
 
   // Asics GEL-1130 — Cream / Pink Cloud
   "asics-gel-1130-1203a899-105": [
-    "images/products/asics-gel-1130-1203a899-105-1.jpg",
-    "images/products/asics-gel-1130-1203a899-105-2.jpg",
-    "images/products/asics-gel-1130-1203a899-105-3.jpg"
+    "images/products/asics-gel-1130-1203a899-105-1.jpg"
   ],
 
   // Asics GEL-1130 — White / Taro Purple
@@ -1643,93 +1570,69 @@ window.BASE_PHOTOS = {
 
   // Asics GEL-1130 — White / Clay Canyon
   "asics-gel-1130-1201a256-113": [
-    "images/products/asics-gel-1130-1201a256-113-1.jpg",
-    "images/products/asics-gel-1130-1201a256-113-2.jpg",
-    "images/products/asics-gel-1130-1201a256-113-3.jpg"
+    "images/products/asics-gel-1130-1201a256-113-1.jpg"
   ],
 
   // Asics GEL-1130 — White / Mid Grey
   "asics-gel-1130-1201a256-114": [
-    "images/products/asics-gel-1130-1201a256-114-1.jpg",
-    "images/products/asics-gel-1130-1201a256-114-2.jpg",
-    "images/products/asics-gel-1130-1201a256-114-3.jpg"
+    "images/products/asics-gel-1130-1201a256-114-1.jpg"
   ],
 
   // Asics GEL-1130 Femme — White / Jade
   "asics-gel-1130-1202a164-112": [
-    "images/products/asics-gel-1130-1202a164-112-1.jpg",
-    "images/products/asics-gel-1130-1202a164-112-2.jpg",
-    "images/products/asics-gel-1130-1202a164-112-3.jpg"
+    "images/products/asics-gel-1130-1202a164-112-1.jpg"
   ],
 
   // Asics GEL-1130 — Cream / Ironclad
   "asics-gel-1130-1201a256-115": [
-    "images/products/asics-gel-1130-1201a256-115-1.jpg",
-    "images/products/asics-gel-1130-1201a256-115-2.jpg",
-    "images/products/asics-gel-1130-1201a256-115-3.jpg"
+    "images/products/asics-gel-1130-1201a256-115-1.jpg"
   ],
 
   // Asics GEL-1130 — Oyster Grey / Clay Grey
   "asics-gel-1130-1201a255-028": [
     "images/products/asics-gel-1130-1201a255-028-1.jpg",
-    "images/products/asics-gel-1130-1201a255-028-2.jpg",
-    "images/products/asics-gel-1130-1201a255-028-3.jpg"
+    "images/products/asics-gel-1130-1201a255-028-2.jpg"
   ],
 
   // Asics GEL-1130 — Smoke Grey / Honey Beige
   "asics-gel-1130-1201a255-030": [
-    "images/products/asics-gel-1130-1201a255-030-1.jpg",
-    "images/products/asics-gel-1130-1201a255-030-2.jpg",
-    "images/products/asics-gel-1130-1201a255-030-3.jpg"
+    "images/products/asics-gel-1130-1201a255-030-1.jpg"
   ],
 
   // Asics GEL-1130 — Vanilla / White Sage
   "asics-gel-1130-1201a255-252": [
     "images/products/asics-gel-1130-1201a255-252-1.jpg",
-    "images/products/asics-gel-1130-1201a255-252-2.jpg",
-    "images/products/asics-gel-1130-1201a255-252-3.jpg"
+    "images/products/asics-gel-1130-1201a255-252-2.jpg"
   ],
 
   // Asics GEL-1130 Femme — White / Malachite Green
   "asics-gel-1130-1202a164-114": [
-    "images/products/asics-gel-1130-1202a164-114-1.jpg",
-    "images/products/asics-gel-1130-1202a164-114-2.jpg",
-    "images/products/asics-gel-1130-1202a164-114-3.jpg"
+    "images/products/asics-gel-1130-1202a164-114-1.jpg"
   ],
 
   // Asics GEL-1130 — White / Cloud Grey
   "asics-gel-1130-1201a256-118": [
-    "images/products/asics-gel-1130-1201a256-118-1.jpg",
-    "images/products/asics-gel-1130-1201a256-118-2.jpg",
-    "images/products/asics-gel-1130-1201a256-118-3.jpg"
+    "images/products/asics-gel-1130-1201a256-118-1.jpg"
   ],
 
   // Asics GEL-1130 — Clay Grey / Pure Silver
   "asics-gel-1130-1201a256-026": [
-    "images/products/asics-gel-1130-1201a256-026-1.jpg",
-    "images/products/asics-gel-1130-1201a256-026-2.jpg",
-    "images/products/asics-gel-1130-1201a256-026-3.jpg"
+    "images/products/asics-gel-1130-1201a256-026-1.jpg"
   ],
 
   // Asics GEL-1130 — Black / Pure Silver
   "asics-gel-1130-1201a906-001": [
-    "images/products/asics-gel-1130-1201a906-001-1.jpg",
-    "images/products/asics-gel-1130-1201a906-001-2.jpg",
-    "images/products/asics-gel-1130-1201a906-001-3.jpg"
+    "images/products/asics-gel-1130-1201a906-001-1.jpg"
   ],
 
   // Asics GEL-1130 — Cream / Blueberry
   "asics-gel-1130-1203a609-101": [
-    "images/products/asics-gel-1130-1203a609-101-1.jpg",
-    "images/products/asics-gel-1130-1203a609-101-2.jpg",
-    "images/products/asics-gel-1130-1203a609-101-3.jpg"
+    "images/products/asics-gel-1130-1203a609-101-1.jpg"
   ],
 
   // Asics GEL-1130 — White / Desert Red
   "asics-gel-1130-1203a609-102": [
-    "images/products/asics-gel-1130-1203a609-102-1.jpg",
-    "images/products/asics-gel-1130-1203a609-102-2.jpg",
-    "images/products/asics-gel-1130-1203a609-102-3.jpg"
+    "images/products/asics-gel-1130-1203a609-102-1.jpg"
   ],
 
   // Asics GEL-1130 — White / Shamrock Green
@@ -1748,176 +1651,130 @@ window.BASE_PHOTOS = {
 
   // Asics GEL-Kayano 14 — Cream / Cocoa Powder
   "asics-kayano-14-1203a537-118": [
-    "images/products/asics-kayano-14-1203a537-118-1.jpg",
-    "images/products/asics-kayano-14-1203a537-118-2.jpg",
-    "images/products/asics-kayano-14-1203a537-118-3.jpg"
+    "images/products/asics-kayano-14-1203a537-118-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Black / Cream
   "asics-kayano-14-1203a537-002": [
-    "images/products/asics-kayano-14-1203a537-002-1.jpg",
-    "images/products/asics-kayano-14-1203a537-002-2.jpg",
-    "images/products/asics-kayano-14-1203a537-002-3.jpg"
+    "images/products/asics-kayano-14-1203a537-002-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Birch / Pure Silver
   "asics-kayano-14-1203a537-200": [
-    "images/products/asics-kayano-14-1203a537-200-1.jpg",
-    "images/products/asics-kayano-14-1203a537-200-2.jpg",
-    "images/products/asics-kayano-14-1203a537-200-3.jpg"
+    "images/products/asics-kayano-14-1203a537-200-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Cream / Obsidian Grey
   "asics-kayano-14-1203a537-113": [
-    "images/products/asics-kayano-14-1203a537-113-1.jpg",
-    "images/products/asics-kayano-14-1203a537-113-2.jpg",
-    "images/products/asics-kayano-14-1203a537-113-3.jpg"
+    "images/products/asics-kayano-14-1203a537-113-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Concrete / Pure Silver
   "asics-kayano-14-1203a537-025": [
     "images/products/asics-kayano-14-1203a537-025-1.jpg",
-    "images/products/asics-kayano-14-1203a537-025-2.jpg",
-    "images/products/asics-kayano-14-1203a537-025-3.jpg"
+    "images/products/asics-kayano-14-1203a537-025-2.jpg"
   ],
 
   // Asics GEL-Kayano 14 — White / Piquant Orange
   "asics-kayano-14-1201a019-109": [
-    "images/products/asics-kayano-14-1201a019-109-1.jpg",
-    "images/products/asics-kayano-14-1201a019-109-2.jpg",
-    "images/products/asics-kayano-14-1201a019-109-3.jpg"
+    "images/products/asics-kayano-14-1201a019-109-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 Femme — White / Dark Grape
   "asics-kayano-14-1202a056-111": [
-    "images/products/asics-kayano-14-1202a056-111-1.jpg",
-    "images/products/asics-kayano-14-1202a056-111-2.jpg",
-    "images/products/asics-kayano-14-1202a056-111-3.jpg"
+    "images/products/asics-kayano-14-1202a056-111-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Simply Taupe / Oatmeal
   "asics-kayano-14-1201a161-251": [
-    "images/products/asics-kayano-14-1201a161-251-1.jpg",
-    "images/products/asics-kayano-14-1201a161-251-2.jpg",
-    "images/products/asics-kayano-14-1201a161-251-3.jpg"
+    "images/products/asics-kayano-14-1201a161-251-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 Femme — White / Smoke Grey
   "asics-kayano-14-1202a105-103": [
-    "images/products/asics-kayano-14-1202a105-103-1.jpg",
-    "images/products/asics-kayano-14-1202a105-103-2.jpg",
-    "images/products/asics-kayano-14-1202a105-103-3.jpg"
+    "images/products/asics-kayano-14-1202a105-103-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Black / Pure Silver
   "asics-kayano-14-1201a019-006": [
-    "images/products/asics-kayano-14-1201a019-006-1.jpg",
-    "images/products/asics-kayano-14-1201a019-006-2.jpg",
-    "images/products/asics-kayano-14-1201a019-006-3.jpg"
+    "images/products/asics-kayano-14-1201a019-006-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Birch / Dark Pewter
   "asics-kayano-14-1201a019-200": [
-    "images/products/asics-kayano-14-1201a019-200-1.jpg",
-    "images/products/asics-kayano-14-1201a019-200-2.jpg",
-    "images/products/asics-kayano-14-1201a019-200-3.jpg"
+    "images/products/asics-kayano-14-1201a019-200-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — White / Malachite Green
   "asics-kayano-14-1201a019-110": [
     "images/products/asics-kayano-14-1201a019-110-1.jpg",
-    "images/products/asics-kayano-14-1201a019-110-2.jpg",
-    "images/products/asics-kayano-14-1201a019-110-3.jpg"
+    "images/products/asics-kayano-14-1201a019-110-2.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Arctic Sky / Pure Silver
   "asics-kayano-14-1203a537-400": [
-    "images/products/asics-kayano-14-1203a537-400-1.jpg",
-    "images/products/asics-kayano-14-1203a537-400-2.jpg",
-    "images/products/asics-kayano-14-1203a537-400-3.jpg"
+    "images/products/asics-kayano-14-1203a537-400-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — White / Fjord Grey
   "asics-kayano-14-1203a537-106": [
-    "images/products/asics-kayano-14-1203a537-106-1.jpg",
-    "images/products/asics-kayano-14-1203a537-106-2.jpg",
-    "images/products/asics-kayano-14-1203a537-106-3.jpg"
+    "images/products/asics-kayano-14-1203a537-106-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — White / Graphite Grey
   "asics-kayano-14-1203a537-110": [
-    "images/products/asics-kayano-14-1203a537-110-1.jpg",
-    "images/products/asics-kayano-14-1203a537-110-2.jpg",
-    "images/products/asics-kayano-14-1203a537-110-3.jpg"
+    "images/products/asics-kayano-14-1203a537-110-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Cream / Ironclad
   "asics-kayano-14-1203a537-109": [
-    "images/products/asics-kayano-14-1203a537-109-1.jpg",
-    "images/products/asics-kayano-14-1203a537-109-2.jpg",
-    "images/products/asics-kayano-14-1203a537-109-3.jpg"
+    "images/products/asics-kayano-14-1203a537-109-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — White / Pure Gold
   "asics-kayano-14-1201a019-102": [
-    "images/products/asics-kayano-14-1201a019-102-1.jpg",
-    "images/products/asics-kayano-14-1201a019-102-2.jpg",
-    "images/products/asics-kayano-14-1201a019-102-3.jpg"
+    "images/products/asics-kayano-14-1201a019-102-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Dolphin Grey / Pure Silver
   "asics-kayano-14-1203a537-401": [
-    "images/products/asics-kayano-14-1203a537-401-1.jpg",
-    "images/products/asics-kayano-14-1203a537-401-2.jpg",
-    "images/products/asics-kayano-14-1203a537-401-3.jpg"
+    "images/products/asics-kayano-14-1203a537-401-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Dried Leaf Green / Pure Silver
   "asics-kayano-14-1203a537-300": [
-    "images/products/asics-kayano-14-1203a537-300-1.jpg",
-    "images/products/asics-kayano-14-1203a537-300-2.jpg",
-    "images/products/asics-kayano-14-1203a537-300-3.jpg"
+    "images/products/asics-kayano-14-1203a537-300-1.jpg"
   ],
 
   // Asics GEL-Kayano 14 — White / Light Sage
   "asics-kayano-14-1203a537-117": [
-    "images/products/asics-kayano-14-1203a537-117-1.jpg",
-    "images/products/asics-kayano-14-1203a537-117-2.jpg",
-    "images/products/asics-kayano-14-1203a537-117-3.jpg"
+    "images/products/asics-kayano-14-1203a537-117-1.jpg"
   ],
 
   // Mizuno Wave Prophecy Beta — White
   "mizuno-wave-prophecy-mud1ga227608": [
-    "images/products/mizuno-wave-prophecy-mud1ga227608-1.jpg",
-    "images/products/mizuno-wave-prophecy-mud1ga227608-2.jpg",
-    "images/products/mizuno-wave-prophecy-mud1ga227608-3.jpg"
+    "images/products/mizuno-wave-prophecy-mud1ga227608-1.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — Silver Cloud / White Sand / Cedar Green
   "mizuno-wave-prophecy-mud1ga238701": [
-    "images/products/mizuno-wave-prophecy-mud1ga238701-1.jpg",
-    "images/products/mizuno-wave-prophecy-mud1ga238701-2.jpg",
-    "images/products/mizuno-wave-prophecy-mud1ga238701-3.jpg"
+    "images/products/mizuno-wave-prophecy-mud1ga238701-1.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — Wind Chime / Fallen Rock
   "mizuno-wave-prophecy-590063-wc8q": [
-    "images/products/mizuno-wave-prophecy-590063-wc8q-1.jpg",
-    "images/products/mizuno-wave-prophecy-590063-wc8q-2.jpg",
-    "images/products/mizuno-wave-prophecy-590063-wc8q-3.jpg"
+    "images/products/mizuno-wave-prophecy-590063-wc8q-1.jpg"
   ],
 
   // Mizuno Wave Prophecy 1 — Iron Gate / Silver
   "mizuno-wave-prophecy-590148-9673": [
     "images/products/mizuno-wave-prophecy-590148-9673-1.jpg",
-    "images/products/mizuno-wave-prophecy-590148-9673-2.jpg",
     "images/products/mizuno-wave-prophecy-590148-9673-3.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — Black Sand / Iron Gate
   "mizuno-wave-prophecy-590126-bs96": [
     "images/products/mizuno-wave-prophecy-590126-bs96-1.jpg",
-    "images/products/mizuno-wave-prophecy-590126-bs96-2.jpg",
     "images/products/mizuno-wave-prophecy-590126-bs96-3.jpg"
   ],
 
@@ -1937,43 +1794,36 @@ window.BASE_PHOTOS = {
   // Mizuno Wave Prophecy 1 — Artisan's Gold / Zinnia / Strong Blue
   "mizuno-wave-prophecy-590188-792a": [
     "images/products/mizuno-wave-prophecy-590188-792a-1.jpg",
-    "images/products/mizuno-wave-prophecy-590188-792a-2.jpg",
     "images/products/mizuno-wave-prophecy-590188-792a-3.jpg"
   ],
 
   // Mizuno Wave Prophecy 1 — Harbor Mist / Chinese Red
   "mizuno-wave-prophecy-590148-hm1f": [
     "images/products/mizuno-wave-prophecy-590148-hm1f-1.jpg",
-    "images/products/mizuno-wave-prophecy-590148-hm1f-2.jpg",
     "images/products/mizuno-wave-prophecy-590148-hm1f-3.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — Salute Navy Blazer
   "mizuno-wave-prophecy-590091-59nl": [
     "images/products/mizuno-wave-prophecy-590091-59nl-1.jpg",
-    "images/products/mizuno-wave-prophecy-590091-59nl-2.jpg",
     "images/products/mizuno-wave-prophecy-590091-59nl-3.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — Sun Dried Tomato / Barbados Cherry
   "mizuno-wave-prophecy-590091-1k16": [
     "images/products/mizuno-wave-prophecy-590091-1k16-1.jpg",
-    "images/products/mizuno-wave-prophecy-590091-1k16-2.jpg",
     "images/products/mizuno-wave-prophecy-590091-1k16-3.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — Black
   "mizuno-wave-prophecy-590126-5p90": [
     "images/products/mizuno-wave-prophecy-590126-5p90-1.jpg",
-    "images/products/mizuno-wave-prophecy-590126-5p90-2.jpg",
     "images/products/mizuno-wave-prophecy-590126-5p90-3.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — Black
   "mizuno-wave-prophecy-590091-9690": [
-    "images/products/mizuno-wave-prophecy-590091-9690-1.jpg",
-    "images/products/mizuno-wave-prophecy-590091-9690-2.jpg",
-    "images/products/mizuno-wave-prophecy-590091-9690-3.jpg"
+    "images/products/mizuno-wave-prophecy-590091-9690-1.jpg"
   ],
 
   // Casquette Sweet Pants 3D Basic — Black
