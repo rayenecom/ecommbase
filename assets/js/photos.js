@@ -57,17 +57,13 @@ window.BASE_PHOTOS = {
   // Doudoune C.P. Company D.D. Shell — Flint Grey
   "cp-dd-shell-puffer-flint": [
     "images/products/cp-dd-shell-puffer-flint-1.jpg",
-    "images/products/cp-dd-shell-puffer-flint-2.jpg",
-    "images/products/cp-dd-shell-puffer-flint-3.jpg",
-    "images/products/cp-dd-shell-puffer-flint-4.jpg"
+    "images/products/cp-dd-shell-puffer-flint-2.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Andorra Red
   "cp-dd-shell-puffer-andorra": [
     "images/products/cp-dd-shell-puffer-andorra-1.jpg",
-    "images/products/cp-dd-shell-puffer-andorra-2.jpg",
-    "images/products/cp-dd-shell-puffer-andorra-3.jpg",
-    "images/products/cp-dd-shell-puffer-andorra-4.jpg"
+    "images/products/cp-dd-shell-puffer-andorra-2.jpg"
   ],
 
   // On Cloudsurfer Max Homme — Iceberg / Olive
@@ -2586,89 +2582,96 @@ window.BASE_PHOTOS = {
   "on-core-set-black": [
     "images/products/on-core-set-black-1.jpg",
     "images/products/on-core-set-black-2.jpg",
-    "images/products/on-core-set-black-3.jpg"
+    "images/products/on-core-set-black-3.jpg",
+    "images/products/on-core-set-black-4.jpg",
+    "images/products/on-core-set-black-5.jpg",
+    "images/products/on-core-set-black-6.jpg",
+    "images/products/on-core-set-black-7.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Midnight
   "on-core-set-midnight": [
     "images/products/on-core-set-midnight-1.jpg",
     "images/products/on-core-set-midnight-2.jpg",
-    "images/products/on-core-set-midnight-3.jpg"
+    "images/products/on-core-set-midnight-3.jpg",
+    "images/products/on-core-set-midnight-4.jpg",
+    "images/products/on-core-set-midnight-5.jpg",
+    "images/products/on-core-set-midnight-6.jpg",
+    "images/products/on-core-set-midnight-7.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Bordeaux (Urchin / Barberry)
   "on-core-set-bordeaux": [
     "images/products/on-core-set-bordeaux-1.jpg",
     "images/products/on-core-set-bordeaux-2.jpg",
-    "images/products/on-core-set-bordeaux-3.jpg"
+    "images/products/on-core-set-bordeaux-3.jpg",
+    "images/products/on-core-set-bordeaux-4.jpg",
+    "images/products/on-core-set-bordeaux-5.jpg",
+    "images/products/on-core-set-bordeaux-6.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Apollo / Glacier
   "on-core-set-apollo": [
     "images/products/on-core-set-apollo-1.jpg",
     "images/products/on-core-set-apollo-2.jpg",
-    "images/products/on-core-set-apollo-3.jpg"
+    "images/products/on-core-set-apollo-3.jpg",
+    "images/products/on-core-set-apollo-4.jpg",
+    "images/products/on-core-set-apollo-5.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Bark / Vetiver
   "on-core-set-bark": [
     "images/products/on-core-set-bark-1.jpg",
     "images/products/on-core-set-bark-2.jpg",
-    "images/products/on-core-set-bark-3.jpg"
+    "images/products/on-core-set-bark-3.jpg",
+    "images/products/on-core-set-bark-4.jpg",
+    "images/products/on-core-set-bark-5.jpg",
+    "images/products/on-core-set-bark-6.jpg",
+    "images/products/on-core-set-bark-7.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Jay / Eclipse
   "on-core-set-jay": [
     "images/products/on-core-set-jay-1.jpg",
     "images/products/on-core-set-jay-2.jpg",
-    "images/products/on-core-set-jay-3.jpg"
+    "images/products/on-core-set-jay-3.jpg",
+    "images/products/on-core-set-jay-4.jpg",
+    "images/products/on-core-set-jay-5.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Black
   "cp-dd-shell-puffer-black": [
     "images/products/cp-dd-shell-puffer-black-1.jpg",
-    "images/products/cp-dd-shell-puffer-black-2.jpg",
-    "images/products/cp-dd-shell-puffer-black-3.jpg",
-    "images/products/cp-dd-shell-puffer-black-4.jpg"
+    "images/products/cp-dd-shell-puffer-black-2.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Gauze White
   "cp-dd-shell-puffer-gauze-white": [
     "images/products/cp-dd-shell-puffer-gauze-white-1.jpg",
-    "images/products/cp-dd-shell-puffer-gauze-white-2.jpg",
-    "images/products/cp-dd-shell-puffer-gauze-white-3.jpg",
-    "images/products/cp-dd-shell-puffer-gauze-white-4.jpg"
+    "images/products/cp-dd-shell-puffer-gauze-white-2.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Orion Blue
   "cp-dd-shell-puffer-orion-blue": [
     "images/products/cp-dd-shell-puffer-orion-blue-1.jpg",
-    "images/products/cp-dd-shell-puffer-orion-blue-2.jpg",
-    "images/products/cp-dd-shell-puffer-orion-blue-3.jpg",
-    "images/products/cp-dd-shell-puffer-orion-blue-4.jpg"
+    "images/products/cp-dd-shell-puffer-orion-blue-2.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Light Blue
   "cp-dd-shell-puffer-light-blue": [
     "images/products/cp-dd-shell-puffer-light-blue-1.jpg",
-    "images/products/cp-dd-shell-puffer-light-blue-2.jpg",
-    "images/products/cp-dd-shell-puffer-light-blue-3.jpg",
-    "images/products/cp-dd-shell-puffer-light-blue-4.jpg"
+    "images/products/cp-dd-shell-puffer-light-blue-2.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Fallen Rock
   "cp-dd-shell-puffer-fallen-rock": [
     "images/products/cp-dd-shell-puffer-fallen-rock-1.jpg",
-    "images/products/cp-dd-shell-puffer-fallen-rock-2.jpg",
-    "images/products/cp-dd-shell-puffer-fallen-rock-3.jpg",
-    "images/products/cp-dd-shell-puffer-fallen-rock-4.jpg"
+    "images/products/cp-dd-shell-puffer-fallen-rock-2.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Pale Yellow
   "cp-dd-shell-puffer-pale-yellow": [
     "images/products/cp-dd-shell-puffer-pale-yellow-1.jpg",
-    "images/products/cp-dd-shell-puffer-pale-yellow-2.jpg",
-    "images/products/cp-dd-shell-puffer-pale-yellow-3.jpg",
-    "images/products/cp-dd-shell-puffer-pale-yellow-4.jpg"
+    "images/products/cp-dd-shell-puffer-pale-yellow-2.jpg"
   ]
 };
