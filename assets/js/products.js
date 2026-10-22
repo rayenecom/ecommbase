@@ -85,32 +85,6 @@ window.BASE_PRODUCTS = [
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On brodé", "Coupe relax"]
   },
 
-  /* ---------- ALO — ensembles ---------- */
-  {
-    id: "alo-accolade-black", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Black", swatch: "#1d1e1e",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING, tags: ["best"],
-    description: "Le best-seller Alo Yoga : hoodie Accolade et sweatpant assortis, molleton brossé ultra-doux.",
-    details: ["Hoodie + sweatpant", "Molleton brossé ultra-doux", "Coupe relax"]
-  },
-  {
-    id: "alo-accolade-heather", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Athletic Heather Grey", swatch: "#5b514e",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING, soldOutSizes: ["XL"],
-    description: "Hoodie Accolade et sweatpant Alo Yoga en gris chiné.",
-    details: ["Hoodie + sweatpant", "Molleton brossé ultra-doux", "Coupe relax"]
-  },
-  {
-    id: "alo-accolade-ivory", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Ivory", swatch: "#dcdbd7",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING, tags: ["new"],
-    description: "L'ensemble Alo Accolade dans son coloris ivoire signature.",
-    details: ["Hoodie + sweatpant", "Molleton brossé ultra-doux", "Coupe relax"]
-  },
-
   /* ---------- C.P. COMPANY ---------- */
   {
     id: "cp-dd-shell-puffer-flint", group: "cp-dd-shell-puffer",
@@ -775,46 +749,6 @@ window.BASE_PRODUCTS = [
 
   /* ---------- ACCESSOIRES — casquettes, bonnets, chaussettes, caleçons ---------- */
   {
-    id: "alo-cap-black", group: "alo-cap",
-    name: "Casquette Alo Off-Duty", color: "Black", swatch: "#1d1d1d",
-    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
-    sizes: TU, tags: ["best"],
-    description: "La casquette Alo Off-Duty, logo brodé, réglable.",
-    details: ["Logo Alo brodé", "Réglable", "Taille unique"]
-  },
-  {
-    id: "alo-cap-bright-white", group: "alo-cap",
-    name: "Casquette Alo Off-Duty", color: "Bright White", swatch: "#f1f1f2",
-    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
-    sizes: TU,
-    description: "La casquette Alo Off-Duty, logo brodé, réglable.",
-    details: ["Logo Alo brodé", "Réglable", "Taille unique"]
-  },
-  {
-    id: "alo-cap-sand-dollar", group: "alo-cap",
-    name: "Casquette Alo Off-Duty", color: "Sand Dollar", swatch: "#e8dacc",
-    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
-    sizes: TU, tags: ["new"],
-    description: "La casquette Alo Off-Duty, logo brodé, réglable.",
-    details: ["Logo Alo brodé", "Réglable", "Taille unique"]
-  },
-  {
-    id: "courreges-cap-ac-black", group: "courreges-cap-ac",
-    name: "Casquette Courrèges Signature AC", color: "Black", swatch: "#262729",
-    brand: "courreges", category: "accessoires", gender: "unisexe", type: "casquettes", price: 150,
-    sizes: TU, tags: ["best"],
-    description: "Casquette Courrèges en coton, logo AC brodé.",
-    details: ["Coton", "Logo AC brodé", "Réglable"]
-  },
-  {
-    id: "courreges-cap-ac-4010", group: "courreges-cap-ac",
-    name: "Casquette Courrèges Signature AC", color: "Burgundy", swatch: "#44242c",
-    brand: "courreges", category: "accessoires", gender: "unisexe", type: "casquettes", price: 150,
-    sizes: TU,
-    description: "Casquette Courrèges en coton, logo AC brodé.",
-    details: ["Coton", "Logo AC brodé", "Réglable"]
-  },
-  {
     id: "courreges-cap-vinyl-black", group: "courreges-cap-vinyl",
     name: "Casquette Courrèges ReEdition Vinyl", color: "Black", swatch: "#343233",
     brand: "courreges", category: "accessoires", gender: "unisexe", type: "casquettes", price: 175,
@@ -1423,70 +1357,6 @@ window.BASE_PRODUCTS = [
     details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
   },
   {
-    id: "alo-accolade-bone", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Bone", swatch: "#d3ccc1",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING,
-    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
-    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
-  },
-  {
-    id: "alo-accolade-espresso", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Espresso", swatch: "#39281b",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING,
-    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
-    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
-  },
-  {
-    id: "alo-accolade-navy", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Navy", swatch: "#242937",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING,
-    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
-    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
-  },
-  {
-    id: "alo-accolade-steel-grey", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Steel Grey", swatch: "#82838c",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING,
-    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
-    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
-  },
-  {
-    id: "alo-accolade-smoky-quartz", group: "alo-accolade",
-    name: "Ensemble Alo Accolade Hoodie + Sweatpant", color: "Smoky Quartz", swatch: "#3f282b",
-    brand: "alo", category: "ensembles", gender: "homme", price: 279,
-    sizes: CLOTHING, tags: ["new"],
-    description: "Le survêtement Alo Accolade : hoodie et jogging en molleton brossé ultra-doux, logo Alo brodé.",
-    details: ["Hoodie + jogging", "Molleton brossé", "Coupe relax"]
-  },
-  {
-    id: "alo-coop-set-black", group: "alo-coop-set",
-    name: "Survêtement Alo Co-Op (Veste + Pantalon)", color: "Black", swatch: "#181b1e",
-    brand: "alo", category: "ensembles", gender: "homme", price: 299,
-    sizes: CLOTHING, tags: ["best"],
-    description: "Le pantalon Alo Co-Op et sa veste zippée Elemental assortie, même tissu technique léger et déperlant.",
-    details: ["Veste zippée Elemental + pantalon Co-Op", "Tissu technique déperlant", "Stretch 4 sens", "Taille normalement"]
-  },
-  {
-    id: "alo-coop-set-espresso", group: "alo-coop-set",
-    name: "Survêtement Alo Co-Op (Veste + Pantalon)", color: "Espresso", swatch: "#332316",
-    brand: "alo", category: "ensembles", gender: "homme", price: 299,
-    sizes: CLOTHING,
-    description: "Le pantalon Alo Co-Op et sa veste zippée Elemental assortie, même tissu technique léger et déperlant.",
-    details: ["Veste zippée Elemental + pantalon Co-Op", "Tissu technique déperlant", "Stretch 4 sens", "Taille normalement"]
-  },
-  {
-    id: "alo-coop-set-gravel", group: "alo-coop-set",
-    name: "Survêtement Alo Co-Op (Veste + Pantalon)", color: "Gravel", swatch: "#705c4c",
-    brand: "alo", category: "ensembles", gender: "homme", price: 299,
-    sizes: CLOTHING, tags: ["new"],
-    description: "Le pantalon Alo Co-Op et sa veste zippée Elemental assortie, même tissu technique léger et déperlant.",
-    details: ["Veste zippée Elemental + pantalon Co-Op", "Tissu technique déperlant", "Stretch 4 sens", "Taille normalement"]
-  },
-  {
     id: "alo-alpha-shell-set-black", group: "alo-alpha-shell-set",
     name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Black", swatch: "#2c313b",
     brand: "alo", category: "ensembles", gender: "homme", price: 549,
@@ -1562,14 +1432,6 @@ window.BASE_PRODUCTS = [
   },
 
   /* ---------- SALOMON — ensemble GORE-TEX & XT-6 (tous coloris) ---------- */
-  {
-    id: "salomon-gtx-set-deep-black", group: "salomon-gtx-set",
-    name: "Ensemble Salomon GORE-TEX Moon Patrol Veste + Pantalon", color: "Deep Black", swatch: "#313131",
-    brand: "salomon", category: "ensembles", gender: "homme", price: 699,
-    sizes: CLOTHING, tags: ["new"],
-    description: "L'ensemble Salomon en GORE-TEX : veste et pantalon Moon Patrol 100 % imperméables et respirants.",
-    details: ["Veste + pantalon GORE-TEX", "Imperméable et respirant", "Coutures étanchées", "Taille normalement"]
-  },
   {
     id: "salomon-xt-6-l492148", group: "salomon-xt-6",
     name: "Salomon XT-6 GORE-TEX", color: "Tradewinds / Stormy Weather / Bog", swatch: "#272726",
@@ -2247,104 +2109,8 @@ window.BASE_PRODUCTS = [
 
   /* ---------- MIZUNO — Wave Prophecy ---------- */
   {
-    id: "mizuno-wave-prophecy-mud1ga227608", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy Beta", color: "White", swatch: "#b9b7b1",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-mud1ga238701", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Silver Cloud / White Sand / Cedar Green", swatch: "#b1a694",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
     id: "mizuno-wave-prophecy-590063-wc8q", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Wind Chime / Fallen Rock", swatch: "#aca397",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590148-9673", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy 1", color: "Iron Gate / Silver", swatch: "#424242",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590126-bs96", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Black Sand / Iron Gate", swatch: "#2d2c2c",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590187-7773", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Harvest Gold / Silver", swatch: "#352e2d",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590187-6j73", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Spring Crocus / Silver", swatch: "#201f21",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590188-792a", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy 1", color: "Artisan's Gold / Zinnia / Strong Blue", swatch: "#141d29",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590148-hm1f", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy 1", color: "Harbor Mist / Chinese Red", swatch: "#1c181a",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590091-59nl", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Salute Navy Blazer", swatch: "#27272a",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590091-1k16", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Sun Dried Tomato / Barbados Cherry", swatch: "#0d0d0d",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590126-5p90", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Black", swatch: "#312c31",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
-    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
-    description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
-    details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
-  },
-  {
-    id: "mizuno-wave-prophecy-590091-9690", group: "mizuno-wave-prophecy",
-    name: "Mizuno Wave Prophecy LS", color: "Black", swatch: "#1c1b1c",
+    name: "Mizuno Wave Prophecy LS", color: "Beige (Wind Chime / Fallen Rock)", swatch: "#aca397",
     brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
     sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
     description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
@@ -3437,5 +3203,121 @@ window.BASE_PRODUCTS = [
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
+  },
+
+  /* ---------- MIZUNO Wave Prophecy LS & Alo District Trucker ---------- */
+  {
+    id: "mizuno-wave-prophecy-ls-black", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Black", swatch: "#2a2a2f",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La Mizuno Wave Prophecy LS : semelle Infinity Wave spectaculaire et look futuriste, la version lifestyle de l'icône running.",
+    details: ["Semelle Infinity Wave", "Tige mesh et overlays synthétiques", "Taille normalement"]
+  },
+  {
+    id: "mizuno-wave-prophecy-ls-black-white", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "White / Black", swatch: "#e6e2de",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 279,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Mizuno Wave Prophecy LS : semelle Infinity Wave spectaculaire et look futuriste, la version lifestyle de l'icône running.",
+    details: ["Semelle Infinity Wave", "Tige mesh et overlays synthétiques", "Taille normalement"]
+  },
+  {
+    id: "alo-district-trucker-black", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "Black", swatch: "#141414",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU, tags: ["best"],
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+  {
+    id: "alo-district-trucker-white-white", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "White", swatch: "#e7e7e9",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU, tags: ["best"],
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+  {
+    id: "alo-district-trucker-bone", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "Bone", swatch: "#e0dad2",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU,
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+  {
+    id: "alo-district-trucker-navy", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "Navy", swatch: "#181d30",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU,
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+  {
+    id: "alo-district-trucker-gravel", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "Gravel", swatch: "#a29081",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU,
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+  {
+    id: "alo-district-trucker-espresso", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "Espresso", swatch: "#544233",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU, tags: ["new"],
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+  {
+    id: "alo-district-trucker-dune-grass", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "Dune Grass", swatch: "#97a38c",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU, tags: ["new"],
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+  {
+    id: "alo-district-trucker-candy-heart-pink", group: "alo-district-trucker",
+    name: "Casquette Alo District Trucker", color: "Candy Heart Pink", swatch: "#d99cbf",
+    brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 58,
+    sizes: TU,
+    description: "La casquette trucker Alo District : façade structurée avec logo Alo brodé, filet respirant à l'arrière, fermeture snapback.",
+    details: ["Logo Alo brodé", "Filet respirant", "Fermeture snapback", "Taille unique"]
+  },
+
+  /* ---------- ALO — Conquer Max + Co-Op ---------- */
+  {
+    id: "alo-conquer-coop-set-black", group: "alo-conquer-coop-set",
+    name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Black", swatch: "#1b1b1c",
+    brand: "alo", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING, tags: ["best"],
+    description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
+    details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
+  },
+  {
+    id: "alo-conquer-coop-set-anthracite", group: "alo-conquer-coop-set",
+    name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Anthracite", swatch: "#3b3c3e",
+    brand: "alo", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING, tags: ["new"],
+    description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
+    details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
+  },
+  {
+    id: "alo-conquer-coop-set-gravel", group: "alo-conquer-coop-set",
+    name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Gravel", swatch: "#a39383",
+    brand: "alo", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING,
+    description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
+    details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
+  },
+  {
+    id: "alo-conquer-coop-set-navy", group: "alo-conquer-coop-set",
+    name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Navy", swatch: "#1d2638",
+    brand: "alo", category: "ensembles", gender: "homme", price: 289,
+    sizes: CLOTHING,
+    description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
+    details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
   }
 ];

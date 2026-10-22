@@ -30,40 +30,24 @@ window.BASE_PHOTOS = {
     "images/products/on-club-set-crater-3.jpg"
   ],
 
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Black
-  "alo-accolade-black": [
-    "images/products/alo-accolade-black-1.jpg",
-    "images/products/alo-accolade-black-2.jpg",
-    "images/products/alo-accolade-black-3.jpg",
-    "images/products/alo-accolade-black-4.jpg"
-  ],
-
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Athletic Heather Grey
-  "alo-accolade-heather": [
-    "images/products/alo-accolade-heather-1.jpg",
-    "images/products/alo-accolade-heather-2.jpg",
-    "images/products/alo-accolade-heather-3.jpg",
-    "images/products/alo-accolade-heather-4.jpg"
-  ],
-
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Ivory
-  "alo-accolade-ivory": [
-    "images/products/alo-accolade-ivory-1.jpg",
-    "images/products/alo-accolade-ivory-2.jpg",
-    "images/products/alo-accolade-ivory-3.jpg",
-    "images/products/alo-accolade-ivory-4.jpg"
-  ],
-
   // Doudoune C.P. Company D.D. Shell — Flint Grey
   "cp-dd-shell-puffer-flint": [
     "images/products/cp-dd-shell-puffer-flint-1.jpg",
-    "images/products/cp-dd-shell-puffer-flint-2.jpg"
+    "images/products/cp-dd-shell-puffer-flint-2.jpg",
+    "images/products/cp-dd-shell-puffer-flint-3.jpg",
+    "images/products/cp-dd-shell-puffer-flint-4.jpg",
+    "images/products/cp-dd-shell-puffer-flint-5.jpg",
+    "images/products/cp-dd-shell-puffer-flint-6.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Andorra Red
   "cp-dd-shell-puffer-andorra": [
     "images/products/cp-dd-shell-puffer-andorra-1.jpg",
-    "images/products/cp-dd-shell-puffer-andorra-2.jpg"
+    "images/products/cp-dd-shell-puffer-andorra-2.jpg",
+    "images/products/cp-dd-shell-puffer-andorra-3.jpg",
+    "images/products/cp-dd-shell-puffer-andorra-4.jpg",
+    "images/products/cp-dd-shell-puffer-andorra-5.jpg",
+    "images/products/cp-dd-shell-puffer-andorra-6.jpg"
   ],
 
   // On Cloudsurfer Max Homme — Iceberg / Olive
@@ -630,41 +614,6 @@ window.BASE_PHOTOS = {
     "images/products/on-club-set-w-black-3.jpg"
   ],
 
-  // Casquette Alo Off-Duty — Black
-  "alo-cap-black": [
-    "images/products/alo-cap-black-1.jpg",
-    "images/products/alo-cap-black-2.jpg",
-    "images/products/alo-cap-black-3.jpg"
-  ],
-
-  // Casquette Alo Off-Duty — Bright White
-  "alo-cap-bright-white": [
-    "images/products/alo-cap-bright-white-1.jpg",
-    "images/products/alo-cap-bright-white-2.jpg",
-    "images/products/alo-cap-bright-white-3.jpg"
-  ],
-
-  // Casquette Alo Off-Duty — Sand Dollar
-  "alo-cap-sand-dollar": [
-    "images/products/alo-cap-sand-dollar-1.jpg",
-    "images/products/alo-cap-sand-dollar-2.jpg",
-    "images/products/alo-cap-sand-dollar-3.jpg"
-  ],
-
-  // Casquette Courrèges Signature AC — Black
-  "courreges-cap-ac-black": [
-    "images/products/courreges-cap-ac-black-1.jpg",
-    "images/products/courreges-cap-ac-black-2.jpg",
-    "images/products/courreges-cap-ac-black-3.jpg"
-  ],
-
-  // Casquette Courrèges Signature AC — Burgundy
-  "courreges-cap-ac-4010": [
-    "images/products/courreges-cap-ac-4010-1.jpg",
-    "images/products/courreges-cap-ac-4010-2.jpg",
-    "images/products/courreges-cap-ac-4010-3.jpg"
-  ],
-
   // Casquette Courrèges ReEdition Vinyl — Black
   "courreges-cap-vinyl-black": [
     "images/products/courreges-cap-vinyl-black-1.jpg",
@@ -1131,70 +1080,6 @@ window.BASE_PHOTOS = {
     "images/products/alo-runner-smoky-quartz-1.jpg"
   ],
 
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Bone
-  "alo-accolade-bone": [
-    "images/products/alo-accolade-bone-1.jpg",
-    "images/products/alo-accolade-bone-2.jpg",
-    "images/products/alo-accolade-bone-3.jpg",
-    "images/products/alo-accolade-bone-4.jpg"
-  ],
-
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Espresso
-  "alo-accolade-espresso": [
-    "images/products/alo-accolade-espresso-1.jpg",
-    "images/products/alo-accolade-espresso-2.jpg",
-    "images/products/alo-accolade-espresso-3.jpg",
-    "images/products/alo-accolade-espresso-4.jpg"
-  ],
-
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Navy
-  "alo-accolade-navy": [
-    "images/products/alo-accolade-navy-1.jpg",
-    "images/products/alo-accolade-navy-2.jpg",
-    "images/products/alo-accolade-navy-3.jpg",
-    "images/products/alo-accolade-navy-4.jpg"
-  ],
-
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Steel Grey
-  "alo-accolade-steel-grey": [
-    "images/products/alo-accolade-steel-grey-1.jpg",
-    "images/products/alo-accolade-steel-grey-2.jpg",
-    "images/products/alo-accolade-steel-grey-3.jpg",
-    "images/products/alo-accolade-steel-grey-4.jpg"
-  ],
-
-  // Ensemble Alo Accolade Hoodie + Sweatpant — Smoky Quartz
-  "alo-accolade-smoky-quartz": [
-    "images/products/alo-accolade-smoky-quartz-1.jpg",
-    "images/products/alo-accolade-smoky-quartz-2.jpg",
-    "images/products/alo-accolade-smoky-quartz-3.jpg",
-    "images/products/alo-accolade-smoky-quartz-4.jpg"
-  ],
-
-  // Survêtement Alo Co-Op (Veste + Pantalon) — Black
-  "alo-coop-set-black": [
-    "images/products/alo-coop-set-black-1.jpg",
-    "images/products/alo-coop-set-black-2.jpg",
-    "images/products/alo-coop-set-black-3.jpg",
-    "images/products/alo-coop-set-black-4.jpg"
-  ],
-
-  // Survêtement Alo Co-Op (Veste + Pantalon) — Espresso
-  "alo-coop-set-espresso": [
-    "images/products/alo-coop-set-espresso-1.jpg",
-    "images/products/alo-coop-set-espresso-2.jpg",
-    "images/products/alo-coop-set-espresso-3.jpg",
-    "images/products/alo-coop-set-espresso-4.jpg"
-  ],
-
-  // Survêtement Alo Co-Op (Veste + Pantalon) — Gravel
-  "alo-coop-set-gravel": [
-    "images/products/alo-coop-set-gravel-1.jpg",
-    "images/products/alo-coop-set-gravel-2.jpg",
-    "images/products/alo-coop-set-gravel-3.jpg",
-    "images/products/alo-coop-set-gravel-4.jpg"
-  ],
-
   // Ensemble Alo Alpha Shell Veste + Pantalon — Black
   "alo-alpha-shell-set-black": [
     "images/products/alo-alpha-shell-set-black-1.jpg",
@@ -1266,14 +1151,6 @@ window.BASE_PHOTOS = {
     "images/products/lulu-pace-breaker-glyde-set-black-2.jpg",
     "images/products/lulu-pace-breaker-glyde-set-black-3.jpg",
     "images/products/lulu-pace-breaker-glyde-set-black-4.jpg"
-  ],
-
-  // Ensemble Salomon GORE-TEX Moon Patrol Veste + Pantalon — Deep Black
-  "salomon-gtx-set-deep-black": [
-    "images/products/salomon-gtx-set-deep-black-1.jpg",
-    "images/products/salomon-gtx-set-deep-black-2.jpg",
-    "images/products/salomon-gtx-set-deep-black-3.jpg",
-    "images/products/salomon-gtx-set-deep-black-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Tradewinds / Stormy Weather / Bog
@@ -1747,79 +1624,9 @@ window.BASE_PHOTOS = {
     "images/products/asics-kayano-14-1203a537-117-1.jpg"
   ],
 
-  // Mizuno Wave Prophecy Beta — White
-  "mizuno-wave-prophecy-mud1ga227608": [
-    "images/products/mizuno-wave-prophecy-mud1ga227608-1.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Silver Cloud / White Sand / Cedar Green
-  "mizuno-wave-prophecy-mud1ga238701": [
-    "images/products/mizuno-wave-prophecy-mud1ga238701-1.jpg"
-  ],
-
   // Mizuno Wave Prophecy LS — Wind Chime / Fallen Rock
   "mizuno-wave-prophecy-590063-wc8q": [
     "images/products/mizuno-wave-prophecy-590063-wc8q-1.jpg"
-  ],
-
-  // Mizuno Wave Prophecy 1 — Iron Gate / Silver
-  "mizuno-wave-prophecy-590148-9673": [
-    "images/products/mizuno-wave-prophecy-590148-9673-1.jpg",
-    "images/products/mizuno-wave-prophecy-590148-9673-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Black Sand / Iron Gate
-  "mizuno-wave-prophecy-590126-bs96": [
-    "images/products/mizuno-wave-prophecy-590126-bs96-1.jpg",
-    "images/products/mizuno-wave-prophecy-590126-bs96-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Harvest Gold / Silver
-  "mizuno-wave-prophecy-590187-7773": [
-    "images/products/mizuno-wave-prophecy-590187-7773-1.jpg",
-    "images/products/mizuno-wave-prophecy-590187-7773-2.jpg",
-    "images/products/mizuno-wave-prophecy-590187-7773-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Spring Crocus / Silver
-  "mizuno-wave-prophecy-590187-6j73": [
-    "images/products/mizuno-wave-prophecy-590187-6j73-1.jpg",
-    "images/products/mizuno-wave-prophecy-590187-6j73-2.jpg"
-  ],
-
-  // Mizuno Wave Prophecy 1 — Artisan's Gold / Zinnia / Strong Blue
-  "mizuno-wave-prophecy-590188-792a": [
-    "images/products/mizuno-wave-prophecy-590188-792a-1.jpg",
-    "images/products/mizuno-wave-prophecy-590188-792a-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy 1 — Harbor Mist / Chinese Red
-  "mizuno-wave-prophecy-590148-hm1f": [
-    "images/products/mizuno-wave-prophecy-590148-hm1f-1.jpg",
-    "images/products/mizuno-wave-prophecy-590148-hm1f-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Salute Navy Blazer
-  "mizuno-wave-prophecy-590091-59nl": [
-    "images/products/mizuno-wave-prophecy-590091-59nl-1.jpg",
-    "images/products/mizuno-wave-prophecy-590091-59nl-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Sun Dried Tomato / Barbados Cherry
-  "mizuno-wave-prophecy-590091-1k16": [
-    "images/products/mizuno-wave-prophecy-590091-1k16-1.jpg",
-    "images/products/mizuno-wave-prophecy-590091-1k16-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Black
-  "mizuno-wave-prophecy-590126-5p90": [
-    "images/products/mizuno-wave-prophecy-590126-5p90-1.jpg",
-    "images/products/mizuno-wave-prophecy-590126-5p90-3.jpg"
-  ],
-
-  // Mizuno Wave Prophecy LS — Black
-  "mizuno-wave-prophecy-590091-9690": [
-    "images/products/mizuno-wave-prophecy-590091-9690-1.jpg"
   ],
 
   // Casquette Sweet Pants 3D Basic — Black
@@ -2580,98 +2387,229 @@ window.BASE_PHOTOS = {
 
   // Ensemble On Core Jacket + Core Pants — Black
   "on-core-set-black": [
-    "images/products/on-core-set-black-1.jpg",
+    "images/products/on-core-set-black-10.jpg",
     "images/products/on-core-set-black-2.jpg",
     "images/products/on-core-set-black-3.jpg",
-    "images/products/on-core-set-black-4.jpg",
-    "images/products/on-core-set-black-5.jpg",
-    "images/products/on-core-set-black-6.jpg",
-    "images/products/on-core-set-black-7.jpg"
+    "images/products/on-core-set-black-11.jpg",
+    "images/products/on-core-set-black-12.jpg",
+    "images/products/on-core-set-black-13.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Midnight
   "on-core-set-midnight": [
-    "images/products/on-core-set-midnight-1.jpg",
+    "images/products/on-core-set-midnight-10.jpg",
+    "images/products/on-core-set-midnight-11.jpg",
+    "images/products/on-core-set-midnight-12.jpg",
     "images/products/on-core-set-midnight-2.jpg",
     "images/products/on-core-set-midnight-3.jpg",
-    "images/products/on-core-set-midnight-4.jpg",
-    "images/products/on-core-set-midnight-5.jpg",
-    "images/products/on-core-set-midnight-6.jpg",
-    "images/products/on-core-set-midnight-7.jpg"
+    "images/products/on-core-set-midnight-13.jpg",
+    "images/products/on-core-set-midnight-14.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Bordeaux (Urchin / Barberry)
   "on-core-set-bordeaux": [
-    "images/products/on-core-set-bordeaux-1.jpg",
+    "images/products/on-core-set-bordeaux-10.jpg",
+    "images/products/on-core-set-bordeaux-11.jpg",
+    "images/products/on-core-set-bordeaux-12.jpg",
     "images/products/on-core-set-bordeaux-2.jpg",
-    "images/products/on-core-set-bordeaux-3.jpg",
-    "images/products/on-core-set-bordeaux-4.jpg",
-    "images/products/on-core-set-bordeaux-5.jpg",
-    "images/products/on-core-set-bordeaux-6.jpg"
+    "images/products/on-core-set-bordeaux-3.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Apollo / Glacier
   "on-core-set-apollo": [
-    "images/products/on-core-set-apollo-1.jpg",
+    "images/products/on-core-set-apollo-10.jpg",
+    "images/products/on-core-set-apollo-11.jpg",
     "images/products/on-core-set-apollo-2.jpg",
     "images/products/on-core-set-apollo-3.jpg",
-    "images/products/on-core-set-apollo-4.jpg",
-    "images/products/on-core-set-apollo-5.jpg"
+    "images/products/on-core-set-apollo-12.jpg",
+    "images/products/on-core-set-apollo-13.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Bark / Vetiver
   "on-core-set-bark": [
-    "images/products/on-core-set-bark-1.jpg",
+    "images/products/on-core-set-bark-10.jpg",
+    "images/products/on-core-set-bark-11.jpg",
+    "images/products/on-core-set-bark-12.jpg",
     "images/products/on-core-set-bark-2.jpg",
     "images/products/on-core-set-bark-3.jpg",
-    "images/products/on-core-set-bark-4.jpg",
-    "images/products/on-core-set-bark-5.jpg",
-    "images/products/on-core-set-bark-6.jpg",
-    "images/products/on-core-set-bark-7.jpg"
+    "images/products/on-core-set-bark-13.jpg",
+    "images/products/on-core-set-bark-14.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Jay / Eclipse
   "on-core-set-jay": [
-    "images/products/on-core-set-jay-1.jpg",
+    "images/products/on-core-set-jay-10.jpg",
+    "images/products/on-core-set-jay-11.jpg",
     "images/products/on-core-set-jay-2.jpg",
-    "images/products/on-core-set-jay-3.jpg",
-    "images/products/on-core-set-jay-4.jpg",
-    "images/products/on-core-set-jay-5.jpg"
+    "images/products/on-core-set-jay-3.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Black
   "cp-dd-shell-puffer-black": [
     "images/products/cp-dd-shell-puffer-black-1.jpg",
-    "images/products/cp-dd-shell-puffer-black-2.jpg"
+    "images/products/cp-dd-shell-puffer-black-2.jpg",
+    "images/products/cp-dd-shell-puffer-black-3.jpg",
+    "images/products/cp-dd-shell-puffer-black-4.jpg",
+    "images/products/cp-dd-shell-puffer-black-5.jpg",
+    "images/products/cp-dd-shell-puffer-black-6.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Gauze White
   "cp-dd-shell-puffer-gauze-white": [
     "images/products/cp-dd-shell-puffer-gauze-white-1.jpg",
-    "images/products/cp-dd-shell-puffer-gauze-white-2.jpg"
+    "images/products/cp-dd-shell-puffer-gauze-white-2.jpg",
+    "images/products/cp-dd-shell-puffer-gauze-white-3.jpg",
+    "images/products/cp-dd-shell-puffer-gauze-white-4.jpg",
+    "images/products/cp-dd-shell-puffer-gauze-white-5.jpg",
+    "images/products/cp-dd-shell-puffer-gauze-white-6.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Orion Blue
   "cp-dd-shell-puffer-orion-blue": [
     "images/products/cp-dd-shell-puffer-orion-blue-1.jpg",
-    "images/products/cp-dd-shell-puffer-orion-blue-2.jpg"
+    "images/products/cp-dd-shell-puffer-orion-blue-2.jpg",
+    "images/products/cp-dd-shell-puffer-orion-blue-3.jpg",
+    "images/products/cp-dd-shell-puffer-orion-blue-4.jpg",
+    "images/products/cp-dd-shell-puffer-orion-blue-5.jpg",
+    "images/products/cp-dd-shell-puffer-orion-blue-6.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Light Blue
   "cp-dd-shell-puffer-light-blue": [
     "images/products/cp-dd-shell-puffer-light-blue-1.jpg",
-    "images/products/cp-dd-shell-puffer-light-blue-2.jpg"
+    "images/products/cp-dd-shell-puffer-light-blue-2.jpg",
+    "images/products/cp-dd-shell-puffer-light-blue-3.jpg",
+    "images/products/cp-dd-shell-puffer-light-blue-4.jpg",
+    "images/products/cp-dd-shell-puffer-light-blue-5.jpg",
+    "images/products/cp-dd-shell-puffer-light-blue-6.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Fallen Rock
   "cp-dd-shell-puffer-fallen-rock": [
     "images/products/cp-dd-shell-puffer-fallen-rock-1.jpg",
-    "images/products/cp-dd-shell-puffer-fallen-rock-2.jpg"
+    "images/products/cp-dd-shell-puffer-fallen-rock-2.jpg",
+    "images/products/cp-dd-shell-puffer-fallen-rock-3.jpg",
+    "images/products/cp-dd-shell-puffer-fallen-rock-4.jpg",
+    "images/products/cp-dd-shell-puffer-fallen-rock-5.jpg",
+    "images/products/cp-dd-shell-puffer-fallen-rock-6.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Pale Yellow
   "cp-dd-shell-puffer-pale-yellow": [
     "images/products/cp-dd-shell-puffer-pale-yellow-1.jpg",
-    "images/products/cp-dd-shell-puffer-pale-yellow-2.jpg"
+    "images/products/cp-dd-shell-puffer-pale-yellow-2.jpg",
+    "images/products/cp-dd-shell-puffer-pale-yellow-3.jpg",
+    "images/products/cp-dd-shell-puffer-pale-yellow-4.jpg",
+    "images/products/cp-dd-shell-puffer-pale-yellow-5.jpg",
+    "images/products/cp-dd-shell-puffer-pale-yellow-6.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Black
+  "mizuno-wave-prophecy-ls-black": [
+    "images/products/mizuno-wave-prophecy-ls-black-1.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — White / Black
+  "mizuno-wave-prophecy-ls-black-white": [
+    "images/products/mizuno-wave-prophecy-ls-black-white-1.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-white-3.jpg"
+  ],
+
+  // Casquette Alo District Trucker — Black
+  "alo-district-trucker-black": [
+    "images/products/alo-district-trucker-black-1.jpg",
+    "images/products/alo-district-trucker-black-2.jpg",
+    "images/products/alo-district-trucker-black-3.jpg"
+  ],
+
+  // Casquette Alo District Trucker — White
+  "alo-district-trucker-white-white": [
+    "images/products/alo-district-trucker-white-white-1.jpg",
+    "images/products/alo-district-trucker-white-white-2.jpg",
+    "images/products/alo-district-trucker-white-white-3.jpg"
+  ],
+
+  // Casquette Alo District Trucker — Bone
+  "alo-district-trucker-bone": [
+    "images/products/alo-district-trucker-bone-1.jpg",
+    "images/products/alo-district-trucker-bone-2.jpg",
+    "images/products/alo-district-trucker-bone-3.jpg"
+  ],
+
+  // Casquette Alo District Trucker — Navy
+  "alo-district-trucker-navy": [
+    "images/products/alo-district-trucker-navy-1.jpg",
+    "images/products/alo-district-trucker-navy-2.jpg",
+    "images/products/alo-district-trucker-navy-3.jpg"
+  ],
+
+  // Casquette Alo District Trucker — Gravel
+  "alo-district-trucker-gravel": [
+    "images/products/alo-district-trucker-gravel-1.jpg",
+    "images/products/alo-district-trucker-gravel-2.jpg",
+    "images/products/alo-district-trucker-gravel-3.jpg"
+  ],
+
+  // Casquette Alo District Trucker — Espresso
+  "alo-district-trucker-espresso": [
+    "images/products/alo-district-trucker-espresso-1.jpg",
+    "images/products/alo-district-trucker-espresso-2.jpg",
+    "images/products/alo-district-trucker-espresso-3.jpg"
+  ],
+
+  // Casquette Alo District Trucker — Dune Grass
+  "alo-district-trucker-dune-grass": [
+    "images/products/alo-district-trucker-dune-grass-1.jpg",
+    "images/products/alo-district-trucker-dune-grass-2.jpg"
+  ],
+
+  // Casquette Alo District Trucker — Candy Heart Pink
+  "alo-district-trucker-candy-heart-pink": [
+    "images/products/alo-district-trucker-candy-heart-pink-1.jpg",
+    "images/products/alo-district-trucker-candy-heart-pink-2.jpg",
+    "images/products/alo-district-trucker-candy-heart-pink-3.jpg"
+  ],
+
+  // Ensemble Alo Conquer Max Veste + Pantalon Co-Op — Black
+  "alo-conquer-coop-set-black": [
+    "images/products/alo-conquer-coop-set-black-1.jpg",
+    "images/products/alo-conquer-coop-set-black-2.jpg",
+    "images/products/alo-conquer-coop-set-black-3.jpg",
+    "images/products/alo-conquer-coop-set-black-4.jpg",
+    "images/products/alo-conquer-coop-set-black-5.jpg",
+    "images/products/alo-conquer-coop-set-black-6.jpg",
+    "images/products/alo-conquer-coop-set-black-7.jpg"
+  ],
+
+  // Ensemble Alo Conquer Max Veste + Pantalon Co-Op — Anthracite
+  "alo-conquer-coop-set-anthracite": [
+    "images/products/alo-conquer-coop-set-anthracite-1.jpg",
+    "images/products/alo-conquer-coop-set-anthracite-2.jpg",
+    "images/products/alo-conquer-coop-set-anthracite-3.jpg",
+    "images/products/alo-conquer-coop-set-anthracite-4.jpg",
+    "images/products/alo-conquer-coop-set-anthracite-5.jpg",
+    "images/products/alo-conquer-coop-set-anthracite-6.jpg"
+  ],
+
+  // Ensemble Alo Conquer Max Veste + Pantalon Co-Op — Gravel
+  "alo-conquer-coop-set-gravel": [
+    "images/products/alo-conquer-coop-set-gravel-1.jpg",
+    "images/products/alo-conquer-coop-set-gravel-2.jpg",
+    "images/products/alo-conquer-coop-set-gravel-3.jpg",
+    "images/products/alo-conquer-coop-set-gravel-4.jpg",
+    "images/products/alo-conquer-coop-set-gravel-5.jpg",
+    "images/products/alo-conquer-coop-set-gravel-6.jpg"
+  ],
+
+  // Ensemble Alo Conquer Max Veste + Pantalon Co-Op — Navy
+  "alo-conquer-coop-set-navy": [
+    "images/products/alo-conquer-coop-set-navy-1.jpg",
+    "images/products/alo-conquer-coop-set-navy-2.jpg",
+    "images/products/alo-conquer-coop-set-navy-3.jpg",
+    "images/products/alo-conquer-coop-set-navy-4.jpg",
+    "images/products/alo-conquer-coop-set-navy-5.jpg",
+    "images/products/alo-conquer-coop-set-navy-6.jpg",
+    "images/products/alo-conquer-coop-set-navy-7.jpg"
   ]
 };

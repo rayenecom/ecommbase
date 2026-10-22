@@ -562,11 +562,12 @@
     const heroSrc = heroMobile && heroSrcM.length ? heroSrcM : [].concat(CFG.heroVideo || []);
     const heroPoster = (heroMobile && CFG.heroPosterMobile) || CFG.heroPoster;
     const duoA = byId("essentials-ss22-set-light-oatmeal"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
+    // Visuels des tuiles : images/home/cat-*.jpg (collages fond crème, générés hors du site)
     const catTiles = [
-      ["Ensembles", L.shop({ cat: "ensembles" }), byId("essentials-ss22-set-light-oatmeal"), countIn((p) => p.category === "ensembles")],
-      ["Chaussures", L.shop({ cat: "chaussures" }), duoB, countIn((p) => p.category === "chaussures")],
-      ["Accessoires", L.shop({ cat: "accessoires" }), byId("cp-goggle-beanie-black") || byId("courreges-cap-ac-black"), countIn((p) => p.category === "accessoires")],
-      ["Femme", L.shop({ g: "femme" }), byId("on-club-set-w-barberry") || firstOf("on-focus-tech-set-w") || firstOf("on-club-set-w"), countIn((p) => p.gender === "femme")]
+      ["Ensembles", L.shop({ cat: "ensembles" }), "ensembles", countIn((p) => p.category === "ensembles")],
+      ["Chaussures", L.shop({ cat: "chaussures" }), "chaussures", countIn((p) => p.category === "chaussures")],
+      ["Accessoires", L.shop({ cat: "accessoires" }), "accessoires", countIn((p) => p.category === "accessoires")],
+      ["Femme", L.shop({ g: "femme" }), "femme", countIn((p) => p.gender === "femme")]
     ];
 
     main.innerHTML = `
@@ -615,7 +616,7 @@
       </div></section>
 
       <section class="band band--tight" style="padding-top:0"><div class="wrap">
-        <div class="cats">${catTiles.map(([t, h, p, n]) => `<a class="cat" href="${h}"><div class="cat__art">${art(p)}</div><div class="cat__label"><span>${t}</span><span class="mono">${n} pièces</span></div></a>`).join("")}</div>
+        <div class="cats">${catTiles.map(([t, h, p, n]) => `<a class="cat" href="${h}"><div class="cat__art"><img src="images/home/cat-${p}.jpg" alt="${t}" loading="lazy"></div><div class="cat__label"><span>${t}</span><span class="mono">${n} pièces</span></div></a>`).join("")}</div>
       </div></section>
 
       ${duoA && duoB ? `<section class="band band--mist"><div class="wrap duo">
@@ -763,7 +764,7 @@
       if (st.filter === "new") return ["Nouveautés", "Les dernières pièces arrivées des États-Unis."];
       if (st.filter === "sale") return ["Promos", "Pièces authentiques à prix réduit, dans la limite des tailles disponibles."];
       if (st.cat && b) return [`${CATS[st.cat].name} ${b.name}`, `Tous nos ${CATS[st.cat].name.toLowerCase()} ${b.name}, 100% authentiques.`];
-      if (st.cat) return [CATS[st.cat].name, { ensembles: "Essentials (Classic, 1977, NBA), Ralph Lauren, On, Alo, Lululemon, UGG, Nocta et Salomon GORE-TEX. Haut et bas assortis, vendus ensemble.", chaussures: "On Cloudtilt, Cloudtilt Arc, Cloudtilt Remix et Cloudsurfer Max en Femme et Homme, Salomon XT-6, Asics GEL-1130 et Kayano 14, Mizuno Wave Prophecy et Alo Runner.", doudounes: "Doudounes C.P. Company, garnissage duvet.", accessoires: "Casquettes Sweet Pants, Courrèges, Alo, Columbia, bonnets C.P. Company, Ralph Lauren, Sweet Pants, chaussettes et caleçons Alo et Lululemon." }[st.cat]];
+      if (st.cat) return [CATS[st.cat].name, { ensembles: "Essentials (basiques et 1977), Ralph Lauren, On, Alo, Lululemon, UGG et Nocta. Haut et bas assortis, vendus ensemble.", chaussures: "On Cloudtilt, Cloudtilt Arc, Cloudtilt Remix et Cloudsurfer Max en Femme et Homme, Salomon XT-6, Asics GEL-1130 et Kayano 14, Mizuno Wave Prophecy LS et Alo Runner.", doudounes: "Doudounes C.P. Company, garnissage duvet.", accessoires: "Casquettes Sweet Pants, Courrèges, Alo District Trucker, Columbia, bonnets C.P. Company, Ralph Lauren, Sweet Pants, chaussettes et caleçons Alo et Lululemon." }[st.cat]];
       if (b) return [b.name, `Toute la sélection ${b.name}, 100% authentique.`];
       return ["Tout le shop", "Ensembles, sneakers et doudounes 100% authentiques, importés des États-Unis."];
     }
