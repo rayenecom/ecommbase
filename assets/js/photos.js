@@ -617,15 +617,13 @@ window.BASE_PHOTOS = {
   // Casquette Courrèges ReEdition Vinyl — Black
   "courreges-cap-vinyl-black": [
     "images/products/courreges-cap-vinyl-black-1.jpg",
-    "images/products/courreges-cap-vinyl-black-2.jpg",
-    "images/products/courreges-cap-vinyl-black-3.jpg"
+    "images/products/courreges-cap-vinyl-black-2.jpg"
   ],
 
   // Casquette Courrèges ReEdition Vinyl — Burgundy
   "courreges-cap-vinyl-4010": [
     "images/products/courreges-cap-vinyl-4010-1.jpg",
-    "images/products/courreges-cap-vinyl-4010-2.jpg",
-    "images/products/courreges-cap-vinyl-4010-3.jpg"
+    "images/products/courreges-cap-vinyl-4010-2.jpg"
   ],
 
   // Bonnet Sweet Pants Logo — Heather Grey
@@ -2128,8 +2126,7 @@ window.BASE_PHOTOS = {
 
   // Casquette Sweet Pants Patchwork — Night
   "sweetpants-patchwork-cap-night": [
-    "images/products/sweetpants-patchwork-cap-night-2.jpg",
-    "images/products/sweetpants-patchwork-cap-night-1.jpg"
+    "images/products/sweetpants-patchwork-cap-night-2.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Primrose

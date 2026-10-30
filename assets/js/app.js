@@ -715,7 +715,7 @@
   }
 
   /* =================== Boutique =================== */
-  const PRICE_RANGES = [["0-150", "Moins de 150 €", 0, 150], ["150-200", "150 à 200 €", 150, 200], ["200-300", "200 à 300 €", 200, 300], ["300-9999", "Plus de 300 €", 300, 99999]];
+  const PRICE_RANGES = [["0-100", "Moins de 100 €", 0, 100], ["100-150", "100 à 150 €", 100, 150], ["150-200", "150 à 200 €", 150, 200], ["200-9999", "Plus de 200 €", 200, 99999]];
   const SIZE_ORDER = ["XS", "S", "M", "L", "XL", "XXL"];
   const sortSizes = (a, b) => (isNaN(a) || isNaN(b) ? SIZE_ORDER.indexOf(a) - SIZE_ORDER.indexOf(b) : a - b);
 
