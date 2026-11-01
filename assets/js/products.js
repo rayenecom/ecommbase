@@ -686,7 +686,7 @@ window.BASE_PRODUCTS = [
     id: "nocta-cs-set-black", group: "nocta-cs-set",
     name: "Ensemble Nocta Fleece CS Hoodie + Sweatpant", color: "Black", swatch: "#232227",
     brand: "nocta", category: "ensembles", gender: "homme", price: 129, oldPrice: 167,
-    sizes: CLOTHING, tags: ["best"],
+    sizes: CLOTHING,
     description: "Le survêtement Nocta (Nike x Drake) en molleton épais : hoodie oversize et jogging assortis, logo brodé.",
     details: ["Hoodie + jogging", "Molleton épais", "Coupe oversize", "Logo Nocta brodé"]
   },
@@ -752,7 +752,7 @@ window.BASE_PRODUCTS = [
     id: "courreges-cap-vinyl-black", group: "courreges-cap-vinyl",
     name: "Casquette Courrèges ReEdition Vinyl", color: "Black", swatch: "#343233",
     brand: "courreges", category: "accessoires", gender: "unisexe", type: "casquettes", price: 105,
-    sizes: TU, tags: ["new"],
+    sizes: TU, tags: ["best", "new"],
     description: "La casquette en vinyle iconique de Courrèges.",
     details: ["Vinyle", "Logo AC", "Réglable"]
   },
@@ -816,7 +816,7 @@ window.BASE_PRODUCTS = [
     id: "columbia-tree-flag-colnava", group: "columbia-tree-flag",
     name: "Casquette Columbia Tree Flag Trucker", color: "Collegiate Navy", swatch: "#bbbec3",
     brand: "columbia", category: "accessoires", gender: "unisexe", type: "casquettes", price: 21,
-    sizes: TU,
+    sizes: TU, tags: ["best"],
     description: "Casquette trucker Columbia avec le patch drapeau-sapin emblématique.",
     details: ["Filet respirant", "Patch Tree Flag", "Fermeture snapback"]
   },
@@ -986,7 +986,7 @@ window.BASE_PRODUCTS = [
     id: "rl-dk-set-black", group: "rl-dk-set",
     name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Black", swatch: "#111111",
     brand: "ralphlauren", category: "ensembles", gender: "homme", price: 119, oldPrice: 155,
-    sizes: CLOTHING, tags: ["best"],
+    sizes: CLOTHING,
     description: "Le survêtement Polo Ralph Lauren Double-Knit Tech : sweat zippé à capuche et jogging assortis, molleton double maille, Pony brodé.",
     details: ["Sweat zippé à capuche + jogging", "Molleton double maille technique", "Pony brodé", "Taille normalement"]
   },
@@ -3176,7 +3176,7 @@ window.BASE_PRODUCTS = [
     id: "cp-dd-shell-puffer-orion-blue", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Orion Blue", swatch: "#4b575e",
     brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
-    sizes: JACKETS,
+    sizes: JACKETS, tags: ["best"],
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
   },

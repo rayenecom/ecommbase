@@ -555,10 +555,15 @@
   function viewHome(main) {
     setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Lululemon, Salomon et sneakers On, Salomon XT-6, Asics, Mizuno, Alo Runner. 100% authentiques, importés des États-Unis.");
     const firstOf = (grp) => PRODUCTS.find((p) => p.group === grp);
+    const pick = (ids) => ids.map(byId).filter((p) => p && !isOut(p));
     const bestWomen = onePerGroup(PRODUCTS.filter((p) => p.gender === "femme" && isBest(p)).concat(PRODUCTS.filter((p) => p.gender === "femme")));
-    const bestAcc = onePerGroup(PRODUCTS.filter((p) => p.category === "accessoires" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "accessoires")));
-    const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
-    const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
+    const bestAcc = pick(["courreges-cap-vinyl-black", "columbia-tree-flag-colnava", "cp-goggle-beanie-black", "alo-district-trucker-black", "courreges-cap-vinyl-4010",
+      "columbia-mesh-snapback-shcoctwi", "rl-pony-beanie-90511020", "sweetpants-beanie-grey"]);
+    // Best-sellers de l'accueil : sélection manuelle, dans l'ordre d'affichage
+    const bestSets = pick(["essentials-ss22-set-light-oatmeal", "on-core-set-black", "alo-conquer-coop-set-black", "essentials-1977-set-dark-oatmeal",
+      "alo-alpha-shell-set-black", "rl-fleece-zip-set-black", "cp-dd-shell-puffer-orion-blue", "ugg-tasman-set-black", "on-focus-tech-set-black", "on-club-collective-set-ember"]);
+    const bestShoes = pick(["on-cloudsurfer-max-m-3mf30434727", "on-cloudtilt-arc-m-3mg30335104", "alo-runner-black-black", "on-cloudsurfer-max-w-3wf30224734",
+      "on-cloudtilt-arc-w-3wg30315104", "alo-runner-white-white", "on-cloudtilt-m-3me10105217", "on-cloudtilt-remix-m-3mg10271430"]);
     const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
     const deals = onePerGroup(PRODUCTS.filter((p) => isSale(p) && !isOut(p)).sort((a, b) => saving(b) - saving(a))).slice(0, 10);
     const heroMobile = matchMedia("(max-width: 699px)").matches, heroSrcM = [].concat(CFG.heroVideoMobile || []);
@@ -620,10 +625,10 @@
             ${railCtrl("rail-best")}
           </div>
         </div>
-        <div id="best-sets">${railHTML("rail-best", bestSets.slice(0, 8))}</div>
-        <div id="best-shoes" hidden>${railHTML("rail-best-shoes", bestShoes.slice(0, 8))}</div>
+        <div id="best-sets">${railHTML("rail-best", bestSets)}</div>
+        <div id="best-shoes" hidden>${railHTML("rail-best-shoes", bestShoes)}</div>
         <div id="best-women" hidden>${railHTML("rail-best-women", bestWomen.slice(0, 8))}</div>
-        <div id="best-acc" hidden>${railHTML("rail-best-acc", bestAcc.slice(0, 8))}</div>
+        <div id="best-acc" hidden>${railHTML("rail-best-acc", bestAcc)}</div>
       </div></section>
 
       <section class="band band--tight" style="padding-top:0"><div class="wrap">
