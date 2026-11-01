@@ -584,15 +584,6 @@ body[data-route="product"] .wa-fab, body[data-route="checkout"] .wa-fab, body[da
 
 /* ---------- Bonnes affaires ---------- */
 .save-line { margin-top: 2px; font-size: var(--fs-xs); font-weight: 600; color: var(--sale); }
-.deal { margin-top: 12px; display: grid; gap: 4px; padding: 12px 14px; border-radius: var(--radius); background: #fbeceb; border: 1px solid #f1c9c6; }
-.deal__top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; color: var(--sale); }
-.deal__top b { font-size: var(--fs-md); }
-.deal__tag { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 999px; background: var(--sale); color: #fff; font-size: 0.6875rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
-.deal p { font-size: var(--fs-sm); color: var(--ink-2); }
+.save-line--lg { margin-top: 6px; font-size: var(--fs-md); }
 .totals .totals__save { color: var(--sale); font-weight: 600; }
-.deals { background: #fbeceb; }
-.deals .deals__eyebrow { color: var(--sale); }
-.deals__pct { display: inline-block; vertical-align: middle; margin-left: 8px; padding: 4px 12px; border-radius: 999px; background: var(--sale); color: #fff; font-family: var(--body); font-size: var(--fs-md); font-weight: 700; letter-spacing: 0; text-transform: none; }
-.hero__deal { justify-self: start; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--sale); color: #fff; font-size: var(--fs-sm); }
-.hero__deal svg { width: 14px; height: 14px; }
-.hero__deal:hover { background: #a50f27; }
+.deals__eyebrow { color: var(--sale); }

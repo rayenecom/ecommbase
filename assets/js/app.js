@@ -29,9 +29,7 @@
   const isNew = (p) => (p.tags || []).includes("new");
   const isBest = (p) => (p.tags || []).includes("best");
   const isSale = (p) => p.oldPrice > p.price;
-  const pct = (p) => Math.round((1 - p.price / p.oldPrice) * 100);
   const saving = (p) => (isSale(p) ? p.oldPrice - p.price : 0);
-  const maxPct = () => Math.max(0, ...PRODUCTS.filter((p) => isSale(p) && !isOut(p)).map(pct));
   const variantsOf = (p) => PRODUCTS.filter((x) => x.group && x.group === p.group);
   const availableSizes = (p) => (p.soldOut ? [] : p.sizes.filter((s) => !(p.soldOutSizes || []).includes(s)));
   const isOut = (p) => !availableSizes(p).length;
@@ -167,7 +165,6 @@
     const b = [];
     if (isOut(p)) b.push('<span class="badge badge--out">Rupture de stock</span>');
     else {
-      if (isSale(p)) b.push(`<span class="badge badge--sale">-${pct(p)}%</span>`);
       if (isNew(p)) b.push('<span class="badge badge--ink">Nouveau</span>');
       else if (isBest(p)) b.push('<span class="badge">Best-seller</span>');
     }
@@ -585,7 +582,6 @@
         </div>
         <div class="wrap">
           <div class="hero__copy">
-            ${deals.length ? `<a class="hero__deal" href="${L.shop({ filter: "sale" })}"><b>Jusqu'à -${maxPct()} %</b><span>sur une sélection</span>${I.chev}</a>` : ""}
             <h1 class="hero__title">Tout part<br>de la <em>base.</em></h1>
             <div class="hero__ctas">
               <a class="btn btn--light" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
@@ -603,9 +599,9 @@
         <div class="trust__item">${I.ret}<div><b>Retours ${CFG.returnDays} jours</b><span>Échange ou remboursement</span></div></div>
       </div></section>
 
-      ${deals.length ? `<section class="band deals"><div class="wrap">
+      ${deals.length ? `<section class="band"><div class="wrap">
         <div class="sec-head">
-          <div><span class="eyebrow deals__eyebrow">Prix réduits · tant qu'il reste des tailles</span><h2 class="h-xl">Les bonnes affaires <span class="deals__pct">jusqu'à -${maxPct()} %</span></h2></div>
+          <div><span class="eyebrow deals__eyebrow">Prix réduits · tant qu'il reste des tailles</span><h2 class="h-xl">Les bonnes affaires</h2></div>
           <div style="display:flex;gap:16px;align-items:center"><a class="link" href="${L.shop({ filter: "sale" })}">Tout voir</a>${railCtrl("rail-deals")}</div>
         </div>
         ${railHTML("rail-deals", deals)}
@@ -907,11 +903,8 @@
             <div class="buy__head">
               <span class="buy__brand"><a href="${L.shop({ brand: p.brand })}">${esc(brandOf(p).name)}</a></span>
               <h1>${esc(p.name)}</h1>
-              <div class="buy__price">${priceHTML(p)}${isSale(p) ? `<span class="badge badge--sale">-${pct(p)}%</span>` : ""}</div>
-              ${isSale(p) && !soldOut ? `<div class="deal" role="note">
-                <div class="deal__top"><span class="deal__tag">Bonne affaire</span><b>Tu économises ${money(saving(p))}</b></div>
-                <p>Au lieu de ${money(p.oldPrice)}, notre prix habituel. Prix réduit dans la limite des tailles disponibles.</p>
-              </div>` : ""}
+              <div class="buy__price">${priceHTML(p)}</div>
+              ${isSale(p) && !soldOut ? `<div class="save-line save-line--lg">Tu économises ${money(saving(p))}</div>` : ""}
               ${CFG.installments > 1 ? `<span class="buy__small">ou ${CFG.installments} × ${moneyExact(p.price / CFG.installments)} sans frais</span>` : `<span class="buy__small">TVA incluse</span>`}
             </div>
 
