@@ -556,7 +556,6 @@
     setMeta("", "Ensembles Essentials, Ralph Lauren, Alo, On, Lululemon, Salomon et sneakers On, Salomon XT-6, Asics, Mizuno, Alo Runner. 100% authentiques, importés des États-Unis.");
     const firstOf = (grp) => PRODUCTS.find((p) => p.group === grp);
     const pick = (ids) => ids.map(byId).filter((p) => p && !isOut(p));
-    const bestWomen = onePerGroup(PRODUCTS.filter((p) => p.gender === "femme" && isBest(p)).concat(PRODUCTS.filter((p) => p.gender === "femme")));
     const bestAcc = pick(["courreges-cap-vinyl-black", "columbia-tree-flag-colnava", "cp-goggle-beanie-black", "alo-district-trucker-black", "courreges-cap-vinyl-4010",
       "columbia-mesh-snapback-shcoctwi", "rl-pony-beanie-90511020", "sweetpants-beanie-grey"]);
     // Best-sellers de l'accueil : sélection manuelle, dans l'ordre d'affichage
@@ -564,7 +563,15 @@
       "alo-alpha-shell-set-black", "rl-fleece-zip-set-black", "cp-dd-shell-puffer-orion-blue", "ugg-tasman-set-black", "on-focus-tech-set-black", "on-club-collective-set-ember"]);
     const bestShoes = pick(["on-cloudsurfer-max-m-3mf30434727", "on-cloudtilt-arc-m-3mg30335104", "alo-runner-black-black", "on-cloudsurfer-max-w-3wf30224734",
       "on-cloudtilt-arc-w-3wg30315104", "alo-runner-white-white", "on-cloudtilt-m-3me10105217", "on-cloudtilt-remix-m-3mg10271430"]);
-    const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
+    const bestTop = pick(["essentials-ss22-set-light-oatmeal", "on-cloudsurfer-max-m-3mf30434727", "alo-runner-black-black", "on-core-set-black",
+      "on-cloudtilt-arc-m-3mg30335104", "alo-conquer-coop-set-black", "courreges-cap-vinyl-black", "ugg-lowmel-w-chestnut", "alo-alpha-shell-set-espresso",
+      "columbia-tree-flag-colnava", "cp-dd-shell-puffer-orion-blue", "essentials-1977-set-dark-oatmeal"]);
+    // Bulles marques : [marque, produit dont la photo sert de visuel]
+    const bubbles = [["essentials", "essentials-ss22-set-light-oatmeal"], ["on", "on-cloudsurfer-max-m-3mf30435168"], ["alo", "alo-runner-black-black"],
+      ["ralphlauren", "rl-fleece-zip-set-black"], ["ugg", "ugg-lowmel-w-chestnut"], ["cpcompany", "cp-goggle-beanie-black"], ["lululemon", "lulu-pace-breaker-set-black"],
+      ["salomon", "salomon-xt-6-l479749"], ["asics", "asics-kayano-14-1201a019-110"], ["mizuno", "mizuno-wave-prophecy-ls-black"], ["courreges", "courreges-cap-vinyl-black"],
+      ["columbia", "columbia-tree-flag-colnava"], ["sweetpants", "sweetpants-home-run-cap-night"], ["nocta", "nocta-cs-set-black"]]
+      .filter(([b]) => BRANDS[b] && PRODUCTS.some((p) => p.brand === b)).map(([b, id]) => [b, byId(id) || PRODUCTS.find((p) => p.brand === b)]);
     const deals = onePerGroup(PRODUCTS.filter((p) => isSale(p) && !isOut(p)).sort((a, b) => saving(b) - saving(a))).slice(0, 10);
     const heroMobile = matchMedia("(max-width: 699px)").matches, heroSrcM = [].concat(CFG.heroVideoMobile || []);
     const heroSrc = heroMobile && heroSrcM.length ? heroSrcM : [].concat(CFG.heroVideo || []);
@@ -597,11 +604,19 @@
         ${heroSrc.length ? `<button class="hero__toggle" type="button" aria-label="Mettre la vidéo en pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-play" d="M8 5l11 7-11 7z"/></svg></button>` : ""}
       </section>
 
+      <section class="band band--tight bubbles-band" aria-label="Nos marques"><div class="wrap">
+        <div class="bubbles">${bubbles.map(([b, p]) => `<a class="bubble" href="${L.shop({ brand: b })}"><span class="bubble__img">${art(p)}</span><span class="bubble__name">${esc(BRANDS[b].name)}</span></a>`).join("")}</div>
+      </div></section>
+
       <section class="trust" aria-label="Nos engagements"><div class="wrap">
         <div class="trust__item">${I.shield}<div><b>100% authentique</b><span>Contrôlé avant envoi</span></div></div>
         <div class="trust__item">${I.plane}<div><b>Direct des USA</b><span>Pas d'intermédiaire</span></div></div>
         <div class="trust__item">${I.truck}<div><b>Livraison suivie</b><span>${CFG.freeShippingFrom ? `Offerte dès ${money(CFG.freeShippingFrom)}` : `${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours`}</span></div></div>
         <div class="trust__item">${I.ret}<div><b>Retours ${CFG.returnDays} jours</b><span>Échange ou remboursement</span></div></div>
+      </div></section>
+
+      <section class="band band--tight" ><div class="wrap">
+        <div class="cats">${catTiles.map(([t, h, p, n]) => `<a class="cat" href="${h}"><div class="cat__art"><img src="images/home/cat-${p}.jpg" alt="${t}" loading="lazy"></div><div class="cat__label"><span>${t}</span><span class="mono">${n} pièces</span></div></a>`).join("")}</div>
       </div></section>
 
       ${deals.length ? `<section class="band"><div class="wrap">
@@ -612,28 +627,25 @@
         ${railHTML("rail-deals", deals)}
       </div></section>` : ""}
 
-      <section class="band"><div class="wrap">
+      <section class="band best-band"><div class="wrap">
         <div class="sec-head">
           <div><span class="eyebrow">Les plus vendus</span><h2 class="h-xl">Best-sellers</h2></div>
           <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
             <div class="tabs" role="tablist">
-              <button class="chip is-on" role="tab" aria-selected="true" data-tab="sets">Ensembles</button>
+              <button class="chip is-on" role="tab" aria-selected="true" data-tab="top">Top</button>
+              <button class="chip" role="tab" aria-selected="false" data-tab="sets">Ensembles</button>
               <button class="chip" role="tab" aria-selected="false" data-tab="shoes">Chaussures</button>
-              <button class="chip" role="tab" aria-selected="false" data-tab="women">Femme</button>
               <button class="chip" role="tab" aria-selected="false" data-tab="acc">Accessoires</button>
             </div>
-            ${railCtrl("rail-best")}
+            ${railCtrl("rail-best-top")}
           </div>
         </div>
-        <div id="best-sets">${railHTML("rail-best", bestSets)}</div>
+        <div id="best-top">${railHTML("rail-best-top", bestTop)}</div>
+        <div id="best-sets" hidden>${railHTML("rail-best", bestSets)}</div>
         <div id="best-shoes" hidden>${railHTML("rail-best-shoes", bestShoes)}</div>
-        <div id="best-women" hidden>${railHTML("rail-best-women", bestWomen.slice(0, 8))}</div>
         <div id="best-acc" hidden>${railHTML("rail-best-acc", bestAcc)}</div>
       </div></section>
 
-      <section class="band band--tight" style="padding-top:0"><div class="wrap">
-        <div class="cats">${catTiles.map(([t, h, p, n]) => `<a class="cat" href="${h}"><div class="cat__art"><img src="images/home/cat-${p}.jpg" alt="${t}" loading="lazy"></div><div class="cat__label"><span>${t}</span><span class="mono">${n} pièces</span></div></a>`).join("")}</div>
-      </div></section>
 
       ${duoA && duoB ? `<section class="band band--mist"><div class="wrap duo">
         <div class="duo__copy">
@@ -646,20 +658,10 @@
         <div class="duo__items">${cardHTML(duoA)}<span class="duo__plus" aria-hidden="true">+</span>${cardHTML(duoB)}</div>
       </div></section>` : ""}
 
-      <section class="band"><div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow">${news.length} nouvelles pièces</span><h2 class="h-xl">Nouveautés</h2></div><a class="link" href="${L.shop({ filter: "new" })}">Tout voir</a></div>
-        <div class="grid">${news.map(cardHTML).join("")}</div>
-      </div></section>
-
-      <section class="band" style="padding-top:0"><div class="wrap">
-        <div class="sec-head"><div><span class="eyebrow">${Object.keys(BRANDS).length} marques</span><h2 class="h-xl">Shop par marque</h2></div></div>
-        <div class="brands">${brandTiles()}</div>
-      </div></section>
-
       <section class="band band--ink"><div class="wrap proof">
         <div style="display:grid;gap:20px;align-content:start">
           <span class="eyebrow">Notre garantie</span>
-          <h2 class="display">Vrai ou remboursé.</h2>
+          <h2 class="display">Authentique ou remboursé.</h2>
           <p style="color:#c4c8c5;max-width:44ch">Chaque pièce vendue sur ${esc(CFG.storeName)} est authentique. Si ce n'est pas le cas, on te rembourse intégralement, livraison comprise.</p>
           <div><a class="btn btn--light" href="${L.faq("authenticite")}">Comment on vérifie</a></div>
         </div>
@@ -668,16 +670,6 @@
           <li class="step"><span class="step__n">02</span><div><h3>Contrôle à la réception</h3><p>Étiquettes, coutures, matières, codes produit et boîte : chaque article est vérifié à la main avant d'être mis en vente.</p></div></li>
           <li class="step"><span class="step__n">03</span><div><h3>Envoi suivi</h3><p>Ta commande part sous 24 à 48 h avec un numéro de suivi. Tu la reçois en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés.</p></div></li>
         </ol>
-      </div></section>
-
-      <section class="band"><div class="wrap two-col">
-        <div style="display:grid;gap:16px;align-content:start">
-          <span class="eyebrow">Questions fréquentes</span>
-          <h2 class="h-xl">Tu te poses une question ?</h2>
-          <p class="muted">On répond en général dans l'heure sur WhatsApp.</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">${CFG.whatsapp ? `<a class="btn" href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener">${I.wa} Écrire sur WhatsApp</a>` : ""}<a class="btn btn--ghost" href="${L.faq()}">Toute l'aide</a></div>
-        </div>
-        <div class="faq">${FAQ.slice(0, 5).map(faqItem).join("")}</div>
       </div></section>
 
       <section class="band band--mist"><div class="wrap news">
@@ -704,9 +696,9 @@
     // Onglets best-sellers
     $$("[data-tab]", main).forEach((b) => b.addEventListener("click", () => {
       $$("[data-tab]", main).forEach((x) => { x.classList.toggle("is-on", x === b); x.setAttribute("aria-selected", x === b); });
-      const tabs = { sets: ["best-sets", "rail-best"], shoes: ["best-shoes", "rail-best-shoes"], women: ["best-women", "rail-best-women"], acc: ["best-acc", "rail-best-acc"] };
+      const tabs = { top: ["best-top", "rail-best-top"], sets: ["best-sets", "rail-best"], shoes: ["best-shoes", "rail-best-shoes"], acc: ["best-acc", "rail-best-acc"] };
       Object.entries(tabs).forEach(([k, [box]]) => { $("#" + box).hidden = k !== b.dataset.tab; });
-      $$("[data-rail]", main).forEach((r) => (r.dataset.rail = tabs[b.dataset.tab][1]));
+      $$(".best-band [data-rail]", main).forEach((r) => (r.dataset.rail = tabs[b.dataset.tab][1]));
     }));
     $("#news-form").addEventListener("submit", (e) => {
       e.preventDefault();
