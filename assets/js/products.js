@@ -71,7 +71,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-set-black", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Black", swatch: "#141213",
-    brand: "on", category: "ensembles", gender: "homme", price: 161,
+    brand: "on", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, tags: ["new"], soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé. Coupe relax, pensée pour la vie en dehors de la piste.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On brodé", "Coupe relax"]
@@ -79,7 +79,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-set-crater", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Crater", swatch: "#bbb5b3",
-    brand: "on", category: "ensembles", gender: "homme", price: 161,
+    brand: "on", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, soldOut: true,
     description: "L'ensemble On Club en gris chiné Crater, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On brodé", "Coupe relax"]
@@ -89,7 +89,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-flint", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Flint Grey", swatch: "#6f7165",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -97,7 +97,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-andorra", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Andorra Red", swatch: "#5c2021",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -685,7 +685,7 @@ window.BASE_PRODUCTS = [
   {
     id: "nocta-cs-set-black", group: "nocta-cs-set",
     name: "Ensemble Nocta Fleece CS Hoodie + Sweatpant", color: "Black", swatch: "#232227",
-    brand: "nocta", category: "ensembles", gender: "homme", price: 167,
+    brand: "nocta", category: "ensembles", gender: "homme", price: 129, oldPrice: 167,
     sizes: CLOTHING, tags: ["best"],
     description: "Le survêtement Nocta (Nike x Drake) en molleton épais : hoodie oversize et jogging assortis, logo brodé.",
     details: ["Hoodie + jogging", "Molleton épais", "Coupe oversize", "Logo Nocta brodé"]
@@ -693,7 +693,7 @@ window.BASE_PRODUCTS = [
   {
     id: "nocta-cs-set-dark-grey", group: "nocta-cs-set",
     name: "Ensemble Nocta Fleece CS Hoodie + Sweatpant", color: "Dark Grey", swatch: "#a8a5a4",
-    brand: "nocta", category: "ensembles", gender: "homme", price: 167,
+    brand: "nocta", category: "ensembles", gender: "homme", price: 129, oldPrice: 167,
     sizes: CLOTHING,
     description: "Le survêtement Nocta (Nike x Drake) en molleton épais : hoodie oversize et jogging assortis, logo brodé.",
     details: ["Hoodie + jogging", "Molleton épais", "Coupe oversize", "Logo Nocta brodé"]
@@ -701,7 +701,7 @@ window.BASE_PRODUCTS = [
   {
     id: "nocta-cs-set-work-blue", group: "nocta-cs-set",
     name: "Ensemble Nocta Fleece CS Hoodie + Sweatpant", color: "Work Blue", swatch: "#5b7aa7",
-    brand: "nocta", category: "ensembles", gender: "homme", price: 167,
+    brand: "nocta", category: "ensembles", gender: "homme", price: 129, oldPrice: 167,
     sizes: CLOTHING, tags: ["new"],
     description: "Le survêtement Nocta (Nike x Drake) en molleton épais : hoodie oversize et jogging assortis, logo brodé.",
     details: ["Hoodie + jogging", "Molleton épais", "Coupe oversize", "Logo Nocta brodé"]
@@ -985,7 +985,7 @@ window.BASE_PRODUCTS = [
   {
     id: "rl-dk-set-black", group: "rl-dk-set",
     name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Black", swatch: "#111111",
-    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 155,
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 119, oldPrice: 155,
     sizes: CLOTHING, tags: ["best"],
     description: "Le survêtement Polo Ralph Lauren Double-Knit Tech : sweat zippé à capuche et jogging assortis, molleton double maille, Pony brodé.",
     details: ["Sweat zippé à capuche + jogging", "Molleton double maille technique", "Pony brodé", "Taille normalement"]
@@ -993,7 +993,7 @@ window.BASE_PRODUCTS = [
   {
     id: "rl-dk-set-navy", group: "rl-dk-set",
     name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Navy", swatch: "#1c1d2a",
-    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 155,
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 119, oldPrice: 155,
     sizes: CLOTHING,
     description: "Le survêtement Polo Ralph Lauren Double-Knit Tech : sweat zippé à capuche et jogging assortis, molleton double maille, Pony brodé.",
     details: ["Sweat zippé à capuche + jogging", "Molleton double maille technique", "Pony brodé", "Taille normalement"]
@@ -1001,7 +1001,7 @@ window.BASE_PRODUCTS = [
   {
     id: "rl-dk-set-grey", group: "rl-dk-set",
     name: "Survêtement Polo Ralph Lauren Double-Knit", color: "Grey", swatch: "#a3a29e",
-    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 155,
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 119, oldPrice: 155,
     sizes: CLOTHING, tags: ["new"],
     description: "Le survêtement Polo Ralph Lauren Double-Knit Tech : sweat zippé à capuche et jogging assortis, molleton double maille, Pony brodé.",
     details: ["Sweat zippé à capuche + jogging", "Molleton double maille technique", "Pony brodé", "Taille normalement"]
@@ -1009,7 +1009,7 @@ window.BASE_PRODUCTS = [
   {
     id: "rl-fleece-zip-set-black", group: "rl-fleece-zip-set",
     name: "Ensemble The RL Fleece Zippé + Jogging", color: "Black / Red Pony", swatch: "#141416",
-    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 161,
+    brand: "ralphlauren", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, tags: ["best"],
     description: "THE RL FLEECE : sweat zippé à capuche noir et pantalon de jogging assorti, Pony rouge brodé. Le classique Ralph Lauren.",
     details: ["Sweat zippé à capuche + pantalon", "Molleton RL Fleece doux", "Pony rouge brodé", "Taille normalement"]
@@ -1027,7 +1027,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-1977-set-dark-oatmeal", group: "essentials-1977-set",
     name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#979694",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 167,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 167,
     sizes: CLOTHING, tags: ["best"],
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
     details: ["Hoodie + jogging", "Flocage 1977 en relief", "Molleton épais", "Coupe ample : taille grand"]
@@ -1035,7 +1035,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-1977-set-iron", group: "essentials-1977-set",
     name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Iron", swatch: "#2a2a2b",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 167,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 167,
     sizes: CLOTHING,
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
     details: ["Hoodie + jogging", "Flocage 1977 en relief", "Molleton épais", "Coupe ample : taille grand"]
@@ -1043,7 +1043,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-1977-set-light-oatmeal", group: "essentials-1977-set",
     name: "Ensemble Essentials 1977 Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#ddd9d6",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 167,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 167,
     sizes: CLOTHING,
     description: "Le survêtement culte Essentials « 1977 » (année de naissance de Jerry Lorenzo), floqué en relief sur le hoodie et le jogging.",
     details: ["Hoodie + jogging", "Flocage 1977 en relief", "Molleton épais", "Coupe ample : taille grand"]
@@ -1053,7 +1053,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-set-storm", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Storm", swatch: "#386f75",
-    brand: "on", category: "ensembles", gender: "homme", price: 161,
+    brand: "on", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
@@ -1061,7 +1061,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-set-jay", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Jay", swatch: "#3477b7",
-    brand: "on", category: "ensembles", gender: "homme", price: 161,
+    brand: "on", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
@@ -1069,7 +1069,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-set-desert", group: "on-club-set",
     name: "Ensemble On Club Hoodie + Pants", color: "Desert", swatch: "#ad937a",
-    brand: "on", category: "ensembles", gender: "homme", price: 161,
+    brand: "on", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, soldOut: true,
     description: "Hoodie et pantalon On Club assortis, coton bio et polyester recyclé, logo On brodé.",
     details: ["Hoodie + pantalon", "Coton bio et polyester recyclé", "Logo On", "Coupe relax"]
@@ -1077,7 +1077,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-collective-set-crater", group: "on-club-collective-set",
     name: "Ensemble On Club Collective Hoodie + Pants", color: "Crater", swatch: "#d6d4db",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING,
     description: "Le survêtement On Club Collective : molleton épais, coupe ample et finitions premium.",
     details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
@@ -1085,7 +1085,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-collective-set-black", group: "on-club-collective-set",
     name: "Ensemble On Club Collective Hoodie + Pants", color: "Black", swatch: "#0d1010",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING,
     description: "Le survêtement On Club Collective : molleton épais, coupe ample et finitions premium.",
     details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
@@ -1093,7 +1093,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-collective-set-ember", group: "on-club-collective-set",
     name: "Ensemble On Club Collective Hoodie + Pants", color: "Ember", swatch: "#625c5d",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING, tags: ["best"],
     description: "Le survêtement On Club Collective : molleton épais, coupe ample et finitions premium.",
     details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
@@ -1101,7 +1101,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-bark", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Bark", swatch: "#555141",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING,
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1109,7 +1109,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-shadow", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Shadow", swatch: "#4c4c46",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING,
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1117,7 +1117,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-black", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Black", swatch: "#171113",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING, tags: ["best"],
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1125,7 +1125,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-jay", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Jay", swatch: "#266eb3",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING,
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1133,7 +1133,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-agave", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Agave", swatch: "#678487",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING,
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1141,7 +1141,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-navy", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Navy", swatch: "#272f40",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING,
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1149,7 +1149,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-basalt", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Basalt", swatch: "#8a8e8e",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING,
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1157,7 +1157,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-desert", group: "on-focus-tech-set",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants", color: "Desert", swatch: "#c4af9a",
-    brand: "on", category: "ensembles", gender: "homme", price: 185,
+    brand: "on", category: "ensembles", gender: "homme", price: 149, oldPrice: 185,
     sizes: CLOTHING,
     description: "Le survêtement On Focus Tech : tissu technique doux et respirant, pensé pour bouger toute la journée.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1165,7 +1165,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-collective-set-w-clove", group: "on-club-collective-set-w",
     name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Clove", swatch: "#806559",
-    brand: "on", category: "ensembles", gender: "femme", price: 179,
+    brand: "on", category: "ensembles", gender: "femme", price: 139, oldPrice: 179,
     sizes: ["XS", "S", "M", "L", "XL"], tags: ["best"],
     description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
     details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
@@ -1173,7 +1173,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-collective-set-w-ember", group: "on-club-collective-set-w",
     name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Ember", swatch: "#605856",
-    brand: "on", category: "ensembles", gender: "femme", price: 179,
+    brand: "on", category: "ensembles", gender: "femme", price: 139, oldPrice: 179,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
     details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
@@ -1181,7 +1181,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-collective-set-w-crater", group: "on-club-collective-set-w",
     name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Crater", swatch: "#d6d6dc",
-    brand: "on", category: "ensembles", gender: "femme", price: 179,
+    brand: "on", category: "ensembles", gender: "femme", price: 139, oldPrice: 179,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
     details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
@@ -1189,7 +1189,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-club-collective-set-w-black", group: "on-club-collective-set-w",
     name: "Ensemble On Club Collective Hoodie + Pants Femme", color: "Black", swatch: "#111315",
-    brand: "on", category: "ensembles", gender: "femme", price: 179,
+    brand: "on", category: "ensembles", gender: "femme", price: 139, oldPrice: 179,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Club Collective pour femme : molleton épais, coupe ample.",
     details: ["Hoodie + pantalon", "Molleton épais", "Coupe ample"]
@@ -1197,7 +1197,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-w-crater", group: "on-focus-tech-set-w",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Crater", swatch: "#dadae2",
-    brand: "on", category: "ensembles", gender: "femme", price: 185,
+    brand: "on", category: "ensembles", gender: "femme", price: 149, oldPrice: 185,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1205,7 +1205,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-w-agave", group: "on-focus-tech-set-w",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Agave", swatch: "#6b888c",
-    brand: "on", category: "ensembles", gender: "femme", price: 185,
+    brand: "on", category: "ensembles", gender: "femme", price: 149, oldPrice: 185,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1213,7 +1213,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-w-black", group: "on-focus-tech-set-w",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Black", swatch: "#191516",
-    brand: "on", category: "ensembles", gender: "femme", price: 185,
+    brand: "on", category: "ensembles", gender: "femme", price: 149, oldPrice: 185,
     sizes: ["XS", "S", "M", "L", "XL"], tags: ["best"],
     description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1221,7 +1221,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-w-flurry", group: "on-focus-tech-set-w",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Flurry", swatch: "#c6e0dd",
-    brand: "on", category: "ensembles", gender: "femme", price: 185,
+    brand: "on", category: "ensembles", gender: "femme", price: 149, oldPrice: 185,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1229,7 +1229,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-w-magnolia", group: "on-focus-tech-set-w",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Magnolia", swatch: "#eea7bc",
-    brand: "on", category: "ensembles", gender: "femme", price: 185,
+    brand: "on", category: "ensembles", gender: "femme", price: 149, oldPrice: 185,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1237,7 +1237,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-w-barberry", group: "on-focus-tech-set-w",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Barberry", swatch: "#885052",
-    brand: "on", category: "ensembles", gender: "femme", price: 185,
+    brand: "on", category: "ensembles", gender: "femme", price: 149, oldPrice: 185,
     sizes: ["XS", "S", "M", "L", "XL"], tags: ["best"],
     description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1245,7 +1245,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-focus-tech-set-w-desert", group: "on-focus-tech-set-w",
     name: "Ensemble On Focus Tech Hoodie + Sweatpants Femme", color: "Desert", swatch: "#c7b099",
-    brand: "on", category: "ensembles", gender: "femme", price: 185,
+    brand: "on", category: "ensembles", gender: "femme", price: 149, oldPrice: 185,
     sizes: ["XS", "S", "M", "L", "XL"],
     description: "Le survêtement On Focus Tech pour femme : tissu technique doux et respirant.",
     details: ["Hoodie + jogging", "Tissu technique respirant", "Coupe ajustée"]
@@ -1359,7 +1359,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-alpha-shell-set-black", group: "alo-alpha-shell-set",
     name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Black", swatch: "#2c313b",
-    brand: "alo", category: "ensembles", gender: "homme", price: 329,
+    brand: "alo", category: "ensembles", gender: "homme", price: 259, oldPrice: 329,
     sizes: CLOTHING, tags: ["best"],
     description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
     details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
@@ -1367,7 +1367,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-alpha-shell-set-bone", group: "alo-alpha-shell-set",
     name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Bone", swatch: "#c4bdb1",
-    brand: "alo", category: "ensembles", gender: "homme", price: 329,
+    brand: "alo", category: "ensembles", gender: "homme", price: 259, oldPrice: 329,
     sizes: CLOTHING, tags: ["new"],
     description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
     details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
@@ -1375,7 +1375,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-alpha-shell-set-espresso", group: "alo-alpha-shell-set",
     name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Espresso", swatch: "#2f2116",
-    brand: "alo", category: "ensembles", gender: "homme", price: 329,
+    brand: "alo", category: "ensembles", gender: "homme", price: 259, oldPrice: 329,
     sizes: CLOTHING,
     description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
     details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
@@ -1383,7 +1383,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-alpha-shell-set-lunar-grey", group: "alo-alpha-shell-set",
     name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Lunar Grey", swatch: "#7c8585",
-    brand: "alo", category: "ensembles", gender: "homme", price: 329,
+    brand: "alo", category: "ensembles", gender: "homme", price: 259, oldPrice: 329,
     sizes: CLOTHING,
     description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
     details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
@@ -1391,7 +1391,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-alpha-shell-set-navy", group: "alo-alpha-shell-set",
     name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Navy", swatch: "#141929",
-    brand: "alo", category: "ensembles", gender: "homme", price: 329,
+    brand: "alo", category: "ensembles", gender: "homme", price: 259, oldPrice: 329,
     sizes: CLOTHING,
     description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
     details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
@@ -1425,7 +1425,7 @@ window.BASE_PRODUCTS = [
   {
     id: "lulu-pace-breaker-glyde-set-black", group: "lulu-pace-breaker-glyde-set",
     name: "Ensemble Lululemon Pace Breaker Glyde Track Jacket + Pant", color: "Black", swatch: "#222122",
-    brand: "lululemon", category: "ensembles", gender: "homme", price: 161,
+    brand: "lululemon", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, tags: ["new"],
     description: "La Pace Breaker en tissu Glyde déperlant : track jacket coupe relax et pantalon Pace Breaker assorti.",
     details: ["Track jacket Glyde + pantalon", "Tissu Glyde déperlant", "Coupe relax", "Taille normalement"]
@@ -2111,7 +2111,7 @@ window.BASE_PRODUCTS = [
   {
     id: "mizuno-wave-prophecy-590063-wc8q", group: "mizuno-wave-prophecy",
     name: "Mizuno Wave Prophecy LS", color: "Beige (Wind Chime / Fallen Rock)", swatch: "#aca397",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 167,
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 129, oldPrice: 167,
     sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"],
     description: "La Mizuno Wave Prophecy : semelle Infinity Wave spectaculaire et look futuriste.",
     details: ["Semelle Infinity Wave", "Look futuriste", "Taille normalement"]
@@ -3019,7 +3019,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-ss22-set-black", group: "essentials-ss22-set",
     name: "Ensemble Essentials Hoodie + Sweatpant", color: "Black", swatch: "#1e1e1e",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 161,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, tags: ["best"],
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
     details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
@@ -3027,7 +3027,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-ss22-set-light-oatmeal", group: "essentials-ss22-set",
     name: "Ensemble Essentials Hoodie + Sweatpant", color: "Light Oatmeal", swatch: "#d2d1ce",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 161,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, tags: ["best"],
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
     details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
@@ -3035,7 +3035,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-ss22-set-dark-oatmeal", group: "essentials-ss22-set",
     name: "Ensemble Essentials Hoodie + Sweatpant", color: "Dark Oatmeal", swatch: "#979592",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 161,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING,
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
     details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
@@ -3043,7 +3043,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-ss22-set-desert-taupe", group: "essentials-ss22-set",
     name: "Ensemble Essentials Hoodie + Sweatpant", color: "Desert Taupe", swatch: "#90897e",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 161,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING, tags: ["new"],
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
     details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
@@ -3051,7 +3051,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-ss22-set-oak", group: "essentials-ss22-set",
     name: "Ensemble Essentials Hoodie + Sweatpant", color: "Oak", swatch: "#af8e6a",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 161,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING,
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
     details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
@@ -3059,7 +3059,7 @@ window.BASE_PRODUCTS = [
   {
     id: "essentials-ss22-set-seafoam", group: "essentials-ss22-set",
     name: "Ensemble Essentials Hoodie + Sweatpant", color: "Seafoam", swatch: "#b5baa4",
-    brand: "essentials", category: "ensembles", gender: "homme", price: 161,
+    brand: "essentials", category: "ensembles", gender: "homme", price: 129, oldPrice: 161,
     sizes: CLOTHING,
     description: "L'Essentials basique : petit logo Essentials en haut à droite du hoodie, grand logo dans le dos, et logo en bas de la jambe du jogging. Molleton épais, coupe ample.",
     details: ["Hoodie + jogging vendus ensemble", "Logo Essentials en haut à droite du hoodie", "Logo en bas de jambe du jogging", "Coupe ample : taille grand"]
@@ -3111,7 +3111,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-core-set-black", group: "on-core-set",
     name: "Ensemble On Core Jacket + Core Pants", color: "Black", swatch: "#262629",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING, tags: ["best"],
     description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
     details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
@@ -3119,7 +3119,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-core-set-midnight", group: "on-core-set",
     name: "Ensemble On Core Jacket + Core Pants", color: "Midnight", swatch: "#1a2435",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING,
     description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
     details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
@@ -3127,7 +3127,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-core-set-bordeaux", group: "on-core-set",
     name: "Ensemble On Core Jacket + Core Pants", color: "Bordeaux (Urchin / Barberry)", swatch: "#593e4a",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING, tags: ["new"],
     description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
     details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
@@ -3135,7 +3135,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-core-set-apollo", group: "on-core-set",
     name: "Ensemble On Core Jacket + Core Pants", color: "Apollo / Glacier", swatch: "#969c96",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING,
     description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
     details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
@@ -3143,7 +3143,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-core-set-bark", group: "on-core-set",
     name: "Ensemble On Core Jacket + Core Pants", color: "Bark / Vetiver", swatch: "#494538",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING, tags: ["new"],
     description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
     details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
@@ -3151,7 +3151,7 @@ window.BASE_PRODUCTS = [
   {
     id: "on-core-set-jay", group: "on-core-set",
     name: "Ensemble On Core Jacket + Core Pants", color: "Jay / Eclipse", swatch: "#2e77b9",
-    brand: "on", category: "ensembles", gender: "homme", price: 179,
+    brand: "on", category: "ensembles", gender: "homme", price: 139, oldPrice: 179,
     sizes: CLOTHING,
     description: "Le Core Jacket et le Core Pants d'On : veste de running légère, déperlante et compressible, et pantalon technique zippé au mollet.",
     details: ["Veste Core + pantalon Core", "Tissu léger et déperlant", "Veste compressible dans sa poche", "Bas de jambe zippé"]
@@ -3159,7 +3159,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-black", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Black", swatch: "#232322",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS, tags: ["best"],
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3167,7 +3167,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-gauze-white", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Gauze White", swatch: "#d9d3c5",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS, tags: ["new"],
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3175,7 +3175,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-orion-blue", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Orion Blue", swatch: "#4b575e",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3183,7 +3183,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-light-blue", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Light Blue", swatch: "#6b8886",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3191,7 +3191,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-fallen-rock", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Fallen Rock", swatch: "#574525",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3199,7 +3199,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-pale-yellow", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Pale Yellow", swatch: "#ac8e5a",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 389,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 309, oldPrice: 389,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3209,7 +3209,7 @@ window.BASE_PRODUCTS = [
   {
     id: "mizuno-wave-prophecy-ls-black", group: "mizuno-wave-prophecy",
     name: "Mizuno Wave Prophecy LS", color: "Black", swatch: "#2a2a2f",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 167,
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 129, oldPrice: 167,
     sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
     description: "La Mizuno Wave Prophecy LS : semelle Infinity Wave spectaculaire et look futuriste, la version lifestyle de l'icône running.",
     details: ["Semelle Infinity Wave", "Tige mesh et overlays synthétiques", "Taille normalement"]
@@ -3217,7 +3217,7 @@ window.BASE_PRODUCTS = [
   {
     id: "mizuno-wave-prophecy-ls-black-white", group: "mizuno-wave-prophecy",
     name: "Mizuno Wave Prophecy LS", color: "White / Black", swatch: "#e6e2de",
-    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 167,
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 129, oldPrice: 167,
     sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
     description: "La Mizuno Wave Prophecy LS : semelle Infinity Wave spectaculaire et look futuriste, la version lifestyle de l'icône running.",
     details: ["Semelle Infinity Wave", "Tige mesh et overlays synthétiques", "Taille normalement"]
@@ -3291,7 +3291,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-conquer-coop-set-black", group: "alo-conquer-coop-set",
     name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Black", swatch: "#1b1b1c",
-    brand: "alo", category: "ensembles", gender: "homme", price: 173,
+    brand: "alo", category: "ensembles", gender: "homme", price: 139, oldPrice: 173,
     sizes: CLOTHING, tags: ["best"],
     description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
     details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
@@ -3299,7 +3299,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-conquer-coop-set-anthracite", group: "alo-conquer-coop-set",
     name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Anthracite", swatch: "#3b3c3e",
-    brand: "alo", category: "ensembles", gender: "homme", price: 173,
+    brand: "alo", category: "ensembles", gender: "homme", price: 139, oldPrice: 173,
     sizes: CLOTHING, tags: ["new"],
     description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
     details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
@@ -3307,7 +3307,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-conquer-coop-set-gravel", group: "alo-conquer-coop-set",
     name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Gravel", swatch: "#a39383",
-    brand: "alo", category: "ensembles", gender: "homme", price: 173,
+    brand: "alo", category: "ensembles", gender: "homme", price: 139, oldPrice: 173,
     sizes: CLOTHING,
     description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
     details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
@@ -3315,7 +3315,7 @@ window.BASE_PRODUCTS = [
   {
     id: "alo-conquer-coop-set-navy", group: "alo-conquer-coop-set",
     name: "Ensemble Alo Conquer Max Veste + Pantalon Co-Op", color: "Navy", swatch: "#1d2638",
-    brand: "alo", category: "ensembles", gender: "homme", price: 173,
+    brand: "alo", category: "ensembles", gender: "homme", price: 139, oldPrice: 173,
     sizes: CLOTHING,
     description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
     details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]

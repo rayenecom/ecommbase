@@ -27,6 +27,7 @@ window.BASE_CONFIG = {
 
   // Messages du bandeau en haut du site (ils défilent un par un)
   announcements: [
+    "Bonnes affaires : jusqu'à -23 % sur une sélection",
     "Livraison offerte dès 150 €",
     "100% authentique · importé des États-Unis",
     "Retours sous 14 jours"

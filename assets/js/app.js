@@ -30,6 +30,8 @@
   const isBest = (p) => (p.tags || []).includes("best");
   const isSale = (p) => p.oldPrice > p.price;
   const pct = (p) => Math.round((1 - p.price / p.oldPrice) * 100);
+  const saving = (p) => (isSale(p) ? p.oldPrice - p.price : 0);
+  const maxPct = () => Math.max(0, ...PRODUCTS.filter((p) => isSale(p) && !isOut(p)).map(pct));
   const variantsOf = (p) => PRODUCTS.filter((x) => x.group && x.group === p.group);
   const availableSizes = (p) => (p.soldOut ? [] : p.sizes.filter((s) => !(p.soldOutSizes || []).includes(s)));
   const isOut = (p) => !availableSizes(p).length;
@@ -204,6 +206,7 @@
         <h3 class="card__name"><a href="${L.product(p.id)}">${esc(p.name)}</a></h3>
         <div class="card__meta">${esc(p.color)}</div>
         <div class="price">${priceHTML(p)}</div>
+        ${isSale(p) && !isOut(p) ? `<div class="save-line">Tu économises ${money(saving(p))}</div>` : ""}
       </div>
     </article>`;
   }
@@ -451,7 +454,9 @@
   }
   function totalsHTML() {
     const s = Cart.shipping();
+    const saved = Cart.items.reduce((n, i) => n + saving(byId(i.id)) * i.qty, 0);
     return `<div class="totals">
+      ${saved ? `<div class="totals__save"><span>Tes économies</span><span>−${moneyExact(saved)}</span></div>` : ""}
       <div><span>Sous-total</span><span>${moneyExact(Cart.subtotal())}</span></div>
       <div><span>Livraison</span><span>${s ? moneyExact(s) : "Offerte"}</span></div>
       <div class="grand"><span>Total</span><span>${moneyExact(Cart.total())}</span></div>
@@ -558,6 +563,7 @@
     const bestSets = onePerGroup(PRODUCTS.filter((p) => p.category === "ensembles" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "ensembles")));
     const bestShoes = onePerGroup(PRODUCTS.filter((p) => p.category === "chaussures" && isBest(p)).concat(PRODUCTS.filter((p) => p.category === "chaussures")));
     const news = onePerGroup(PRODUCTS.filter(isNew)).slice(0, 8);
+    const deals = onePerGroup(PRODUCTS.filter((p) => isSale(p) && !isOut(p)).sort((a, b) => saving(b) - saving(a))).slice(0, 10);
     const heroMobile = matchMedia("(max-width: 699px)").matches, heroSrcM = [].concat(CFG.heroVideoMobile || []);
     const heroSrc = heroMobile && heroSrcM.length ? heroSrcM : [].concat(CFG.heroVideo || []);
     const heroPoster = (heroMobile && CFG.heroPosterMobile) || CFG.heroPoster;
@@ -579,6 +585,7 @@
         </div>
         <div class="wrap">
           <div class="hero__copy">
+            ${deals.length ? `<a class="hero__deal" href="${L.shop({ filter: "sale" })}"><b>Jusqu'à -${maxPct()} %</b><span>sur une sélection</span>${I.chev}</a>` : ""}
             <h1 class="hero__title">Tout part<br>de la <em>base.</em></h1>
             <div class="hero__ctas">
               <a class="btn btn--light" href="${L.shop({ cat: "ensembles" })}">Shop les ensembles</a>
@@ -595,6 +602,14 @@
         <div class="trust__item">${I.truck}<div><b>Livraison suivie</b><span>${CFG.freeShippingFrom ? `Offerte dès ${money(CFG.freeShippingFrom)}` : `${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours`}</span></div></div>
         <div class="trust__item">${I.ret}<div><b>Retours ${CFG.returnDays} jours</b><span>Échange ou remboursement</span></div></div>
       </div></section>
+
+      ${deals.length ? `<section class="band deals"><div class="wrap">
+        <div class="sec-head">
+          <div><span class="eyebrow deals__eyebrow">Prix réduits · tant qu'il reste des tailles</span><h2 class="h-xl">Les bonnes affaires <span class="deals__pct">jusqu'à -${maxPct()} %</span></h2></div>
+          <div style="display:flex;gap:16px;align-items:center"><a class="link" href="${L.shop({ filter: "sale" })}">Tout voir</a>${railCtrl("rail-deals")}</div>
+        </div>
+        ${railHTML("rail-deals", deals)}
+      </div></section>` : ""}
 
       <section class="band"><div class="wrap">
         <div class="sec-head">
@@ -893,6 +908,10 @@
               <span class="buy__brand"><a href="${L.shop({ brand: p.brand })}">${esc(brandOf(p).name)}</a></span>
               <h1>${esc(p.name)}</h1>
               <div class="buy__price">${priceHTML(p)}${isSale(p) ? `<span class="badge badge--sale">-${pct(p)}%</span>` : ""}</div>
+              ${isSale(p) && !soldOut ? `<div class="deal" role="note">
+                <div class="deal__top"><span class="deal__tag">Bonne affaire</span><b>Tu économises ${money(saving(p))}</b></div>
+                <p>Au lieu de ${money(p.oldPrice)}, notre prix habituel. Prix réduit dans la limite des tailles disponibles.</p>
+              </div>` : ""}
               ${CFG.installments > 1 ? `<span class="buy__small">ou ${CFG.installments} × ${moneyExact(p.price / CFG.installments)} sans frais</span>` : `<span class="buy__small">TVA incluse</span>`}
             </div>
 
