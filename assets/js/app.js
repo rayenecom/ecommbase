@@ -568,7 +568,7 @@
       "columbia-tree-flag-colnava", "cp-dd-shell-puffer-orion-blue", "essentials-1977-set-dark-oatmeal"]);
     // Bulles marques : [marque, produit dont la photo sert de visuel]
     const bubbles = [["essentials", "essentials-ss22-set-light-oatmeal"], ["on", "on-cloudsurfer-max-m-3mf30435168"], ["alo", "alo-runner-black-black"],
-      ["ralphlauren", "rl-fleece-zip-set-black"], ["ugg", "ugg-lowmel-w-chestnut"], ["cpcompany", "cp-goggle-beanie-black"], ["lululemon", "lulu-pace-breaker-set-black"],
+      ["ralphlauren", "rl-fleece-zip-set-black"], ["ugg", "ugg-lowmel-w-chestnut"], ["cpcompany", "cp-dd-shell-puffer-black"], ["lululemon", "lulu-pace-breaker-set-black"],
       ["salomon", "salomon-xt-6-l479749"], ["asics", "asics-kayano-14-1201a019-110"], ["mizuno", "mizuno-wave-prophecy-ls-black"], ["courreges", "courreges-cap-vinyl-black"],
       ["columbia", "columbia-tree-flag-colnava"], ["sweetpants", "sweetpants-home-run-cap-night"], ["nocta", "nocta-cs-set-black"]]
       .filter(([b]) => BRANDS[b] && PRODUCTS.some((p) => p.brand === b)).map(([b, id]) => [b, byId(id) || PRODUCTS.find((p) => p.brand === b)]);
