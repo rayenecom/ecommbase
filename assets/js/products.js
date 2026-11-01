@@ -1396,6 +1396,14 @@ window.BASE_PRODUCTS = [
     description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
     details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
   },
+  {
+    id: "alo-alpha-shell-set-rich-bordeaux", group: "alo-alpha-shell-set",
+    name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Rich Bordeaux", swatch: "#4a1f33",
+    brand: "alo", category: "ensembles", gender: "homme", price: 259, oldPrice: 329,
+    sizes: CLOTHING,
+    description: "La veste Alpha Shell et son pantalon Alpha Shell : coupe-vent imperméable premium, l'ensemble technique d'Alo.",
+    details: ["Veste + pantalon Alpha Shell", "Tissu imperméable et respirant", "Coupe relax", "Taille normalement"]
+  },
 
   /* ---------- LULULEMON — Pace Breaker ---------- */
   {
@@ -3319,5 +3327,151 @@ window.BASE_PRODUCTS = [
     sizes: CLOTHING,
     description: "La veste zippée Alo Conquer Max (col montant, tissu technique stretch) associée au pantalon Co-Op assorti : l'ensemble Alo pensé pour bouger et sortir.",
     details: ["Veste Conquer Max zippée + pantalon Co-Op", "Tissu technique stretch", "Coupe ajustée", "Taille normalement"]
+  },
+
+  /* ---------- UGG — Lowmel, Lo Lowmel, Tasman Lace ---------- */
+  {
+    id: "ugg-lowmel-w-black", group: "ugg-lowmel-w",
+    name: "UGG Lowmel Femme", color: "Black", swatch: "#0d0d0d",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 109,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["best"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lowmel-w-chestnut", group: "ugg-lowmel-w",
+    name: "UGG Lowmel Femme", color: "Chestnut", swatch: "#72432a",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 109,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["best"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lowmel-w-sand", group: "ugg-lowmel-w",
+    name: "UGG Lowmel Femme", color: "Sand", swatch: "#b78b6a",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 109,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lowmel-w-rocky-oak", group: "ugg-lowmel-w",
+    name: "UGG Lowmel Femme", color: "Rocky Oak", swatch: "#452f2a",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 109,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lowmel-w-dusty-orchid", group: "ugg-lowmel-w",
+    name: "UGG Lowmel Femme", color: "Dusty Orchid", swatch: "#b08585",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 109,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lowmel-w-khaki", group: "ugg-lowmel-w",
+    name: "UGG Lowmel Femme", color: "Khaki", swatch: "#76533a",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 109,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lowmel-m-black", group: "ugg-lowmel-m",
+    name: "UGG Lowmel Homme", color: "Black", swatch: "#040404",
+    brand: "ugg", category: "chaussures", gender: "homme", price: 109,
+    sizes: ["40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lowmel-m-chestnut", group: "ugg-lowmel-m",
+    name: "UGG Lowmel Homme", color: "Chestnut", swatch: "#6c3f27",
+    brand: "ugg", category: "chaussures", gender: "homme", price: 109,
+    sizes: ["40", "41", "42", "43", "44", "45", "46"], tags: ["best"],
+    description: "La UGG Lowmel : sneaker en daim épais doublée de laine, gros lacets façon skate et semelle crantée. Le confort UGG en version sneaker.",
+    details: ["Daim et doublure laine", "Lacets épais", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-w-black", group: "ugg-lolowmel-w",
+    name: "UGG Lo Lowmel Femme", color: "Black", swatch: "#262b29",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 99,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-w-chestnut", group: "ugg-lolowmel-w",
+    name: "UGG Lo Lowmel Femme", color: "Chestnut", swatch: "#745232",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 99,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-w-jasmine", group: "ugg-lolowmel-w",
+    name: "UGG Lo Lowmel Femme", color: "Jasmine", swatch: "#cebfa7",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 99,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-w-muted-brass", group: "ugg-lolowmel-w",
+    name: "UGG Lo Lowmel Femme", color: "Muted Brass", swatch: "#9e8e68",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 99,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-w-horizon-pink", group: "ugg-lolowmel-w",
+    name: "UGG Lo Lowmel Femme", color: "Horizon Pink", swatch: "#cfbbac",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 99,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-w-mustard-seed", group: "ugg-lolowmel-w",
+    name: "UGG Lo Lowmel Femme", color: "Mustard Seed", swatch: "#b0967a",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 99,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-m-black", group: "ugg-lolowmel-m",
+    name: "UGG Lo Lowmel Homme", color: "Black", swatch: "#2f2d2e",
+    brand: "ugg", category: "chaussures", gender: "homme", price: 99,
+    sizes: ["40", "41", "42", "43", "44", "45", "46"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-lolowmel-m-mustard-seed", group: "ugg-lolowmel-m",
+    name: "UGG Lo Lowmel Homme", color: "Mustard Seed", swatch: "#e2cdb8",
+    brand: "ugg", category: "chaussures", gender: "homme", price: 99,
+    sizes: ["40", "41", "42", "43", "44", "45", "46"],
+    description: "La Lo Lowmel : la version basse de la Lowmel, en daim, lacets épais et semelle légère. Facile à porter tous les jours.",
+    details: ["Daim", "Lacets épais", "Semelle légère", "Taille normalement"]
+  },
+  {
+    id: "ugg-tasmanlace-m-black", group: "ugg-tasmanlace-m",
+    name: "UGG Tasman Lace Homme", color: "Black", swatch: "#2b2d2e",
+    brand: "ugg", category: "chaussures", gender: "homme", price: 99,
+    sizes: ["40", "41", "42", "43", "44", "45", "46"],
+    description: "La Tasman à lacets : l'iconique Tasman en daim et laine, avec un laçage tressé sur le dessus.",
+    details: ["Daim et laine", "Laçage tressé", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-tasmanlace-m-chestnut", group: "ugg-tasmanlace-m",
+    name: "UGG Tasman Lace Homme", color: "Chestnut", swatch: "#815340",
+    brand: "ugg", category: "chaussures", gender: "homme", price: 99,
+    sizes: ["40", "41", "42", "43", "44", "45", "46"],
+    description: "La Tasman à lacets : l'iconique Tasman en daim et laine, avec un laçage tressé sur le dessus.",
+    details: ["Daim et laine", "Laçage tressé", "Semelle Treadlite", "Taille normalement"]
   }
 ];

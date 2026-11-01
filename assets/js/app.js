@@ -619,14 +619,6 @@
         <div class="cats">${catTiles.map(([t, h, p, n]) => `<a class="cat" href="${h}"><div class="cat__art"><img src="images/home/cat-${p}.jpg" alt="${t}" loading="lazy"></div><div class="cat__label"><span>${t}</span><span class="mono">${n} pièces</span></div></a>`).join("")}</div>
       </div></section>
 
-      ${deals.length ? `<section class="band"><div class="wrap">
-        <div class="sec-head">
-          <div><span class="eyebrow deals__eyebrow">Prix réduits · tant qu'il reste des tailles</span><h2 class="h-xl">Les bonnes affaires</h2></div>
-          <div style="display:flex;gap:16px;align-items:center"><a class="link" href="${L.shop({ filter: "sale" })}">Tout voir</a>${railCtrl("rail-deals")}</div>
-        </div>
-        ${railHTML("rail-deals", deals)}
-      </div></section>` : ""}
-
       <section class="band best-band"><div class="wrap">
         <div class="sec-head">
           <div><span class="eyebrow">Les plus vendus</span><h2 class="h-xl">Best-sellers</h2></div>
@@ -645,6 +637,14 @@
         <div id="best-shoes" hidden>${railHTML("rail-best-shoes", bestShoes)}</div>
         <div id="best-acc" hidden>${railHTML("rail-best-acc", bestAcc)}</div>
       </div></section>
+
+      ${deals.length ? `<section class="band"><div class="wrap">
+        <div class="sec-head">
+          <div><span class="eyebrow deals__eyebrow">Prix réduits · tant qu'il reste des tailles</span><h2 class="h-xl">Les bonnes affaires</h2></div>
+          <div style="display:flex;gap:16px;align-items:center"><a class="link" href="${L.shop({ filter: "sale" })}">Tout voir</a>${railCtrl("rail-deals")}</div>
+        </div>
+        ${railHTML("rail-deals", deals)}
+      </div></section>` : ""}
 
 
       ${duoA && duoB ? `<section class="band band--mist"><div class="wrap duo">

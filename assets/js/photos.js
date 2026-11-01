@@ -1090,7 +1090,8 @@ window.BASE_PHOTOS = {
   "alo-alpha-shell-set-bone": [
     "images/products/alo-alpha-shell-set-bone-1.jpg",
     "images/products/alo-alpha-shell-set-bone-2.jpg",
-    "images/products/alo-alpha-shell-set-bone-3.jpg"
+    "images/products/alo-alpha-shell-set-bone-3.jpg",
+    "images/products/alo-alpha-shell-set-bone-4.jpg"
   ],
 
   // Ensemble Alo Alpha Shell Veste + Pantalon — Espresso
@@ -1110,6 +1111,14 @@ window.BASE_PHOTOS = {
   ],
 
   // Ensemble Alo Alpha Shell Veste + Pantalon — Navy
+  // Ensemble Alo Alpha Shell Veste + Pantalon — Rich Bordeaux
+  "alo-alpha-shell-set-rich-bordeaux": [
+    "images/products/alo-alpha-shell-set-rich-bordeaux-1.jpg",
+    "images/products/alo-alpha-shell-set-rich-bordeaux-2.jpg",
+    "images/products/alo-alpha-shell-set-rich-bordeaux-3.jpg",
+    "images/products/alo-alpha-shell-set-rich-bordeaux-4.jpg"
+  ],
+
   "alo-alpha-shell-set-navy": [
     "images/products/alo-alpha-shell-set-navy-1.jpg",
     "images/products/alo-alpha-shell-set-navy-2.jpg",
@@ -1622,7 +1631,7 @@ window.BASE_PHOTOS = {
     "images/products/asics-kayano-14-1203a537-117-1.jpg"
   ],
 
-  // Mizuno Wave Prophecy LS — Wind Chime / Fallen Rock
+  // Mizuno Wave Prophecy LS — Beige (Wind Chime / Fallen Rock)
   "mizuno-wave-prophecy-590063-wc8q": [
     "images/products/mizuno-wave-prophecy-590063-wc8q-1.jpg"
   ],
@@ -2126,7 +2135,8 @@ window.BASE_PHOTOS = {
 
   // Casquette Sweet Pants Patchwork — Night
   "sweetpants-patchwork-cap-night": [
-    "images/products/sweetpants-patchwork-cap-night-2.jpg"
+    "images/products/sweetpants-patchwork-cap-night-2.jpg",
+    "images/products/sweetpants-patchwork-cap-night-1.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Primrose
@@ -2608,5 +2618,109 @@ window.BASE_PHOTOS = {
     "images/products/alo-conquer-coop-set-navy-5.jpg",
     "images/products/alo-conquer-coop-set-navy-6.jpg",
     "images/products/alo-conquer-coop-set-navy-7.jpg"
+  ],
+
+  // UGG Lowmel Femme — Black
+  "ugg-lowmel-w-black": [
+    "images/products/ugg-lowmel-w-black-1.jpg",
+    "images/products/ugg-lowmel-w-black-2.jpg",
+    "images/products/ugg-lowmel-w-black-3.jpg"
+  ],
+
+  // UGG Lowmel Femme — Chestnut
+  "ugg-lowmel-w-chestnut": [
+    "images/products/ugg-lowmel-w-chestnut-1.jpg",
+    "images/products/ugg-lowmel-w-chestnut-2.jpg",
+    "images/products/ugg-lowmel-w-chestnut-3.jpg"
+  ],
+
+  // UGG Lowmel Femme — Sand
+  "ugg-lowmel-w-sand": [
+    "images/products/ugg-lowmel-w-sand-1.jpg"
+  ],
+
+  // UGG Lowmel Femme — Rocky Oak
+  "ugg-lowmel-w-rocky-oak": [
+    "images/products/ugg-lowmel-w-rocky-oak-1.jpg",
+    "images/products/ugg-lowmel-w-rocky-oak-2.jpg",
+    "images/products/ugg-lowmel-w-rocky-oak-3.jpg"
+  ],
+
+  // UGG Lowmel Femme — Dusty Orchid
+  "ugg-lowmel-w-dusty-orchid": [
+    "images/products/ugg-lowmel-w-dusty-orchid-1.jpg",
+    "images/products/ugg-lowmel-w-dusty-orchid-2.jpg",
+    "images/products/ugg-lowmel-w-dusty-orchid-3.jpg"
+  ],
+
+  // UGG Lowmel Femme — Khaki
+  "ugg-lowmel-w-khaki": [
+    "images/products/ugg-lowmel-w-khaki-1.jpg",
+    "images/products/ugg-lowmel-w-khaki-2.jpg",
+    "images/products/ugg-lowmel-w-khaki-3.jpg"
+  ],
+
+  // UGG Lowmel Homme — Black
+  "ugg-lowmel-m-black": [
+    "images/products/ugg-lowmel-m-black-1.jpg",
+    "images/products/ugg-lowmel-m-black-2.jpg",
+    "images/products/ugg-lowmel-m-black-3.jpg"
+  ],
+
+  // UGG Lowmel Homme — Chestnut
+  "ugg-lowmel-m-chestnut": [
+    "images/products/ugg-lowmel-m-chestnut-1.jpg",
+    "images/products/ugg-lowmel-m-chestnut-2.jpg",
+    "images/products/ugg-lowmel-m-chestnut-3.jpg"
+  ],
+
+  // UGG Lo Lowmel Femme — Black
+  "ugg-lolowmel-w-black": [
+    "images/products/ugg-lolowmel-w-black-1.jpg"
+  ],
+
+  // UGG Lo Lowmel Femme — Chestnut
+  "ugg-lolowmel-w-chestnut": [
+    "images/products/ugg-lolowmel-w-chestnut-1.jpg"
+  ],
+
+  // UGG Lo Lowmel Femme — Jasmine
+  "ugg-lolowmel-w-jasmine": [
+    "images/products/ugg-lolowmel-w-jasmine-1.jpg"
+  ],
+
+  // UGG Lo Lowmel Femme — Muted Brass
+  "ugg-lolowmel-w-muted-brass": [
+    "images/products/ugg-lolowmel-w-muted-brass-1.jpg"
+  ],
+
+  // UGG Lo Lowmel Femme — Horizon Pink
+  "ugg-lolowmel-w-horizon-pink": [
+    "images/products/ugg-lolowmel-w-horizon-pink-1.jpg"
+  ],
+
+  // UGG Lo Lowmel Femme — Mustard Seed
+  "ugg-lolowmel-w-mustard-seed": [
+    "images/products/ugg-lolowmel-w-mustard-seed-1.jpg"
+  ],
+
+  // UGG Lo Lowmel Homme — Black
+  "ugg-lolowmel-m-black": [
+    "images/products/ugg-lolowmel-m-black-1.jpg"
+  ],
+
+  // UGG Lo Lowmel Homme — Mustard Seed
+  "ugg-lolowmel-m-mustard-seed": [
+    "images/products/ugg-lolowmel-m-mustard-seed-1.jpg"
+  ],
+
+  // UGG Tasman Lace Homme — Black
+  "ugg-tasmanlace-m-black": [
+    "images/products/ugg-tasmanlace-m-black-1.jpg"
+  ],
+
+  // UGG Tasman Lace Homme — Chestnut
+  "ugg-tasmanlace-m-chestnut": [
+    "images/products/ugg-tasmanlace-m-chestnut-1.jpg"
   ]
 };
