@@ -21,6 +21,9 @@ window.BASE_CONFIG = {
   // Contact / prise de commande
   // WhatsApp : format international sans "+" ni espaces (ex : 33612345678)
   whatsapp: "33600000000",
+  // false = le numéro n'est pas encore prêt : un clic sur WhatsApp affiche « Une erreur est survenue ».
+  // Quand ton numéro pro est en place, mets-le ci-dessus et passe ceci à true.
+  whatsappActive: false,
   instagram: "base.store",     // sans le @
   tiktok: "base.store",        // sans le @
   email: "contact@base-store.fr",

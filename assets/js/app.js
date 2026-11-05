@@ -1119,7 +1119,7 @@
           <button class="btn btn--ghost btn--block" type="button" id="copy-order">Copier le récapitulatif</button>
         </div>
         <pre class="recap" id="recap">${esc(txt)}</pre>
-        ${ch !== "whatsapp" && CFG.whatsapp ? `<p class="muted" style="font-size:var(--fs-sm)">Tu peux aussi l'envoyer sur WhatsApp au <b class="tnum">+${esc(CFG.whatsapp)}</b>.</p>` : ""}
+        ${ch !== "whatsapp" && CFG.whatsapp && CFG.whatsappActive ? `<p class="muted" style="font-size:var(--fs-sm)">Tu peux aussi l'envoyer sur WhatsApp au <b class="tnum">+${esc(CFG.whatsapp)}</b>.</p>` : ""}
       </div>
       <div class="perks">
         <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">Après confirmation du paiement.</span></div></div>
@@ -1157,7 +1157,7 @@
         <div style="display:grid;gap:14px;align-content:start" id="faq-contact">
           <h2 class="h-md">Nous contacter</h2>
           <p class="muted">Une question sur une taille, un délai ou une commande ? On répond vite.</p>
-          ${CFG.whatsapp ? `<a class="btn" href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener">${I.wa} WhatsApp</a><p class="muted tnum" style="font-size:var(--fs-sm)">+${esc(CFG.whatsapp)}</p>` : ""}
+          ${CFG.whatsapp ? `<a class="btn" href="https://wa.me/${esc(CFG.whatsapp)}" target="_blank" rel="noopener">${I.wa} WhatsApp</a>${CFG.whatsappActive ? `<p class="muted tnum" style="font-size:var(--fs-sm)">+${esc(CFG.whatsapp)}</p>` : ""}` : ""}
           ${CFG.instagram ? `<a class="btn btn--ghost" href="https://instagram.com/${esc(CFG.instagram)}" target="_blank" rel="noopener">${I.ig} @${esc(CFG.instagram)}</a>` : ""}
           ${CFG.email ? `<p style="font-size:var(--fs-sm)">E-mail : <b style="user-select:all">${esc(CFG.email)}</b></p>` : ""}
         </div>
@@ -1192,6 +1192,12 @@
 
   /* =================== Événements globaux =================== */
   function bind() {
+    // WhatsApp pas encore actif : tout lien wa.me affiche un message d'erreur au lieu d'ouvrir WhatsApp
+    if (!CFG.whatsappActive) document.addEventListener("click", (e) => {
+      const a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+      if (!a) return;
+      e.preventDefault(); e.stopImmediatePropagation(); showServiceError();
+    }, true);
     document.addEventListener("click", (e) => {
       const t = e.target;
       const o = t.closest("[data-open]");
@@ -1250,6 +1256,23 @@
     renderCart();
     go();
   }
+  function showServiceError() {
+    let m = $("#svc-error");
+    if (!m) {
+      m = document.createElement("div"); m.id = "svc-error"; m.className = "svc-error"; m.setAttribute("role", "alertdialog"); m.setAttribute("aria-modal", "true"); m.setAttribute("aria-labelledby", "svc-error-t");
+      m.innerHTML = `<div class="svc-error__box">
+        <div class="svc-error__icon" aria-hidden="true">!</div>
+        <h2 id="svc-error-t" class="h-md">Une erreur est survenue</h2>
+        <p class="muted">Le service est momentanément indisponible. Réessaie dans quelques instants.</p>
+        <button class="btn btn--block" type="button" data-close-err>Fermer</button>
+      </div>`;
+      m.addEventListener("click", (e) => { if (e.target === m || e.target.closest("[data-close-err]")) m.hidden = true; });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") m.hidden = true; });
+      document.body.appendChild(m);
+    }
+    m.hidden = false; $("[data-close-err]", m).focus();
+  }
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 
   window.BASE = { Cart, go };

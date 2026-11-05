@@ -599,3 +599,9 @@ body[data-route="product"] .wa-fab, body[data-route="checkout"] .wa-fab, body[da
 .bubble:hover .bubble__img { box-shadow: 0 0 0 2px var(--ink); transform: translateY(-2px); }
 .bubble__name { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .01em; text-align: center; white-space: nowrap; }
 @media (min-width: 900px) { .bubble { width: 112px; } .bubble__img { width: 104px; height: 104px; } .bubbles { gap: 24px; justify-content: safe center; } }
+
+/* ---------- Message d'erreur (service indisponible) ---------- */
+.svc-error { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 16px; background: rgba(16, 18, 17, .55); }
+.svc-error[hidden] { display: none; }
+.svc-error__box { width: min(400px, 100%); display: grid; gap: 12px; justify-items: center; text-align: center; padding: 28px 24px 24px; border-radius: var(--radius); background: var(--paper); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+.svc-error__icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #fbeceb; color: var(--sale); font-size: 1.5rem; font-weight: 700; }
