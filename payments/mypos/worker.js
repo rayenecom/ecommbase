@@ -4,8 +4,8 @@
    avec la clé privée myPOS, qui ne doit jamais être dans le site.
 
    Routes :
-     POST /checkout  le site envoie le panier -> renvoie le formulaire signé
-     POST /notify    myPOS confirme un paiement (IPCPurchaseNotify)
+     POST /notify    myPOS confirme un paiement (paiement intégré sur le site) -> répond « OK »
+     POST /checkout  (paiement par redirection, optionnel) le site envoie le panier -> formulaire signé
      ANY  /ok        retour client après paiement   -> la-base.shop/#/merci?paye=1
      ANY  /cancel    retour client après annulation -> la-base.shop/#/commande
 
@@ -119,15 +119,19 @@ async function checkout(req, env, url, site) {
 
 /* ---------- Confirmation myPOS ---------- */
 async function notify(req, env) {
-  const mode = env.MYPOS_MODE === "live" ? "live" : "test";
-  const pack = loadPack(env, mode);
+  // myPOS attend toujours « OK » : sans cette réponse, il annule le paiement.
   const params = [...new URLSearchParams(await req.text())];
-  const sig = (params.find(([k]) => k === "Signature") || [])[1];
-  const values = params.filter(([k]) => k !== "Signature").map(([, v]) => v);
-  if (!sig || !(await verify(values, sig, pack.pc))) return new Response("Signature invalide", { status: 400 });
-  // Paiement confirmé : il apparaît dans ton espace myPOS (Transactions). myPOS attend « OK ».
-  console.log("Paiement confirmé", Object.fromEntries(params.filter(([k]) => /OrderID|Amount|IPC_Trnref|IPCmethod/.test(k))));
-  return new Response("OK", { status: 200 });
+  let verified = "non vérifié (pas de configuration pack)";
+  try {
+    const mode = env.MYPOS_MODE === "live" ? "live" : "test";
+    const pack = env.MYPOS_CONFIG_PACK || mode === "test" ? loadPack(env, mode) : null;
+    const sig = (params.find(([k]) => k === "Signature") || [])[1];
+    const values = params.filter(([k]) => k !== "Signature").map(([, v]) => v);
+    if (pack && pack.pc) verified = sig && (await verify(values, sig, pack.pc)) ? "signature OK" : "SIGNATURE INVALIDE";
+  } catch (e) { verified = "vérification impossible"; }
+  // Le paiement apparaît dans ton espace myPOS (Transactions). Ce journal est visible dans Cloudflare > Worker > Logs.
+  console.log("Notification myPOS", verified, Object.fromEntries(params.filter(([k]) => /IPCmethod|OrderID|Amount|Currency|IPC_Trnref|PAN|CustomerEmail/.test(k))));
+  return new Response("OK", { status: 200, headers: { "Content-Type": "text/plain" } });
 }
 
 /* ---------- Catalogue (prix relus sur le site) ---------- */

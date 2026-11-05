@@ -1028,7 +1028,7 @@
     const d = store.get(DRAFT_KEY, {});
     const v = (k) => esc(d[k] || "");
     const channels = [
-      CFG.paymentUrl && ["card", "Carte bancaire", "Paiement sécurisé par myPOS : Visa, Mastercard, Apple Pay, Google Pay.", I.card],
+      cardOn() && ["card", "Carte bancaire", "Visa, Mastercard, Maestro. Paiement sécurisé par myPOS, directement ici.", I.card],
       CFG.whatsapp && ["whatsapp", "WhatsApp", "Réponse la plus rapide. On te confirme ta taille et t'envoie le lien de paiement.", I.wa],
       CFG.instagram && ["instagram", "Instagram", `Tu nous envoies ta commande en message privé à @${esc(CFG.instagram)}.`, I.ig],
       CFG.email && ["email", "E-mail", `Tu nous envoies ta commande à ${esc(CFG.email)}.`, I.mail]
@@ -1049,7 +1049,7 @@
           <div class="field full"><label for="f-notes">Note (optionnel)</label><textarea id="f-notes" name="notes" placeholder="Code d'entrée, précision sur une taille…">${v("notes")}</textarea></div>
         </div></div>
         ${q && q.get("annule") ? `<p class="co-alert" role="status">Le paiement a été annulé. Ton panier est toujours là, tu peux réessayer.</p>` : ""}
-        <div class="fieldset"><h2>${CFG.paymentUrl ? "Paiement" : "Envoyer ma commande par"}</h2>
+        <div class="fieldset"><h2>${cardOn() ? "Paiement" : "Envoyer ma commande par"}</h2>
           <div class="channels">${channels.map(([k, t, s, ic], i) => `<label class="channel"><input type="radio" name="channel" value="${k}" ${(d.channel ? d.channel === k : i === 0) ? "checked" : ""}><span><b>${t}</b><small>${s}</small></span>${ic}</label>`).join("")}</div>
           <p class="muted" id="co-paynote" style="font-size:var(--fs-sm)">Le paiement (carte, PayPal ou virement) se fait après la confirmation de ta taille. Tu ne paies rien maintenant.</p>
         </div>
@@ -1057,6 +1057,20 @@
         <p class="co-err" id="co-err" role="alert"></p>
         <p class="muted" style="font-size:var(--fs-xs);margin-top:12px;text-align:center">En validant, tu acceptes nos <a class="link" href="${L.legal}">conditions de vente</a>.</p>
       </form>
+      <section class="co-pay" id="co-pay" hidden aria-labelledby="co-pay-title">
+        <nav class="progress" aria-label="Étapes"><span>Panier</span>${I.chev}<span>Informations</span>${I.chev}<b>Paiement</b></nav>
+        <div class="co-pay__head">
+          <h1 class="h-xl" id="co-pay-title">Paiement</h1>
+          <button type="button" class="link" id="co-back">Modifier mes informations</button>
+        </div>
+        <div class="co-pay__amount"><span>À payer</span><b id="co-pay-total"></b></div>
+        <div class="co-pay__box">
+          <div class="co-pay__loading" id="co-pay-loading"><span class="spinner" aria-hidden="true"></span>Chargement du paiement sécurisé…</div>
+          <div id="myPOSEmbeddedCheckout"></div>
+        </div>
+        <p class="co-err" id="co-pay-err" role="alert"></p>
+        <p class="co-pay__secure">${I.shield} Paiement chiffré et sécurisé par myPOS. Tes données de carte ne passent jamais par notre site.</p>
+      </section>
       <aside class="summary" id="summary"></aside>
     </div>`;
     renderSummary();
@@ -1097,25 +1111,58 @@
       location.hash = "#/merci";
     });
   }
-  // Paiement myPOS : le service signe la commande (prix relus côté serveur), puis on envoie le client sur la page de paiement myPOS
-  async function payByCard(order) {
-    const btn = $("#co-submit"), err = $("#co-err");
-    btn.disabled = true; $("#co-cta").textContent = "Redirection vers le paiement sécurisé…"; err.textContent = "";
-    try {
-      const r = await fetch(CFG.paymentUrl.replace(/\/$/, "") + "/checkout", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ref: order.ref, items: order.items.map((i) => ({ id: i.id, size: i.size, qty: i.qty })), customer: order.data })
-      });
-      const res = await r.json().catch(() => ({}));
-      if (!r.ok || !res.action) throw new Error(res.error || "Paiement momentanément indisponible.");
-      const f = document.createElement("form");
-      f.method = "POST"; f.action = res.action; f.hidden = true;
-      res.fields.forEach(([k, v]) => { const i = document.createElement("input"); i.type = "hidden"; i.name = k; i.value = v; f.appendChild(i); });
-      document.body.appendChild(f); f.submit();
-    } catch (e) {
-      btn.disabled = false; $("#co-cta").textContent = "Payer par carte";
-      err.textContent = (e && e.message) || "Paiement momentanément indisponible. Réessaie dans quelques instants.";
-    }
+  // Paiement par carte myPOS intégré à la page (myPOS Embedded Checkout) : le client reste sur la-base.shop.
+  function MP() { return CFG.mypos || {}; }
+  function cardOn() { return !!(MP().sid && MP().walletNumber && MP().notifyUrl); }
+  const MYPOS_SDK = "https://developers.mypos.com/repository/mypos-embedded-sdk.js";
+  let sdkPromise = null;
+  function loadMyPOS() {
+    if (window.MyPOSEmbedded) return Promise.resolve(window.MyPOSEmbedded);
+    if (!sdkPromise) sdkPromise = new Promise((ok, ko) => {
+      const sc = document.createElement("script");
+      sc.src = MYPOS_SDK; sc.async = true;
+      sc.onload = () => (window.MyPOSEmbedded ? ok(window.MyPOSEmbedded) : ko(new Error("sdk")));
+      sc.onerror = () => { sdkPromise = null; sc.remove(); ko(new Error("sdk")); };
+      document.head.appendChild(sc);
+    });
+    return sdkPromise;
+  }
+  const r2 = (n) => Math.round(n * 100) / 100;
+  function payByCard(order) {
+    const form = $("#co-form"), pay = $("#co-pay"), box = $("#myPOSEmbeddedCheckout"), err = $("#co-pay-err"), loading = $("#co-pay-loading");
+    const back = () => { pay.hidden = true; form.hidden = false; box.innerHTML = ""; err.textContent = ""; scrollTo({ top: 0 }); };
+    $("#co-back").onclick = back;
+    form.hidden = true; pay.hidden = false; box.innerHTML = ""; err.textContent = ""; loading.hidden = false;
+    $("#co-pay-total").textContent = moneyExact(order.total);
+    scrollTo({ top: 0 });
+    const cartItems = order.items.map((it) => {
+      const p = byId(it.id);
+      return { article: `${p.name} - ${p.color} - ${it.size}`.slice(0, 120), quantity: it.qty, price: r2(p.price), currency: CFG.currency };
+    });
+    if (order.shipping) cartItems.push({ article: "Livraison", quantity: 1, price: r2(order.shipping), currency: CFG.currency });
+    const params = {
+      sid: String(MP().sid), ipcLanguage: "fr", walletNumber: String(MP().walletNumber),
+      amount: r2(cartItems.reduce((t, c) => t + c.price * c.quantity, 0)), currency: CFG.currency,
+      orderID: order.ref, urlNotify: MP().notifyUrl, urlOk: location.href.split("#")[0], urlCancel: location.href.split("#")[0],
+      keyIndex: Number(MP().keyIndex) || 1, cartItems
+    };
+    const paid = () => {
+      order.paid = true; store.set("base_last_order", order); lastOrder = order;
+      location.hash = `#/merci?paye=1&ref=${encodeURIComponent(order.ref)}`;
+    };
+    const failed = (msg) => { err.textContent = msg; };
+    const started = loadMyPOS().then((M) => M.createPayment("myPOSEmbeddedCheckout", params, {
+      isSandbox: !!MP().sandbox,
+      onSuccess: paid,
+      onDecline: () => failed("Paiement refusé par ta banque. Vérifie les informations de ta carte ou essaie une autre carte."),
+      onError: () => failed("Le paiement n'a pas abouti. Réessaie, ou contacte-nous si le problème continue.")
+    }));
+    const ready = Promise.race([started, new Promise((_, ko) => setTimeout(ko, 30000))]);
+    ready.then(() => { loading.hidden = true; }).catch(() => {
+      if (pay.hidden) return;
+      loading.hidden = true;
+      failed("Le paiement sécurisé n'a pas pu se charger. Vérifie ta connexion, puis clique sur « Modifier mes informations » et réessaie.");
+    });
   }
   function field(name, label, ac, val, type = "text", cls = "") {
     return `<div class="field ${cls}"><label for="f-${name}">${label}</label><input id="f-${name}" name="${name}" type="${type}" autocomplete="${ac}" value="${val}" required><span class="err" aria-live="polite"></span></div>`;

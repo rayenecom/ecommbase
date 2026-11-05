@@ -45,9 +45,15 @@ window.BASE_CONFIG = {
   heroVideoMobile: ["assets/video/hero-m.webm", "assets/video/hero-m.mp4"],
   heroPosterMobile: "assets/video/hero-m.jpg",
 
-  // Paiement par carte myPOS : adresse du service de paiement (Cloudflare Worker, voir payments/mypos/LISEZMOI.md).
-  // Vide = paiement par carte désactivé (commande par message, comme avant).
-  paymentUrl: "",
+  // Paiement par carte myPOS, directement sur la page de commande (voir payments/mypos/LISEZMOI.md).
+  // Tant que sid, walletNumber et notifyUrl sont vides, le paiement par carte est masqué.
+  mypos: {
+    sid: "",               // « Store ID » de ta boutique en ligne myPOS
+    walletNumber: "",      // numéro de compte (wallet) myPOS qui reçoit l'argent
+    keyIndex: 1,           // « Key index » de la boutique
+    notifyUrl: "",         // adresse du service Cloudflare + /notify (ex : https://base-paiement.xxx.workers.dev/notify)
+    sandbox: false         // true = mode test myPOS (aucun vrai débit)
+  },
 
   // Recherches proposées dans la barre de recherche
   popularSearches: ["Essentials 1977", "Cloudtilt", "XT-6", "Kayano 14", "Ralph Lauren", "Sweet Pants", "Alo Runner"]
