@@ -103,6 +103,7 @@
     shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4.5 6v5.5c0 4.8 3.2 8 7.5 9.5 4.3-1.5 7.5-4.7 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.3 2.3 4.3-4.6"/></svg>',
     truck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2.5 6.5h11.5v9.5H2.5zM14 9.5h4l3.5 3.5v3H14"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>',
     ret: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h11a5 5 0 0 1 0 10H8"/><path d="m8 5-4 4 4 4"/></svg>',
+    card: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg>',
     lock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>',
     plane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10.5 13.5 3 10.5l1.5-1.5 7.5 1 4.5-4.5c1-1 2.5-1 3 0 .5.5.5 2-.5 3L14.5 13l1 7.5L14 22l-3.5-8.5Z"/></svg>',
     ruler: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 15.5 15.5 3l5.5 5.5L8.5 21 3 15.5Z"/><path d="m7 11.5 2 2M10 8.5l2 2M13 5.5l2 2"/></svg>',
@@ -1018,7 +1019,7 @@
       <div class="foot-trust" style="justify-content:flex-start"><span>${I.shield} 100% authentique</span><span>${I.ret} Retours ${CFG.returnDays} j</span></div>`;
   }
 
-  function viewCheckout(main) {
+  function viewCheckout(main, parts, q) {
     setMeta("Commande", "Finalise ta commande BASE.");
     if (!Cart.items.length) {
       main.innerHTML = `<div class="wrap"><div class="empty" style="padding-block:96px"><h1 class="h-xl">Ton panier est vide</h1><p class="muted">Ajoute un article pour passer commande.</p><a class="btn" href="${L.shop()}">Découvrir le shop</a></div></div>`;
@@ -1027,6 +1028,7 @@
     const d = store.get(DRAFT_KEY, {});
     const v = (k) => esc(d[k] || "");
     const channels = [
+      CFG.paymentUrl && ["card", "Carte bancaire", "Paiement sécurisé par myPOS : Visa, Mastercard, Apple Pay, Google Pay.", I.card],
       CFG.whatsapp && ["whatsapp", "WhatsApp", "Réponse la plus rapide. On te confirme ta taille et t'envoie le lien de paiement.", I.wa],
       CFG.instagram && ["instagram", "Instagram", `Tu nous envoies ta commande en message privé à @${esc(CFG.instagram)}.`, I.ig],
       CFG.email && ["email", "E-mail", `Tu nous envoies ta commande à ${esc(CFG.email)}.`, I.mail]
@@ -1046,17 +1048,25 @@
           <div class="field full"><label for="f-country">Pays</label><select id="f-country" name="country">${["France", "Belgique", "Suisse", "Luxembourg"].map((c) => `<option${d.country === c ? " selected" : ""}>${c}</option>`).join("")}</select></div>
           <div class="field full"><label for="f-notes">Note (optionnel)</label><textarea id="f-notes" name="notes" placeholder="Code d'entrée, précision sur une taille…">${v("notes")}</textarea></div>
         </div></div>
-        <div class="fieldset"><h2>Envoyer ma commande par</h2>
+        ${q && q.get("annule") ? `<p class="co-alert" role="status">Le paiement a été annulé. Ton panier est toujours là, tu peux réessayer.</p>` : ""}
+        <div class="fieldset"><h2>${CFG.paymentUrl ? "Paiement" : "Envoyer ma commande par"}</h2>
           <div class="channels">${channels.map(([k, t, s, ic], i) => `<label class="channel"><input type="radio" name="channel" value="${k}" ${(d.channel ? d.channel === k : i === 0) ? "checked" : ""}><span><b>${t}</b><small>${s}</small></span>${ic}</label>`).join("")}</div>
-          <p class="muted" style="font-size:var(--fs-sm)">Le paiement (carte, PayPal ou virement) se fait après la confirmation de ta taille. Tu ne paies rien maintenant.</p>
+          <p class="muted" id="co-paynote" style="font-size:var(--fs-sm)">Le paiement (carte, PayPal ou virement) se fait après la confirmation de ta taille. Tu ne paies rien maintenant.</p>
         </div>
-        <button class="btn btn--block" type="submit">Valider ma commande · <span id="co-total">${moneyExact(Cart.total())}</span></button>
+        <button class="btn btn--block" type="submit" id="co-submit"><span id="co-cta">Valider ma commande</span> · <span id="co-total">${moneyExact(Cart.total())}</span></button>
+        <p class="co-err" id="co-err" role="alert"></p>
         <p class="muted" style="font-size:var(--fs-xs);margin-top:12px;text-align:center">En validant, tu acceptes nos <a class="link" href="${L.legal}">conditions de vente</a>.</p>
       </form>
       <aside class="summary" id="summary"></aside>
     </div>`;
     renderSummary();
     const form = $("#co-form");
+    const syncPay = () => {
+      const card = (new FormData(form).get("channel")) === "card";
+      $("#co-cta").textContent = card ? "Payer par carte" : "Valider ma commande";
+      $("#co-paynote").hidden = card;
+    };
+    form.addEventListener("change", syncPay); syncPay();
     form.addEventListener("input", () => store.set(DRAFT_KEY, Object.fromEntries(new FormData(form))));
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -1083,8 +1093,29 @@
       const order = { ref, data, items: Cart.items.map((i) => ({ ...i })), subtotal: Cart.subtotal(), shipping: Cart.shipping(), total: Cart.total() };
       store.set("base_last_order", order);
       lastOrder = order;
+      if (data.channel === "card") return payByCard(order);
       location.hash = "#/merci";
     });
+  }
+  // Paiement myPOS : le service signe la commande (prix relus côté serveur), puis on envoie le client sur la page de paiement myPOS
+  async function payByCard(order) {
+    const btn = $("#co-submit"), err = $("#co-err");
+    btn.disabled = true; $("#co-cta").textContent = "Redirection vers le paiement sécurisé…"; err.textContent = "";
+    try {
+      const r = await fetch(CFG.paymentUrl.replace(/\/$/, "") + "/checkout", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ref: order.ref, items: order.items.map((i) => ({ id: i.id, size: i.size, qty: i.qty })), customer: order.data })
+      });
+      const res = await r.json().catch(() => ({}));
+      if (!r.ok || !res.action) throw new Error(res.error || "Paiement momentanément indisponible.");
+      const f = document.createElement("form");
+      f.method = "POST"; f.action = res.action; f.hidden = true;
+      res.fields.forEach(([k, v]) => { const i = document.createElement("input"); i.type = "hidden"; i.name = k; i.value = v; f.appendChild(i); });
+      document.body.appendChild(f); f.submit();
+    } catch (e) {
+      btn.disabled = false; $("#co-cta").textContent = "Payer par carte";
+      err.textContent = (e && e.message) || "Paiement momentanément indisponible. Réessaie dans quelques instants.";
+    }
   }
   function field(name, label, ac, val, type = "text", cls = "") {
     return `<div class="field ${cls}"><label for="f-${name}">${label}</label><input id="f-${name}" name="${name}" type="${type}" autocomplete="${ac}" value="${val}" required><span class="err" aria-live="polite"></span></div>`;
@@ -1098,9 +1129,25 @@
       `${d.firstname} ${d.lastname}`, `Tél : ${d.phone}`, `E-mail : ${d.email}`, `${d.address}, ${d.zip} ${d.city}, ${d.country}`, d.notes ? `Note : ${d.notes}` : ""].filter((x, i, a) => !(x === "" && a[i - 1] === "")).join("\n").trim();
   }
 
-  function viewDone(main) {
+  function viewDone(main, parts, q) {
     const o = lastOrder || store.get("base_last_order", null);
     setMeta("Confirmation", "");
+    if (q && q.get("paye")) {
+      Cart.clear(); try { localStorage.removeItem(DRAFT_KEY); } catch (e) { /* ignore */ }
+      const ref = (q.get("ref") || (o && o.ref) || "").replace(/[^A-Z0-9-]/gi, "");
+      main.innerHTML = `<div class="wrap"><div class="done">
+        <nav class="progress" aria-label="Étapes"><span>Panier</span>${I.chev}<span>Paiement</span>${I.chev}<b>Confirmation</b></nav>
+        ${ref ? `<span class="eyebrow">Commande ${esc(ref)}</span>` : ""}
+        <h1 class="display">Merci, c'est validé.</h1>
+        <p style="font-size:1.0625rem;color:var(--ink-2)">Ton paiement a bien été reçu. Tu vas recevoir la confirmation myPOS par e-mail, et on prépare ta commande.</p>
+        <div class="perks">
+          <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">Expédition sous 24 à 48 h avec numéro de suivi.</span></div></div>
+          <div class="perk">${I.shield}<div><b>100% authentique, garanti</b></div></div>
+        </div>
+        <a class="btn" href="${L.shop()}">Continuer mes achats</a>
+      </div></div>`;
+      return;
+    }
     if (!o) { main.innerHTML = `<div class="wrap"><div class="empty" style="padding-block:96px"><h1 class="h-xl">Aucune commande en cours</h1><a class="btn" href="${L.shop()}">Découvrir le shop</a></div></div>`; return; }
     const txt = orderText(o);
     const ch = o.data.channel || "whatsapp";

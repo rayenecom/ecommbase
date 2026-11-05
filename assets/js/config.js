@@ -45,6 +45,10 @@ window.BASE_CONFIG = {
   heroVideoMobile: ["assets/video/hero-m.webm", "assets/video/hero-m.mp4"],
   heroPosterMobile: "assets/video/hero-m.jpg",
 
+  // Paiement par carte myPOS : adresse du service de paiement (Cloudflare Worker, voir payments/mypos/LISEZMOI.md).
+  // Vide = paiement par carte désactivé (commande par message, comme avant).
+  paymentUrl: "",
+
   // Recherches proposées dans la barre de recherche
   popularSearches: ["Essentials 1977", "Cloudtilt", "XT-6", "Kayano 14", "Ralph Lauren", "Sweet Pants", "Alo Runner"]
 };

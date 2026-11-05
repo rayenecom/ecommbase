@@ -605,3 +605,9 @@ body[data-route="product"] .wa-fab, body[data-route="checkout"] .wa-fab, body[da
 .svc-error[hidden] { display: none; }
 .svc-error__box { width: min(400px, 100%); display: grid; gap: 12px; justify-items: center; text-align: center; padding: 28px 24px 24px; border-radius: var(--radius); background: var(--paper); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
 .svc-error__icon { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: #fbeceb; color: var(--sale); font-size: 1.5rem; font-weight: 700; }
+
+/* ---------- Paiement ---------- */
+.co-err { min-height: 0; margin-top: 10px; font-size: var(--fs-sm); color: var(--sale); text-align: center; }
+.co-err:empty { display: none; }
+.co-alert { margin: 8px 0 0; padding: 12px 14px; border-radius: var(--radius); background: #fbeceb; color: var(--sale); font-size: var(--fs-sm); }
+#co-submit[disabled] { opacity: .7; cursor: progress; }
