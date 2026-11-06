@@ -1028,7 +1028,7 @@
     const d = store.get(DRAFT_KEY, {});
     const v = (k) => esc(d[k] || "");
     const channels = [
-      cardOn() && ["card", "Carte bancaire", "Visa, Mastercard, Maestro. Paiement sécurisé par myPOS, directement ici.", I.card],
+      cardOn() && ["card", "Carte bancaire", stripeOn() ? "CB, Visa, Mastercard, Apple Pay, Google Pay. Paiement sécurisé par Stripe, directement ici." : "Visa, Mastercard, Maestro. Paiement sécurisé par myPOS, directement ici.", I.card],
       CFG.whatsapp && ["whatsapp", "WhatsApp", "Réponse la plus rapide. On te confirme ta taille et t'envoie le lien de paiement.", I.wa],
       CFG.instagram && ["instagram", "Instagram", `Tu nous envoies ta commande en message privé à @${esc(CFG.instagram)}.`, I.ig],
       CFG.email && ["email", "E-mail", `Tu nous envoies ta commande à ${esc(CFG.email)}.`, I.mail]
@@ -1066,10 +1066,10 @@
         <div class="co-pay__amount"><span>À payer</span><b id="co-pay-total"></b></div>
         <div class="co-pay__box">
           <div class="co-pay__loading" id="co-pay-loading"><span class="spinner" aria-hidden="true"></span>Chargement du paiement sécurisé…</div>
-          <div id="myPOSEmbeddedCheckout"></div>
+          <div id="pay-mount"></div>
         </div>
         <p class="co-err" id="co-pay-err" role="alert"></p>
-        <p class="co-pay__secure">${I.shield} Paiement chiffré et sécurisé par myPOS. Tes données de carte ne passent jamais par notre site.</p>
+        <p class="co-pay__secure">${I.shield} Paiement chiffré et sécurisé par ${stripeOn() ? "Stripe" : "myPOS"}. Tes données de carte ne passent jamais par notre site.</p>
       </section>
       <aside class="summary" id="summary"></aside>
     </div>`;
@@ -1111,30 +1111,67 @@
       location.hash = "#/merci";
     });
   }
-  // Paiement par carte myPOS intégré à la page (myPOS Embedded Checkout) : le client reste sur la-base.shop.
+  // Paiement par carte intégré à la page : Stripe (Embedded Checkout) en priorité, sinon myPOS (Embedded Checkout).
+  // Le client reste sur la-base.shop.
   function MP() { return CFG.mypos || {}; }
-  function cardOn() { return !!(MP().sid && MP().walletNumber && MP().notifyUrl); }
-  const MYPOS_SDK = "https://developers.mypos.com/repository/mypos-embedded-sdk.js";
-  let sdkPromise = null;
-  function loadMyPOS() {
-    if (window.MyPOSEmbedded) return Promise.resolve(window.MyPOSEmbedded);
-    if (!sdkPromise) sdkPromise = new Promise((ok, ko) => {
+  function ST() { return CFG.stripe || {}; }
+  function stripeOn() { return !!(ST().publishableKey && ST().apiUrl); }
+  function myposOn() { return !!(MP().sid && MP().walletNumber && MP().notifyUrl); }
+  function cardOn() { return stripeOn() || myposOn(); }
+  const sdkCache = {};
+  function loadScript(src, global) {
+    if (window[global]) return Promise.resolve(window[global]);
+    if (!sdkCache[src]) sdkCache[src] = new Promise((ok, ko) => {
       const sc = document.createElement("script");
-      sc.src = MYPOS_SDK; sc.async = true;
-      sc.onload = () => (window.MyPOSEmbedded ? ok(window.MyPOSEmbedded) : ko(new Error("sdk")));
-      sc.onerror = () => { sdkPromise = null; sc.remove(); ko(new Error("sdk")); };
+      sc.src = src; sc.async = true;
+      sc.onload = () => (window[global] ? ok(window[global]) : ko(new Error("sdk")));
+      sc.onerror = () => { delete sdkCache[src]; sc.remove(); ko(new Error("sdk")); };
       document.head.appendChild(sc);
     });
-    return sdkPromise;
+    return sdkCache[src];
   }
   const r2 = (n) => Math.round(n * 100) / 100;
+  let stripeCheckout = null;
   function payByCard(order) {
-    const form = $("#co-form"), pay = $("#co-pay"), box = $("#myPOSEmbeddedCheckout"), err = $("#co-pay-err"), loading = $("#co-pay-loading");
-    const back = () => { pay.hidden = true; form.hidden = false; box.innerHTML = ""; err.textContent = ""; scrollTo({ top: 0 }); };
-    $("#co-back").onclick = back;
-    form.hidden = true; pay.hidden = false; box.innerHTML = ""; err.textContent = ""; loading.hidden = false;
+    const form = $("#co-form"), pay = $("#co-pay"), box = $("#pay-mount"), err = $("#co-pay-err"), loading = $("#co-pay-loading");
+    const reset = () => {
+      if (stripeCheckout) { try { stripeCheckout.destroy(); } catch (e) { /* ignore */ } stripeCheckout = null; }
+      box.innerHTML = ""; err.textContent = "";
+    };
+    $("#co-back").onclick = () => { reset(); pay.hidden = true; form.hidden = false; scrollTo({ top: 0 }); };
+    reset(); form.hidden = true; pay.hidden = false; loading.hidden = false;
     $("#co-pay-total").textContent = moneyExact(order.total);
     scrollTo({ top: 0 });
+    const failed = (msg) => { loading.hidden = true; err.textContent = msg; };
+    const started = stripeOn() ? payStripe(order, box) : payMyPOS(order, box, failed);
+    Promise.race([started, new Promise((_, ko) => setTimeout(() => ko(new Error("Le paiement sécurisé n'a pas pu se charger. Vérifie ta connexion, puis clique sur « Modifier mes informations » et réessaie.")), 30000))])
+      .then(() => { loading.hidden = true; })
+      .catch((e) => { if (!pay.hidden) failed((e && e.public) || (e && /connexion/.test(e.message) && e.message) || "Le paiement sécurisé n'a pas pu se charger. Vérifie ta connexion, puis clique sur « Modifier mes informations » et réessaie."); });
+  }
+  // Stripe : le service Cloudflare crée la session (prix relus côté serveur) et renvoie le clientSecret du formulaire intégré.
+  async function payStripe(order, box) {
+    const Stripe = await loadScript("https://js.stripe.com/v3/", "Stripe");
+    const fetchClientSecret = async () => {
+      const r = await fetch(ST().apiUrl.replace(/\/$/, "") + "/checkout", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ref: order.ref, items: order.items.map((i) => ({ id: i.id, size: i.size, qty: i.qty })), customer: order.data })
+      });
+      const res = await r.json().catch(() => ({}));
+      if (!r.ok || !res.clientSecret) { const e = new Error("pay"); e.public = res.error || "Paiement momentanément indisponible. Réessaie dans quelques instants."; throw e; }
+      return res.clientSecret;
+    };
+    const secret = await fetchClientSecret();
+    const st = Stripe(ST().publishableKey, { locale: "fr" }), opts = { fetchClientSecret: async () => secret };
+    try { stripeCheckout = await st.initEmbeddedCheckout(opts); } catch (e) {
+      if (!st.createEmbeddedCheckoutPage) throw e;
+      stripeCheckout = await st.createEmbeddedCheckoutPage(opts);   // nom de la méthode dans les versions récentes de Stripe.js
+    }
+    if (!box.isConnected || $("#co-pay").hidden) { stripeCheckout.destroy(); stripeCheckout = null; return; }
+    stripeCheckout.mount(box);
+  }
+  // myPOS : formulaire de carte myPOS dans la page (pas de signature côté site).
+  function payMyPOS(order, box, failed) {
+    box.id = "pay-mount";
     const cartItems = order.items.map((it) => {
       const p = byId(it.id);
       return { article: `${p.name} - ${p.color} - ${it.size}`.slice(0, 120), quantity: it.qty, price: r2(p.price), currency: CFG.currency };
@@ -1146,23 +1183,15 @@
       orderID: order.ref, urlNotify: MP().notifyUrl, urlOk: location.href.split("#")[0], urlCancel: location.href.split("#")[0],
       keyIndex: Number(MP().keyIndex) || 1, cartItems
     };
-    const paid = () => {
-      order.paid = true; store.set("base_last_order", order); lastOrder = order;
-      location.hash = `#/merci?paye=1&ref=${encodeURIComponent(order.ref)}`;
-    };
-    const failed = (msg) => { err.textContent = msg; };
-    const started = loadMyPOS().then((M) => M.createPayment("myPOSEmbeddedCheckout", params, {
+    return loadScript("https://developers.mypos.com/repository/mypos-embedded-sdk.js", "MyPOSEmbedded").then((M) => M.createPayment("pay-mount", params, {
       isSandbox: !!MP().sandbox,
-      onSuccess: paid,
+      onSuccess: () => {
+        order.paid = true; store.set("base_last_order", order); lastOrder = order;
+        location.hash = `#/merci?paye=1&ref=${encodeURIComponent(order.ref)}`;
+      },
       onDecline: () => failed("Paiement refusé par ta banque. Vérifie les informations de ta carte ou essaie une autre carte."),
       onError: () => failed("Le paiement n'a pas abouti. Réessaie, ou contacte-nous si le problème continue.")
     }));
-    const ready = Promise.race([started, new Promise((_, ko) => setTimeout(ko, 30000))]);
-    ready.then(() => { loading.hidden = true; }).catch(() => {
-      if (pay.hidden) return;
-      loading.hidden = true;
-      failed("Le paiement sécurisé n'a pas pu se charger. Vérifie ta connexion, puis clique sur « Modifier mes informations » et réessaie.");
-    });
   }
   function field(name, label, ac, val, type = "text", cls = "") {
     return `<div class="field ${cls}"><label for="f-${name}">${label}</label><input id="f-${name}" name="${name}" type="${type}" autocomplete="${ac}" value="${val}" required><span class="err" aria-live="polite"></span></div>`;
@@ -1186,7 +1215,7 @@
         <nav class="progress" aria-label="Étapes"><span>Panier</span>${I.chev}<span>Paiement</span>${I.chev}<b>Confirmation</b></nav>
         ${ref ? `<span class="eyebrow">Commande ${esc(ref)}</span>` : ""}
         <h1 class="display">Merci, c'est validé.</h1>
-        <p style="font-size:1.0625rem;color:var(--ink-2)">Ton paiement a bien été reçu. Tu vas recevoir la confirmation myPOS par e-mail, et on prépare ta commande.</p>
+        <p style="font-size:1.0625rem;color:var(--ink-2)">Ton paiement a bien été reçu. Tu vas recevoir la confirmation par e-mail, et on prépare ta commande.</p>
         <div class="perks">
           <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">Expédition sous 24 à 48 h avec numéro de suivi.</span></div></div>
           <div class="perk">${I.shield}<div><b>100% authentique, garanti</b></div></div>

@@ -45,7 +45,14 @@ window.BASE_CONFIG = {
   heroVideoMobile: ["assets/video/hero-m.webm", "assets/video/hero-m.mp4"],
   heroPosterMobile: "assets/video/hero-m.jpg",
 
-  // Paiement par carte myPOS, directement sur la page de commande (voir payments/mypos/LISEZMOI.md).
+  // Paiement par carte Stripe, directement sur la page de commande (voir payments/stripe/LISEZMOI.md).
+  // Tant que ces deux valeurs sont vides, le paiement par carte Stripe est masqué.
+  stripe: {
+    publishableKey: "",    // clé publiable Stripe : pk_live_… (ou pk_test_… pour essayer). Elle peut être publique.
+    apiUrl: ""             // adresse du service Cloudflare (ex : https://base-stripe.xxx.workers.dev)
+  },
+
+  // (Plus tard) Paiement par carte myPOS, utilisé seulement si Stripe n'est pas configuré (voir payments/mypos/LISEZMOI.md).
   // Tant que sid, walletNumber et notifyUrl sont vides, le paiement par carte est masqué.
   mypos: {
     sid: "",               // « Store ID » de ta boutique en ligne myPOS
