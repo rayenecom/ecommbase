@@ -69,6 +69,7 @@ async function checkout(req, env, url, site) {
 
   const f = [
     ["ui_mode", "embedded"], ["mode", "payment"], ["locale", "fr"],
+    ["adaptive_pricing[enabled]", "false"],   // prix toujours en euros, comme sur le site
     ["return_url", `${self}/retour?session_id={CHECKOUT_SESSION_ID}`],
     ["client_reference_id", ref], ["customer_email", clip(c.email, 200)],
     ["payment_intent_data[description]", `Commande ${ref}`],

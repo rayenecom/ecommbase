@@ -1138,8 +1138,9 @@
       if (stripeCheckout) { try { stripeCheckout.destroy(); } catch (e) { /* ignore */ } stripeCheckout = null; }
       box.innerHTML = ""; err.textContent = "";
     };
-    $("#co-back").onclick = () => { reset(); pay.hidden = true; form.hidden = false; scrollTo({ top: 0 }); };
+    $("#co-back").onclick = () => { reset(); pay.hidden = true; form.hidden = false; $(".co").classList.remove("is-stripe"); scrollTo({ top: 0 }); };
     reset(); form.hidden = true; pay.hidden = false; loading.hidden = false;
+    $(".co").classList.toggle("is-stripe", stripeOn());
     $("#co-pay-total").textContent = moneyExact(order.total);
     scrollTo({ top: 0 });
     const failed = (msg) => { loading.hidden = true; err.textContent = msg; };

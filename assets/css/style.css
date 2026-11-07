@@ -625,4 +625,9 @@ body[data-route="product"] .wa-fab, body[data-route="checkout"] .wa-fab, body[da
 @media (prefers-reduced-motion: reduce) { .co-pay__loading .spinner { animation-duration: 2.4s; } }
 .co-pay__secure { display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 14px; font-size: var(--fs-xs); color: var(--muted); text-align: center; }
 .co-pay__secure svg { width: 14px; height: 14px; flex: none; }
+/* Stripe affiche son propre récapitulatif : le formulaire prend toute la largeur */
+.co.is-stripe { grid-template-columns: minmax(0, 1fr); max-width: 1080px; margin-inline: auto; }
+.co.is-stripe .summary { display: none; }
+.co.is-stripe .co-pay__box { border: 0; background: transparent; min-height: 560px; overflow: visible; }
+.co.is-stripe .co-pay__box iframe { min-width: 0; min-height: 0; }
 #co-submit[disabled] { opacity: .7; cursor: progress; }
