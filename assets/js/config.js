@@ -48,7 +48,7 @@ window.BASE_CONFIG = {
   // Paiement par carte Stripe, directement sur la page de commande (voir payments/stripe/LISEZMOI.md).
   // Tant que ces deux valeurs sont vides, le paiement par carte Stripe est masqué.
   stripe: {
-    publishableKey: "pk_test_51UZGKbR5RnMKhZmVQ7JYxmU89bQk9b4Cm8e4hKx2PEtEHM4meiLSIpBimPCo7gg80U2lAwRdTS03wvb0hS34OEWG00UMjH1uAQ",    // clé publiable Stripe : pk_live_… (ou pk_test_… pour essayer). Elle peut être publique.
+    publishableKey: "pk_live_51UZGKbR5RnMKhZmV1ZHpMyPKMw1lgxfsr0pgHwvX83ndhne88vRjD8PVu51B0pDjwGZdBr0wjuY2IbfVgNsGK3Mn00tYCckko8",    // clé publiable Stripe : pk_live_… (ou pk_test_… pour essayer). Elle peut être publique.
     apiUrl: "https://base-stripe.la-base.workers.dev"   // adresse du service Cloudflare (ex : https://base-stripe.xxx.workers.dev)
   },
 
