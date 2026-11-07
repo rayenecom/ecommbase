@@ -590,7 +590,7 @@
       <section class="hero">
         <div class="hero__media" aria-hidden="true">
           ${heroSrc.length
-            ? `<video class="hero__video" muted loop playsinline preload="auto"${heroPoster ? ` poster="${heroPoster}"` : ""}>${heroSrc.map((src) => `<source src="${src}" type="video/${src.split(".").pop() === "webm" ? "webm" : "mp4"}">`).join("")}</video>`
+            ? `<video class="hero__video" autoplay muted loop playsinline webkit-playsinline x5-playsinline disablepictureinpicture disableremoteplayback preload="auto"${heroPoster ? ` poster="${heroPoster}"` : ""}>${heroSrc.map((src) => `<source src="${src}" type="video/${src.split(".").pop() === "webm" ? "webm" : "mp4"}">`).join("")}</video>`
             : heroPoster ? `<img class="hero__video" src="${heroPoster}" alt="">` : ""}
         </div>
         <div class="wrap">
@@ -682,15 +682,33 @@
       </div></section>
     `;
 
-    // Vidéo de la bannière : lecture auto (sauf « réduire les animations »), pause hors écran, bouton pause/lecture
+    // Vidéo de la bannière : lecture auto en boucle, même dans les navigateurs intégrés (TikTok, Instagram) qui bloquent
+    // parfois le démarrage : on réessaie au premier geste, au retour sur la page, et si le système la met en pause.
+    // Pause seulement hors écran ou si le visiteur clique sur le bouton pause.
     const vid = $(".hero video", main), tog = $(".hero__toggle", main);
     if (vid && tog) {
-      let wanted = !matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const sync = () => { tog.classList.toggle("is-paused", !wanted); tog.setAttribute("aria-label", wanted ? "Mettre la vidéo en pause" : "Lire la vidéo"); };
-      const play = () => vid.play().catch(() => { wanted = false; sync(); });
-      tog.addEventListener("click", () => { wanted = !wanted; wanted ? play() : vid.pause(); sync(); });
-      if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { e.isIntersecting && wanted ? play() : vid.pause(); }).observe(vid);
-      else if (wanted) play();
+      vid.muted = true; vid.defaultMuted = true; vid.setAttribute("muted", ""); vid.loop = true;
+      let userPaused = false, inView = true, retry = 0;
+      const sync = () => { const on = !userPaused; tog.classList.toggle("is-paused", !on); tog.setAttribute("aria-label", on ? "Mettre la vidéo en pause" : "Lire la vidéo"); };
+      const play = () => {
+        if (userPaused || !inView || document.hidden || !vid.isConnected) return;
+        vid.muted = true;
+        const pr = vid.play();
+        if (pr && pr.catch) pr.catch(() => { clearTimeout(retry); retry = setTimeout(play, 1200); });
+      };
+      tog.addEventListener("click", () => { userPaused = !userPaused; userPaused ? vid.pause() : play(); sync(); });
+      // le navigateur ou le système a mis la vidéo en pause tout seul : on relance
+      vid.addEventListener("pause", () => { if (!userPaused && inView && !document.hidden) { clearTimeout(retry); retry = setTimeout(play, 400); } });
+      vid.addEventListener("ended", () => { vid.currentTime = 0; play(); });
+      ["loadeddata", "canplay"].forEach((ev) => vid.addEventListener(ev, play));
+      // premier geste du visiteur (toucher, défilement) : débloque la lecture dans les navigateurs intégrés
+      const kick = () => { play(); if (!vid.paused || !vid.isConnected) ["touchstart", "pointerdown", "scroll", "keydown"].forEach((ev) => removeEventListener(ev, kick, true)); };
+      ["touchstart", "pointerdown", "scroll", "keydown"].forEach((ev) => addEventListener(ev, kick, { capture: true, passive: true }));
+      const onVis = () => { if (!vid.isConnected) { document.removeEventListener("visibilitychange", onVis); removeEventListener("pageshow", onVis); return; } play(); };
+      document.addEventListener("visibilitychange", onVis);
+      addEventListener("pageshow", onVis);
+      if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { inView = e.isIntersecting; inView ? play() : vid.pause(); }).observe(vid);
+      play();
       sync();
     }
 

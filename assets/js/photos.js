@@ -638,32 +638,50 @@ window.BASE_PHOTOS = {
 
   // Casquette Columbia Mesh Snapback — Black
   "columbia-mesh-snapback-blab": [
-    "images/products/columbia-mesh-snapback-blab-1.jpg"
+    "images/products/columbia-mesh-snapback-blab-1.jpg",
+    "images/products/columbia-mesh-snapback-blab-2.jpg",
+    "images/products/columbia-mesh-snapback-blab-3.jpg",
+    "images/products/columbia-mesh-snapback-blab-4.jpg"
   ],
 
   // Casquette Columbia Mesh Snapback — Shark / Collegiate Navy
   "columbia-mesh-snapback-shcoctwi": [
-    "images/products/columbia-mesh-snapback-shcoctwi-1.jpg"
+    "images/products/columbia-mesh-snapback-shcoctwi-1.jpg",
+    "images/products/columbia-mesh-snapback-shcoctwi-2.jpg",
+    "images/products/columbia-mesh-snapback-shcoctwi-3.jpg",
+    "images/products/columbia-mesh-snapback-shcoctwi-4.jpg"
   ],
 
   // Casquette Columbia Mesh Snapback — Shark / Purple
   "columbia-mesh-snapback-shpucoctwi": [
-    "images/products/columbia-mesh-snapback-shpucoctwi-1.jpg"
+    "images/products/columbia-mesh-snapback-shpucoctwi-1.jpg",
+    "images/products/columbia-mesh-snapback-shpucoctwi-2.jpg",
+    "images/products/columbia-mesh-snapback-shpucoctwi-3.jpg",
+    "images/products/columbia-mesh-snapback-shpucoctwi-4.jpg"
   ],
 
   // Casquette Columbia Tree Flag Trucker — Black
   "columbia-tree-flag-bk": [
-    "images/products/columbia-tree-flag-bk-1.jpg"
+    "images/products/columbia-tree-flag-bk-1.jpg",
+    "images/products/columbia-tree-flag-bk-2.jpg",
+    "images/products/columbia-tree-flag-bk-3.jpg",
+    "images/products/columbia-tree-flag-bk-4.jpg"
   ],
 
   // Casquette Columbia Tree Flag Trucker — Collegiate Navy
   "columbia-tree-flag-colnava": [
-    "images/products/columbia-tree-flag-colnava-1.jpg"
+    "images/products/columbia-tree-flag-colnava-1.jpg",
+    "images/products/columbia-tree-flag-colnava-2.jpg",
+    "images/products/columbia-tree-flag-colnava-3.jpg",
+    "images/products/columbia-tree-flag-colnava-4.jpg"
   ],
 
   // Casquette Columbia Tree Flag Trucker — Moss Green
   "columbia-tree-flag-mosgre": [
-    "images/products/columbia-tree-flag-mosgre-1.jpg"
+    "images/products/columbia-tree-flag-mosgre-1.jpg",
+    "images/products/columbia-tree-flag-mosgre-2.jpg",
+    "images/products/columbia-tree-flag-mosgre-3.jpg",
+    "images/products/columbia-tree-flag-mosgre-4.jpg"
   ],
 
   // Bonnet C.P. Company Goggle — Black
@@ -1080,50 +1098,50 @@ window.BASE_PHOTOS = {
 
   // Ensemble Alo Alpha Shell Veste + Pantalon — Black
   "alo-alpha-shell-set-black": [
+    "images/products/alo-alpha-shell-set-black-4.jpg",
     "images/products/alo-alpha-shell-set-black-1.jpg",
     "images/products/alo-alpha-shell-set-black-2.jpg",
-    "images/products/alo-alpha-shell-set-black-3.jpg",
-    "images/products/alo-alpha-shell-set-black-4.jpg"
+    "images/products/alo-alpha-shell-set-black-3.jpg"
   ],
 
   // Ensemble Alo Alpha Shell Veste + Pantalon — Bone
   "alo-alpha-shell-set-bone": [
+    "images/products/alo-alpha-shell-set-bone-4.jpg",
     "images/products/alo-alpha-shell-set-bone-1.jpg",
     "images/products/alo-alpha-shell-set-bone-2.jpg",
-    "images/products/alo-alpha-shell-set-bone-3.jpg",
-    "images/products/alo-alpha-shell-set-bone-4.jpg"
+    "images/products/alo-alpha-shell-set-bone-3.jpg"
   ],
 
   // Ensemble Alo Alpha Shell Veste + Pantalon — Espresso
   "alo-alpha-shell-set-espresso": [
+    "images/products/alo-alpha-shell-set-espresso-4.jpg",
     "images/products/alo-alpha-shell-set-espresso-1.jpg",
     "images/products/alo-alpha-shell-set-espresso-2.jpg",
-    "images/products/alo-alpha-shell-set-espresso-3.jpg",
-    "images/products/alo-alpha-shell-set-espresso-4.jpg"
+    "images/products/alo-alpha-shell-set-espresso-3.jpg"
   ],
 
   // Ensemble Alo Alpha Shell Veste + Pantalon — Lunar Grey
   "alo-alpha-shell-set-lunar-grey": [
+    "images/products/alo-alpha-shell-set-lunar-grey-4.jpg",
     "images/products/alo-alpha-shell-set-lunar-grey-1.jpg",
     "images/products/alo-alpha-shell-set-lunar-grey-2.jpg",
-    "images/products/alo-alpha-shell-set-lunar-grey-3.jpg",
-    "images/products/alo-alpha-shell-set-lunar-grey-4.jpg"
+    "images/products/alo-alpha-shell-set-lunar-grey-3.jpg"
   ],
 
   // Ensemble Alo Alpha Shell Veste + Pantalon — Navy
   // Ensemble Alo Alpha Shell Veste + Pantalon — Rich Bordeaux
   "alo-alpha-shell-set-rich-bordeaux": [
+    "images/products/alo-alpha-shell-set-rich-bordeaux-4.jpg",
     "images/products/alo-alpha-shell-set-rich-bordeaux-1.jpg",
     "images/products/alo-alpha-shell-set-rich-bordeaux-2.jpg",
-    "images/products/alo-alpha-shell-set-rich-bordeaux-3.jpg",
-    "images/products/alo-alpha-shell-set-rich-bordeaux-4.jpg"
+    "images/products/alo-alpha-shell-set-rich-bordeaux-3.jpg"
   ],
 
   "alo-alpha-shell-set-navy": [
+    "images/products/alo-alpha-shell-set-navy-4.jpg",
     "images/products/alo-alpha-shell-set-navy-1.jpg",
     "images/products/alo-alpha-shell-set-navy-2.jpg",
-    "images/products/alo-alpha-shell-set-navy-3.jpg",
-    "images/products/alo-alpha-shell-set-navy-4.jpg"
+    "images/products/alo-alpha-shell-set-navy-3.jpg"
   ],
 
   // Ensemble Lululemon Pace Breaker Veste + Jogger — Black
