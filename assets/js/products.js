@@ -3473,5 +3473,102 @@ window.BASE_PRODUCTS = [
     sizes: ["40", "41", "42", "43", "44", "45", "46"],
     description: "La Tasman à lacets : l'iconique Tasman en daim et laine, avec un laçage tressé sur le dessus.",
     details: ["Daim et laine", "Laçage tressé", "Semelle Treadlite", "Taille normalement"]
+  },
+  /* ---------- UGG femme sans lacets — Tasman, Tazz, Classic Ultra Mini ---------- */
+  {
+    id: "ugg-tasman-w-black", group: "ugg-tasman-w",
+    name: "UGG Tasman Femme", color: "Black", swatch: "#111111",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La UGG Tasman : le chausson culte en daim doublé de laine, bordure brodée Tasman et semelle crantée. Se porte dedans comme dehors.",
+    details: ["Daim et doublure laine", "Bordure brodée Tasman", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-tasman-w-chestnut", group: "ugg-tasman-w",
+    name: "UGG Tasman Femme", color: "Chestnut", swatch: "#9a6a3f",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["best"],
+    description: "La UGG Tasman : le chausson culte en daim doublé de laine, bordure brodée Tasman et semelle crantée. Se porte dedans comme dehors.",
+    details: ["Daim et doublure laine", "Bordure brodée Tasman", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-tasman-w-dusted-cocoa", group: "ugg-tasman-w",
+    name: "UGG Tasman Femme", color: "Dusted Cocoa", swatch: "#4a3328",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: [],
+    description: "La UGG Tasman : le chausson culte en daim doublé de laine, bordure brodée Tasman et semelle crantée. Se porte dedans comme dehors.",
+    details: ["Daim et doublure laine", "Bordure brodée Tasman", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-tasman-w-sand-dark-cherry", group: "ugg-tasman-w",
+    name: "UGG Tasman Femme", color: "Sand / Dark Cherry", swatch: "#c4a382",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La UGG Tasman : le chausson culte en daim doublé de laine, bordure brodée Tasman et semelle crantée. Se porte dedans comme dehors.",
+    details: ["Daim et doublure laine", "Bordure brodée Tasman", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-tazz-w-chestnut", group: "ugg-tazz-w",
+    name: "UGG Tazz Femme", color: "Chestnut", swatch: "#a8713f",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["best"],
+    description: "La UGG Tazz : la Tasman sur semelle plateforme, en daim doublé de laine avec la bordure brodée emblématique.",
+    details: ["Daim et doublure laine", "Semelle plateforme 5 cm", "Bordure brodée Tasman", "Taille normalement"]
+  },
+  {
+    id: "ugg-tazz-w-black", group: "ugg-tazz-w",
+    name: "UGG Tazz Femme", color: "Black", swatch: "#111111",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: [],
+    description: "La UGG Tazz : la Tasman sur semelle plateforme, en daim doublé de laine avec la bordure brodée emblématique.",
+    details: ["Daim et doublure laine", "Semelle plateforme 5 cm", "Bordure brodée Tasman", "Taille normalement"]
+  },
+  {
+    id: "ugg-tazz-w-sand", group: "ugg-tazz-w",
+    name: "UGG Tazz Femme", color: "Sand", swatch: "#c8ae8f",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La UGG Tazz : la Tasman sur semelle plateforme, en daim doublé de laine avec la bordure brodée emblématique.",
+    details: ["Daim et doublure laine", "Semelle plateforme 5 cm", "Bordure brodée Tasman", "Taille normalement"]
+  },
+  {
+    id: "ugg-tazz-w-dusted-cocoa", group: "ugg-tazz-w",
+    name: "UGG Tazz Femme", color: "Dusted Cocoa", swatch: "#4a3328",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: [],
+    description: "La UGG Tazz : la Tasman sur semelle plateforme, en daim doublé de laine avec la bordure brodée emblématique.",
+    details: ["Daim et doublure laine", "Semelle plateforme 5 cm", "Bordure brodée Tasman", "Taille normalement"]
+  },
+  {
+    id: "ugg-tazz-w-pink", group: "ugg-tazz-w",
+    name: "UGG Tazz Femme", color: "Pink", swatch: "#e6b6d6",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La UGG Tazz : la Tasman sur semelle plateforme, en daim doublé de laine avec la bordure brodée emblématique.",
+    details: ["Daim et doublure laine", "Semelle plateforme 5 cm", "Bordure brodée Tasman", "Taille normalement"]
+  },
+  {
+    id: "ugg-ultramini-w-sand", group: "ugg-ultramini-w",
+    name: "UGG Classic Ultra Mini Femme", color: "Sand", swatch: "#c09a74",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["best"],
+    description: "La UGG Classic Ultra Mini : la botte iconique en version très basse, daim et peau lainée, sans lacets, qui s'enfile en une seconde.",
+    details: ["Daim et peau lainée", "Tige ultra basse", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-ultramini-w-black", group: "ugg-ultramini-w",
+    name: "UGG Classic Ultra Mini Femme", color: "Black", swatch: "#111111",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: [],
+    description: "La UGG Classic Ultra Mini : la botte iconique en version très basse, daim et peau lainée, sans lacets, qui s'enfile en une seconde.",
+    details: ["Daim et peau lainée", "Tige ultra basse", "Semelle Treadlite", "Taille normalement"]
+  },
+  {
+    id: "ugg-ultramini-w-portobello", group: "ugg-ultramini-w",
+    name: "UGG Classic Ultra Mini Femme", color: "Portobello", swatch: "#8d7470",
+    brand: "ugg", category: "chaussures", gender: "femme", price: 65,
+    sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
+    description: "La UGG Classic Ultra Mini : la botte iconique en version très basse, daim et peau lainée, sans lacets, qui s'enfile en une seconde.",
+    details: ["Daim et peau lainée", "Tige ultra basse", "Semelle Treadlite", "Taille normalement"]
   }
 ];

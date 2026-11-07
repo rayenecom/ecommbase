@@ -2638,6 +2638,90 @@ window.BASE_PHOTOS = {
     "images/products/alo-conquer-coop-set-navy-7.jpg"
   ],
 
+  // UGG Tasman Femme — Black
+  "ugg-tasman-w-black": [
+    "images/products/ugg-tasman-w-black-1.jpg",
+    "images/products/ugg-tasman-w-black-2.jpg",
+    "images/products/ugg-tasman-w-black-3.jpg"
+  ],
+
+  // UGG Tasman Femme — Chestnut
+  "ugg-tasman-w-chestnut": [
+    "images/products/ugg-tasman-w-chestnut-1.jpg",
+    "images/products/ugg-tasman-w-chestnut-2.jpg",
+    "images/products/ugg-tasman-w-chestnut-3.jpg"
+  ],
+
+  // UGG Tasman Femme — Dusted Cocoa
+  "ugg-tasman-w-dusted-cocoa": [
+    "images/products/ugg-tasman-w-dusted-cocoa-1.jpg",
+    "images/products/ugg-tasman-w-dusted-cocoa-2.jpg",
+    "images/products/ugg-tasman-w-dusted-cocoa-3.jpg"
+  ],
+
+  // UGG Tasman Femme — Sand / Dark Cherry
+  "ugg-tasman-w-sand-dark-cherry": [
+    "images/products/ugg-tasman-w-sand-dark-cherry-1.jpg",
+    "images/products/ugg-tasman-w-sand-dark-cherry-2.jpg",
+    "images/products/ugg-tasman-w-sand-dark-cherry-3.jpg"
+  ],
+
+  // UGG Tazz Femme — Chestnut
+  "ugg-tazz-w-chestnut": [
+    "images/products/ugg-tazz-w-chestnut-1.jpg",
+    "images/products/ugg-tazz-w-chestnut-2.jpg",
+    "images/products/ugg-tazz-w-chestnut-3.jpg"
+  ],
+
+  // UGG Tazz Femme — Black
+  "ugg-tazz-w-black": [
+    "images/products/ugg-tazz-w-black-1.jpg",
+    "images/products/ugg-tazz-w-black-2.jpg",
+    "images/products/ugg-tazz-w-black-3.jpg"
+  ],
+
+  // UGG Tazz Femme — Sand
+  "ugg-tazz-w-sand": [
+    "images/products/ugg-tazz-w-sand-1.jpg",
+    "images/products/ugg-tazz-w-sand-2.jpg",
+    "images/products/ugg-tazz-w-sand-3.jpg"
+  ],
+
+  // UGG Tazz Femme — Dusted Cocoa
+  "ugg-tazz-w-dusted-cocoa": [
+    "images/products/ugg-tazz-w-dusted-cocoa-1.jpg",
+    "images/products/ugg-tazz-w-dusted-cocoa-2.jpg",
+    "images/products/ugg-tazz-w-dusted-cocoa-3.jpg"
+  ],
+
+  // UGG Tazz Femme — Pink
+  "ugg-tazz-w-pink": [
+    "images/products/ugg-tazz-w-pink-1.jpg",
+    "images/products/ugg-tazz-w-pink-2.jpg",
+    "images/products/ugg-tazz-w-pink-3.jpg"
+  ],
+
+  // UGG Classic Ultra Mini Femme — Sand
+  "ugg-ultramini-w-sand": [
+    "images/products/ugg-ultramini-w-sand-1.jpg",
+    "images/products/ugg-ultramini-w-sand-2.jpg",
+    "images/products/ugg-ultramini-w-sand-3.jpg"
+  ],
+
+  // UGG Classic Ultra Mini Femme — Black
+  "ugg-ultramini-w-black": [
+    "images/products/ugg-ultramini-w-black-1.jpg",
+    "images/products/ugg-ultramini-w-black-2.jpg",
+    "images/products/ugg-ultramini-w-black-3.jpg"
+  ],
+
+  // UGG Classic Ultra Mini Femme — Portobello
+  "ugg-ultramini-w-portobello": [
+    "images/products/ugg-ultramini-w-portobello-1.jpg",
+    "images/products/ugg-ultramini-w-portobello-2.jpg",
+    "images/products/ugg-ultramini-w-portobello-3.jpg"
+  ],
+
   // UGG Lowmel Femme — Black
   "ugg-lowmel-w-black": [
     "images/products/ugg-lowmel-w-black-1.jpg",
