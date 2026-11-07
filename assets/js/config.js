@@ -49,7 +49,7 @@ window.BASE_CONFIG = {
   // Tant que ces deux valeurs sont vides, le paiement par carte Stripe est masqué.
   stripe: {
     publishableKey: "",    // clé publiable Stripe : pk_live_… (ou pk_test_… pour essayer). Elle peut être publique.
-    apiUrl: ""             // adresse du service Cloudflare (ex : https://base-stripe.xxx.workers.dev)
+    apiUrl: "https://base-stripe.la-base.workers.dev"   // adresse du service Cloudflare (ex : https://base-stripe.xxx.workers.dev)
   },
 
   // (Plus tard) Paiement par carte myPOS, utilisé seulement si Stripe n'est pas configuré (voir payments/mypos/LISEZMOI.md).
