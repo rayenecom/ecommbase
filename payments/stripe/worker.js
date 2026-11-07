@@ -14,6 +14,8 @@
    ========================================================== */
 
 const STRIPE = "https://api.stripe.com/v1";
+// Version de l'API Stripe figée : les changements de Stripe ne cassent pas le paiement (formulaire intégré « embedded »).
+const STRIPE_VERSION = "2025-03-31.basil";
 const COUNTRIES = { France: "FR", Belgique: "BE", Suisse: "CH", Luxembourg: "LU" };
 
 export default {
@@ -113,6 +115,7 @@ async function stripe(env, method, path, fields, idem) {
     headers: {
       Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`,
       "Content-Type": "application/x-www-form-urlencoded",
+      "Stripe-Version": STRIPE_VERSION,
       ...(idem ? { "Idempotency-Key": `${idem}-${await hash(fields)}` } : {})
     },
     body: fields ? new URLSearchParams(fields).toString() : undefined
