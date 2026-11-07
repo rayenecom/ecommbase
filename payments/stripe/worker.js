@@ -48,7 +48,9 @@ async function checkout(req, env, url, site) {
   if (need.some((k) => !String(c[k] || "").trim())) fail("Informations client incomplètes.", 400);
   if (!Array.isArray(body.items) || !body.items.length || body.items.length > 20) fail("Panier vide.", 400);
 
-  const { products, shipping } = await catalogue(site);
+  let { products, shipping } = await catalogue(site);
+  // produit tout juste ajouté au site : on relit le catalogue à jour avant de refuser
+  if (body.items.some((it) => !products.has(String(it.id)))) ({ products, shipping } = await catalogue(site, true));
   const lines = body.items.map((it) => {
     const p = products.get(String(it.id));
     const qty = Math.trunc(Number(it.qty));
@@ -131,9 +133,11 @@ async function stripe(env, method, path, fields, idem) {
 
 /* ---------- Catalogue (prix relus sur le site) ---------- */
 let cache = null;
-async function catalogue(site) {
-  if (cache && Date.now() - cache.at < 5 * 60 * 1000) return cache.data;
-  const [pjs, cjs, phjs] = await Promise.all(["products", "config", "photos"].map((n) => fetch(`${site}/assets/js/${n}.js`, { cf: { cacheTtl: 300 } }).then((r) => {
+async function catalogue(site, fresh = false) {
+  // catalogue gardé 1 minute au plus : un changement de prix sur le site est vite pris en compte
+  if (!fresh && cache && Date.now() - cache.at < 60 * 1000) return cache.data;
+  const v = fresh ? Date.now() : Math.floor(Date.now() / 60000);
+  const [pjs, cjs, phjs] = await Promise.all(["products", "config", "photos"].map((n) => fetch(`${site}/assets/js/${n}.js?v=${v}`, { cf: { cacheTtl: 60 } }).then((r) => {
     if (!r.ok && n !== "photos") fail("Catalogue indisponible.", 503);
     return r.ok ? r.text() : "";
   })));
