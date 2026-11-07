@@ -1356,6 +1356,47 @@ window.BASE_PRODUCTS = [
     description: "La Alo Runner : sneaker rétro-running unisexe, tige mesh et daim, semelle légère et confortable. Pour homme et femme.",
     details: ["Unisexe (homme et femme)", "Tige mesh et daim", "Semelle légère amortissante", "Taille normalement"]
   },
+  /* ---------- Alo Accolade : capuche, zippé, 1/4 zip + jogging ---------- */
+  {
+    id: "alo-accolade-hoodie-set-black", group: "alo-accolade-hoodie-set",
+    name: "Ensemble Alo Accolade Hoodie + Jogging", color: "Black", swatch: "#151515",
+    brand: "alo", category: "ensembles", gender: "homme", price: 105,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le sweat à capuche Accolade (capuche à cordons, poche kangourou) et son jogging Accolade assorti : molleton épais et doux, coupe relax, le survêtement signature d'Alo.",
+    details: ["Sweat à capuche + jogging", "Molleton épais brossé", "Capuche à cordons", "Coupe relax : taille normalement"]
+  },
+  {
+    id: "alo-accolade-hoodie-set-navy", group: "alo-accolade-hoodie-set",
+    name: "Ensemble Alo Accolade Hoodie + Jogging", color: "Navy", swatch: "#2b3550",
+    brand: "alo", category: "ensembles", gender: "homme", price: 105,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le sweat à capuche Accolade (capuche à cordons, poche kangourou) et son jogging Accolade assorti : molleton épais et doux, coupe relax, le survêtement signature d'Alo.",
+    details: ["Sweat à capuche + jogging", "Molleton épais brossé", "Capuche à cordons", "Coupe relax : taille normalement"]
+  },
+  {
+    id: "alo-accolade-zip-set-black", group: "alo-accolade-zip-set",
+    name: "Ensemble Alo Accolade Zippé + Jogging", color: "Black", swatch: "#151515",
+    brand: "alo", category: "ensembles", gender: "homme", price: 105,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le sweat zippé à capuche Accolade et son jogging Accolade assorti : molleton épais et doux, double zip, coupe relax.",
+    details: ["Sweat zippé à capuche + jogging", "Molleton épais brossé", "Fermeture zip intégrale", "Coupe relax : taille normalement"]
+  },
+  {
+    id: "alo-accolade-zip-set-navy", group: "alo-accolade-zip-set",
+    name: "Ensemble Alo Accolade Zippé + Jogging", color: "Navy", swatch: "#2b3550",
+    brand: "alo", category: "ensembles", gender: "homme", price: 105,
+    sizes: CLOTHING, tags: [],
+    description: "Le sweat zippé à capuche Accolade et son jogging Accolade assorti : molleton épais et doux, double zip, coupe relax.",
+    details: ["Sweat zippé à capuche + jogging", "Molleton épais brossé", "Fermeture zip intégrale", "Coupe relax : taille normalement"]
+  },
+  {
+    id: "alo-accolade-qzip-set-rich-bordeaux", group: "alo-accolade-qzip-set",
+    name: "Ensemble Alo Accolade 1/4 Zip + Jogging", color: "Rich Bordeaux", swatch: "#5b1f35",
+    brand: "alo", category: "ensembles", gender: "homme", price: 105,
+    sizes: CLOTHING, tags: ["new"],
+    description: "Le pull col zippé Accolade et son jogging Accolade assorti, en Rich Bordeaux : molleton épais et doux, col montant zippé, coupe relax.",
+    details: ["Pull col zippé + jogging", "Molleton épais brossé", "Col montant zippé", "Coupe relax : taille normalement"]
+  },
   {
     id: "alo-alpha-shell-set-black", group: "alo-alpha-shell-set",
     name: "Ensemble Alo Alpha Shell Veste + Pantalon", color: "Black", swatch: "#2c313b",

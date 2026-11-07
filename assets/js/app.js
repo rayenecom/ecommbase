@@ -1045,12 +1045,15 @@
     }
     const d = store.get(DRAFT_KEY, {});
     const v = (k) => esc(d[k] || "");
-    const channels = [
-      cardOn() && ["card", "Carte bancaire", stripeOn() ? "CB, Visa, Mastercard, Apple Pay, Google Pay. Paiement sécurisé par Stripe, directement ici." : "Visa, Mastercard, Maestro. Paiement sécurisé par myPOS, directement ici.", I.card],
-      CFG.whatsapp && ["whatsapp", "WhatsApp", "Réponse la plus rapide. On te confirme ta taille et t'envoie le lien de paiement.", I.wa],
-      CFG.instagram && ["instagram", "Instagram", `Tu nous envoies ta commande en message privé à @${esc(CFG.instagram)}.`, I.ig],
-      CFG.email && ["email", "E-mail", `Tu nous envoies ta commande à ${esc(CFG.email)}.`, I.mail]
-    ].filter(Boolean);
+    // Paiement par carte uniquement quand il est configuré ; sinon (secours) commande par message.
+    const channels = (cardOn()
+      ? [["card", "Carte bancaire", stripeOn() ? "CB, Visa, Mastercard, Apple Pay, Google Pay. Paiement sécurisé par Stripe, directement ici." : "Visa, Mastercard, Maestro. Paiement sécurisé par myPOS, directement ici.", I.card]]
+      : [
+        CFG.whatsapp && ["whatsapp", "WhatsApp", "Réponse la plus rapide. On te confirme ta taille et t'envoie le lien de paiement.", I.wa],
+        CFG.instagram && ["instagram", "Instagram", `Tu nous envoies ta commande en message privé à @${esc(CFG.instagram)}.`, I.ig],
+        CFG.email && ["email", "E-mail", `Tu nous envoies ta commande à ${esc(CFG.email)}.`, I.mail]
+      ]).filter(Boolean);
+    const savedCh = channels.some(([k]) => k === d.channel) ? d.channel : channels[0][0];
     main.innerHTML = `<div class="wrap co">
       <form id="co-form" novalidate>
         <nav class="progress" aria-label="Étapes"><span>Panier</span>${I.chev}<b>Informations</b>${I.chev}<span>Confirmation</span></nav>
@@ -1068,7 +1071,7 @@
         </div></div>
         ${q && q.get("annule") ? `<p class="co-alert" role="status">Le paiement a été annulé. Ton panier est toujours là, tu peux réessayer.</p>` : ""}
         <div class="fieldset"><h2>${cardOn() ? "Paiement" : "Envoyer ma commande par"}</h2>
-          <div class="channels">${channels.map(([k, t, s, ic], i) => `<label class="channel"><input type="radio" name="channel" value="${k}" ${(d.channel ? d.channel === k : i === 0) ? "checked" : ""}><span><b>${t}</b><small>${s}</small></span>${ic}</label>`).join("")}</div>
+          <div class="channels">${channels.map(([k, t, s, ic], i) => `<label class="channel"><input type="radio" name="channel" value="${k}" ${k === savedCh ? "checked" : ""}><span><b>${t}</b><small>${s}</small></span>${ic}</label>`).join("")}</div>
           <p class="muted" id="co-paynote" style="font-size:var(--fs-sm)">Le paiement (carte, PayPal ou virement) se fait après la confirmation de ta taille. Tu ne paies rien maintenant.</p>
         </div>
         <button class="btn btn--block" type="submit" id="co-submit"><span id="co-cta">Valider ma commande</span> · <span id="co-total">${moneyExact(Cart.total())}</span></button>

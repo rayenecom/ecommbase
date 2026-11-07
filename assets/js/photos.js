@@ -1096,6 +1096,46 @@ window.BASE_PHOTOS = {
     "images/products/alo-runner-smoky-quartz-1.jpg"
   ],
 
+  // Ensemble Alo Accolade Hoodie + Jogging — Black
+  "alo-accolade-hoodie-set-black": [
+    "images/products/alo-accolade-hoodie-set-black-1.jpg",
+    "images/products/alo-accolade-hoodie-set-black-2.jpg",
+    "images/products/alo-accolade-hoodie-set-black-3.jpg",
+    "images/products/alo-accolade-hoodie-set-black-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade Hoodie + Jogging — Navy
+  "alo-accolade-hoodie-set-navy": [
+    "images/products/alo-accolade-hoodie-set-navy-1.jpg",
+    "images/products/alo-accolade-hoodie-set-navy-2.jpg",
+    "images/products/alo-accolade-hoodie-set-navy-3.jpg",
+    "images/products/alo-accolade-hoodie-set-navy-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade Zippé + Jogging — Black
+  "alo-accolade-zip-set-black": [
+    "images/products/alo-accolade-zip-set-black-1.jpg",
+    "images/products/alo-accolade-zip-set-black-2.jpg",
+    "images/products/alo-accolade-zip-set-black-3.jpg",
+    "images/products/alo-accolade-zip-set-black-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade Zippé + Jogging — Navy
+  "alo-accolade-zip-set-navy": [
+    "images/products/alo-accolade-zip-set-navy-1.jpg",
+    "images/products/alo-accolade-zip-set-navy-2.jpg",
+    "images/products/alo-accolade-zip-set-navy-3.jpg",
+    "images/products/alo-accolade-zip-set-navy-4.jpg"
+  ],
+
+  // Ensemble Alo Accolade 1/4 Zip + Jogging — Rich Bordeaux
+  "alo-accolade-qzip-set-rich-bordeaux": [
+    "images/products/alo-accolade-qzip-set-rich-bordeaux-1.jpg",
+    "images/products/alo-accolade-qzip-set-rich-bordeaux-2.jpg",
+    "images/products/alo-accolade-qzip-set-rich-bordeaux-3.jpg",
+    "images/products/alo-accolade-qzip-set-rich-bordeaux-4.jpg"
+  ],
+
   // Ensemble Alo Alpha Shell Veste + Pantalon — Black
   "alo-alpha-shell-set-black": [
     "images/products/alo-alpha-shell-set-black-4.jpg",
