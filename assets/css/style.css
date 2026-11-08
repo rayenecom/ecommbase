@@ -207,11 +207,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero__ctas { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn--glass { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.7); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .btn--glass:hover { background: #fff; color: var(--ink); border-color: #fff; }
-.hero__toggle { position: absolute; right: clamp(16px, 3vw, 32px); top: clamp(16px, 3vw, 32px); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.45); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); cursor: pointer; transition: background .2s var(--ease); }
-.hero__toggle:hover { background: rgba(255,255,255,.28); }
-.hero__toggle svg { width: 16px; height: 16px; fill: currentColor; }
-.hero__toggle .i-play, .hero__toggle.is-paused .i-pause { display: none; }
-.hero__toggle.is-paused .i-play { display: inline; }
 .tag { position: absolute; left: 12px; bottom: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--paper); border-radius: 999px; padding: 8px 8px 8px 14px; font-size: var(--fs-xs); box-shadow: 0 6px 20px -8px rgba(16,18,17,.25); }
 .tag b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .tag span { background: var(--ink); color: var(--on-ink); border-radius: 999px; padding: 4px 10px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }

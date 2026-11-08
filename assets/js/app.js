@@ -602,7 +602,6 @@
             </div>
           </div>
         </div>
-        ${heroSrc.length ? `<button class="hero__toggle" type="button" aria-label="Mettre la vidéo en pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-play" d="M8 5l11 7-11 7z"/></svg></button>` : ""}
       </section>
 
       <section class="band band--tight bubbles-band" aria-label="Nos marques"><div class="wrap">
@@ -682,34 +681,18 @@
       </div></section>
     `;
 
-    // Vidéo de la bannière : lecture auto en boucle, même dans les navigateurs intégrés (TikTok, Instagram) qui bloquent
-    // parfois le démarrage : on réessaie au premier geste, au retour sur la page, et si le système la met en pause.
-    // Pause seulement hors écran ou si le visiteur clique sur le bouton pause.
-    const vid = $(".hero video", main), tog = $(".hero__toggle", main);
-    if (vid && tog) {
-      vid.muted = true; vid.defaultMuted = true; vid.setAttribute("muted", ""); vid.loop = true;
-      let userPaused = false, inView = true, retry = 0;
-      const sync = () => { const on = !userPaused; tog.classList.toggle("is-paused", !on); tog.setAttribute("aria-label", on ? "Mettre la vidéo en pause" : "Lire la vidéo"); };
-      const play = () => {
-        if (userPaused || !inView || document.hidden || !vid.isConnected) return;
-        vid.muted = true;
-        const pr = vid.play();
-        if (pr && pr.catch) pr.catch(() => { clearTimeout(retry); retry = setTimeout(play, 1200); });
-      };
-      tog.addEventListener("click", () => { userPaused = !userPaused; userPaused ? vid.pause() : play(); sync(); });
-      // le navigateur ou le système a mis la vidéo en pause tout seul : on relance
-      vid.addEventListener("pause", () => { if (!userPaused && inView && !document.hidden) { clearTimeout(retry); retry = setTimeout(play, 400); } });
-      vid.addEventListener("ended", () => { vid.currentTime = 0; play(); });
-      ["loadeddata", "canplay"].forEach((ev) => vid.addEventListener(ev, play));
-      // premier geste du visiteur (toucher, défilement) : débloque la lecture dans les navigateurs intégrés
-      const kick = () => { play(); if (!vid.paused || !vid.isConnected) ["touchstart", "pointerdown", "scroll", "keydown"].forEach((ev) => removeEventListener(ev, kick, true)); };
-      ["touchstart", "pointerdown", "scroll", "keydown"].forEach((ev) => addEventListener(ev, kick, { capture: true, passive: true }));
-      const onVis = () => { if (!vid.isConnected) { document.removeEventListener("visibilitychange", onVis); removeEventListener("pageshow", onVis); return; } play(); };
+    // Vidéo de la bannière : lecture automatique en boucle, sans bouton pause.
+    // Si le navigateur (ex. navigateur intégré TikTok) bloque le démarrage, elle se lance au premier toucher.
+    const vid = $(".hero video", main);
+    if (vid) {
+      vid.muted = true; vid.defaultMuted = true;
+      const start = () => { if (vid.isConnected && vid.paused) { const pr = vid.play(); if (pr && pr.catch) pr.catch(() => {}); } };
+      const onGesture = () => { start(); removeEventListener("touchstart", onGesture, true); removeEventListener("pointerdown", onGesture, true); };
+      addEventListener("touchstart", onGesture, { capture: true, passive: true, once: true });
+      addEventListener("pointerdown", onGesture, { capture: true, passive: true, once: true });
+      const onVis = () => { if (!vid.isConnected) return document.removeEventListener("visibilitychange", onVis); if (!document.hidden) start(); };
       document.addEventListener("visibilitychange", onVis);
-      addEventListener("pageshow", onVis);
-      if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { inView = e.isIntersecting; inView ? play() : vid.pause(); }).observe(vid);
-      play();
-      sync();
+      start();
     }
 
     // Onglets best-sellers
