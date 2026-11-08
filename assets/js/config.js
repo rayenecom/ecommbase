@@ -44,6 +44,9 @@ window.BASE_CONFIG = {
   // Version verticale pour téléphone (facultatif : sans elle, la vidéo ci-dessus est recadrée au centre)
   heroVideoMobile: ["assets/video/hero-m.webm", "assets/video/hero-m.mp4"],
   heroPosterMobile: "assets/video/hero-m.jpg",
+  // Version « image animée » de la vidéo : utilisée dans les navigateurs des applis (TikTok, Instagram, Snapchat…)
+  // qui bloquent ou détournent les vidéos, et en secours si la lecture automatique est refusée.
+  heroAnim: "assets/video/hero-m.webp",
 
   // Paiement par carte Stripe, directement sur la page de commande (voir payments/stripe/LISEZMOI.md).
   // Tant que ces deux valeurs sont vides, le paiement par carte Stripe est masqué.

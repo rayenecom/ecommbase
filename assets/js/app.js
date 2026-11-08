@@ -577,6 +577,9 @@
     const heroMobile = matchMedia("(max-width: 699px)").matches, heroSrcM = [].concat(CFG.heroVideoMobile || []);
     const heroSrc = heroMobile && heroSrcM.length ? heroSrcM : [].concat(CFG.heroVideo || []);
     const heroPoster = (heroMobile && CFG.heroPosterMobile) || CFG.heroPoster;
+    // Navigateurs intégrés des applis : ils bloquent ou détournent les vidéos (lecteur plein écran, bouton lecture).
+    const inApp = /TikTok|musical_ly|Bytedance|aweme|trill|Instagram|FBAN|FBAV|FB_IAB|Snapchat|Twitter|Line\//i.test(navigator.userAgent);
+    const useAnim = !!CFG.heroAnim && (inApp || matchMedia("(prefers-reduced-data: reduce)").matches);
     const duoA = byId("essentials-ss22-set-light-oatmeal"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
     // Visuels des tuiles : images/home/cat-*.jpg (collages fond crème, générés hors du site)
     const catTiles = [
@@ -588,10 +591,12 @@
 
     main.innerHTML = `
       <section class="hero">
-        <div class="hero__media" aria-hidden="true">
-          ${heroSrc.length
-            ? `<video class="hero__video" autoplay muted loop playsinline webkit-playsinline x5-playsinline disablepictureinpicture disableremoteplayback preload="auto"${heroPoster ? ` poster="${heroPoster}"` : ""}>${heroSrc.map((src) => `<source src="${src}" type="video/${src.split(".").pop() === "webm" ? "webm" : "mp4"}">`).join("")}</video>`
-            : heroPoster ? `<img class="hero__video" src="${heroPoster}" alt="">` : ""}
+        <div class="hero__media" aria-hidden="true"${heroPoster ? ` style="background-image:url('${heroPoster}')"` : ""}>
+          ${useAnim
+            ? `<img class="hero__video" src="${CFG.heroAnim}" alt="" decoding="async" fetchpriority="high" draggable="false">`
+            : heroSrc.length
+            ? `<video class="hero__video" autoplay muted loop playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" x5-video-player-fullscreen="false" x-webkit-airplay="deny" disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" tabindex="-1" preload="auto"${heroPoster ? ` poster="${heroPoster}"` : ""}>${heroSrc.map((src) => `<source src="${src}" type="video/${src.split(".").pop() === "webm" ? "webm" : "mp4"}">`).join("")}</video>`
+            : heroPoster ? `<img class="hero__video" src="${heroPoster}" alt="" draggable="false">` : ""}
         </div>
         <div class="wrap">
           <div class="hero__copy">
@@ -681,15 +686,22 @@
       </div></section>
     `;
 
-    // Vidéo de la bannière : lecture automatique en boucle, sans bouton pause.
-    // Si le navigateur (ex. navigateur intégré TikTok) bloque le démarrage, elle se lance au premier toucher.
+    // Vidéo de la bannière : lecture automatique en boucle, impossible à toucher ou à mettre en plein écran.
+    // Si le navigateur refuse la lecture automatique, on la remplace par l'image animée (qui tourne toujours toute seule).
     const vid = $(".hero video", main);
     if (vid) {
-      vid.muted = true; vid.defaultMuted = true;
-      const start = () => { if (vid.isConnected && vid.paused) { const pr = vid.play(); if (pr && pr.catch) pr.catch(() => {}); } };
-      const onGesture = () => { start(); removeEventListener("touchstart", onGesture, true); removeEventListener("pointerdown", onGesture, true); };
-      addEventListener("touchstart", onGesture, { capture: true, passive: true, once: true });
-      addEventListener("pointerdown", onGesture, { capture: true, passive: true, once: true });
+      vid.muted = true; vid.defaultMuted = true; vid.controls = false;
+      const toAnim = () => {
+        if (!CFG.heroAnim || !vid.isConnected) return;
+        const img = document.createElement("img");
+        img.className = "hero__video"; img.src = CFG.heroAnim; img.alt = ""; img.draggable = false;
+        vid.replaceWith(img);
+      };
+      const start = () => { if (vid.isConnected && vid.paused) { const pr = vid.play(); if (pr && pr.catch) pr.catch(toAnim); } };
+      // certains navigateurs passent la vidéo en plein écran : on l'en sort tout de suite
+      vid.addEventListener("webkitbeginfullscreen", () => { try { vid.webkitExitFullscreen(); } catch (e) { /* ignore */ } toAnim(); });
+      // filet de sécurité : toujours à l'arrêt après 3 s (lecture bloquée sans erreur) -> image animée
+      setTimeout(() => { if (vid.isConnected && vid.paused && !document.hidden) toAnim(); }, 3000);
       const onVis = () => { if (!vid.isConnected) return document.removeEventListener("visibilitychange", onVis); if (!document.hidden) start(); };
       document.addEventListener("visibilitychange", onVis);
       start();
