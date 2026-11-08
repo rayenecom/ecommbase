@@ -578,7 +578,11 @@
     const heroSrc = heroMobile && heroSrcM.length ? heroSrcM : [].concat(CFG.heroVideo || []);
     const heroPoster = (heroMobile && CFG.heroPosterMobile) || CFG.heroPoster;
     // Navigateurs intégrés des applis : ils bloquent ou détournent les vidéos (lecteur plein écran, bouton lecture).
-    const inApp = /TikTok|musical_ly|Bytedance|aweme|trill|Instagram|FBAN|FBAV|FB_IAB|Snapchat|Twitter|Line\//i.test(navigator.userAgent);
+    const ua = navigator.userAgent;
+    const iOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const inApp = /TikTok|musical_ly|Bytedance|aweme|trill|Instagram|FBAN|FBAV|FB_IAB|Snapchat|Twitter|Line\/|Pinterest|LinkedIn/i.test(ua)
+      || (iOS && !/Safari\//.test(ua))                              // navigateur intégré iPhone (sans « Safari/ » dans son identité)
+      || (/Android/.test(ua) && /; wv\)|Version\/[\d.]+ Chrome/.test(ua)); // navigateur intégré Android (WebView)
     const useAnim = !!CFG.heroAnim && (inApp || matchMedia("(prefers-reduced-data: reduce)").matches);
     const duoA = byId("essentials-ss22-set-light-oatmeal"), duoB = PRODUCTS.find((p) => p.group === "on-cloudtilt-m" && /white|ivory/i.test(p.color)) || firstOf("on-cloudtilt-m");
     // Visuels des tuiles : images/home/cat-*.jpg (collages fond crème, générés hors du site)
