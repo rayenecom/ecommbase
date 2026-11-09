@@ -78,3 +78,9 @@ d'après les liens `utm_…` des publicités.
    `https://base-stripe.la-base.workers.dev/feed/snapchat.csv` (relu sur le site, toujours à jour).
 4. **Liens des pubs** : `https://la-base.shop/?utm_source=snapchat&utm_medium=paid&utm_campaign=NOM&utm_content=CREA#/produit/ID`
    (les paramètres avant le `#`). Snapchat ajoute lui-même `ScCid=…` au clic : le site le récupère et nettoie l'adresse.
+
+## 7. Codes promo (créateurs, Black Friday)
+
+Le formulaire de paiement affiche un champ « Ajouter un code promo ». Pour créer un code :
+Stripe → **Catalogue de produits → Coupons → Créer un coupon** (ex. 10 %, une fois par client), puis dans ce coupon
+**Ajouter un code promotionnel** (ex. `BASE10`, ou `INES10` pour une créatrice). Chaque paiement indique le code utilisé.
