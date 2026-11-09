@@ -50,6 +50,70 @@
     legal: "#/mentions"
   };
 
+  /* =================== Mesure des pubs (Snapchat) =================== */
+  // Provenance de la visite (liens utm_… et ScCid ajouté par Snapchat au clic) : gardée 30 jours pour l'attacher
+  // à la commande dans Stripe. Le Pixel Snap ne se charge qu'après « Accepter » dans le bandeau cookies,
+  // et seulement si config.js contient snap.pixelId.
+  const Track = (() => {
+    const pid = String((CFG.snap || {}).pixelId || "").trim();
+    const SRC = "base_src_v1", OK = "base_consent_v1", DONE = "base_px_done";
+    const href = location.href;
+    const grab = (k) => { const m = href.match(new RegExp("[?&]" + k + "=([^&#]*)", "i")); try { return m ? decodeURIComponent(m[1].replace(/\+/g, " ")).slice(0, 200) : ""; } catch (e) { return ""; } };
+    const utm = {};
+    ["source", "medium", "campaign", "content"].forEach((k) => { const v = grab("utm_" + k); if (v) utm[k] = v; });
+    const sccid = grab("ScCid");
+    if (Object.keys(utm).length || sccid) store.set(SRC, { utm, sccid, at: Date.now() });
+    // Nettoie l'adresse : « #/produit/x&ScCid=… » casserait la page produit
+    const strip = (x) => x.replace(/[?&](?:ScCid|utm_[a-z]+)=[^&#]*/gi, "");
+    let h = strip(location.hash), q = strip(location.search).replace(/^&/, "?");
+    if (h !== location.hash && h.indexOf("?") === -1 && h.indexOf("&") > -1) h = h.replace("&", "?");
+    if (q === "?") q = "";
+    if (h !== location.hash || q !== location.search) { try { history.replaceState(null, "", location.pathname + q + h); } catch (e) { /* navigateur restreint */ } }
+
+    // Choix cookies : redemandé après 13 mois (recommandation CNIL)
+    const consent = () => { const c = store.get(OK, null); return c && Date.now() - c.at < 395 * 864e5 ? c.ads : undefined; };
+    const on = () => !!pid && consent() === true;
+    let loaded = false;
+    function load() {
+      if (loaded || !on()) return;
+      loaded = true;
+      (function (e, t, n) { if (e.snaptr) return; const a = e.snaptr = function () { a.handleRequest ? a.handleRequest.apply(a, arguments) : a.queue.push(arguments); }; a.queue = []; const r = t.createElement("script"); r.async = true; r.src = n; const u = t.getElementsByTagName("script")[0]; u.parentNode.insertBefore(r, u); })(window, document, "https://sc-static.net/scevent.min.js");
+      window.snaptr("init", pid, {});
+    }
+    function ev(name, data) { if (!on()) return; load(); try { window.snaptr("track", name, data || {}); } catch (e) { /* mesure indisponible */ } }
+    const cookie = (n) => { const m = document.cookie.match(new RegExp("(?:^|; )" + n + "=([^;]*)")); return m ? decodeURIComponent(m[1]) : ""; };
+    function src() { const x = store.get(SRC, null); return x && Date.now() - x.at < 30 * 864e5 ? x : null; }
+    // Envoyé au service de paiement : provenance (toujours) et identifiants Snapchat (seulement avec accord)
+    function payload() { const x = src() || {}; return { consent: on(), utm: x.utm || {}, sccid: on() ? x.sccid || "" : "", scid: on() ? cookie("_scid") : "" }; }
+    function purchase(o, ref) {
+      if (!on() || !o || o.ref !== ref) return;
+      const done = store.get(DONE, []);
+      if (done.includes(ref)) return;
+      store.set(DONE, [ref, ...done].slice(0, 20));
+      ev("PURCHASE", { transaction_id: ref, price: Math.round(o.total * 100) / 100, currency: CFG.currency, item_ids: o.items.map((i) => i.id), number_items: o.items.reduce((n, i) => n + i.qty, 0) });
+    }
+    function set(v) {
+      store.set(OK, { ads: v, at: Date.now() });
+      const b = document.getElementById("consent"); if (b) b.hidden = true;
+      if (v) ev("PAGE_VIEW");
+      else { const d = location.hostname.split(".").slice(-2).join("."); ["", "; domain=." + d].forEach((x) => { document.cookie = "_scid=; Max-Age=0; path=/" + x; }); }
+    }
+    function banner(force) {
+      if (!pid || (!force && consent() !== undefined)) return;
+      let b = document.getElementById("consent");
+      if (!b) {
+        b = document.createElement("div"); b.id = "consent"; b.className = "consent"; b.setAttribute("role", "dialog"); b.setAttribute("aria-labelledby", "consent-t");
+        b.innerHTML = `<p><b id="consent-t">Cookies publicitaires</b>On utilise le traceur Snapchat pour mesurer nos publicités, seulement si tu l'acceptes. <a href="${L.legal}">En savoir plus</a></p>
+          <div class="consent__btns"><button class="btn btn--ghost btn--sm" type="button" data-consent-set="0">Refuser</button><button class="btn btn--ghost btn--sm" type="button" data-consent-set="1">Accepter</button></div>`;
+        b.addEventListener("click", (e) => { const t = e.target.closest("[data-consent-set]"); if (t) set(t.dataset.consentSet === "1"); });
+        document.body.appendChild(b);
+      }
+      b.hidden = false;
+    }
+    document.addEventListener("click", (e) => { if (e.target.closest && e.target.closest("[data-consent-open]")) { e.preventDefault(); banner(true); } });
+    return { pid, ev, on, payload, purchase, banner };
+  })();
+
   // Date de livraison estimée (jours ouvrés)
   function addBusinessDays(d, n) { const r = new Date(d); while (n > 0) { r.setDate(r.getDate() + 1); const w = r.getDay(); if (w !== 0 && w !== 6) n--; } return r; }
   function deliveryWindow() {
@@ -145,6 +209,8 @@
       const f = this.items.find((i) => i.id === id && i.size === size);
       if (f) f.qty += qty; else this.items.push({ id, size, qty });
       this.save();
+      const p = byId(id);
+      if (p) Track.ev("ADD_CART", { item_ids: [id], price: p.price * qty, currency: CFG.currency, number_items: qty });
     },
     setQty(i, q) { if (q <= 0) this.items.splice(i, 1); else this.items[i].qty = Math.min(q, 9); this.save(); },
     clear() { this.items = []; this.save(); },
@@ -397,6 +463,7 @@
           <li><a href="${L.faq("tailles")}">Guide des tailles</a></li>
           <li><a href="${L.faq("contact")}">Contact</a></li>
           <li><a href="${L.legal}">Mentions légales & CGV</a></li>
+          ${Track.pid ? `<li><a href="${L.legal}" data-consent-open>Cookies</a></li>` : ""}
         </ul></div>
       </div>
       <div class="footer__bottom">
@@ -548,6 +615,7 @@
     const views = { home: viewHome, shop: viewShop, product: viewProduct, checkout: viewCheckout, done: viewDone, faq: viewFaq, legal: viewLegal, brands: viewBrands, 404: view404 };
     main.innerHTML = "";
     views[route.name](main, parts, q);
+    Track.ev("PAGE_VIEW");
     if (!go.keepScroll) window.scrollTo(0, 0);
     go.keepScroll = false;
   }
@@ -892,6 +960,7 @@
     const p = byId(parts[1]);
     if (!p) return view404(main);
     pushRecent(p.id);
+    Track.ev("VIEW_CONTENT", { item_ids: [p.id], item_category: p.category, price: p.price, currency: CFG.currency });
     setMeta(`${p.name} ${p.color}`, `${p.name} ${p.color} — 100% authentique, importé des États-Unis. ${p.description}`);
     const cat = CATS[p.category];
     const variants = variantsOf(p);
@@ -1153,6 +1222,7 @@
   const r2 = (n) => Math.round(n * 100) / 100;
   let stripeCheckout = null;
   function payByCard(order) {
+    Track.ev("START_CHECKOUT", { item_ids: order.items.map((i) => i.id), price: r2(order.total), currency: CFG.currency, number_items: order.items.reduce((n, i) => n + i.qty, 0) });
     const form = $("#co-form"), pay = $("#co-pay"), box = $("#pay-mount"), err = $("#co-pay-err"), loading = $("#co-pay-loading");
     const reset = () => {
       if (stripeCheckout) { try { stripeCheckout.destroy(); } catch (e) { /* ignore */ } stripeCheckout = null; }
@@ -1175,7 +1245,7 @@
     const fetchClientSecret = async () => {
       const r = await fetch(ST().apiUrl.replace(/\/$/, "") + "/checkout", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ref: order.ref, items: order.items.map((i) => ({ id: i.id, size: i.size, qty: i.qty })), customer: order.data })
+        body: JSON.stringify({ ref: order.ref, items: order.items.map((i) => ({ id: i.id, size: i.size, qty: i.qty })), customer: order.data, track: Track.payload() })
       });
       const res = await r.json().catch(() => ({}));
       if (!r.ok || !res.clientSecret) { const e = new Error("pay"); e.public = res.error || "Paiement momentanément indisponible. Réessaie dans quelques instants."; throw e; }
@@ -1232,6 +1302,7 @@
     if (q && q.get("paye")) {
       Cart.clear(); try { localStorage.removeItem(DRAFT_KEY); } catch (e) { /* ignore */ }
       const ref = (q.get("ref") || (o && o.ref) || "").replace(/[^A-Z0-9-]/gi, "");
+      Track.purchase(o, ref);
       main.innerHTML = `<div class="wrap"><div class="done">
         <nav class="progress" aria-label="Étapes"><span>Panier</span>${I.chev}<span>Paiement</span>${I.chev}<b>Confirmation</b></nav>
         ${ref ? `<span class="eyebrow">Commande ${esc(ref)}</span>` : ""}
@@ -1325,6 +1396,7 @@
         <h2>Livraison</h2><p>Expédition sous 24 à 48 h après paiement, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés.</p>
         <h2>Droit de rétractation</h2><p>Tu disposes de 14 jours à compter de la réception pour exercer ton droit de rétractation. L'article doit être retourné non porté, avec ses étiquettes et dans son emballage d'origine.</p>
         <h2>Données personnelles</h2><p>Les informations saisies servent uniquement à traiter et livrer ta commande. Elles ne sont jamais revendues. Pour y accéder ou les supprimer, contacte-nous.</p>
+        ${Track.pid ? `<h2>Cookies</h2><p>Seulement si tu l'acceptes, le site utilise le Pixel de Snapchat (Snap Inc.) pour mesurer l'efficacité de nos publicités. Dans ce cas, tes achats sont aussi transmis à Snapchat par notre service de paiement, avec ton e-mail et ton téléphone chiffrés (hachés). Sans ton accord, rien n'est envoyé. <a href="${L.legal}" data-consent-open>Changer mon choix</a></p>` : ""}
       </div>
     </div>`;
   }
@@ -1399,6 +1471,7 @@
     bind();
     renderCart();
     go();
+    Track.banner();
   }
   function showServiceError() {
     let m = $("#svc-error");

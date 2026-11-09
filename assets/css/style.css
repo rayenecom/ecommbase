@@ -628,3 +628,11 @@ body[data-route="product"] .wa-fab, body[data-route="checkout"] .wa-fab, body[da
 .co.is-stripe .co-pay__box { border: 0; background: transparent; min-height: 560px; overflow: visible; }
 .co.is-stripe .co-pay__box iframe { min-width: 0; min-height: 0; }
 #co-submit[disabled] { opacity: .7; cursor: progress; }
+
+/* Bandeau cookies (affiché seulement si un Pixel publicitaire est configuré) */
+.consent { position: fixed; z-index: 95; left: max(12px, env(safe-area-inset-left, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); width: min(520px, calc(100% - 24px)); background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 14px 40px rgba(16, 18, 17, .18); padding: 16px 18px; display: grid; gap: 12px; font-size: var(--fs-sm); line-height: 1.5; }
+.consent p { margin: 0; }
+.consent b { display: block; margin-bottom: 2px; font-size: var(--fs-md); }
+.consent a { text-decoration: underline; text-underline-offset: 2px; }
+.consent__btns { display: flex; gap: 10px; }
+.consent__btns .btn { flex: 1; }

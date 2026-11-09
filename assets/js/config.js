@@ -55,6 +55,11 @@ window.BASE_CONFIG = {
     apiUrl: "https://base-stripe.la-base.workers.dev"   // adresse du service Cloudflare (ex : https://base-stripe.xxx.workers.dev)
   },
 
+  // Publicité Snapchat. pixelId : identifiant du Pixel Snap (Ads Manager > Events Manager, sous le nom du Pixel).
+  // Vide = aucun traceur et aucun bandeau cookies. Rempli = bandeau « Accepter / Refuser » ; le Pixel ne se charge
+  // qu'après « Accepter ». Les achats sont aussi envoyés côté serveur si le jeton SNAP_CAPI_TOKEN est réglé dans Cloudflare.
+  snap: { pixelId: "" },
+
   // (Plus tard) Paiement par carte myPOS, utilisé seulement si Stripe n'est pas configuré (voir payments/mypos/LISEZMOI.md).
   // Tant que sid, walletNumber et notifyUrl sont vides, le paiement par carte est masqué.
   mypos: {

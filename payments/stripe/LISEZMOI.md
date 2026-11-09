@@ -57,3 +57,24 @@ Le choix **« Carte bancaire »** apparaît alors au paiement, sélectionné par
 
 Stripe → **Paiements**. Chaque paiement porte la description `Commande BASE-XXXXXX`, l'adresse de
 livraison du client et le détail des articles (tailles comprises) dans les **métadonnées**.
+
+La ligne **source** des métadonnées indique d'où vient la commande (ex. `snapchat / paid / FR_PERF_PROSP / F6s`),
+d'après les liens `utm_…` des publicités.
+
+## 6. Publicité Snapchat (Pixel, achats côté serveur, catalogue)
+
+1. **Pixel** : dans Snapchat Ads Manager → Events Manager → crée un Pixel web, copie son identifiant, puis mets-le
+   dans `assets/js/config.js` :
+   ```js
+   snap: { pixelId: "ton-identifiant" },
+   ```
+   Le site affiche alors un bandeau cookies « Refuser / Accepter ». Le Pixel ne se charge qu'après « Accepter ».
+   Événements envoyés : PAGE_VIEW, VIEW_CONTENT, ADD_CART, START_CHECKOUT, PURCHASE.
+2. **Achats côté serveur (Conversions API)** : Ads Manager → Business Details → Conversions API Tokens →
+   Generate Token. Colle ce jeton dans Cloudflare → Worker `base-stripe` → Settings → Variables and Secrets →
+   Add → type **Secret**, nom `SNAP_CAPI_TOKEN`. Chaque paiement réussi est envoyé à Snapchat (même référence que
+   le Pixel, compté une seule fois), seulement si le client a accepté les cookies.
+3. **Catalogue** : Ads Manager → Catalogues → nouveau catalogue → flux par URL, mise à jour quotidienne :
+   `https://base-stripe.la-base.workers.dev/feed/snapchat.csv` (relu sur le site, toujours à jour).
+4. **Liens des pubs** : `https://la-base.shop/?utm_source=snapchat&utm_medium=paid&utm_campaign=NOM&utm_content=CREA#/produit/ID`
+   (les paramètres avant le `#`). Snapchat ajoute lui-même `ScCid=…` au clic : le site le récupère et nettoie l'adresse.
