@@ -1474,22 +1474,34 @@ window.BASE_PHOTOS = {
 
   // Asics GEL-1130 — Cream / Cocoa Powder
   "asics-gel-1130-1203a609-114": [
-    "images/products/asics-gel-1130-1203a609-114-1.jpg"
+    "images/products/asics-gel-1130-1203a609-114-1.jpg",
+    "images/products/asics-gel-1130-1203a609-114-2.jpg",
+    "images/products/asics-gel-1130-1203a609-114-3.jpg",
+    "images/products/asics-gel-1130-1203a609-114-4.jpg"
   ],
 
   // Asics GEL-1130 — White / Rusted Rock
   "asics-gel-1130-1203a609-117": [
-    "images/products/asics-gel-1130-1203a609-117-1.jpg"
+    "images/products/asics-gel-1130-1203a609-117-1.jpg",
+    "images/products/asics-gel-1130-1203a609-117-2.jpg",
+    "images/products/asics-gel-1130-1203a609-117-3.jpg",
+    "images/products/asics-gel-1130-1203a609-117-4.jpg"
   ],
 
   // Asics GEL-1130 — Glacier Grey / Pure Silver
   "asics-gel-1130-1203a609-023": [
-    "images/products/asics-gel-1130-1203a609-023-1.jpg"
+    "images/products/asics-gel-1130-1203a609-023-1.jpg",
+    "images/products/asics-gel-1130-1203a609-023-2.jpg",
+    "images/products/asics-gel-1130-1203a609-023-3.jpg",
+    "images/products/asics-gel-1130-1203a609-023-4.jpg"
   ],
 
   // Asics GEL-1130 — Cream / Pink Cloud
   "asics-gel-1130-1203a899-105": [
-    "images/products/asics-gel-1130-1203a899-105-1.jpg"
+    "images/products/asics-gel-1130-1203a899-105-1.jpg",
+    "images/products/asics-gel-1130-1203a899-105-2.jpg",
+    "images/products/asics-gel-1130-1203a899-105-3.jpg",
+    "images/products/asics-gel-1130-1203a899-105-4.jpg"
   ],
 
   // Asics GEL-1130 — White / Taro Purple
@@ -1508,69 +1520,108 @@ window.BASE_PHOTOS = {
 
   // Asics GEL-1130 — White / Clay Canyon
   "asics-gel-1130-1201a256-113": [
-    "images/products/asics-gel-1130-1201a256-113-1.jpg"
+    "images/products/asics-gel-1130-1201a256-113-1.jpg",
+    "images/products/asics-gel-1130-1201a256-113-2.jpg",
+    "images/products/asics-gel-1130-1201a256-113-3.jpg",
+    "images/products/asics-gel-1130-1201a256-113-4.jpg"
   ],
 
   // Asics GEL-1130 — White / Mid Grey
   "asics-gel-1130-1201a256-114": [
-    "images/products/asics-gel-1130-1201a256-114-1.jpg"
+    "images/products/asics-gel-1130-1201a256-114-1.jpg",
+    "images/products/asics-gel-1130-1201a256-114-2.jpg",
+    "images/products/asics-gel-1130-1201a256-114-3.jpg",
+    "images/products/asics-gel-1130-1201a256-114-4.jpg"
   ],
 
   // Asics GEL-1130 Femme — White / Jade
   "asics-gel-1130-1202a164-112": [
-    "images/products/asics-gel-1130-1202a164-112-1.jpg"
+    "images/products/asics-gel-1130-1202a164-112-1.jpg",
+    "images/products/asics-gel-1130-1202a164-112-2.jpg",
+    "images/products/asics-gel-1130-1202a164-112-3.jpg",
+    "images/products/asics-gel-1130-1202a164-112-4.jpg"
   ],
 
   // Asics GEL-1130 — Cream / Ironclad
   "asics-gel-1130-1201a256-115": [
-    "images/products/asics-gel-1130-1201a256-115-1.jpg"
+    "images/products/asics-gel-1130-1201a256-115-1.jpg",
+    "images/products/asics-gel-1130-1201a256-115-2.jpg",
+    "images/products/asics-gel-1130-1201a256-115-3.jpg",
+    "images/products/asics-gel-1130-1201a256-115-4.jpg"
   ],
 
   // Asics GEL-1130 — Oyster Grey / Clay Grey
   "asics-gel-1130-1201a255-028": [
     "images/products/asics-gel-1130-1201a255-028-1.jpg",
-    "images/products/asics-gel-1130-1201a255-028-2.jpg"
+    "images/products/asics-gel-1130-1201a255-028-2.jpg",
+    "images/products/asics-gel-1130-1201a255-028-3.jpg",
+    "images/products/asics-gel-1130-1201a255-028-4.jpg",
+    "images/products/asics-gel-1130-1201a255-028-5.jpg"
   ],
 
   // Asics GEL-1130 — Smoke Grey / Honey Beige
   "asics-gel-1130-1201a255-030": [
-    "images/products/asics-gel-1130-1201a255-030-1.jpg"
+    "images/products/asics-gel-1130-1201a255-030-1.jpg",
+    "images/products/asics-gel-1130-1201a255-030-2.jpg",
+    "images/products/asics-gel-1130-1201a255-030-3.jpg",
+    "images/products/asics-gel-1130-1201a255-030-4.jpg"
   ],
 
   // Asics GEL-1130 — Vanilla / White Sage
   "asics-gel-1130-1201a255-252": [
     "images/products/asics-gel-1130-1201a255-252-1.jpg",
-    "images/products/asics-gel-1130-1201a255-252-2.jpg"
+    "images/products/asics-gel-1130-1201a255-252-2.jpg",
+    "images/products/asics-gel-1130-1201a255-252-3.jpg",
+    "images/products/asics-gel-1130-1201a255-252-4.jpg",
+    "images/products/asics-gel-1130-1201a255-252-5.jpg"
   ],
 
   // Asics GEL-1130 Femme — White / Malachite Green
   "asics-gel-1130-1202a164-114": [
-    "images/products/asics-gel-1130-1202a164-114-1.jpg"
+    "images/products/asics-gel-1130-1202a164-114-1.jpg",
+    "images/products/asics-gel-1130-1202a164-114-2.jpg",
+    "images/products/asics-gel-1130-1202a164-114-3.jpg",
+    "images/products/asics-gel-1130-1202a164-114-4.jpg"
   ],
 
   // Asics GEL-1130 — White / Cloud Grey
   "asics-gel-1130-1201a256-118": [
-    "images/products/asics-gel-1130-1201a256-118-1.jpg"
+    "images/products/asics-gel-1130-1201a256-118-1.jpg",
+    "images/products/asics-gel-1130-1201a256-118-2.jpg",
+    "images/products/asics-gel-1130-1201a256-118-3.jpg",
+    "images/products/asics-gel-1130-1201a256-118-4.jpg"
   ],
 
   // Asics GEL-1130 — Clay Grey / Pure Silver
   "asics-gel-1130-1201a256-026": [
-    "images/products/asics-gel-1130-1201a256-026-1.jpg"
+    "images/products/asics-gel-1130-1201a256-026-1.jpg",
+    "images/products/asics-gel-1130-1201a256-026-2.jpg",
+    "images/products/asics-gel-1130-1201a256-026-3.jpg",
+    "images/products/asics-gel-1130-1201a256-026-4.jpg"
   ],
 
   // Asics GEL-1130 — Black / Pure Silver
   "asics-gel-1130-1201a906-001": [
-    "images/products/asics-gel-1130-1201a906-001-1.jpg"
+    "images/products/asics-gel-1130-1201a906-001-1.jpg",
+    "images/products/asics-gel-1130-1201a906-001-2.jpg",
+    "images/products/asics-gel-1130-1201a906-001-3.jpg",
+    "images/products/asics-gel-1130-1201a906-001-4.jpg"
   ],
 
   // Asics GEL-1130 — Cream / Blueberry
   "asics-gel-1130-1203a609-101": [
-    "images/products/asics-gel-1130-1203a609-101-1.jpg"
+    "images/products/asics-gel-1130-1203a609-101-1.jpg",
+    "images/products/asics-gel-1130-1203a609-101-2.jpg",
+    "images/products/asics-gel-1130-1203a609-101-3.jpg",
+    "images/products/asics-gel-1130-1203a609-101-4.jpg"
   ],
 
   // Asics GEL-1130 — White / Desert Red
   "asics-gel-1130-1203a609-102": [
-    "images/products/asics-gel-1130-1203a609-102-1.jpg"
+    "images/products/asics-gel-1130-1203a609-102-1.jpg",
+    "images/products/asics-gel-1130-1203a609-102-2.jpg",
+    "images/products/asics-gel-1130-1203a609-102-3.jpg",
+    "images/products/asics-gel-1130-1203a609-102-4.jpg"
   ],
 
   // Asics GEL-1130 — White / Shamrock Green
@@ -1589,33 +1640,49 @@ window.BASE_PHOTOS = {
 
   // Asics GEL-Kayano 14 — Cream / Cocoa Powder
   "asics-kayano-14-1203a537-118": [
-    "images/products/asics-kayano-14-1203a537-118-1.jpg"
+    "images/products/asics-kayano-14-1203a537-118-1.jpg",
+    "images/products/asics-kayano-14-1203a537-118-2.jpg",
+    "images/products/asics-kayano-14-1203a537-118-3.jpg",
+    "images/products/asics-kayano-14-1203a537-118-4.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Black / Cream
   "asics-kayano-14-1203a537-002": [
-    "images/products/asics-kayano-14-1203a537-002-1.jpg"
+    "images/products/asics-kayano-14-1203a537-002-1.jpg",
+    "images/products/asics-kayano-14-1203a537-002-2.jpg",
+    "images/products/asics-kayano-14-1203a537-002-3.jpg",
+    "images/products/asics-kayano-14-1203a537-002-4.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Birch / Pure Silver
   "asics-kayano-14-1203a537-200": [
-    "images/products/asics-kayano-14-1203a537-200-1.jpg"
+    "images/products/asics-kayano-14-1203a537-200-1.jpg",
+    "images/products/asics-kayano-14-1203a537-200-2.jpg",
+    "images/products/asics-kayano-14-1203a537-200-3.jpg",
+    "images/products/asics-kayano-14-1203a537-200-4.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Cream / Obsidian Grey
   "asics-kayano-14-1203a537-113": [
-    "images/products/asics-kayano-14-1203a537-113-1.jpg"
+    "images/products/asics-kayano-14-1203a537-113-1.jpg",
+    "images/products/asics-kayano-14-1203a537-113-2.jpg",
+    "images/products/asics-kayano-14-1203a537-113-3.jpg",
+    "images/products/asics-kayano-14-1203a537-113-4.jpg"
   ],
 
   // Asics GEL-Kayano 14 — Concrete / Pure Silver
   "asics-kayano-14-1203a537-025": [
     "images/products/asics-kayano-14-1203a537-025-1.jpg",
-    "images/products/asics-kayano-14-1203a537-025-2.jpg"
+    "images/products/asics-kayano-14-1203a537-025-2.jpg",
+    "images/products/asics-kayano-14-1203a537-025-3.jpg",
+    "images/products/asics-kayano-14-1203a537-025-4.jpg",
+    "images/products/asics-kayano-14-1203a537-025-5.jpg"
   ],
 
   // Asics GEL-Kayano 14 — White / Piquant Orange
   "asics-kayano-14-1201a019-109": [
-    "images/products/asics-kayano-14-1201a019-109-1.jpg"
+    "images/products/asics-kayano-14-1201a019-109-1.jpg",
+    "images/products/asics-kayano-14-1201a019-109-2.jpg"
   ],
 
   // Asics GEL-Kayano 14 Femme — White / Dark Grape
@@ -2121,307 +2188,358 @@ window.BASE_PHOTOS = {
   // Casquette Sweet Pants Home Run — Candy
   "sweetpants-home-run-cap-candy": [
     "images/products/sweetpants-home-run-cap-candy-1.jpg",
-    "images/products/sweetpants-home-run-cap-candy-2.jpg"
+    "images/products/sweetpants-home-run-cap-candy-2.jpg",
+    "images/products/sweetpants-home-run-cap-candy-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Grey
   "sweetpants-home-run-cap-grey": [
     "images/products/sweetpants-home-run-cap-grey-1.jpg",
-    "images/products/sweetpants-home-run-cap-grey-2.jpg"
+    "images/products/sweetpants-home-run-cap-grey-2.jpg",
+    "images/products/sweetpants-home-run-cap-grey-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Imperial
   "sweetpants-home-run-cap-imperial": [
     "images/products/sweetpants-home-run-cap-imperial-1.jpg",
-    "images/products/sweetpants-home-run-cap-imperial-2.jpg"
+    "images/products/sweetpants-home-run-cap-imperial-2.jpg",
+    "images/products/sweetpants-home-run-cap-imperial-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Kaki
   "sweetpants-home-run-cap-kaki": [
     "images/products/sweetpants-home-run-cap-kaki-1.jpg",
-    "images/products/sweetpants-home-run-cap-kaki-2.jpg"
+    "images/products/sweetpants-home-run-cap-kaki-2.jpg",
+    "images/products/sweetpants-home-run-cap-kaki-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Light Clay
   "sweetpants-home-run-cap-light-clay": [
     "images/products/sweetpants-home-run-cap-light-clay-1.jpg",
-    "images/products/sweetpants-home-run-cap-light-clay-2.jpg"
+    "images/products/sweetpants-home-run-cap-light-clay-2.jpg",
+    "images/products/sweetpants-home-run-cap-light-clay-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Night
   "sweetpants-home-run-cap-night": [
     "images/products/sweetpants-home-run-cap-night-1.jpg",
-    "images/products/sweetpants-home-run-cap-night-2.jpg"
+    "images/products/sweetpants-home-run-cap-night-2.jpg",
+    "images/products/sweetpants-home-run-cap-night-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Peony
   "sweetpants-home-run-cap-peony": [
     "images/products/sweetpants-home-run-cap-peony-1.jpg",
-    "images/products/sweetpants-home-run-cap-peony-2.jpg"
+    "images/products/sweetpants-home-run-cap-peony-2.jpg",
+    "images/products/sweetpants-home-run-cap-peony-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Primrose
   "sweetpants-home-run-cap-primrose": [
     "images/products/sweetpants-home-run-cap-primrose-1.jpg",
-    "images/products/sweetpants-home-run-cap-primrose-2.jpg"
+    "images/products/sweetpants-home-run-cap-primrose-2.jpg",
+    "images/products/sweetpants-home-run-cap-primrose-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Sage
   "sweetpants-home-run-cap-sage": [
     "images/products/sweetpants-home-run-cap-sage-1.jpg",
-    "images/products/sweetpants-home-run-cap-sage-2.jpg"
+    "images/products/sweetpants-home-run-cap-sage-2.jpg",
+    "images/products/sweetpants-home-run-cap-sage-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Varsity Blue
   "sweetpants-home-run-cap-varsity-blue": [
     "images/products/sweetpants-home-run-cap-varsity-blue-1.jpg",
-    "images/products/sweetpants-home-run-cap-varsity-blue-2.jpg"
+    "images/products/sweetpants-home-run-cap-varsity-blue-2.jpg",
+    "images/products/sweetpants-home-run-cap-varsity-blue-3.jpg"
   ],
 
   // Casquette Sweet Pants Home Run — Windsor
   "sweetpants-home-run-cap-windsor": [
     "images/products/sweetpants-home-run-cap-windsor-1.jpg",
-    "images/products/sweetpants-home-run-cap-windsor-2.jpg"
+    "images/products/sweetpants-home-run-cap-windsor-2.jpg",
+    "images/products/sweetpants-home-run-cap-windsor-3.jpg"
   ],
 
   // Casquette Sweet Pants La Leo — Leopard
   "sweetpants-la-leo-cap": [
     "images/products/sweetpants-la-leo-cap-1.jpg",
-    "images/products/sweetpants-la-leo-cap-2.jpg"
+    "images/products/sweetpants-la-leo-cap-2.jpg",
+    "images/products/sweetpants-la-leo-cap-3.jpg"
   ],
 
   // Casquette Sweet Pants Ninetys — Black
   "sweetpants-ninetys-cap-black": [
     "images/products/sweetpants-ninetys-cap-black-1.jpg",
-    "images/products/sweetpants-ninetys-cap-black-2.jpg"
+    "images/products/sweetpants-ninetys-cap-black-2.jpg",
+    "images/products/sweetpants-ninetys-cap-black-3.jpg"
   ],
 
   // Casquette Sweet Pants Ninetys — Fudge
   "sweetpants-ninetys-cap-fudge": [
     "images/products/sweetpants-ninetys-cap-fudge-1.jpg",
-    "images/products/sweetpants-ninetys-cap-fudge-2.jpg"
+    "images/products/sweetpants-ninetys-cap-fudge-2.jpg",
+    "images/products/sweetpants-ninetys-cap-fudge-3.jpg"
   ],
 
   // Casquette Sweet Pants Ninetys — Night
   "sweetpants-ninetys-cap-night": [
     "images/products/sweetpants-ninetys-cap-night-1.jpg",
-    "images/products/sweetpants-ninetys-cap-night-2.jpg"
+    "images/products/sweetpants-ninetys-cap-night-2.jpg",
+    "images/products/sweetpants-ninetys-cap-night-3.jpg"
   ],
 
   // Casquette Sweet Pants Nylon — Black
   "sweetpants-nylon-cap-black": [
     "images/products/sweetpants-nylon-cap-black-1.jpg",
-    "images/products/sweetpants-nylon-cap-black-2.jpg"
+    "images/products/sweetpants-nylon-cap-black-2.jpg",
+    "images/products/sweetpants-nylon-cap-black-3.jpg"
   ],
 
   // Casquette Sweet Pants Nylon — Fudge
   "sweetpants-nylon-cap-fudge": [
     "images/products/sweetpants-nylon-cap-fudge-1.jpg",
-    "images/products/sweetpants-nylon-cap-fudge-2.jpg"
+    "images/products/sweetpants-nylon-cap-fudge-2.jpg",
+    "images/products/sweetpants-nylon-cap-fudge-3.jpg"
   ],
 
   // Casquette Sweet Pants Nylon — Night
   "sweetpants-nylon-cap-night": [
     "images/products/sweetpants-nylon-cap-night-1.jpg",
-    "images/products/sweetpants-nylon-cap-night-2.jpg"
+    "images/products/sweetpants-nylon-cap-night-2.jpg",
+    "images/products/sweetpants-nylon-cap-night-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Black
   "sweetpants-patchwork-cap-black": [
     "images/products/sweetpants-patchwork-cap-black-1.jpg",
-    "images/products/sweetpants-patchwork-cap-black-2.jpg"
+    "images/products/sweetpants-patchwork-cap-black-2.jpg",
+    "images/products/sweetpants-patchwork-cap-black-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Electrik
   "sweetpants-patchwork-cap-electrik": [
     "images/products/sweetpants-patchwork-cap-electrik-1.jpg",
-    "images/products/sweetpants-patchwork-cap-electrik-2.jpg"
+    "images/products/sweetpants-patchwork-cap-electrik-2.jpg",
+    "images/products/sweetpants-patchwork-cap-electrik-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Fudge
   "sweetpants-patchwork-cap-fudge": [
     "images/products/sweetpants-patchwork-cap-fudge-1.jpg",
-    "images/products/sweetpants-patchwork-cap-fudge-2.jpg"
+    "images/products/sweetpants-patchwork-cap-fudge-2.jpg",
+    "images/products/sweetpants-patchwork-cap-fudge-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Karmin
   "sweetpants-patchwork-cap-karmin": [
     "images/products/sweetpants-patchwork-cap-karmin-1.jpg",
-    "images/products/sweetpants-patchwork-cap-karmin-2.jpg"
+    "images/products/sweetpants-patchwork-cap-karmin-2.jpg",
+    "images/products/sweetpants-patchwork-cap-karmin-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Night
   "sweetpants-patchwork-cap-night": [
     "images/products/sweetpants-patchwork-cap-night-2.jpg",
-    "images/products/sweetpants-patchwork-cap-night-1.jpg"
+    "images/products/sweetpants-patchwork-cap-night-1.jpg",
+    "images/products/sweetpants-patchwork-cap-night-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Primrose
   "sweetpants-patchwork-cap-primrose": [
     "images/products/sweetpants-patchwork-cap-primrose-1.jpg",
-    "images/products/sweetpants-patchwork-cap-primrose-2.jpg"
+    "images/products/sweetpants-patchwork-cap-primrose-2.jpg",
+    "images/products/sweetpants-patchwork-cap-primrose-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Seaweed
   "sweetpants-patchwork-cap-seaweed": [
     "images/products/sweetpants-patchwork-cap-seaweed-1.jpg",
-    "images/products/sweetpants-patchwork-cap-seaweed-2.jpg"
+    "images/products/sweetpants-patchwork-cap-seaweed-2.jpg",
+    "images/products/sweetpants-patchwork-cap-seaweed-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — Toffee
   "sweetpants-patchwork-cap-toffee": [
     "images/products/sweetpants-patchwork-cap-toffee-1.jpg",
-    "images/products/sweetpants-patchwork-cap-toffee-2.jpg"
+    "images/products/sweetpants-patchwork-cap-toffee-2.jpg",
+    "images/products/sweetpants-patchwork-cap-toffee-3.jpg"
   ],
 
   // Casquette Sweet Pants Patchwork — White Pepper
   "sweetpants-patchwork-cap-white-pepper": [
     "images/products/sweetpants-patchwork-cap-white-pepper-1.jpg",
-    "images/products/sweetpants-patchwork-cap-white-pepper-2.jpg"
+    "images/products/sweetpants-patchwork-cap-white-pepper-2.jpg",
+    "images/products/sweetpants-patchwork-cap-white-pepper-3.jpg"
   ],
 
   // Casquette Sweet Pants Sign — Black
   "sweetpants-sign-cap-black": [
     "images/products/sweetpants-sign-cap-black-1.jpg",
-    "images/products/sweetpants-sign-cap-black-2.jpg"
+    "images/products/sweetpants-sign-cap-black-2.jpg",
+    "images/products/sweetpants-sign-cap-black-3.jpg"
   ],
 
   // Casquette Sweet Pants Sign — Fudge
   "sweetpants-sign-cap-fudge": [
     "images/products/sweetpants-sign-cap-fudge-1.jpg",
-    "images/products/sweetpants-sign-cap-fudge-2.jpg"
+    "images/products/sweetpants-sign-cap-fudge-2.jpg",
+    "images/products/sweetpants-sign-cap-fudge-3.jpg"
   ],
 
   // Casquette Sweet Pants Sign — Night
   "sweetpants-sign-cap-night": [
     "images/products/sweetpants-sign-cap-night-1.jpg",
-    "images/products/sweetpants-sign-cap-night-2.jpg"
+    "images/products/sweetpants-sign-cap-night-2.jpg",
+    "images/products/sweetpants-sign-cap-night-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Air Blue
   "sweetpants-smart-cap-air-blue": [
     "images/products/sweetpants-smart-cap-air-blue-1.jpg",
-    "images/products/sweetpants-smart-cap-air-blue-2.jpg"
+    "images/products/sweetpants-smart-cap-air-blue-2.jpg",
+    "images/products/sweetpants-smart-cap-air-blue-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Black
   "sweetpants-smart-cap-black": [
     "images/products/sweetpants-smart-cap-black-1.jpg",
-    "images/products/sweetpants-smart-cap-black-2.jpg"
+    "images/products/sweetpants-smart-cap-black-2.jpg",
+    "images/products/sweetpants-smart-cap-black-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Dark Earth
   "sweetpants-smart-cap-dark-earth": [
     "images/products/sweetpants-smart-cap-dark-earth-1.jpg",
-    "images/products/sweetpants-smart-cap-dark-earth-2.jpg"
+    "images/products/sweetpants-smart-cap-dark-earth-2.jpg",
+    "images/products/sweetpants-smart-cap-dark-earth-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Leaf
   "sweetpants-smart-cap-leaf": [
     "images/products/sweetpants-smart-cap-leaf-1.jpg",
-    "images/products/sweetpants-smart-cap-leaf-2.jpg"
+    "images/products/sweetpants-smart-cap-leaf-2.jpg",
+    "images/products/sweetpants-smart-cap-leaf-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Milk
   "sweetpants-smart-cap-milk": [
     "images/products/sweetpants-smart-cap-milk-1.jpg",
-    "images/products/sweetpants-smart-cap-milk-2.jpg"
+    "images/products/sweetpants-smart-cap-milk-2.jpg",
+    "images/products/sweetpants-smart-cap-milk-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Night
   "sweetpants-smart-cap-night": [
     "images/products/sweetpants-smart-cap-night-1.jpg",
-    "images/products/sweetpants-smart-cap-night-2.jpg"
+    "images/products/sweetpants-smart-cap-night-2.jpg",
+    "images/products/sweetpants-smart-cap-night-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Primrose
   "sweetpants-smart-cap-primrose": [
     "images/products/sweetpants-smart-cap-primrose-1.jpg",
-    "images/products/sweetpants-smart-cap-primrose-2.jpg"
+    "images/products/sweetpants-smart-cap-primrose-2.jpg",
+    "images/products/sweetpants-smart-cap-primrose-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Sage
   "sweetpants-smart-cap-sage": [
     "images/products/sweetpants-smart-cap-sage-1.jpg",
-    "images/products/sweetpants-smart-cap-sage-2.jpg"
+    "images/products/sweetpants-smart-cap-sage-2.jpg",
+    "images/products/sweetpants-smart-cap-sage-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — White Pepper
   "sweetpants-smart-cap-white-pepper": [
     "images/products/sweetpants-smart-cap-white-pepper-1.jpg",
-    "images/products/sweetpants-smart-cap-white-pepper-2.jpg"
+    "images/products/sweetpants-smart-cap-white-pepper-2.jpg",
+    "images/products/sweetpants-smart-cap-white-pepper-3.jpg"
   ],
 
   // Casquette Sweet Pants Smart — Windsor
   "sweetpants-smart-cap-windsor": [
     "images/products/sweetpants-smart-cap-windsor-1.jpg",
-    "images/products/sweetpants-smart-cap-windsor-2.jpg"
+    "images/products/sweetpants-smart-cap-windsor-2.jpg",
+    "images/products/sweetpants-smart-cap-windsor-3.jpg"
   ],
 
   // Casquette Sweet Pants Sunfaded — Black
   "sweetpants-sunfaded-cap-black": [
     "images/products/sweetpants-sunfaded-cap-black-1.jpg",
-    "images/products/sweetpants-sunfaded-cap-black-2.jpg"
+    "images/products/sweetpants-sunfaded-cap-black-2.jpg",
+    "images/products/sweetpants-sunfaded-cap-black-3.jpg"
   ],
 
   // Casquette Sweet Pants Sunfaded — Brown
   "sweetpants-sunfaded-cap-brown": [
     "images/products/sweetpants-sunfaded-cap-brown-1.jpg",
-    "images/products/sweetpants-sunfaded-cap-brown-2.jpg"
+    "images/products/sweetpants-sunfaded-cap-brown-2.jpg",
+    "images/products/sweetpants-sunfaded-cap-brown-3.jpg"
   ],
 
   // Casquette Sweet Pants Sunfaded — Electrik
   "sweetpants-sunfaded-cap-electrik": [
     "images/products/sweetpants-sunfaded-cap-electrik-1.jpg",
-    "images/products/sweetpants-sunfaded-cap-electrik-2.jpg"
+    "images/products/sweetpants-sunfaded-cap-electrik-2.jpg",
+    "images/products/sweetpants-sunfaded-cap-electrik-3.jpg"
   ],
 
   // Casquette Sweet Pants Sunfaded — Karmin
   "sweetpants-sunfaded-cap-karmin": [
     "images/products/sweetpants-sunfaded-cap-karmin-1.jpg",
-    "images/products/sweetpants-sunfaded-cap-karmin-2.jpg"
+    "images/products/sweetpants-sunfaded-cap-karmin-2.jpg",
+    "images/products/sweetpants-sunfaded-cap-karmin-3.jpg"
   ],
 
   // Casquette Sweet Pants Sunfaded — Milk
   "sweetpants-sunfaded-cap-milk": [
     "images/products/sweetpants-sunfaded-cap-milk-1.jpg",
-    "images/products/sweetpants-sunfaded-cap-milk-2.jpg"
+    "images/products/sweetpants-sunfaded-cap-milk-2.jpg",
+    "images/products/sweetpants-sunfaded-cap-milk-3.jpg"
   ],
 
   // Casquette Sweet Pants Velors — Army
   "sweetpants-velors-cap-army": [
     "images/products/sweetpants-velors-cap-army-1.jpg",
-    "images/products/sweetpants-velors-cap-army-2.jpg"
+    "images/products/sweetpants-velors-cap-army-2.jpg",
+    "images/products/sweetpants-velors-cap-army-3.jpg"
   ],
 
   // Casquette Sweet Pants Velors — Eden
   "sweetpants-velors-cap-eden": [
     "images/products/sweetpants-velors-cap-eden-1.jpg",
-    "images/products/sweetpants-velors-cap-eden-2.jpg"
+    "images/products/sweetpants-velors-cap-eden-2.jpg",
+    "images/products/sweetpants-velors-cap-eden-3.jpg"
   ],
 
   // Casquette Sweet Pants Velors — Imperial
   "sweetpants-velors-cap-imperial": [
     "images/products/sweetpants-velors-cap-imperial-1.jpg",
-    "images/products/sweetpants-velors-cap-imperial-2.jpg"
+    "images/products/sweetpants-velors-cap-imperial-2.jpg",
+    "images/products/sweetpants-velors-cap-imperial-3.jpg"
   ],
 
   // Casquette Sweet Pants Velors — Night
   "sweetpants-velors-cap-night": [
     "images/products/sweetpants-velors-cap-night-1.jpg",
-    "images/products/sweetpants-velors-cap-night-2.jpg"
+    "images/products/sweetpants-velors-cap-night-2.jpg",
+    "images/products/sweetpants-velors-cap-night-3.jpg"
   ],
 
   // Casquette Sweet Pants Velors — White Pepper
   "sweetpants-velors-cap-white-pepper": [
     "images/products/sweetpants-velors-cap-white-pepper-1.jpg",
-    "images/products/sweetpants-velors-cap-white-pepper-2.jpg"
+    "images/products/sweetpants-velors-cap-white-pepper-2.jpg",
+    "images/products/sweetpants-velors-cap-white-pepper-3.jpg"
   ],
 
   // Casquette Sweet Pants Velors — Windsor
   "sweetpants-velors-cap-windsor": [
     "images/products/sweetpants-velors-cap-windsor-1.jpg",
-    "images/products/sweetpants-velors-cap-windsor-2.jpg"
+    "images/products/sweetpants-velors-cap-windsor-2.jpg",
+    "images/products/sweetpants-velors-cap-windsor-3.jpg"
   ],
 
   // Ensemble Essentials Hoodie + Sweatpant — Black
@@ -2512,8 +2630,6 @@ window.BASE_PHOTOS = {
   // Ensemble On Core Jacket + Core Pants — Black
   "on-core-set-black": [
     "images/products/on-core-set-black-10.jpg",
-    "images/products/on-core-set-black-2.jpg",
-    "images/products/on-core-set-black-3.jpg",
     "images/products/on-core-set-black-11.jpg",
     "images/products/on-core-set-black-12.jpg",
     "images/products/on-core-set-black-13.jpg"
@@ -2524,8 +2640,6 @@ window.BASE_PHOTOS = {
     "images/products/on-core-set-midnight-10.jpg",
     "images/products/on-core-set-midnight-11.jpg",
     "images/products/on-core-set-midnight-12.jpg",
-    "images/products/on-core-set-midnight-2.jpg",
-    "images/products/on-core-set-midnight-3.jpg",
     "images/products/on-core-set-midnight-13.jpg",
     "images/products/on-core-set-midnight-14.jpg"
   ],
@@ -2534,17 +2648,13 @@ window.BASE_PHOTOS = {
   "on-core-set-bordeaux": [
     "images/products/on-core-set-bordeaux-10.jpg",
     "images/products/on-core-set-bordeaux-11.jpg",
-    "images/products/on-core-set-bordeaux-12.jpg",
-    "images/products/on-core-set-bordeaux-2.jpg",
-    "images/products/on-core-set-bordeaux-3.jpg"
+    "images/products/on-core-set-bordeaux-12.jpg"
   ],
 
   // Ensemble On Core Jacket + Core Pants — Apollo / Glacier
   "on-core-set-apollo": [
     "images/products/on-core-set-apollo-10.jpg",
     "images/products/on-core-set-apollo-11.jpg",
-    "images/products/on-core-set-apollo-2.jpg",
-    "images/products/on-core-set-apollo-3.jpg",
     "images/products/on-core-set-apollo-12.jpg",
     "images/products/on-core-set-apollo-13.jpg"
   ],
@@ -2554,8 +2664,6 @@ window.BASE_PHOTOS = {
     "images/products/on-core-set-bark-10.jpg",
     "images/products/on-core-set-bark-11.jpg",
     "images/products/on-core-set-bark-12.jpg",
-    "images/products/on-core-set-bark-2.jpg",
-    "images/products/on-core-set-bark-3.jpg",
     "images/products/on-core-set-bark-13.jpg",
     "images/products/on-core-set-bark-14.jpg"
   ],
@@ -2563,9 +2671,7 @@ window.BASE_PHOTOS = {
   // Ensemble On Core Jacket + Core Pants — Jay / Eclipse
   "on-core-set-jay": [
     "images/products/on-core-set-jay-10.jpg",
-    "images/products/on-core-set-jay-11.jpg",
-    "images/products/on-core-set-jay-2.jpg",
-    "images/products/on-core-set-jay-3.jpg"
+    "images/products/on-core-set-jay-11.jpg"
   ],
 
   // Doudoune C.P. Company D.D. Shell — Black
