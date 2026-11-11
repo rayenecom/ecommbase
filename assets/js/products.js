@@ -40,7 +40,9 @@ window.BASE_BRANDS = {
   lululemon:   { name: "Lululemon",    tint: "#ece9e6", line: "Vancouver" },
   courreges:   { name: "Courrèges",    tint: "#eeeeec", line: "Paris" },
   columbia:    { name: "Columbia",     tint: "#e8eae6", line: "Since 1938" },
-  sweetpants:  { name: "Sweet Pants",  tint: "#ecebe8", line: "Paris" }
+  sweetpants:  { name: "Sweet Pants",  tint: "#ecebe8", line: "Paris" },
+  jordan:      { name: "Jordan",       tint: "#ebe8e4", line: "Travis Scott" },
+  pyrenex:     { name: "Pyrenex",      tint: "#e8e9ec", line: "Since 1859" }
 };
 
 window.BASE_CATEGORIES = {
@@ -89,7 +91,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-flint", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Flint Grey", swatch: "#6f7165",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -97,7 +99,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-andorra", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Andorra Red", swatch: "#5c2021",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3208,7 +3210,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-black", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Black", swatch: "#232322",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS, tags: ["best"],
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3216,7 +3218,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-gauze-white", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Gauze White", swatch: "#d9d3c5",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS, tags: ["new"],
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3224,7 +3226,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-orion-blue", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Orion Blue", swatch: "#4b575e",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS, tags: ["best"],
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3232,7 +3234,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-light-blue", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Light Blue", swatch: "#6b8886",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3240,7 +3242,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-fallen-rock", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Fallen Rock", swatch: "#574525",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3248,7 +3250,7 @@ window.BASE_PRODUCTS = [
   {
     id: "cp-dd-shell-puffer-pale-yellow", group: "cp-dd-shell-puffer",
     name: "Doudoune C.P. Company D.D. Shell", color: "Pale Yellow", swatch: "#ac8e5a",
-    brand: "cpcompany", category: "doudounes", gender: "homme", price: 290, oldPrice: 309,
+    brand: "cpcompany", category: "doudounes", gender: "homme", price: 190, oldPrice: 290,
     sizes: JACKETS,
     description: "La doudoune iconique C.P. Company : nylon D.D. Shell micro-ripstop, garnissage duvet, capuche réglable et lentille signature sur la manche.",
     details: ["Nylon D.D. Shell micro-ripstop", "Garnissage 95 % duvet de canard", "Lentille signature sur la manche", "Capuche réglable, double zip"]
@@ -3619,5 +3621,127 @@ window.BASE_PRODUCTS = [
     sizes: ["36", "37", "38", "39", "40", "41", "42"], tags: ["new"],
     description: "La UGG Classic Ultra Mini : la botte iconique en version très basse, daim et peau lainée, sans lacets, qui s'enfile en une seconde.",
     details: ["Daim et peau lainée", "Tige ultra basse", "Semelle Treadlite", "Taille normalement"]
+  },
+  /* ---------- JORDAN x TRAVIS SCOTT ---------- */
+  {
+    id: "jordan-1-low-travis-velvet-brown", group: "jordan-1-low-travis",
+    name: "Air Jordan 1 Low OG x Travis Scott", color: "Velvet Brown", swatch: "#3b2f2a",
+    brand: "jordan", category: "chaussures", gender: "unisexe", price: 250,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Air Jordan 1 Low OG signée Travis Scott : Swoosh inversé sur le côté extérieur, logo Cactus Jack au talon, cuir et daim premium.",
+    details: ["Swoosh inversé", "Cuir et daim premium", "Logo Cactus Jack", "Taille normalement"]
+  },
+  {
+    id: "jordan-1-low-travis-reverse-mocha", group: "jordan-1-low-travis",
+    name: "Air Jordan 1 Low OG x Travis Scott", color: "Reverse Mocha", swatch: "#6f6157",
+    brand: "jordan", category: "chaussures", gender: "unisexe", price: 250,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Air Jordan 1 Low OG signée Travis Scott : Swoosh inversé sur le côté extérieur, logo Cactus Jack au talon, cuir et daim premium.",
+    details: ["Swoosh inversé", "Cuir et daim premium", "Logo Cactus Jack", "Taille normalement"]
+  },
+  {
+    id: "jordan-1-low-travis-fragment", group: "jordan-1-low-travis",
+    name: "Air Jordan 1 Low OG x Travis Scott", color: "Fragment (Sail / Military Blue)", swatch: "#2f5d8c",
+    brand: "jordan", category: "chaussures", gender: "unisexe", price: 250,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Air Jordan 1 Low OG signée Travis Scott : Swoosh inversé sur le côté extérieur, logo Cactus Jack au talon, cuir et daim premium.",
+    details: ["Swoosh inversé", "Cuir et daim premium", "Logo Cactus Jack", "Taille normalement"]
+  },
+  {
+    id: "jordan-1-low-travis-shy-pink", group: "jordan-1-low-travis",
+    name: "Air Jordan 1 Low OG x Travis Scott", color: "Shy Pink", swatch: "#e9aac0",
+    brand: "jordan", category: "chaussures", gender: "unisexe", price: 250,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Air Jordan 1 Low OG signée Travis Scott : Swoosh inversé sur le côté extérieur, logo Cactus Jack au talon, cuir et daim premium.",
+    details: ["Swoosh inversé", "Cuir et daim premium", "Logo Cactus Jack", "Taille normalement"]
+  },
+  /* ---------- DOUDOUNES : Pyrenex, Nike x NOCTA, Polo Ralph Lauren ---------- */
+  {
+    id: "pyrenex-sten-navy", group: "pyrenex-sten",
+    name: "Doudoune Pyrenex Sten", color: "Bleu marine (Amiral)", swatch: "#1d2540",
+    brand: "pyrenex", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La doudoune Pyrenex Sten : coupe ample, nylon brillant, garnissage duvet naturel et capuche, l'icône de la marque des Landes.",
+    details: ["Nylon brillant déperlant", "Garnissage duvet naturel", "Capuche fixe", "Coupe ample unisexe"]
+  },
+  {
+    id: "pyrenex-sten-black", group: "pyrenex-sten",
+    name: "Doudoune Pyrenex Sten", color: "Noir", swatch: "#111111",
+    brand: "pyrenex", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La doudoune Pyrenex Sten : coupe ample, nylon brillant, garnissage duvet naturel et capuche, l'icône de la marque des Landes.",
+    details: ["Nylon brillant déperlant", "Garnissage duvet naturel", "Capuche fixe", "Coupe ample unisexe"]
+  },
+  {
+    id: "pyrenex-sten-khaki", group: "pyrenex-sten",
+    name: "Doudoune Pyrenex Sten", color: "Kaki foncé", swatch: "#3f4a33",
+    brand: "pyrenex", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La doudoune Pyrenex Sten : coupe ample, nylon brillant, garnissage duvet naturel et capuche, l'icône de la marque des Landes.",
+    details: ["Nylon brillant déperlant", "Garnissage duvet naturel", "Capuche fixe", "Coupe ample unisexe"]
+  },
+  {
+    id: "pyrenex-john-black", group: "pyrenex-john",
+    name: "Doudoune sans manches Pyrenex John", color: "Noir", swatch: "#111111",
+    brand: "pyrenex", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La doudoune sans manches Pyrenex John : nylon brillant, garnissage duvet naturel et col montant, à porter sur un sweat ou sous un manteau.",
+    details: ["Nylon brillant déperlant", "Garnissage duvet naturel", "Col montant", "Coupe unisexe"]
+  },
+  {
+    id: "nocta-sunset-puffer-black", group: "nocta-sunset-puffer",
+    name: "Doudoune Nike x NOCTA Sunset Puffer", color: "Black", swatch: "#111111",
+    brand: "nocta", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La Nike x NOCTA Sunset Puffer : doudoune brillante en duvet, col montant, Swoosh brodé devant et grand Swoosh au dos.",
+    details: ["Nylon brillant", "Garnissage duvet", "Col montant zippé", "Grand Swoosh au dos"]
+  },
+  {
+    id: "nocta-sunset-puffer-red", group: "nocta-sunset-puffer",
+    name: "Doudoune Nike x NOCTA Sunset Puffer", color: "University Red", swatch: "#c8102e",
+    brand: "nocta", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La Nike x NOCTA Sunset Puffer : doudoune brillante en duvet, col montant, Swoosh brodé devant et grand Swoosh au dos.",
+    details: ["Nylon brillant", "Garnissage duvet", "Col montant zippé", "Grand Swoosh au dos"]
+  },
+  {
+    id: "nocta-sunset-puffer-baroque-brown", group: "nocta-sunset-puffer",
+    name: "Doudoune Nike x NOCTA Sunset Puffer", color: "Baroque Brown", swatch: "#5a3a28",
+    brand: "nocta", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La Nike x NOCTA Sunset Puffer : doudoune brillante en duvet, col montant, Swoosh brodé devant et grand Swoosh au dos.",
+    details: ["Nylon brillant", "Garnissage duvet", "Col montant zippé", "Grand Swoosh au dos"]
+  },
+  {
+    id: "nocta-sunset-puffer-desert-berry", group: "nocta-sunset-puffer",
+    name: "Doudoune Nike x NOCTA Sunset Puffer", color: "Desert Berry", swatch: "#d47b93",
+    brand: "nocta", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La Nike x NOCTA Sunset Puffer : doudoune brillante en duvet, col montant, Swoosh brodé devant et grand Swoosh au dos.",
+    details: ["Nylon brillant", "Garnissage duvet", "Col montant zippé", "Grand Swoosh au dos"]
+  },
+  {
+    id: "nocta-sunset-puffer-mica", group: "nocta-sunset-puffer",
+    name: "Doudoune Nike x NOCTA Sunset Puffer", color: "Mica Green", swatch: "#b9cfcf",
+    brand: "nocta", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La Nike x NOCTA Sunset Puffer : doudoune brillante en duvet, col montant, Swoosh brodé devant et grand Swoosh au dos.",
+    details: ["Nylon brillant", "Garnissage duvet", "Col montant zippé", "Grand Swoosh au dos"]
+  },
+  {
+    id: "nocta-sunset-puffer-neptune-green", group: "nocta-sunset-puffer",
+    name: "Doudoune Nike x NOCTA Sunset Puffer", color: "Neptune Green", swatch: "#1f9a86",
+    brand: "nocta", category: "doudounes", gender: "unisexe", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La Nike x NOCTA Sunset Puffer : doudoune brillante en duvet, col montant, Swoosh brodé devant et grand Swoosh au dos.",
+    details: ["Nylon brillant", "Garnissage duvet", "Col montant zippé", "Grand Swoosh au dos"]
+  },
+  {
+    id: "rl-gorham-glossed-black", group: "rl-gorham-glossed",
+    name: "Doudoune Polo Ralph Lauren The Gorham Glossed", color: "Black", swatch: "#111111",
+    brand: "ralphlauren", category: "doudounes", gender: "homme", price: 190,
+    sizes: JACKETS, tags: ["new"],
+    description: "La Gorham Glossed de Polo Ralph Lauren : nylon brillant déperlant, garnissage duvet, capuche amovible et Pony rouge brodé sur la poitrine.",
+    details: ["Nylon brillant déperlant", "Garnissage duvet", "Capuche amovible", "Pony brodé"]
   }
 ];
