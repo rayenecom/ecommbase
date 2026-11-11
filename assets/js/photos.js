@@ -1691,7 +1691,10 @@ window.BASE_PHOTOS = {
 
   // Mizuno Wave Prophecy LS — Beige (Wind Chime / Fallen Rock)
   "mizuno-wave-prophecy-590063-wc8q": [
-    "images/products/mizuno-wave-prophecy-590063-wc8q-1.jpg"
+    "images/products/mizuno-wave-prophecy-590063-wc8q-1.jpg",
+    "images/products/mizuno-wave-prophecy-590063-wc8q-2.jpg",
+    "images/products/mizuno-wave-prophecy-590063-wc8q-3.jpg",
+    "images/products/mizuno-wave-prophecy-590063-wc8q-4.jpg"
   ],
 
   // Casquette Sweet Pants 3D Basic — Black
@@ -2572,13 +2575,29 @@ window.BASE_PHOTOS = {
   // Mizuno Wave Prophecy LS — Black
   "mizuno-wave-prophecy-ls-black": [
     "images/products/mizuno-wave-prophecy-ls-black-1.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-4.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-5.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-2.jpg",
     "images/products/mizuno-wave-prophecy-ls-black-3.jpg"
   ],
 
   // Mizuno Wave Prophecy LS — White / Black
   "mizuno-wave-prophecy-ls-black-white": [
     "images/products/mizuno-wave-prophecy-ls-black-white-1.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-white-4.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-white-5.jpg",
+    "images/products/mizuno-wave-prophecy-ls-black-white-2.jpg",
     "images/products/mizuno-wave-prophecy-ls-black-white-3.jpg"
+  ],
+
+  // Mizuno Wave Prophecy LS — Beige / Argent (Pristine / Black / Silver)
+  "mizuno-wave-prophecy-ls-pristine-black-silver": [
+    "images/products/mizuno-wave-prophecy-ls-pristine-black-silver-1.jpg",
+    "images/products/mizuno-wave-prophecy-ls-pristine-black-silver-2.jpg",
+    "images/products/mizuno-wave-prophecy-ls-pristine-black-silver-6.jpg",
+    "images/products/mizuno-wave-prophecy-ls-pristine-black-silver-5.jpg",
+    "images/products/mizuno-wave-prophecy-ls-pristine-black-silver-4.jpg",
+    "images/products/mizuno-wave-prophecy-ls-pristine-black-silver-3.jpg"
   ],
 
   // Casquette Alo District Trucker — Black

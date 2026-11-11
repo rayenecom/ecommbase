@@ -3272,6 +3272,14 @@ window.BASE_PRODUCTS = [
     details: ["Semelle Infinity Wave", "Tige mesh et overlays synthétiques", "Taille normalement"]
   },
   {
+    id: "mizuno-wave-prophecy-ls-pristine-black-silver", group: "mizuno-wave-prophecy",
+    name: "Mizuno Wave Prophecy LS", color: "Beige / Argent (Pristine / Black / Silver)", swatch: "#ebe5d5",
+    brand: "mizuno", category: "chaussures", gender: "unisexe", price: 95, oldPrice: 129,
+    sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], tags: ["new"],
+    description: "La Mizuno Wave Prophecy LS : semelle Infinity Wave spectaculaire et look futuriste, la version lifestyle de l'icône running. Coloris crème avec overlays argentés et logo noir.",
+    details: ["Semelle Infinity Wave", "Tige mesh 3D et overlays argentés", "Taille normalement"]
+  },
+  {
     id: "alo-district-trucker-black", group: "alo-district-trucker",
     name: "Casquette Alo District Trucker", color: "Black", swatch: "#141414",
     brand: "alo", category: "accessoires", gender: "unisexe", type: "casquettes", price: 35,
