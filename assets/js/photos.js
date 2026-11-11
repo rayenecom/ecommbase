@@ -776,19 +776,24 @@ window.BASE_PHOTOS = {
   "alo-boxer-black": [
     "images/products/alo-boxer-black-1.jpg",
     "images/products/alo-boxer-black-2.jpg",
-    "images/products/alo-boxer-black-3.jpg"
+    "images/products/alo-boxer-black-3.jpg",
+    "images/products/alo-boxer-black-4.jpg"
   ],
 
   // Caleçon Alo Day and Night Boxer — Grey
   "alo-boxer-grey": [
     "images/products/alo-boxer-grey-1.jpg",
-    "images/products/alo-boxer-grey-2.jpg"
+    "images/products/alo-boxer-grey-2.jpg",
+    "images/products/alo-boxer-grey-3.jpg",
+    "images/products/alo-boxer-grey-4.jpg"
   ],
 
   // Caleçon Alo Day and Night Boxer — White
   "alo-boxer-white": [
     "images/products/alo-boxer-white-1.jpg",
-    "images/products/alo-boxer-white-2.jpg"
+    "images/products/alo-boxer-white-2.jpg",
+    "images/products/alo-boxer-white-3.jpg",
+    "images/products/alo-boxer-white-4.jpg"
   ],
 
   // Caleçons Lululemon Always In Motion (pack de 5) — Black
@@ -1262,7 +1267,9 @@ window.BASE_PHOTOS = {
   // Salomon XT-6 GORE-TEX — Tradewinds / Stormy Weather / Bog
   "salomon-xt-6-l492148": [
     "images/products/salomon-xt-6-l492148-1.jpg",
-    "images/products/salomon-xt-6-l492148-3.jpg"
+    "images/products/salomon-xt-6-l492148-3.jpg",
+    "images/products/salomon-xt-6-l492148-4.jpg",
+    "images/products/salomon-xt-6-l492148-5.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Pearl Blue / Asphalt / Black
@@ -1319,46 +1326,60 @@ window.BASE_PHOTOS = {
   "salomon-xt-6-l454728": [
     "images/products/salomon-xt-6-l454728-1.jpg",
     "images/products/salomon-xt-6-l454728-2.jpg",
-    "images/products/salomon-xt-6-l454728-3.jpg",
-    "images/products/salomon-xt-6-l454728-4.jpg"
+    "images/products/salomon-xt-6-l454728-3.jpg"
   ],
 
   // Salomon XT-6 — Black Coffee / French Roast / Vanilla Ice
   "salomon-xt-6-l478661": [
     "images/products/salomon-xt-6-l478661-1.jpg",
-    "images/products/salomon-xt-6-l478661-3.jpg"
+    "images/products/salomon-xt-6-l478661-3.jpg",
+    "images/products/salomon-xt-6-l478661-4.jpg",
+    "images/products/salomon-xt-6-l478661-5.jpg"
   ],
 
   // Salomon XT-6 — Almond Milk / Portabella / Ice Flow
   "salomon-xt-6-l475822": [
     "images/products/salomon-xt-6-l475822-1.jpg",
-    "images/products/salomon-xt-6-l475822-3.jpg"
+    "images/products/salomon-xt-6-l475822-3.jpg",
+    "images/products/salomon-xt-6-l475822-4.jpg",
+    "images/products/salomon-xt-6-l475822-5.jpg"
   ],
 
   // Salomon XT-6 — Ghost Gray / Ghost Gray / Gray Flannel
   "salomon-xt-6-l474448": [
     "images/products/salomon-xt-6-l474448-1.jpg",
-    "images/products/salomon-xt-6-l474448-3.jpg"
+    "images/products/salomon-xt-6-l474448-3.jpg",
+    "images/products/salomon-xt-6-l474448-4.jpg",
+    "images/products/salomon-xt-6-l474448-5.jpg"
   ],
 
   // Salomon XT-6 — Aloe Wash / Hazelnut / Feather Gray
   "salomon-xt-6-l472937": [
-    "images/products/salomon-xt-6-l472937-1.jpg"
+    "images/products/salomon-xt-6-l472937-1.jpg",
+    "images/products/salomon-xt-6-l472937-2.jpg",
+    "images/products/salomon-xt-6-l472937-3.jpg",
+    "images/products/salomon-xt-6-l472937-4.jpg"
   ],
 
   // Salomon XT-6 — Black / Fiery Red / Silver
   "salomon-xt-6-l479882": [
-    "images/products/salomon-xt-6-l479882-1.jpg"
+    "images/products/salomon-xt-6-l479882-1.jpg",
+    "images/products/salomon-xt-6-l479882-2.jpg",
+    "images/products/salomon-xt-6-l479882-3.jpg"
   ],
 
   // Salomon XT-6 — Black / White / Blue Curacao
   "salomon-xt-6-l491433": [
-    "images/products/salomon-xt-6-l491433-1.jpg"
+    "images/products/salomon-xt-6-l491433-1.jpg",
+    "images/products/salomon-xt-6-l491433-2.jpg",
+    "images/products/salomon-xt-6-l491433-3.jpg"
   ],
 
   // Salomon XT-6 — Cloudburst / Icy Pink / Tapioca
   "salomon-xt-6-l491546": [
-    "images/products/salomon-xt-6-l491546-1.jpg"
+    "images/products/salomon-xt-6-l491546-1.jpg",
+    "images/products/salomon-xt-6-l491546-2.jpg",
+    "images/products/salomon-xt-6-l491546-3.jpg"
   ],
 
   // Salomon XT-6 — Black / Almond Cream
@@ -1370,7 +1391,9 @@ window.BASE_PHOTOS = {
 
   // Salomon XT-6 — Black / Grape Leaf
   "salomon-xt-6-l491544": [
-    "images/products/salomon-xt-6-l491544-1.jpg"
+    "images/products/salomon-xt-6-l491544-1.jpg",
+    "images/products/salomon-xt-6-l491544-2.jpg",
+    "images/products/salomon-xt-6-l491544-3.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Niagara / Sunny Lime
@@ -1382,24 +1405,34 @@ window.BASE_PHOTOS = {
 
   // Salomon XT-6 GORE-TEX — Black / Ebony / Lunar Rock
   "salomon-xt-6-l416635": [
-    "images/products/salomon-xt-6-l416635-1.jpg"
+    "images/products/salomon-xt-6-l416635-1.jpg",
+    "images/products/salomon-xt-6-l416635-2.jpg",
+    "images/products/salomon-xt-6-l416635-3.jpg",
+    "images/products/salomon-xt-6-l416635-4.jpg"
   ],
 
   // Salomon XT-6 — Dried Herb / Deep Lichen Green / Bright Green
   "salomon-xt-6-l472935": [
-    "images/products/salomon-xt-6-l472935-1.jpg"
+    "images/products/salomon-xt-6-l472935-1.jpg",
+    "images/products/salomon-xt-6-l472935-2.jpg",
+    "images/products/salomon-xt-6-l472935-3.jpg",
+    "images/products/salomon-xt-6-l472935-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Blue Print / Heather / White
   "salomon-xt-6-l472919": [
-    "images/products/salomon-xt-6-l472919-1.jpg"
+    "images/products/salomon-xt-6-l472919-1.jpg",
+    "images/products/salomon-xt-6-l472919-2.jpg",
+    "images/products/salomon-xt-6-l472919-3.jpg",
+    "images/products/salomon-xt-6-l472919-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Black / Black / Silver
   "salomon-xt-6-l474506": [
     "images/products/salomon-xt-6-l474506-1.jpg",
     "images/products/salomon-xt-6-l474506-2.jpg",
-    "images/products/salomon-xt-6-l474506-3.jpg"
+    "images/products/salomon-xt-6-l474506-3.jpg",
+    "images/products/salomon-xt-6-l474506-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Safari / Safari / Black
@@ -1413,86 +1446,119 @@ window.BASE_PHOTOS = {
   // Salomon XT-6 GORE-TEX — White / White / Silver
   "salomon-xt-6-l475811": [
     "images/products/salomon-xt-6-l475811-1.jpg",
-    "images/products/salomon-xt-6-l475811-3.jpg"
+    "images/products/salomon-xt-6-l475811-3.jpg",
+    "images/products/salomon-xt-6-l475811-4.jpg",
+    "images/products/salomon-xt-6-l475811-5.jpg"
   ],
 
   // Salomon XT-6 — Icicle / Nirvana / Nine Iron
   "salomon-xt-6-l477376": [
     "images/products/salomon-xt-6-l477376-1.jpg",
-    "images/products/salomon-xt-6-l477376-3.jpg"
+    "images/products/salomon-xt-6-l477376-3.jpg",
+    "images/products/salomon-xt-6-l477376-4.jpg",
+    "images/products/salomon-xt-6-l477376-5.jpg"
   ],
 
   // Salomon XT-6 — Roasted Clay / Burnt Ochre / Almond Milk
   "salomon-xt-6-l477375": [
-    "images/products/salomon-xt-6-l477375-1.jpg"
+    "images/products/salomon-xt-6-l477375-1.jpg",
+    "images/products/salomon-xt-6-l477375-2.jpg",
+    "images/products/salomon-xt-6-l477375-3.jpg"
   ],
 
   // Salomon XT-6 — Oxford Tan / Carbon / Clearly Aqua
   "salomon-xt-6-l477374": [
-    "images/products/salomon-xt-6-l477374-1.jpg"
+    "images/products/salomon-xt-6-l477374-1.jpg",
+    "images/products/salomon-xt-6-l477374-2.jpg",
+    "images/products/salomon-xt-6-l477374-3.jpg",
+    "images/products/salomon-xt-6-l477374-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Iron / Etherea / Seagrass
   "salomon-xt-6-l477326": [
-    "images/products/salomon-xt-6-l477326-1.jpg"
+    "images/products/salomon-xt-6-l477326-1.jpg",
+    "images/products/salomon-xt-6-l477326-2.jpg",
+    "images/products/salomon-xt-6-l477326-3.jpg",
+    "images/products/salomon-xt-6-l477326-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Almond Milk / Feather Gray / Pale Mauve
   "salomon-xt-6-l475812": [
     "images/products/salomon-xt-6-l475812-1.jpg",
-    "images/products/salomon-xt-6-l475812-3.jpg"
+    "images/products/salomon-xt-6-l475812-3.jpg",
+    "images/products/salomon-xt-6-l475812-4.jpg",
+    "images/products/salomon-xt-6-l475812-5.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Urban Chic / Black / Lime Cream
   "salomon-xt-6-l475813": [
     "images/products/salomon-xt-6-l475813-1.jpg",
-    "images/products/salomon-xt-6-l475813-2.jpg"
+    "images/products/salomon-xt-6-l475813-2.jpg",
+    "images/products/salomon-xt-6-l475813-3.jpg"
   ],
 
   // Salomon XT-6 — Vanilla Ice / Iron / Etherea
   "salomon-xt-6-l477377": [
-    "images/products/salomon-xt-6-l477377-1.jpg"
+    "images/products/salomon-xt-6-l477377-1.jpg",
+    "images/products/salomon-xt-6-l477377-2.jpg",
+    "images/products/salomon-xt-6-l477377-3.jpg",
+    "images/products/salomon-xt-6-l477377-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Black / Flame Scarlet / Vanilla Ice
   "salomon-xt-6-l479749": [
-    "images/products/salomon-xt-6-l479749-1.jpg"
+    "images/products/salomon-xt-6-l479749-1.jpg",
+    "images/products/salomon-xt-6-l479749-2.jpg",
+    "images/products/salomon-xt-6-l479749-3.jpg",
+    "images/products/salomon-xt-6-l479749-4.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Tea / Peat
   "salomon-xt-6-l478638": [
     "images/products/salomon-xt-6-l478638-1.jpg",
-    "images/products/salomon-xt-6-l478638-3.jpg"
+    "images/products/salomon-xt-6-l478638-3.jpg",
+    "images/products/salomon-xt-6-l478638-4.jpg",
+    "images/products/salomon-xt-6-l478638-5.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Mahogany Rose / Tawny Port / Black
   "salomon-xt-6-l478637": [
     "images/products/salomon-xt-6-l478637-1.jpg",
-    "images/products/salomon-xt-6-l478637-3.jpg"
+    "images/products/salomon-xt-6-l478637-3.jpg",
+    "images/products/salomon-xt-6-l478637-4.jpg",
+    "images/products/salomon-xt-6-l478637-5.jpg"
   ],
 
   // Salomon XT-6 — Nine Iron / Excalibur / Plum Perfect
   "salomon-xt-6-l478641": [
     "images/products/salomon-xt-6-l478641-1.jpg",
-    "images/products/salomon-xt-6-l478641-3.jpg"
+    "images/products/salomon-xt-6-l478641-3.jpg",
+    "images/products/salomon-xt-6-l478641-4.jpg",
+    "images/products/salomon-xt-6-l478641-5.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — North Atlantic / Black / Silver
   "salomon-xt-6-l478615": [
     "images/products/salomon-xt-6-l478615-1.jpg",
-    "images/products/salomon-xt-6-l478615-3.jpg"
+    "images/products/salomon-xt-6-l478615-3.jpg",
+    "images/products/salomon-xt-6-l478615-4.jpg",
+    "images/products/salomon-xt-6-l478615-5.jpg"
   ],
 
   // Salomon XT-6 GORE-TEX — Blue Nights / Astral Aura / Plum Kitten
   "salomon-xt-6-l478616": [
     "images/products/salomon-xt-6-l478616-1.jpg",
-    "images/products/salomon-xt-6-l478616-3.jpg"
+    "images/products/salomon-xt-6-l478616-3.jpg",
+    "images/products/salomon-xt-6-l478616-4.jpg",
+    "images/products/salomon-xt-6-l478616-5.jpg"
   ],
 
   // Salomon XT-6 — Ultramarine / Silver / Black
   "salomon-xt-6-l478651": [
     "images/products/salomon-xt-6-l478651-1.jpg",
-    "images/products/salomon-xt-6-l478651-3.jpg"
+    "images/products/salomon-xt-6-l478651-3.jpg",
+    "images/products/salomon-xt-6-l478651-4.jpg",
+    "images/products/salomon-xt-6-l478651-5.jpg"
   ],
 
   // Asics GEL-1130 — White / Storm Cloud
@@ -2903,7 +2969,9 @@ window.BASE_PHOTOS = {
   // Casquette Alo District Trucker — Dune Grass
   "alo-district-trucker-dune-grass": [
     "images/products/alo-district-trucker-dune-grass-1.jpg",
-    "images/products/alo-district-trucker-dune-grass-2.jpg"
+    "images/products/alo-district-trucker-dune-grass-2.jpg",
+    "images/products/alo-district-trucker-dune-grass-3.jpg",
+    "images/products/alo-district-trucker-dune-grass-4.jpg"
   ],
 
   // Casquette Alo District Trucker — Candy Heart Pink
@@ -3130,7 +3198,10 @@ window.BASE_PHOTOS = {
 
   // UGG Lo Lowmel Femme — Horizon Pink
   "ugg-lolowmel-w-horizon-pink": [
-    "images/products/ugg-lolowmel-w-horizon-pink-1.jpg"
+    "images/products/ugg-lolowmel-w-horizon-pink-1.jpg",
+    "images/products/ugg-lolowmel-w-horizon-pink-2.jpg",
+    "images/products/ugg-lolowmel-w-horizon-pink-3.jpg",
+    "images/products/ugg-lolowmel-w-horizon-pink-4.jpg"
   ],
 
   // UGG Lo Lowmel Femme — Mustard Seed
