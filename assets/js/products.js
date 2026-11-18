@@ -3743,5 +3743,15 @@ window.BASE_PRODUCTS = [
     sizes: JACKETS, tags: ["new"],
     description: "La Gorham Glossed de Polo Ralph Lauren : nylon brillant déperlant, garnissage duvet, capuche amovible et Pony rouge brodé sur la poitrine.",
     details: ["Nylon brillant déperlant", "Garnissage duvet", "Capuche amovible", "Pony brodé"]
+  },
+  /* ---------- PRODUIT DE TEST DU PAIEMENT (caché : lien direct #/produit/test-paiement-cp) — à retirer après le test ---------- */
+  {
+    id: "test-paiement-cp", group: "test-paiement-cp",
+    name: "Test paiement – Doudoune C.P. Company", color: "Black", swatch: "#232322",
+    brand: "cpcompany", category: "doudounes", gender: "unisexe", price: 1, hidden: true,
+    sizes: ["M"],
+    images: ["images/products/cp-dd-shell-puffer-black-1.jpg", "images/products/cp-dd-shell-puffer-black-2.jpg", "images/products/cp-dd-shell-puffer-black-3.jpg"],
+    description: "Produit de test interne pour vérifier le paiement. Il n'apparaît pas dans la boutique.",
+    details: ["Test du paiement", "Commande à rembourser dans Stripe"]
   }
 ];

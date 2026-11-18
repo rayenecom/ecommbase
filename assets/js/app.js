@@ -10,11 +10,13 @@
   const CFG = window.BASE_CONFIG;
   const BRANDS = window.BASE_BRANDS;
   const CATS = window.BASE_CATEGORIES;
-  const PRODUCTS = window.BASE_PRODUCTS;
+  // Produits « hidden: true » (ex. produit de test du paiement) : achetables par leur lien direct, absents de la boutique
+  const ALL_PRODUCTS = window.BASE_PRODUCTS;
+  const PRODUCTS = ALL_PRODUCTS.filter((p) => !p.hidden);
   const ART = window.BASE_ART;
   // Photos déclarées dans photos.js (prioritaires sur le champ images de products.js)
   const PHOTOS = window.BASE_PHOTOS || {};
-  PRODUCTS.forEach((p) => { const ph = (PHOTOS[p.id] || []).filter(Boolean); if (ph.length) p.images = ph; });
+  ALL_PRODUCTS.forEach((p) => { const ph = (PHOTOS[p.id] || []).filter(Boolean); if (ph.length) p.images = ph; });
 
   /* =================== Utilitaires =================== */
   const $ = (s, r = document) => r.querySelector(s);
@@ -24,7 +26,7 @@
   const money = (n) => fmt.format(n).replace(/[.,]00(?=\s?\D*$)/, "");
   const moneyExact = (n) => fmt.format(n);
   const norm = (s) => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
-  const byId = (id) => PRODUCTS.find((p) => p.id === id);
+  const byId = (id) => ALL_PRODUCTS.find((p) => p.id === id);
   const brandOf = (p) => BRANDS[p.brand] || { name: p.brand, tint: "#ececea" };
   const isNew = (p) => (p.tags || []).includes("new");
   const isBest = (p) => (p.tags || []).includes("best");
