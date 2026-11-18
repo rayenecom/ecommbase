@@ -514,6 +514,7 @@
     </div>`;
   }
   function shipHTML() {
+    if (!CFG.shippingPrice) return Cart.items.length ? `<div class="ship"><span class="added">${I.check} Livraison offerte</span></div>` : "";
     if (!CFG.freeShippingFrom) return "";
     const left = CFG.freeShippingFrom - Cart.subtotal();
     const w = Math.min(100, (Cart.subtotal() / CFG.freeShippingFrom) * 100);
@@ -690,7 +691,7 @@
       <section class="trust" aria-label="Nos engagements"><div class="wrap">
         <div class="trust__item">${I.shield}<div><b>100% authentique</b><span>Contrôlé avant envoi</span></div></div>
         <div class="trust__item">${I.plane}<div><b>Direct des USA</b><span>Pas d'intermédiaire</span></div></div>
-        <div class="trust__item">${I.truck}<div><b>Livraison suivie</b><span>${CFG.freeShippingFrom ? `Offerte dès ${money(CFG.freeShippingFrom)}` : `${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours`}</span></div></div>
+        <div class="trust__item">${I.truck}<div><b>Livraison suivie</b><span>${!CFG.shippingPrice ? "Offerte sur tout le site" : CFG.freeShippingFrom ? `Offerte dès ${money(CFG.freeShippingFrom)}` : `${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours`}</span></div></div>
         <div class="trust__item">${I.ret}<div><b>Retours ${CFG.returnDays} jours</b><span>Échange ou remboursement</span></div></div>
       </div></section>
 
@@ -1014,7 +1015,7 @@
             </div>
 
             <div class="perks">
-              <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">${CFG.freeShippingFrom ? (p.price >= CFG.freeShippingFrom ? "Livraison offerte sur cet article" : `Offerte dès ${money(CFG.freeShippingFrom)} d'achat`) : `Envoi suivi`}</span></div></div>
+              <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">${!CFG.shippingPrice ? "Livraison offerte" : CFG.freeShippingFrom ? (p.price >= CFG.freeShippingFrom ? "Livraison offerte sur cet article" : `Offerte dès ${money(CFG.freeShippingFrom)} d'achat`) : `Envoi suivi`}</span></div></div>
               <div class="perk">${I.shield}<div><b>100% authentique, garanti</b><br><span class="muted">Contrôlé avant envoi. Remboursé si non authentique.</span></div></div>
               <div class="perk">${I.ret}<div><b>Retours sous ${CFG.returnDays} jours</b><br><span class="muted">Article non porté, avec étiquettes.</span></div></div>
             </div>
@@ -1024,7 +1025,7 @@
             <div class="acc">
               <details open><summary>Description</summary><div class="body"><p>${esc(p.description)}</p>${p.details ? `<ul class="dots">${p.details.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}</div></details>
               <details><summary>Authenticité</summary><div class="body"><p>Acheté aux États-Unis et contrôlé à la main avant l'envoi : étiquettes, coutures, matières, codes produit et boîte. Si un article n'était pas authentique, tu serais remboursé intégralement, livraison comprise.</p></div></details>
-              <details><summary>Livraison & retours</summary><div class="body"><p>Expédition sous 24 à 48 h avec suivi, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${CFG.freeShippingFrom ? `Livraison ${moneyExact(CFG.shippingPrice)}, offerte dès ${money(CFG.freeShippingFrom)}.` : ""}</p><p>Retour ou échange sous ${CFG.returnDays} jours, article non porté avec ses étiquettes.</p></div></details>
+              <details><summary>Livraison & retours</summary><div class="body"><p>Expédition sous 24 à 48 h avec suivi, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${!CFG.shippingPrice ? "Livraison offerte." : CFG.freeShippingFrom ? `Livraison ${moneyExact(CFG.shippingPrice)}, offerte dès ${money(CFG.freeShippingFrom)}.` : `Livraison ${moneyExact(CFG.shippingPrice)}.`}</p><p>Retour ou échange sous ${CFG.returnDays} jours, article non porté avec ses étiquettes.</p></div></details>
             </div>
           </div>
         </div>
@@ -1357,7 +1358,7 @@
   const FAQ = [
     ["authenticite", "Vos produits sont-ils vraiment authentiques ?", "Oui, 100%. Chaque pièce est achetée aux États-Unis par notre fournisseur, puis contrôlée à la main avant l'envoi : étiquettes, coutures, matières, codes produit et boîte. Si un article n'était pas authentique, tu serais remboursé intégralement, livraison comprise."],
     ["commande", "Comment se passe une commande ?", "Ajoute tes articles au panier, remplis tes coordonnées, puis envoie le récapitulatif par WhatsApp, Instagram ou e-mail. On te confirme la disponibilité de ta taille et on t'envoie un lien de paiement sécurisé. Ta commande part dès réception du paiement."],
-    ["livraison", "Quels sont les délais et frais de livraison ?", `Expédition sous 24 à 48 h après paiement, avec suivi. Livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${CFG.freeShippingFrom ? `La livraison coûte ${moneyExact(CFG.shippingPrice)} et elle est offerte dès ${money(CFG.freeShippingFrom)} d'achat.` : ""}`],
+    ["livraison", "Quels sont les délais et frais de livraison ?", `Expédition sous 24 à 48 h après paiement, avec suivi. Livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${!CFG.shippingPrice ? "La livraison est offerte sur toute la boutique." : CFG.freeShippingFrom ? `La livraison coûte ${moneyExact(CFG.shippingPrice)} et elle est offerte dès ${money(CFG.freeShippingFrom)} d'achat.` : `La livraison coûte ${moneyExact(CFG.shippingPrice)}.`}`],
     ["retours", "Puis-je retourner ou échanger un article ?", `Oui, sous ${CFG.returnDays} jours après réception, pour un article non porté, avec ses étiquettes et dans son emballage d'origine. Écris-nous pour lancer le retour ou l'échange de taille.`],
     ["tailles", "Comment choisir ma taille ?", "Les vêtements sont en tailles US, les chaussures en pointures EU. Essentials et Alo ont une coupe oversize : prends ta taille habituelle pour un rendu ample. Un guide des tailles est disponible sur chaque fiche produit, et on peut te conseiller sur WhatsApp."],
     ["paiement", "Quels moyens de paiement acceptez-vous ?", "Carte bancaire, PayPal, Apple Pay et virement. Tu ne paies qu'une fois ta taille confirmée."],
@@ -1393,7 +1394,7 @@
         <h2>Éditeur du site</h2><p>[Nom ou raison sociale] · [Statut : micro-entreprise, SAS…] · SIRET [numéro] · [Adresse] · [E-mail]</p>
         <h2>Hébergement</h2><p>[Nom et adresse de l'hébergeur]</p>
         <h2>Marques</h2><p>${esc(CFG.storeName)} est un revendeur indépendant, non affilié, non sponsorisé et non autorisé officiellement par les marques présentées. Fear of God Essentials, Ralph Lauren, On, Alo, Lululemon, UGG, Nocta, Salomon, Mizuno, Asics, Sweet Pants, Courrèges, Columbia et C.P. Company sont des marques de leurs propriétaires respectifs, citées uniquement pour désigner les produits authentiques revendus.</p>
-        <h2>Produits et prix</h2><p>Les produits sont neufs et authentiques. Les prix sont indiqués en euros TTC, hors frais de livraison.</p>
+        <h2>Produits et prix</h2><p>Les produits sont neufs et authentiques. Les prix sont indiqués en euros TTC. ${!CFG.shippingPrice ? "La livraison est offerte sur toute la boutique." : "Les frais de livraison s'ajoutent au prix et sont affichés avant le paiement."}</p>
         <h2>Commande et paiement</h2><p>La commande est définitive après confirmation de la disponibilité et réception du paiement.</p>
         <h2>Livraison</h2><p>Expédition sous 24 à 48 h après paiement, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés.</p>
         <h2>Droit de rétractation</h2><p>Tu disposes de 14 jours à compter de la réception pour exercer ton droit de rétractation. L'article doit être retourné non porté, avec ses étiquettes et dans son emballage d'origine.</p>

@@ -10,8 +10,8 @@ window.BASE_CONFIG = {
   locale: "fr-FR",
 
   // Livraison
-  shippingPrice: 7.9,          // livraison standard
-  freeShippingFrom: 150,       // livraison offerte dès ce montant (0 = jamais)
+  shippingPrice: 0,            // prix de la livraison (0 = livraison offerte sur tout le site)
+  freeShippingFrom: 0,         // livraison offerte dès ce montant (0 = pas de seuil)
   deliveryDays: [3, 6],        // délai de livraison en jours ouvrés [min, max]
   returnDays: 14,              // délai de retour
 
@@ -31,7 +31,7 @@ window.BASE_CONFIG = {
   // Messages du bandeau en haut du site (ils défilent un par un)
   announcements: [
     "Bonnes affaires : prix réduits sur une sélection",
-    "Livraison offerte dès 150 €",
+    "Livraison offerte sur tout le site",
     "100% authentique · importé des États-Unis",
     "Retours sous 14 jours"
   ],
