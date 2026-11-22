@@ -42,14 +42,16 @@ window.BASE_BRANDS = {
   columbia:    { name: "Columbia",     tint: "#e8eae6", line: "Since 1938" },
   sweetpants:  { name: "Sweet Pants",  tint: "#ecebe8", line: "Paris" },
   jordan:      { name: "Jordan",       tint: "#ebe8e4", line: "Travis Scott" },
-  pyrenex:     { name: "Pyrenex",      tint: "#e8e9ec", line: "Since 1859" }
+  pyrenex:     { name: "Pyrenex",      tint: "#e8e9ec", line: "Since 1859" },
+  labase:      { name: "LA BASE",      tint: "#eee7db", line: "Packs", hidden: true }   // hidden : absente des listes de marques
 };
 
 window.BASE_CATEGORIES = {
   ensembles:  { name: "Ensembles",  one: "Ensemble" },
   chaussures: { name: "Chaussures", one: "Chaussure" },
   doudounes:  { name: "Doudounes",  one: "Doudoune" },
-  accessoires: { name: "Accessoires", one: "Accessoire" }
+  accessoires: { name: "Accessoires", one: "Accessoire" },
+  packs:      { name: "Packs fournisseurs", one: "Pack fournisseurs" }
 };
 
 window.BASE_TYPES = {
@@ -3743,6 +3745,16 @@ window.BASE_PRODUCTS = [
     sizes: JACKETS, tags: ["new"],
     description: "La Gorham Glossed de Polo Ralph Lauren : nylon brillant déperlant, garnissage duvet, capuche amovible et Pony rouge brodé sur la poitrine.",
     details: ["Nylon brillant déperlant", "Garnissage duvet", "Capuche amovible", "Pony brodé"]
+  },
+  /* ---------- PACK NUMÉRIQUE (digital : pas de taille ni de livraison, envoyé par e-mail / WhatsApp) ---------- */
+  {
+    id: "pack-fournisseurs-alo-on-essentials", group: "pack-fournisseurs-alo-on-essentials",
+    name: "Pack fournisseurs Alo, On & Essentials", color: "Accès numérique", swatch: "#101211",
+    brand: "labase", category: "packs", gender: "unisexe", price: 100, digital: true,
+    sizes: TU,
+    images: ["images/products/pack-fournisseurs-alo-on-essentials-1.jpg", "images/products/pack-fournisseurs-alo-on-essentials-2.jpg", "images/products/pack-fournisseurs-alo-on-essentials-3.jpg"],
+    description: "Le pack fournisseurs LA BASE : les contacts de nos fournisseurs Alo, On et Essentials pour commander toi-même. Le pack t'est envoyé par e-mail et sur WhatsApp après le paiement.",
+    details: ["Fournisseur Alo : ensembles et accessoires", "Fournisseur On : ensembles et sneakers", "Fournisseur Essentials : ensembles", "Envoyé par e-mail et WhatsApp sous 24 h", "Contenu numérique, aucun envoi postal"]
   },
   /* ---------- PRODUIT DE TEST DU PAIEMENT (caché : lien direct #/produit/test-paiement-cp) — à retirer après le test ---------- */
   {

@@ -356,6 +356,7 @@
       ["Ensembles", L.shop({ cat: "ensembles" }), megaHTML("ensembles")],
       ["Chaussures", L.shop({ cat: "chaussures" }), megaHTML("chaussures")],
       ["Accessoires", L.shop({ cat: "accessoires" }), accMega()],
+      ["Packs", L.shop({ cat: "packs" }), ""],
       ["Marques", "#/marques", ""],
       ["Promos", L.shop({ filter: "sale" }), ""]
     ];
@@ -392,6 +393,7 @@
           ${["ensembles", "chaussures"].map((c) => `<details><summary>${CATS[c].name} ${I.chev}</summary><ul><li><a href="${L.shop({ cat: c })}"><b>Tout voir</b></a></li>${brandsIn(c).map((b) => `<li><a href="${L.shop({ cat: c, brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></details>`).join("")}
           <details><summary>Accessoires ${I.chev}</summary><ul><li><a href="${L.shop({ cat: "accessoires" })}"><b>Tout voir</b></a></li>${Object.keys(TYPES).map((t) => `<li><a href="${L.shop({ cat: "accessoires", type: t })}">${TYPES[t]}</a></li>`).join("")}</ul></details>
           <a href="${L.shop({ cat: "doudounes" })}">Doudounes ${I.chev}</a>
+          <a href="${L.shop({ cat: "packs" })}">Packs fournisseurs ${I.chev}</a>
           <a href="#/marques">Marques ${I.chev}</a>
           <a href="${L.shop({ filter: "sale" })}" style="color:var(--sale)">Promos ${I.chev}</a>
           <a href="${L.faq()}">Aide & contact ${I.chev}</a>
@@ -455,9 +457,10 @@
           <li><a href="${L.shop({ g: "homme" })}">Homme</a></li>
           <li><a href="${L.shop({ cat: "accessoires" })}">Accessoires</a></li>
           <li><a href="${L.shop({ cat: "doudounes" })}">Doudounes</a></li>
+          <li><a href="${L.shop({ cat: "packs" })}">Packs fournisseurs</a></li>
           <li><a href="${L.shop({ filter: "sale" })}">Promos</a></li>
         </ul></div>
-        <div><h4>Marques</h4><ul>${Object.keys(BRANDS).map((b) => `<li><a href="${L.shop({ brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></div>
+        <div><h4>Marques</h4><ul>${Object.keys(BRANDS).filter((b) => !BRANDS[b].hidden).map((b) => `<li><a href="${L.shop({ brand: b })}">${esc(BRANDS[b].name)}</a></li>`).join("")}</ul></div>
         <div><h4>Aide</h4><ul>
           <li><a href="${L.faq("authenticite")}">Authenticité</a></li>
           <li><a href="${L.faq("livraison")}">Livraison</a></li>
@@ -505,7 +508,7 @@
       <a class="line__art" href="${L.product(p.id)}">${art(p)}${editable ? "" : `<span class="qbadge">${it.qty}</span>`}</a>
       <div class="line__info">
         <div class="line__top"><span>${esc(p.name)}</span><span>${money(p.price * it.qty)}</span></div>
-        <div class="line__meta">${esc(p.color)} · Taille ${esc(it.size)}</div>
+        <div class="line__meta">${esc(p.color)}${p.digital ? "" : ` · Taille ${esc(it.size)}`}</div>
         ${editable ? `<div class="line__row">
           <div class="qty"><button type="button" data-qty="${i}" data-d="-1" aria-label="Retirer un article">${I.minus}</button><span>${it.qty}</span><button type="button" data-qty="${i}" data-d="1" aria-label="Ajouter un article">${I.plus}</button></div>
           <button type="button" class="rm" data-rm="${i}">Retirer</button>
@@ -800,7 +803,7 @@
   }
 
   function brandTiles() {
-    return Object.keys(BRANDS).map((b) => {
+    return Object.keys(BRANDS).filter((b) => !BRANDS[b].hidden).map((b) => {
       const n = PRODUCTS.filter((p) => p.brand === b).length;
       return `<a class="brand" href="${L.shop({ brand: b })}"><span class="eyebrow">${esc(BRANDS[b].line || "")}</span><span class="brand__name">${esc(BRANDS[b].name)}</span><span class="brand__row"><span class="muted" style="font-size:var(--fs-sm)">${n} produit${n > 1 ? "s" : ""}</span>${I.right}</span></a>`;
     }).join("");
@@ -826,6 +829,7 @@
     function base() {
       let l = PRODUCTS.slice();
       if (st.cat) l = l.filter((p) => p.category === st.cat);
+      else if (!st.q) l = l.filter((p) => !p.digital || st.brands.has(p.brand));
       if (st.type) l = l.filter((p) => p.type === st.type);
       if (st.g) l = l.filter((p) => genderOk(p, st.g));
       if (st.filter === "new") l = l.filter(isNew);
@@ -861,7 +865,7 @@
       if (st.filter === "new") return ["Nouveautés", "Les dernières pièces arrivées des États-Unis."];
       if (st.filter === "sale") return ["Promos", "Pièces authentiques à prix réduit, dans la limite des tailles disponibles."];
       if (st.cat && b) return [`${CATS[st.cat].name} ${b.name}`, `Tous nos ${CATS[st.cat].name.toLowerCase()} ${b.name}, 100% authentiques.`];
-      if (st.cat) return [CATS[st.cat].name, { ensembles: "Essentials (basiques et 1977), Ralph Lauren, On, Alo, Lululemon, UGG et Nocta. Haut et bas assortis, vendus ensemble.", chaussures: "On Cloudtilt, Cloudtilt Arc, Cloudtilt Remix et Cloudsurfer Max en Femme et Homme, Salomon XT-6, Asics GEL-1130 et Kayano 14, Mizuno Wave Prophecy LS et Alo Runner.", doudounes: "Doudounes C.P. Company, garnissage duvet.", accessoires: "Casquettes Sweet Pants, Courrèges, Alo District Trucker, Columbia, bonnets C.P. Company, Ralph Lauren, Sweet Pants, chaussettes et caleçons Alo et Lululemon." }[st.cat]];
+      if (st.cat) return [CATS[st.cat].name, { ensembles: "Essentials (basiques et 1977), Ralph Lauren, On, Alo, Lululemon, UGG et Nocta. Haut et bas assortis, vendus ensemble.", chaussures: "On Cloudtilt, Cloudtilt Arc, Cloudtilt Remix et Cloudsurfer Max en Femme et Homme, Salomon XT-6, Asics GEL-1130 et Kayano 14, Mizuno Wave Prophecy LS et Alo Runner.", doudounes: "Doudounes C.P. Company, garnissage duvet.", packs: "Accès numériques : les contacts de nos fournisseurs, envoyés par e-mail et WhatsApp après le paiement.", accessoires: "Casquettes Sweet Pants, Courrèges, Alo District Trucker, Columbia, bonnets C.P. Company, Ralph Lauren, Sweet Pants, chaussettes et caleçons Alo et Lululemon." }[st.cat]];
       if (b) return [b.name, `Toute la sélection ${b.name}, 100% authentique.`];
       return ["Tout le shop", "Ensembles, sneakers et doudounes 100% authentiques, importés des États-Unis."];
     }
@@ -964,13 +968,14 @@
     if (!p) return view404(main);
     pushRecent(p.id);
     Track.ev("VIEW_CONTENT", { item_ids: [p.id], item_category: p.category, price: p.price, currency: CFG.currency });
-    setMeta(`${p.name} ${p.color}`, `${p.name} ${p.color} — 100% authentique, importé des États-Unis. ${p.description}`);
+    const dig = !!p.digital;
+    setMeta(dig ? p.name : `${p.name} ${p.color}`, dig ? p.description : `${p.name} ${p.color} — 100% authentique, importé des États-Unis. ${p.description}`);
     const cat = CATS[p.category];
     const variants = variantsOf(p);
     const out = p.soldOutSizes || [];
     const low = p.lowStock || [];
     const views = p.images && p.images.length ? p.images.map((_, i) => i) : [0, 1, 2];
-    const look = lookFor(p, 2);
+    const look = dig ? [] : lookFor(p, 2);
     const related = onePerGroup(PRODUCTS.filter((x) => x.group !== p.group && (x.brand === p.brand || x.category === p.category))
       .sort((a, b) => (b.category === p.category) - (a.category === p.category) || (b.brand === p.brand) - (a.brand === p.brand) || isBest(b) - isBest(a))).slice(0, 8);
     const recent = store.get(RV_KEY, []).filter((id) => id !== p.id).map(byId).filter(Boolean).slice(0, 8);
@@ -996,11 +1001,11 @@
             </div>
 
             <div>
-              <div class="opt-head"><span>Coloris : <b>${esc(p.color)}</b></span>${variants.length > 1 ? `<span class="muted">${variants.length} coloris</span>` : ""}</div>
+              <div class="opt-head"><span>${dig ? "Format" : "Coloris"} : <b>${esc(p.color)}</b></span>${variants.length > 1 ? `<span class="muted">${variants.length} coloris</span>` : ""}</div>
               ${variants.length > 1 ? `<div class="variants">${variants.map((v) => `<a class="variant${v.id === p.id ? " is-on" : ""}" href="${L.product(v.id)}" title="${esc(v.color)}" aria-label="Coloris ${esc(v.color)}"${v.id === p.id ? ' aria-current="true"' : ""}>${art(v)}</a>`).join("")}</div>` : ""}
             </div>
 
-            <div>
+            <div${dig ? " hidden" : ""}>
               <div class="opt-head"><b>${oneSize ? "Taille unique" : unit ? `Taille (${unit})` : "Taille"}</b>${oneSize ? "" : `<button class="link" type="button" data-guide="${esc(p.category)}" style="font-size:var(--fs-sm)">Guide des tailles</button>`}</div>
               <div class="sizes" id="sizes" role="radiogroup" aria-label="Taille">${p.sizes.map((s) => {
                 const o = soldOut || out.includes(s);
@@ -1014,18 +1019,21 @@
               ${CFG.whatsapp ? `<a class="btn btn--wa btn--block" id="wa-buy" href="#" target="_blank" rel="noopener">${I.wa} ${soldOut ? "Me prévenir du restock" : "Commander sur WhatsApp"}</a>` : ""}
             </div>
 
-            <div class="perks">
+            ${dig ? `<div class="perks">
+              <div class="perk ok">${I.truck}<div><b>Envoyé par e-mail et WhatsApp sous 24 h</b><br><span class="muted">Contenu numérique, aucun envoi postal</span></div></div>
+              <div class="perk">${I.shield}<div><b>Paiement sécurisé</b><br><span class="muted">Carte bancaire, Apple Pay, Google Pay</span></div></div>
+            </div>` : `<div class="perks">
               <div class="perk ok">${I.truck}<div><b>Livraison estimée entre le ${deliveryWindow()}</b><br><span class="muted">${!CFG.shippingPrice ? "Livraison offerte" : CFG.freeShippingFrom ? (p.price >= CFG.freeShippingFrom ? "Livraison offerte sur cet article" : `Offerte dès ${money(CFG.freeShippingFrom)} d'achat`) : `Envoi suivi`}</span></div></div>
               <div class="perk">${I.shield}<div><b>100% authentique, garanti</b><br><span class="muted">Contrôlé avant envoi. Remboursé si non authentique.</span></div></div>
               <div class="perk">${I.ret}<div><b>Retours sous ${CFG.returnDays} jours</b><br><span class="muted">Article non porté, avec étiquettes.</span></div></div>
-            </div>
+            </div>`}
 
             ${look.length ? `<div class="look"><span class="eyebrow">Complète le look</span>${look.map((x) => `<a class="look__item" href="${L.product(x.id)}"><div class="art">${art(x)}</div><div><div class="t">${esc(x.name)}</div><div class="s">${esc(x.color)}</div><div class="price" style="font-size:var(--fs-sm)">${priceHTML(x)}</div></div>${I.chev.replace("<svg", '<svg width="18" height="18"')}</a>`).join("")}</div>` : ""}
 
             <div class="acc">
               <details open><summary>Description</summary><div class="body"><p>${esc(p.description)}</p>${p.details ? `<ul class="dots">${p.details.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>` : ""}</div></details>
-              <details><summary>Authenticité</summary><div class="body"><p>Acheté aux États-Unis et contrôlé à la main avant l'envoi : étiquettes, coutures, matières, codes produit et boîte. Si un article n'était pas authentique, tu serais remboursé intégralement, livraison comprise.</p></div></details>
-              <details><summary>Livraison & retours</summary><div class="body"><p>Expédition sous 24 à 48 h avec suivi, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${!CFG.shippingPrice ? "Livraison offerte." : CFG.freeShippingFrom ? `Livraison ${moneyExact(CFG.shippingPrice)}, offerte dès ${money(CFG.freeShippingFrom)}.` : `Livraison ${moneyExact(CFG.shippingPrice)}.`}</p><p>Retour ou échange sous ${CFG.returnDays} jours, article non porté avec ses étiquettes.</p></div></details>
+              ${dig ? `<details><summary>Envoi du pack</summary><div class="body"><p>Après le paiement, le pack t'est envoyé par e-mail et sur WhatsApp sous 24 h, aux coordonnées données lors de la commande. C'est un contenu numérique : rien n'est envoyé par la poste.</p><p>En validant ta commande, tu demandes l'envoi immédiat du pack et tu reconnais perdre ton droit de rétractation une fois le pack reçu (article L221-28 du Code de la consommation).</p></div></details>` : `<details><summary>Authenticité</summary><div class="body"><p>Acheté aux États-Unis et contrôlé à la main avant l'envoi : étiquettes, coutures, matières, codes produit et boîte. Si un article n'était pas authentique, tu serais remboursé intégralement, livraison comprise.</p></div></details>
+              <details><summary>Livraison & retours</summary><div class="body"><p>Expédition sous 24 à 48 h avec suivi, livraison en ${CFG.deliveryDays[0]} à ${CFG.deliveryDays[1]} jours ouvrés. ${!CFG.shippingPrice ? "Livraison offerte." : CFG.freeShippingFrom ? `Livraison ${moneyExact(CFG.shippingPrice)}, offerte dès ${money(CFG.freeShippingFrom)}.` : `Livraison ${moneyExact(CFG.shippingPrice)}.`}</p><p>Retour ou échange sous ${CFG.returnDays} jours, article non porté avec ses étiquettes.</p></div></details>`}
             </div>
           </div>
         </div>
@@ -1043,7 +1051,7 @@
       if (!wa) return;
       const txt = soldOut
         ? `Bonjour ${CFG.storeName} ! Pouvez-vous me prévenir quand ce produit revient en stock ?\n${p.name} — ${p.color}${picked ? `\nTaille : ${picked}` : ""}`
-        : `Bonjour ${CFG.storeName} ! Je voudrais commander :\n${p.name} — ${p.color}\nTaille : ${picked || "à préciser"}\nPrix : ${moneyExact(p.price)}`;
+        : `Bonjour ${CFG.storeName} ! Je voudrais commander :\n${p.name} — ${p.color}${dig ? "" : `\nTaille : ${picked || "à préciser"}`}\nPrix : ${moneyExact(p.price)}`;
       wa.href = `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(txt)}`;
     }
     function setAtcLabel() { if (!soldOut) atc.textContent = picked ? `Ajouter au panier · ${money(p.price)}` : "Ajouter au panier"; }
@@ -1079,7 +1087,7 @@
     // Barre d'achat collante (mobile)
     const sticky = $("#sticky-buy");
     function updateSticky() {
-      sticky.innerHTML = `<div class="sticky-buy__info"><b>${esc(p.name)}</b><span class="price">${priceHTML(p)}</span></div><button class="btn btn--sm" type="button" id="sticky-atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Rupture de stock" : picked ? `Ajouter · ${esc(picked)}` : "Choisir ma taille"}</button>`;
+      sticky.innerHTML = `<div class="sticky-buy__info"><b>${esc(p.name)}</b><span class="price">${priceHTML(p)}</span></div><button class="btn btn--sm" type="button" id="sticky-atc" ${soldOut ? "disabled" : ""}>${soldOut ? "Rupture de stock" : picked ? (dig ? "Ajouter au panier" : `Ajouter · ${esc(picked)}`) : "Choisir ma taille"}</button>`;
       $("#sticky-atc").onclick = () => { if (picked) addToCart(p.id, picked); else $("#sizes").scrollIntoView({ behavior: "smooth", block: "center" }); };
     }
     updateSticky();
